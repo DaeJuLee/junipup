@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Emp">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="EmpResult" type="Emp">
+		<result property="empno" column="empno" />
+		<result property="ename" column="ename" />
+		<result property="job" column="job" />
+		<result property="mgr" column="mgr" />
+		<result property="hiredate" column="hiredate" />
+		<result property="sal" column="sal" />
+		<result property="comm" column="comm" />
+		<result property="deptno" column="deptno" />
+	</resultMap>
+
+	<select id="list" parameterType="Emp" resultMap="EmpResult">
+    	select * from (select rownum rn, a.* from (select * from emp
+    	order by empno) a) where rn between #{start} and #{end}
+	</select>
+	
+	<select id="total" resultType="int" >
+		select count(*) from emp
+	</select>
+	
+	<select id="selectEname" parameterType="int" resultMap="EmpResult">
+		<![CDATA[select * from emp where empno = #{empno}]]>
+	</select>
+	
+	<insert id="insertEmp" parameterType="Emp">
+		insert into emp
+		values (
+		#{empno}, #{ename}, #{job}, #{mgr} , #{hiredate}, #{sal}, #{comm}, #{deptno} )
+	</insert>
+	
+	<insert id="insertEmpList" parameterType="Emp">
+		insert into emp
+		values (
+		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
+	</insert>
+	
+	<delete id="deleteEmp" parameterType="int">
+		delete from emp where empno = #{empno}
+	</delete>
+	
+	<update id="updateEmp" parameterType="Emp">
+		update emp set
+		ename = #{ename},
+		job = #{job},
+		mgr = #{mgr},
+		hiredate = to_date(#{hiredate}, 'yyyy-MM-dd-hh24:mi:ss'),
+		sal = #{sal},
+		<if test = "comm!=null">
+			comm = #{comm},
+		</if>
+		deptno = #{deptno}
+		where
+		empno = #{empno}
+	</update>
+	
+	<!-- <if test="hiredate = ''">hiredate=${hiredate,}</if> 위 update할때 쌤이 한 방식-->
+	
+	<!-- <select id="total" parameterType = "Board" resultType="int">
+    	select count(*) from board1
+    	 <where>
+    	 	<if test = "search=='title'">
+    				 title like '%'||#{keyword}||'%'list.jsp의 <input type="text" name="keyword">
+    			</if>
+    			<if test = "search=='writer'">
+    				 writer like '%'||#{keyword}||'%'list.jsp의 <input type="text" name="keyword">
+    			</if>
+    			<if test = "search=='content'">
+    				 content like '%'||#{keyword}||'%'list.jsp의 <input type="text" name="keyword">
+    			</if>
+    			<select name="search"> <if>태그의 test에서 쓰이는 이름
+						<option value="title">제목</option>
+						<option value="writer">작성자</option>
+						<option value="content">내용</option>
+					 </select>
+    	 </where>
+    	 order by id
+	</select>
+	
+	<insert id="insert" parameterType="Board">
+		<selectKey order="BEFORE" keyProperty="id" resultType="int">
+			select nvl(max(id),0)+1 from board1
+		</selectKey>
+		insert into board1
+		values (
+		#{id}, #{title}, #{writer}, #{content} , #{hit}, sysdate )
+	</insert>
+
+	<select id="select" parameterType="int" resultType="Board">
+		select * from board1 where id = #{id}
+	</select>
+	<update id="hitUpdate" parameterType="int">
+		update board1 set hit = hit + 1 where id = #{id}
+	</update>
+
+	 -->
+
+</mapper>

@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+body {	font-family: 굴림체;	}
+table { border: 1px solid black; width: 100%;}
+tr { height:30px; }
+th {	background: #C9BFED;	}
+td {	background: #EDEDED;	}
