@@ -7,13 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	response.sendRedirect("main.do");
-	//response.sendRedirect("list.do");
-	//response.sendRedirect("listEmp.do");
-	//response.sendRedirect("insertEmpList.do");
-	//response.sendRedirect("insert.do");
-	/*insert.do는 선생님이 했던 방식  */
-%>
+
 </body>
 </html>
