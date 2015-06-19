@@ -1,5 +1,6 @@
 create table member (
 	nickname varchar2(30) primary key,
+	photo varchar2(50),
 	id varchar2(12),
 	password varchar2(20),
 	name varchar2(15),
