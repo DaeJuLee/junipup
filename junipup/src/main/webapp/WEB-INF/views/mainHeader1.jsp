@@ -14,6 +14,9 @@
 		<title>Card Stack</title>
 	</head>
 	<body>
+	<div align="center">
+		<a href="#"><img src="images/logo.jpg" width="212px"></a>
+	</div>
 	<div class="navbar">
 	<a class="brand" href="#"><img src="https://socialchomp.com/img/banner.logo.png"/></a>
 	<!--MOBILE-->
