@@ -6,12 +6,12 @@ create table member (
 	name varchar2(15),
 	phoneNumber number(15),
 	email varchar2(30),
-	mrank varchar2(24),
+	mrank number(2),
 	usePoint number(7),
 	maxPoint number(7),
 	regDate date
 );
-
+-- 랭크는 낮은 숫자가 높은등급으로
 insert into member values('juni', 'juni', 'juni', 'juni', 01000000000, 'juni@juni.com', 9, 100, 100);
 insert into member values('admin', 'admin', 'admin', 'admin', 01000001111, 'admini@juni.com', 1, 1000000, 1000000);
 
