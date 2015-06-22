@@ -14,7 +14,7 @@
 <div id="wrab">
 	<div id="h2">		
 	<div align="center">
-		<a href="main.jsp"><img src="images/junipup${loginUser.mRank }.jpg" width="100px"></a>
+		<a href="main.do"><img src="images/junipup${loginUser.mRank }.jpg" width="100px"></a>
 	</div>
 		<p>
 		<c:choose>
@@ -93,7 +93,7 @@
 						<li><a href="#">Instagram</a></li>
 						<li><a href="#"></a></li>
 					</ul></li>
-				<li class="Login"><a href="login.jsp">Login</a>
+				<li class="Login"><a href="login.do">Login</a>
 				</li>
 
 			</ul><!-- id="menu" 끝 -->

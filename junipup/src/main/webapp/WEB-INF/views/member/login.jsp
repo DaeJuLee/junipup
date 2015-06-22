@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
-<%@ include file="mainHeader2.jsp"%>
+<%@ include file="../header.jsp" %>
+<%@ include file="../mainHeader2.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -123,7 +123,7 @@ jQuery(function($){
 				</ul>
 			</fieldset>
 		</form>
-		<a href="#login_anchor" title="로그인 레이어 닫기" class="close">X</a>
+		<a href="main.do" title="로그인 레이어 닫기" class="close">X</a>
 	</div>
 </div>
 
