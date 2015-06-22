@@ -8,10 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
 	@RequestMapping(value = "main")
-	public String main(Model model){
-		
+	public String main(Model model){	
 		return "main";
 	}
 	
-	
+	@RequestMapping(value="login")
+	public String login(Model model){
+		return "/member/login";
+	}
+
 }
