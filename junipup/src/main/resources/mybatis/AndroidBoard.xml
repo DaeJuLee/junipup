@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AndroidBoard">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="AndroidBoardResult" type="AndroidBoard">
+		<result property="bnum"        column="bnum" />
+		<result property="nickname"    column="nickname" />
+		<result property="title"       column="title" />
+		<result property="mrank"       column="mrank" />
+		<result property="content"     column="content" />
+		<result property="ip"          column="ip" />
+		<result property="hits"        column="hits" />
+		<result property="category"    column="category" />
+		<result property="filesize"    column="filesize"/>
+		<result property="filename"    column="filename" /> 
+		<result property="b_date"      column="b_date" /> 
+	</resultMap>
+
+	<select id="listAndroid" parameterType="AndroidBoard" resultMap="AndroidBoardResult">
+    	select * from (select rownum rn, a.* from (select * from Android
+    	order by bnum) a) where rn between #{start} and #{end}
+	</select>
+	
+	<select id="total" resultType="int" >
+		select count(*) from Android
+	</select>
+	
+	<select id="androidDetail" parameterType="String" resultMap="AndroidBoardResult">
+		<![CDATA[select * from Android where title = #{title}]]>
+	</select>
+	
+	<insert id="insertAndroid" parameterType="AndroidBoard">
+		<selectKey order="BEFORE" keyProperty="bnum" resultType="Integer">
+			select nvl(max(bnum),0)+1 from Android
+		</selectKey>
+		insert into Android
+		values (
+		#{bnum}, #{nickname}, #{title}, #{mrank} , sysdate, #{content}, #{ip}, 0, #{filesize},
+		#{filename}, #{category} )
+	</insert>
+	
+	<!-- <insert id="insertEmpList" parameterType="Emp">
+		insert into emp
+		values (
+		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
+	</insert>
+	
+	<delete id="deleteEmp" parameterType="int">
+		delete from emp where empno = #{empno}
+	</delete>
+	
+	<update id="updateEmp" parameterType="Emp">
+		update emp set
+		ename = #{ename},
+		job = #{job},
+		mgr = #{mgr},
+		hiredate = to_date(#{hiredate}, 'yyyy-MM-dd-hh24:mi:ss'),
+		sal = #{sal},
+		<if test = "comm!=null">
+			comm = #{comm},
+		</if>
+		deptno = #{deptno}
+		where
+		empno = #{empno}
+	</update> -->
+
+</mapper>
