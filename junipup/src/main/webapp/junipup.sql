@@ -12,8 +12,8 @@ create table member (
 	regDate date
 );
 -- 랭크는 낮은 숫자가 높은등급으로
-insert into member values('juni', 'juni', 'juni', 'juni', 01000000000, 'juni@juni.com', 9, 100, 100);
-insert into member values('admin', 'admin', 'admin', 'admin', 01000001111, 'admini@juni.com', 1, 1000000, 1000000);
+insert into member values('juni', 'aa.jgp', 'juni', 'juni', 'juni', 01000000000, 'juni@juni.com', 9, 100, 100, sysdate);
+insert into member values('admin', 'aa.jgp', 'admin', 'admin', 'admin', 01000001111, 'admini@juni.com', 1, 1000000, 1000000, sysdate);
 
 drop table member;
 drop table member cascade CONSTRAINTS;
@@ -23,7 +23,7 @@ create table rank (
 	mrank varchar2(24),
 	maxPoint number(7)
 );
--- 카테고리 1.oracle 2.java 3.html5 4.jquery 5.jsp 6.spring 7.android
+
 
 create table oracledb (
 	bnum number(8) primary key,
@@ -275,6 +275,7 @@ create table qna (
 	ref number(2),
 	re_step number(2),
 	re_level number(2)
+	-- 카테고리 1.oracle 2.java 3.html5 4.jquery 5.jsp 6.spring 7.android
 );
 
 insert into oracledb values(1, 'juni', 'title1', 9, sysdate, '원빈', '255.255.255.255', 0, '20000', 'aa.jpg', '1',0,0,0);
