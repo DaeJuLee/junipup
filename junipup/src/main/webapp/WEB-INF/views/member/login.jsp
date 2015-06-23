@@ -119,7 +119,7 @@ jQuery(function($){
 				<span class="btn_login"><input name="" type="submit" value="로그인"></span>
 				<ul class="help">
 				<li class="first"><a href="#">아이디/비밀번호 찾기</a></li>
-				<li><a href="#">회원 가입</a></li>
+				<li><a href="memjoinForm.do">회원 가입</a></li>
 				</ul>
 			</fieldset>
 		</form>

@@ -23,9 +23,19 @@
 
 	<insert id="insertMember" parameterType="Member">
 		insert into member
-		values (#{nickname}, #{photo}, #{id}, #{password}, #{name}, #{phoneNumber},
-		 #{email}, 10, 50, 50, sysdate)
+		values (
+		#{nickname}, #{photo, jdbcType=VARCHAR}, #{id},
+		#{password}, #{name}, #{phoneNumber},
+		#{email, jdbcType=VARCHAR},
+		#{mrank},
+		#{usePoint},
+		#{maxPoint},
+		sysdate
+		)
 	</insert>
+	
+	
+
 <!-- 
 	<select id="list" parameterType="Emp" resultMap="EmpResult">
     	select * from (select rownum rn, a.* from (select * from emp

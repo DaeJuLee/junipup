@@ -2,7 +2,10 @@ package service;
 
 import java.util.List;
 
+
+
 import model.Member;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,8 +60,14 @@ public class MemberServiceImpl implements MemberService {
 
 
 	public int insertMember(Member member) {
+		member.setMrank(10);
+		member.setUsePoint(0);
+		member.setMaxPoint(50);
+		
 		return md.insertMember(member);
+		
 	}
+	
 
 
 

@@ -8,7 +8,7 @@ public class Member {
 	private String id;
 	private String password;
 	private String name;
-	private int phoneNumber;
+	private String phoneNumber;
 	private String email;
 	private int mrank;
 	private int usePoint;
@@ -45,10 +45,10 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getEmail() {
