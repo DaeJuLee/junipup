@@ -11,7 +11,7 @@
 <body>
 <a href = "androidInsertForm.do"> 글쓰기</a>
 
-<c:set var="num" value="${pg.total - pg.start }" />
+<c:set var="num" value="${pg.total - pg.start +1}" />
 	<table>
 		<tr>
 			<th>번호</th>
@@ -31,16 +31,16 @@
 	</table>
 
 	<c:if test="${pg.startPage > pg.pageBlock}">
-		<a href="list.do?currentPage=${pg.startPage-pg.pageBlock }">[이전]</a>
+		<a href="androidMain.do?currentPage=${pg.startPage-pg.pageBlock }">[이전]</a>
 	</c:if>
 
 	<c:forEach var="pg" begin="${pg.startPage }" end="${pg.endPage }"
 		step="1">
-		<a href="list.do?currentPage=${pg }">[${pg }]</a>
+		<a href="androidMain.do?currentPage=${pg }">[${pg }]</a>
 	</c:forEach>
 
 	<c:if test="${pg.endPage < pg.totalPage }">
-		<a href="list.do?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
+		<a href="androidMain.do?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
 	</c:if>
 
 </body>

@@ -22,7 +22,9 @@ public class AndroidController {
 	
 	@RequestMapping(value="androidMain")
 	public String androidMain(AndroidBoard android, String currentPage, Model model){
+//		service.insertBoard();
 		int total = service.total();
+		System.out.println("int total : " + total);
 		Paging pg = new Paging(total, currentPage);
 		android.setStart(pg.getStart());
 		android.setEnd(pg.getEnd());
@@ -39,7 +41,7 @@ public class AndroidController {
 	
 	@RequestMapping(value = "androidInsert", method=RequestMethod.POST)
 	public String androidInsert(AndroidBoard android, Model model){
-		int result = service.insert(android);
+		int result = service.insertAndroid(android);
 		if(result > 0){
 			return "redirect:androidMain.do";
 		}else{
@@ -52,5 +54,33 @@ public class AndroidController {
 		AndroidBoard android = service.selectAndroid(title);
 		model.addAttribute("androidDetail", android);
 		return "/android/androidDetail";
+	}
+	
+	@RequestMapping(value = "androidUpdateForm")
+	public String androidUpdateForm(String title, Model model){
+		AndroidBoard android = service.selectAndroid(title);
+		model.addAttribute("androidDetail", android);
+		return "/android/androidUpdateForm";
+	}
+	
+	@RequestMapping(value = "androidUpdate")
+	public String androidUpdate(AndroidBoard android, Model model){
+		int result = service.updateAndroid(android);
+		if(result > 0){
+			return "redirect:androidMain.do";
+		}else{
+			return "forward:androidUpdateForm.do";
+		}
+	}
+	
+	@RequestMapping(value = "androidDelete")
+	public String androidDelete(String title, Model model){
+		service.deleteAndroid(title);
+		return "redirect:androidMain.do";
+	}
+	
+	@RequestMapping(value="androidDeleteCheck")
+	public String androidDeleteCheck(Model model){
+		return "/android/androidDeleteCheck";
 	}
 }

@@ -19,15 +19,19 @@ public class Paging {
 		}
 		start = (currentPage - 1) * rowPage + 1;
 		end = start + rowPage - 1;
-		totalPage = (int)Math.ceil((double)(total/rowPage));
+		System.out.println("double..(total/rowPage) : " + (double)total/rowPage);
+		System.out.println("double..(total/rowPage) : " + Math.ceil((double)(total/rowPage)));
+		totalPage = (int)Math.ceil((double)total/rowPage);
 		//페이지 총 개수
 		startPage = currentPage - (currentPage - 1) % pageBlock;
 		System.out.println("startPage : " + startPage);
 		endPage = startPage + pageBlock - 1;
 		System.out.println("endPage : " + endPage);
+		System.out.println("현재페이지 : " + currentPage);
 		if(endPage > totalPage){
 			endPage = totalPage;
 		}
+		System.out.println("총 게시판 개수 : " + totalPage );
 	}
 
 	public int getCurrentPage() {

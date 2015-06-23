@@ -9,6 +9,7 @@
 <body>
 <%
 	response.sendRedirect("main.do");
+	//response.sendRedirect("androidDeleteCheck.do");
 	//response.sendRedirect("list.do");
 	//response.sendRedirect("listEmp.do");
 	//response.sendRedirect("insertEmpList.do");

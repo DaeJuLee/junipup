@@ -21,9 +21,9 @@ ip varchar2(400),
 hits varchar2(50),
 filesize number,
 filename varchar2(200),
-category varchar2(2)
+category varchar2(100)
 );
-
+select * from ANDROID;
 --drop table Android;
 
 create table AndroidComment(

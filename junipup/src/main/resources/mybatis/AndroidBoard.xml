@@ -23,7 +23,7 @@
 
 	<select id="listAndroid" parameterType="AndroidBoard" resultMap="AndroidBoardResult">
     	select * from (select rownum rn, a.* from (select * from Android
-    	order by bnum) a) where rn between #{start} and #{end}
+    	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
 	<select id="total" resultType="int" >
@@ -35,7 +35,7 @@
 	</select>
 	
 	<insert id="insertAndroid" parameterType="AndroidBoard">
-		<selectKey order="BEFORE" keyProperty="bnum" resultType="Integer">
+		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
 			select nvl(max(bnum),0)+1 from Android
 		</selectKey>
 		insert into Android
@@ -44,29 +44,27 @@
 		#{filename}, #{category} )
 	</insert>
 	
+	<delete id="deleteAndroid" parameterType="String">
+		delete from Android where title = #{empno}
+	</delete>
+	
+	<update id="updateAndroid" parameterType="AndroidBoard">
+		update Android set
+		title = #{title},
+		content = #{content},
+		filesize = #{filesize},
+		filename = #{filename},
+		ip = #{ip}
+		
+		where
+		title = #{title}
+	</update>
+	
 	<!-- <insert id="insertEmpList" parameterType="Emp">
 		insert into emp
 		values (
 		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
 	</insert>
-	
-	<delete id="deleteEmp" parameterType="int">
-		delete from emp where empno = #{empno}
-	</delete>
-	
-	<update id="updateEmp" parameterType="Emp">
-		update emp set
-		ename = #{ename},
-		job = #{job},
-		mgr = #{mgr},
-		hiredate = to_date(#{hiredate}, 'yyyy-MM-dd-hh24:mi:ss'),
-		sal = #{sal},
-		<if test = "comm!=null">
-			comm = #{comm},
-		</if>
-		deptno = #{deptno}
-		where
-		empno = #{empno}
-	</update> -->
+	 -->
 
 </mapper>

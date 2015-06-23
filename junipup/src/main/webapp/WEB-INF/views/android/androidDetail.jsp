@@ -17,8 +17,8 @@
 파일이름 : ${androidDetail.filename }<p>
 카테고리 : ${androidDetail.category }<p>
 <a href="androidMain.do">목록보기</a>
-<a href="#">수정</a>
-<%-- <input type="button" value="삭제" 
-		onclick="location.href='delete.do?empno=${selectEname.empno}'"> --%>
+<a href="androidUpdateForm.do?title=${androidDetail.title }">수정</a>
+<input type="button" value="삭제" 
+		onclick="location.href='androidDelete.do?title=${androidDetail.title}'">
 </body>
 </html>
