@@ -3,13 +3,9 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="Emp" type="model.Emp" />
-		<typeAlias alias="Dept" type="model.Dept" />
-		<typeAlias alias="EmpDept" type="model.EmpDept" />
+		<typeAlias alias="AndroidBoard" type="model.AndroidBoard" />
 	</typeAliases>
 	<mappers>
-		<mapper resource="mybatis/Emp.xml" />
-		<mapper resource="mybatis/Dept.xml" />
-		<mapper resource="mybatis/EmpDept.xml" />
+		<mapper resource="mybatis/AndroidBoard.xml" />
 	</mappers>
 </configuration>

@@ -77,7 +77,8 @@
 						<li><a href="#"></a></li>
 					</ul></li>
 
-				<li class="Android"><a href="#">Android</a>
+				<li class="Android"><a href="androidMain.do">Android</a>
+				<!-- <li class="Android"><a href="#">Android</a> -->
 					<ul>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
