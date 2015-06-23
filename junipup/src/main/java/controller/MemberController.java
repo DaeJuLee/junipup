@@ -35,10 +35,20 @@ public class MemberController {
 	public String memjoinForm() {
 		return "/member/joinForm";
 	}
-	
 	@RequestMapping(value="memjoin", method=RequestMethod.GET)
-	public String insert(Member member, Tel tel, Model model) {
+	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
+		int result = ms.insertMember(member);
+		System.out.println(member.getPhoneNumber());
+		if (result > 0) return "redirect:main.do";
+		else {
+			model.addAttribute("msg","입력 실패 확인해 보세요");
+			return "forward:/member/joinForm.do";
+		}
+	}
+	@RequestMapping(value="memlogin", method=RequestMethod.GET)
+	public String memlogin(Member member, Model model) {
+		
 		int result = ms.insertMember(member);
 		System.out.println(member.getPhoneNumber());
 		if (result > 0) return "redirect:main.do";
