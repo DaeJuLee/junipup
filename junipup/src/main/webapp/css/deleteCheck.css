@@ -1,0 +1,187 @@
+html {
+	height: 80px;
+	margin: 0
+}
+
+#login fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	height: 80px
+}
+/* 팝업창 크기 */
+#login {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 328px;
+	height: 120px;
+	margin: -150px 0 0 -194px;
+	padding: 28px 28px 0 28px;
+	border: 2px solid #555;
+	background: #fff;
+	font-size: 20px;
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #767676;
+	line-height: normal;
+	white-space: normal
+}
+
+
+.mw_login {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10000;
+	width: 100%;
+	height: 100%
+}
+
+.mw_login.open {
+	display: block
+}
+
+.mw_login .bg {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50)
+}
+
+
+
+
+#login form {
+	display: none;
+	margin: 0;
+	padding: 0
+}
+
+
+#login legend {
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	font-size: 0;
+	line-height: 0
+}
+
+
+#login .btn_login, #login .btn_login a {
+	display: inline-block;
+	overflow: visible;
+	position: relative;
+	height: 32px;
+	margin: 0 0 0 50px;
+	padding: 0;
+	border: 0;
+	background: transparent url(img/btn_login.gif) no-repeat;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+	line-height: 32px;
+	text-decoration: none !important;
+	vertical-align: middle;
+	cursor: pointer
+}
+
+#login .btn_login {
+	margin: 0 4px 0 0;
+	background-position: left top
+}
+
+#login .btn_login input {
+	left: 4px;
+	padding: 0 24px 0 36px;
+	background-position: right top;
+	*vertical-align: top
+}
+/*  */ 
+#login .item {
+	position: relative
+}
+
+#login .i_label {
+	display: block;
+	position: static;
+	top: 9px;
+	font: bold 11px Tahoma
+}
+
+#login .o_login .i_label {
+	left: 36px
+}
+
+
+ #login .g_login .i_label {
+	left: 10px
+}
+
+
+#login .i_text {
+	display: block;
+	position: relative;
+	border: 1px solid #b7b7b7;
+	border-right-color: #e1e1e1;
+	border-bottom-color: #e1e1e1;
+	background: transparent;
+	font: bold 11px Tahoma;
+	height: 14px;
+	color: #767676
+}
+#login .g_login .btn_login {
+	position: absolute;
+	top: 103px;
+	right: 28px;
+	color:black;
+}
+
+#login .g_login .keeping {
+	float: none;
+	height: 32px;
+	margin: 10px 0;
+	padding: 0;
+	line-height: 32px
+}
+
+#login .g_login .keeping label {
+	position: static;
+	font-family: Dotum, 돋움, Thahoma;
+	cursor: pointer
+}
+
+#login .g_login .i_check {
+	width: 13px;
+	height: 13px;
+	margin: 0 4px 0 0;
+	padding: 0;
+	vertical-align: middle
+}
+
+#login.g_login .g_login {
+	display: block
+}
+
+#login .close {
+	overflow: visible;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font: 11px/25px Verdana, Geneva, sans-serif;
+	color: #ccc;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer
+} 

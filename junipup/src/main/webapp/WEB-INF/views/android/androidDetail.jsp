@@ -19,6 +19,6 @@
 <a href="androidMain.do">목록보기</a>
 <a href="androidUpdateForm.do?title=${androidDetail.title }">수정</a>
 <input type="button" value="삭제" 
-		onclick="location.href='androidDelete.do?title=${androidDetail.title}'">
+		onclick="location.href='androidDeleteCheck.do?title=${androidDetail.title}'">
 </body>
 </html>

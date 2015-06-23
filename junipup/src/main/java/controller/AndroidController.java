@@ -80,7 +80,10 @@ public class AndroidController {
 	}
 	
 	@RequestMapping(value="androidDeleteCheck")
-	public String androidDeleteCheck(Model model){
+	public String androidDeleteCheck(String title, Model model){
+		AndroidBoard board = new AndroidBoard();
+		board.setTitle(title);
+		model.addAttribute("title", board);
 		return "/android/androidDeleteCheck";
 	}
 }
