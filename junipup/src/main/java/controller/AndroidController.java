@@ -49,7 +49,7 @@ public class AndroidController {
 		}
 	}
 	
-	@RequestMapping(value = "androidDetail")
+	@RequestMapping(value = "androidDetail", method=RequestMethod.POST)
 	public String androidDetail(String title, Model model){
 		AndroidBoard android = service.androidDetail(title);
 		model.addAttribute("androidDetail", android);
@@ -69,7 +69,7 @@ public class AndroidController {
 		return "/android/androidUpdateCheck";
 	}
 	
-	@RequestMapping(value = "androidUpdate")
+	@RequestMapping(value = "androidUpdate", method=RequestMethod.POST)
 	public String androidUpdate(AndroidBoard android, Model model){
 		int result = service.androidUpdate(android);
 		if(result > 0){
