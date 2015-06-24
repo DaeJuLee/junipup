@@ -15,8 +15,8 @@ public class AndroidServiceImpl implements AndroidService{
 	@Autowired
 	AndroidDao dao;
 	
-	public int insertAndroid(AndroidBoard android) {
-		return dao.insertAndroid(android);
+	public int androidInsert(AndroidBoard android) {
+		return dao.androidInsert(android);
 	}
 
 	public int total() {
@@ -27,12 +27,12 @@ public class AndroidServiceImpl implements AndroidService{
 		return dao.listAndroid(android);
 	}
 
-	public AndroidBoard selectAndroid(String title) {
-		return dao.selectAndroid(title);
+	public AndroidBoard androidDetail(String title) {
+		return dao.androidDetail(title);
 	}
 
-	public void deleteAndroid(String title) {
-		dao.deleteAndroid(title);	
+	public void androidDelete(String title) {
+		dao.androidDelete(title);	
 	}
 
 	public void insertBoard() {
@@ -40,8 +40,8 @@ public class AndroidServiceImpl implements AndroidService{
 	}
 
 	@Override
-	public int updateAndroid(AndroidBoard android) {
-		return dao.updateAndroid(android);
+	public int androidUpdate(AndroidBoard android) {
+		return dao.androidUpdate(android);
 	}
 	
 

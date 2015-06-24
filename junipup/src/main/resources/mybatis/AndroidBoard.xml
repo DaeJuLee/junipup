@@ -34,7 +34,7 @@
 		<![CDATA[select * from Android where title = #{title}]]>
 	</select>
 	
-	<insert id="insertAndroid" parameterType="AndroidBoard">
+	<insert id="androidInsert" parameterType="AndroidBoard">
 		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
 			select nvl(max(bnum),0)+1 from Android
 		</selectKey>
@@ -44,11 +44,11 @@
 		#{filename}, #{category} )
 	</insert>
 	
-	<delete id="deleteAndroid" parameterType="String">
+	<delete id="androidDelete" parameterType="String">
 		delete from Android where title = #{empno}
 	</delete>
 	
-	<update id="updateAndroid" parameterType="AndroidBoard">
+	<update id="androidUpdate" parameterType="AndroidBoard">
 		update Android set
 		title = #{title},
 		content = #{content},

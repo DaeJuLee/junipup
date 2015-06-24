@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file = "header.jsp" %>
+<%@ include file="header.jsp"%>
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
@@ -11,33 +11,45 @@
 <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
 </head>
 <body>
-<div id="wrab">
-	<div id="h2">		
-	<div align="center">
-		<a href="main.do"><img src="images/junipup${loginUser.mRank }.jpg" width="100px"></a>
-	</div>
-		<p>
-		<c:choose>
-		<c:when test="${not empty loginUser}">
-			<font color="green"><c:out value="${loginUser.mName}" />님, 환영합니다. | </font> 
-			<c:choose>
-				<c:when test="${loginUser.mId == 'master' }">
-					<a href="adminMain.html">관리자 페이지</a>
-				</c:when>
-				<c:when test="${loginUser.mId != 'master' }">
-					<a href="mypage.html?mId=${loginUser.mId }">마이 페이지</a>
-				</c:when>
-			</c:choose>
-		</c:when>
-		<c:otherwise>
-			<div id="text">
-			<font>당신을 환영합니다.</font>
+	<div id="wrab">
+		<div id="h2">
+			<div align="center">
+				<a href="main.do"><img
+					src="images/junipup${loginUser.mRank }.jpg" width="100px"></a>
 			</div>
-		</c:otherwise>
-		</c:choose>		
-		</p>
+
+		</div>
+
+		<div id="h3">
+			<fieldset>
+				<legend> 로그인 정보 </legend>
+			</fieldset>
+		</div>
+		<div id="h4">
+			<p>
+				<c:choose>
+					<c:when test="${not empty loginUser}">
+						<font color="green"><c:out value="${loginUser.mName}" />님,
+							환영합니다. | </font>
+						<c:choose>
+							<c:when test="${loginUser.mId == 'master' }">
+								<a href="adminMain.html">관리자 페이지</a>
+							</c:when>
+							<c:when test="${loginUser.mId != 'master' }">
+								<a href="mypage.html?mId=${loginUser.mId }">마이 페이지</a>
+							</c:when>
+						</c:choose>
+					</c:when>
+					<c:otherwise>
+						<div id="text">
+							<font>당신을 환영합니다.</font>
+						</div>
+					</c:otherwise>
+				</c:choose>
+			</p>
+		</div>
 	</div>
-</div>
+	<!-- wrab 끝 -->
 	<nav>
 		<div class="wrapper">
 			<ul id="menu" class="clearfix">
@@ -49,7 +61,7 @@
 						<li><a href="#">The Team</a></li>
 						<li><a href="#">Our Mission</a></li>
 					</ul></li>
-					
+
 				<!-- jquery -->
 				<li class="jQuery"><a href="#">jQuery</a>
 					<ul>
@@ -77,8 +89,7 @@
 						<li><a href="#"></a></li>
 					</ul></li>
 
-				<li class="Android"><a href="androidMain.do">Android</a>
-				<!-- <li class="Android"><a href="#">Android</a> -->
+				<li class="Android"><a href="androidMain.do">Android</a> <!-- <li class="Android"><a href="#">Android</a> -->
 					<ul>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
@@ -94,11 +105,12 @@
 						<li><a href="#">Instagram</a></li>
 						<li><a href="#"></a></li>
 					</ul></li>
-				<li class="Login"><a href="login.do">Login</a>
-				</li>
+				<li class="Login"><a href="login.do">Login</a></li>
 
-			</ul><!-- id="menu" 끝 -->
-		</div><!-- class="wrapper" 끝 -->
+			</ul>
+			<!-- id="menu" 끝 -->
+		</div>
+		<!-- class="wrapper" 끝 -->
 	</nav>
 	<script type="text/javascript">
 		$(function() {

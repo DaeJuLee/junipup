@@ -24,6 +24,9 @@
 </script>
 </head>
 <body>
+	<div>
+		
+	</div>
 	<table id="wrap">
 		<colgroup>
 			<col width="50%">

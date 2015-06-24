@@ -41,7 +41,7 @@ public class AndroidController {
 	
 	@RequestMapping(value = "androidInsert", method=RequestMethod.POST)
 	public String androidInsert(AndroidBoard android, Model model){
-		int result = service.insertAndroid(android);
+		int result = service.androidInsert(android);
 		if(result > 0){
 			return "redirect:androidMain.do";
 		}else{
@@ -51,21 +51,21 @@ public class AndroidController {
 	
 	@RequestMapping(value = "androidDetail")
 	public String androidDetail(String title, Model model){
-		AndroidBoard android = service.selectAndroid(title);
+		AndroidBoard android = service.androidDetail(title);
 		model.addAttribute("androidDetail", android);
 		return "/android/androidDetail";
 	}
 	
 	@RequestMapping(value = "androidUpdateForm")
 	public String androidUpdateForm(String title, Model model){
-		AndroidBoard android = service.selectAndroid(title);
+		AndroidBoard android = service.androidDetail(title);
 		model.addAttribute("androidDetail", android);
 		return "/android/androidUpdateForm";
 	}
 	
 	@RequestMapping(value = "androidUpdate")
 	public String androidUpdate(AndroidBoard android, Model model){
-		int result = service.updateAndroid(android);
+		int result = service.androidUpdate(android);
 		if(result > 0){
 			return "redirect:androidMain.do";
 		}else{
@@ -75,7 +75,7 @@ public class AndroidController {
 	
 	@RequestMapping(value = "androidDelete")
 	public String androidDelete(String title, Model model){
-		service.deleteAndroid(title);
+		service.androidDelete(title);
 		return "redirect:androidMain.do";
 	}
 	

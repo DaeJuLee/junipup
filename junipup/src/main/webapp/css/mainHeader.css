@@ -18,9 +18,12 @@ input, textarea {
   box-sizing: border-box;
   outline: none; 
 } */
-#wrab{width:200px;position:relative;margin:30px auto; background-color: yellow;}
+#wrab{width:100%;position:relative;margin:30px auto; background-color: yellow; display:inline-block;height:100px;}
+#h2 img{width: 100px; height:100px}/* 이미지 크기  */
 #h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;} 
 #h2 p a{font:bold 12px/1.3em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
+#h3 fieldset{float:right; width:150px; height:80px}
+#h4 {height:80px}
 #text {font:bold 14px/1.3em '맑은고딕'; color:blue; text-align: center;} 
 
 .top {float:right;}
@@ -52,24 +55,26 @@ nav {
   display: block;
   position: relative;
   z-index: 99;
+  width:100%;
   
 }
 
 #menu li {
   display: block;
   float: left;
-  
+  width:10%; /* tab메뉴 database java.. 크기  %지정 */
 }
 #menu li a {
   display: block;
   position: relative;
   float: left;
   padding: 0 35px;
-  font-size: 1.5em;
+  font-size: 1.0em;
   line-height: 70px;
   font-weight: bold;
   text-decoration: none;
   color: #f5f5f5;
+  /* width:10%; *//* tab메뉴 database java.. 크기  %지정 */
 }
 #menu li a:hover, #menu li a.active {
   background: #fff;
@@ -80,7 +85,8 @@ nav {
   display: none;
   position: absolute;
   top: 70px;
-  width: 200px;
+  /* width: 200px; */ /* 수정 성공 */
+  width: 15%%;
   background: #fff;
   z-index: -1;
   -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
@@ -89,29 +95,34 @@ nav {
 }
 #menu li ul li {
   display: block;
-  width: 200px;
+  /* width: 200px; *//* 수정 성공*/
+  width: 100%;
 }
+/* #menu li ul.expanded li { margin-right: 200px; } */
 #menu li ul li a {
   display: block;
   float: none;
   color: #4e5b67;
-  font-size: 1.35em;
+  font-size: 1.0em; /*sub menu 글씨 크기  */
   line-height: 50px;
   padding: 0 15px;
+  width:100%;
 }
 #menu li ul li a:hover {
   background: #384958;
   color: #fff;
+  /* width:100%; */ /* 수정 성공?  */
 }
 
 #menu li ul.expanded {
-  width: 400px;
+  width: 400px; /* 수정 */
+  /* width: 50%; */
 }
-#menu li ul.expanded li { margin-right: 200px; }
 
 
 
-#menu li ul li ul {
+
+/* #menu li ul li ul {
   display: none;
   position: absolute;
   left: 200px;
@@ -121,8 +132,9 @@ nav {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
-#menu li ul li ul li a { color: #fff; }
+  width:100%; *//* 수정
+} */
+/* #menu li ul li ul li a { color: #fff; }
 #menu li ul li ul li a:hover { text-decoration: underline; }
 
 #menu li ul li.Design a:hover, #menu li ul li.Design a.active { background: #4f4c83; color: #fff; }
@@ -142,7 +154,7 @@ nav {
 
 #menu li ul li.gold a:hover, #menu li ul li.gold a.active { background: #97944c; color: #fff; }
 #menu li ul li.gold ul { background: #97944c; }
-
+ */
 
 /** clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }

@@ -15,8 +15,8 @@ public class AndroidDaoImpl implements AndroidDao{
 	@Autowired
 	private SqlSession session;
 	
-	public int insertAndroid(AndroidBoard android) {
-		return session.insert("insertAndroid", android);
+	public int androidInsert(AndroidBoard android) {
+		return session.insert("androidInsert", android);
 	}
 
 	public int total() {
@@ -27,16 +27,16 @@ public class AndroidDaoImpl implements AndroidDao{
 		return session.selectList("listAndroid", android);
 	}
 
-	public AndroidBoard selectAndroid(String title) {
+	public AndroidBoard androidDetail(String title) {
 		return session.selectOne("androidDetail", title);
 	}
 	
-	public void deleteAndroid(String title){
-		session.delete("deleteAndroid", title);
+	public void androidDelete(String title){
+		session.delete("androidDelete", title);
 	}
 	
-	public int updateAndroid(AndroidBoard android) {
-		return session.update("updateAndroid", android);
+	public int androidUpdate(AndroidBoard android) {
+		return session.update("androidUpdate", android);
 	}
 
 	public void insertBoard() {
