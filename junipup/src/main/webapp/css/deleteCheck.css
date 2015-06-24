@@ -73,7 +73,7 @@ html {
 	line-height: 0
 }
 
-
+/* 버튼 주변에 있는 것 */
 #login .btn_login, #login .btn_login a {
 	display: inline-block;
 	overflow: visible;
@@ -99,9 +99,11 @@ html {
 
 #login .btn_login input {
 	left: 4px;
-	padding: 0 24px 0 36px;
+	padding: 0 24px 0 24px;
 	background-position: right top;
-	*vertical-align: top
+	*vertical-align: top;
+	display: table-caption;
+	background-color:white;
 }
 /*  */ 
 #login .item {

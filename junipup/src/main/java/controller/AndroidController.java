@@ -63,6 +63,12 @@ public class AndroidController {
 		return "/android/androidUpdateForm";
 	}
 	
+	@RequestMapping(value="androidUpdateCheck")
+	public String androidUpdateCheck(AndroidBoard android, Model model){
+		model.addAttribute("androidCheck", android);
+		return "/android/androidUpdateCheck";
+	}
+	
 	@RequestMapping(value = "androidUpdate")
 	public String androidUpdate(AndroidBoard android, Model model){
 		int result = service.androidUpdate(android);

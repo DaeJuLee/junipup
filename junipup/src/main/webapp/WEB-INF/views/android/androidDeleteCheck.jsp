@@ -19,8 +19,12 @@
 			정말로 삭제 하시겠습니까?
 			<fieldset>
 				<span class="btn_login">
-					<a href="androidDelete.do?title=${title.title }">삭제</a>
-					<a href="androidDetail.do?title=${title.title }">취소</a>
+					<%-- <a href="androidDelete.do?title=${title.title }">삭제</a>
+					<a href="androidDetail.do?title=${title.title }">취소</a> --%>
+					<input type="button" value="삭제" 
+						onclick="location.href='androidDelete.do?title=${title.title }'">
+					<input type="button" value="취소" 
+						onclick="location.href='androidDetail.do?title=${title.title }'">
 				</span>
 			</fieldset>
 		</form>

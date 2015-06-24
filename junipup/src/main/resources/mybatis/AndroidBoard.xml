@@ -55,7 +55,6 @@
 		filesize = #{filesize},
 		filename = #{filename},
 		ip = #{ip}
-		
 		where
 		title = #{title}
 	</update>

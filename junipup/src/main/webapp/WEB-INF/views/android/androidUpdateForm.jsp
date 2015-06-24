@@ -6,9 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<form action="androidUpdate.do" method="post">
+<form action="androidUpdateCheck.do" method="post">
 <body>
-	현재페이지<input type="text" name="currentPage" value="${currentPage }">
 	별명<input type="text" name="nickname" value="${androidDetail.nickname }" required="required"><p>
 	제목<input type="text" name="title" value="${androidDetail.title }" required="required"><p>
 	등급</th><td><input type="text" name="mrank" value="${androidDetail.mrank }" required="required"><p>
