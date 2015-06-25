@@ -97,37 +97,7 @@
 		});
 	});
 
-	/* $(function() {
-		/*회원가입창 띄우기  */
-		$('#joinOk').bind('click',function(){
-			alert("회원가입 클릭했냐?");
-			         var html = '';
-			            /* html += '<div class="bg"></div>';
-			            html += '<div id="join" class="g_join"><form action="" class="g_join" id="ajax">'; */
-			            html += '<fieldset><legend>회원가입</legend>';
-			            html += '<div class="item"><label class="i_label" style="position: absolute; visibility: visible;">'+
-			            		'ID</label><input name="id" id="id" type="text" value="" class="i_text upw"></div>';
-			            html += '<div class="item"><label class="i_label" style="position: absolute; visibility: visible;">'+
-			            		'NICKNAME(별명)</label><input name="nickname" type="text" value="" class="i_text upw"></div>';
-			            html += '<div class="item"><label class="i_label" style="position: absolute; visibility: visible;">'+
-			            		'PASSWORD</label><input name="password" type="password" value="" class="i_text upw"></div>';
-			            html += '<div class="item"><label class="i_label" style="position: absolute; visibility: visible;">'+
-			            		'CHECK PASSWORD</label><input name="checkpassword" type="text" value="" class="i_text upw"></div>';
-			            html += '<div class="item"><label class="i_label" style="position: absolute; visibility: visible;">'+
-			            		'NAME</label><input name="name" type="text" value="" class="i_text upw"></div>';
-			            html += '<div class="item"><label class="i_label" style="position: absolute; visibility: visible;">'+
-			            		'EMAIL</label><input name="email" type="text" value="" class="i_text upw"></div>';
-			            html += '<input type="submit" value="회원가입">';
-			            /* html +=	'<input type="button" value="취소" onclick="location.href='#'">'; */
-			            /* html +=	'</fieldset></form></div>'; */
-			            html +=	'</fieldset>'; 
-			           //$('#mw_join').after(html); 
-					   //$('#mw_join open').after("<b>Hello</b>");
-					    $('#join').after(html);
-					   //$('#test').after('<b>Hello</b>');
-
-			});
-	}); */
+	
 	
 </script>
 </head>
@@ -160,7 +130,7 @@
 					<span class="btn_login"><input type="submit" value="로그인"></span>
 					<ul class="help">
 						<li class="first"><a href="#">아이디/비밀번호 찾기</a></li>
-						<li><a href="" id="joinOk">회원 가입</a></li>
+						<li><a href="memjoinForm.do" id="joinOk">회원 가입</a></li>
 					</ul>
 				</fieldset>
 				

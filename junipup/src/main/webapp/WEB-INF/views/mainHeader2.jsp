@@ -57,9 +57,10 @@
 				<!-- Database -->
 				<li><a href="DBMain.do">Database</a>
 					<ul>
-						<li><a href="#">History</a></li>
-						<li><a href="#">The Team</a></li>
-						<li><a href="#">Our Mission</a></li>
+						<li><a href="#">기초익히기</a></li>
+						<li><a href="#">등급올리기</a></li>
+						<li><a href="#">질문게시판</a></li>
+						<li><a href="#">응용게시판</a></li>
 					</ul></li>
 
 				<!-- jquery -->

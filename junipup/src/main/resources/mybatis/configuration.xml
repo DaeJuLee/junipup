@@ -6,10 +6,12 @@
 		<typeAlias alias="AndroidBoard" type="model.AndroidBoard" />
 		<typeAlias alias="DBBoard" type="model.DBBoard" />
 		<typeAlias alias="JavaBoard" type="model.JavaBoard" />
+		<typeAlias alias="Member" type="model.Member" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/AndroidBoard.xml" />
 		<mapper resource="mybatis/DBBoard.xml" />
 		<mapper resource="mybatis/JavaBoard.xml" />
+		<mapper resource="mybatis/Member.xml" />
 	</mappers>
 </configuration>

@@ -25,20 +25,21 @@ create table rank (
 );
 
 
-create table oracledb (
-	bnum number(8) primary key,
-	nickname varchar2(30),
-	title varchar2(150),
-	mrank varchar2(24),
-	b_date date,
-	content varchar2(4000),
-	ip varchar2(20),
-	hits number(6),
-	filesize varchar(20),
-	filename varchar2(50),
-	category number(2)
+create table DB (
+	bnum number primary key,
+nickname varchar2(50),
+title varchar2(50),
+mrank varchar2(50),
+b_date Date,
+content varchar2(4000),
+ip varchar2(400),
+hits varchar2(50),
+filesize number,
+filename varchar2(200),
+category varchar2(100)
 );
-create table oracledbcomment (
+drop table DB;
+create table DBcomment (
 	commentNum number(6) primary key, 
 	bnum number(8),
 	nickname varchar2(30),
@@ -47,7 +48,7 @@ create table oracledbcomment (
 	re_step number(2),
 	re_level number(2)
 );
-
+select * from db;
 insert into oracledb values(1, 'juni', 'title1', 9, sysdate, '원빈', '255.255.255.255', 0, '20000', 'aa.jpg', '1');
 insert into oracledb values(2, 'juni', 'title1', 9, sysdate, '원빈', '255.255.255.255', 0, '20000', 'aa.jpg', '1');
 insert into oracledb values(3, 'juni', 'title1', 9, sysdate, '원빈', '255.255.255.255', 0, '20000', 'aa.jpg', '1');
@@ -56,17 +57,17 @@ insert into oracledb values(5, 'juni', 'title1', 9, sysdate, '원빈', '255.255.
 
 
 create table java (
-	bnum number(8) primary key,
-	nickname varchar2(30),
-	title varchar2(150),
-	mrank varchar2(24),
-	b_date date,
-	content varchar2(4000),
-	ip varchar2(20),
-	hits number(6),
-	filesize varchar(20),
-	filename varchar2(50),
-	category number(2)
+	bnum number primary key,
+nickname varchar2(50),
+title varchar2(50),
+mrank varchar2(50),
+b_date Date,
+content varchar2(4000),
+ip varchar2(400),
+hits varchar2(50),
+filesize number,
+filename varchar2(200),
+category varchar2(100)
 );
 select * from java;
 create table javacomment (
