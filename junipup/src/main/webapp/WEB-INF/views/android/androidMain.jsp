@@ -12,6 +12,7 @@
 <a href = "androidInsertForm.do"> 글쓰기</a>
 
 <c:set var="num" value="${pg.total - pg.start +1}" />
+	
 	<table>
 		<tr>
 			<th>번호</th>

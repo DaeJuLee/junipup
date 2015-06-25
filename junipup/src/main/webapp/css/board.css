@@ -1,6 +1,17 @@
-@CHARSET "UTF-8";
-body {	font-family: 굴림체;	}
-table { border: 1px solid black; width: 100%;}
-tr { height:30px; }
-th {	background: #C9BFED;	}
-td {	background: #EDEDED;	}
+.tbl,.tbl th,.tbl td{
+					border:0
+					}
+.tbl{width:70%;
+	border-bottom:2px solid #dcdcdc;
+	font-family:Tahoma;font-size:11px;
+	text-align:center
+	}
+.tbl th{padding:7px 0 4px;
+		border-top:2px solid #dcdcdc;
+		background-color:#FFFF00;color:#666;
+		font-family:'돋움',dotum;
+		font-size:12px;
+		font-weight:bold}
+.tbl td{padding:6px 0 4px;
+		border-top:1px solid #e5e5e5;
+		color:#4c4c4c}

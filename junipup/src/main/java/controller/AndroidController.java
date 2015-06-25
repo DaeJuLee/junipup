@@ -76,7 +76,7 @@ public class AndroidController {
 		return "/android/androidUpdateCheck";
 	}
 	
-	@RequestMapping(value = "androidUpdate", method=RequestMethod.POST)
+	@RequestMapping(value = "androidUpdate")
 	public String androidUpdate(AndroidBoard android, Model model){
 		int result = service.androidUpdate(android);
 		if(result > 0){

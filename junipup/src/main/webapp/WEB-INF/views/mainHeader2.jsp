@@ -55,7 +55,7 @@
 			<ul id="menu" class="clearfix">
 				<li><a href="#">Home</a></li>
 				<!-- Database -->
-				<li><a href="#">Database</a>
+				<li><a href="DBMain.do">Database</a>
 					<ul>
 						<li><a href="#">History</a></li>
 						<li><a href="#">The Team</a></li>
@@ -72,7 +72,7 @@
 						<li><a href="#"></a></li>
 					</ul></li>
 				<!-- jsp -->
-				<li class="Jsp"><a href="#">Jsp</a>
+				<li class="Jsp"><a href="jspMain.do">Jsp</a>
 					<ul>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
@@ -80,7 +80,7 @@
 						<li><a href="#">Instagram</a></li>
 						<li><a href="#"></a></li>
 					</ul></li>
-				<li class="Java"><a href="#">Java</a>
+				<li class="Java"><a href="javaMain.do">Java</a>
 					<ul>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>

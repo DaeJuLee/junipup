@@ -68,6 +68,7 @@ create table java (
 	filename varchar2(50),
 	category number(2)
 );
+select * from java;
 create table javacomment (
 	commentNum number(6) primary key, 
 	bnum number(8),

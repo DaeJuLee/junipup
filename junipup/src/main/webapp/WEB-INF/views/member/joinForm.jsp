@@ -5,6 +5,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	.join_tbl {
+	 width: 50%;
+	 
+	}
+	.join_tbl th {
+		width: 980px; border-collapse:collapse; border-spacing:0; border-top:2px solid #ddd;
+			border-bottom:2px solid #ddd; font-size:11px; font-family:dotum; margin-bottom:30px
+	}
+	.join_tbl td {
+		padding:5px 15px; border-bottom:1px solid #ddd
+	}
+	.join_tbl td .inputText {
+		width:100px; border:1px solid #ccc
+	}
+	.join_tbl td span {
+		color:#888
+	}
+	
+</style>
+<!-- jQuery libaray 추가 -->
+<script type="text/javascript" src="../js/jquery.js"></script>
+<!-- jQuery 예약어 충동 방지 처리 -->
+<script type="text/javascript">
+
+   jQuery.noConflict();
+   var j$ = jQuery;
+
+</script>
+<script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -29,17 +59,28 @@
 </script>
 </head>
 <body>
-
-<h2>회원가입을 해볼까낭</h2>
 <form action="memjoin.do" id="login" method="get">
-	<table>
+	<div align="center">		
+	<table class="join_tbl">
+		<colgroup>
+			<col width="10%" />
+			<col width="40%" />
+			<col width="10%" />
+			<col width="40%" />
+		</colgroup>
 		<tr><th colspan="2">회원가입</th></tr>
-		<tr><td>아이디</td><td><input type="text" name="id" id="id" maxlength="12" required="required"></td></tr>
-		<tr><td>비밀번호</td><td><input type="password" name="password" id="password" required="required"></td></tr>
-		<tr><td>비밀번호확인</td><td><input type="password" name="password2" id="password2" required="required"></td></tr>
-		<tr><td>닉네입</td><td><input type="text" name="nickname" id="nickname" required="required"></td></tr>
-		<tr><td>이름</td><td><input type="text" name="name" id="name" required="required"></td></tr>
-		<tr><td>전화번호</td><td><div id="phone">
+		<tr><th>아이디</th>
+			<td  colspan="3"><input type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required"></td></tr>
+		<tr><th>패스워드</th>
+			<td><input type="password" name="password" id="password" class="inputText" required="required"></td></tr>
+		<tr><th>비밀번호확인</th>
+			<td colspan="3"><input type="password" name="password2" id="password2" class="inputText" required="required"></td></tr>
+		<tr><th>닉네입</th>
+			<td colspan="3"><input type="text" name="nickname" id="nickname" class="inputText" required="required"></td></tr>
+		<tr><th>이름</th>
+			<td colspan="3"><input type="text" name="name" id="name" class="inputText" required="required"></td></tr>
+		<tr><th>전화번호</th>
+			<td colspan="3"><div id="phone">
 				<input type="hidden" name="phoneNumber" id="phoneNumber">
 				<select name="tel1" id="tel1">
 				<option>010</option><option>011</option>
@@ -54,13 +95,16 @@
 				<option>061</option><option>062</option><option>063</option>
 				<option>064</option><option>070</option>
 			</select>
-			<input type="text" name="tel2" id="tel2" size="4" maxlength="4" required="required">-
-			<input type="text" name="tel3" id="tel3" size="4" maxlength="4" required="required"></div>
+			<input type="text" name="tel2" id="tel2" class="inputText" size="4" maxlength="4" required="required">-
+			<input type="text" name="tel3" id="tel3" class="inputText" size="4" maxlength="4" required="required"></div>
 		</td></tr>
-		<tr><td>이메일</td><td><input type="email" name="email" required="required"></td></tr>
-		<tr><td>사진</td><td><input type="file" name="photo" id="photo"></td></tr>
+		<tr><th>이메일</th>
+			<td colspan="3"><input type="email" name="email" class="inputText" required="required"></td></tr>
+		<tr><th>사진</th>
+			<td colspan="3"><input type="file" name="photo" class="inputText" id="photo"></td></tr>
 		<tr><td colspan="2" align="center"><input type="submit" value="확인">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="reset" value="취소"></td></tr>
 	</table>
+	</div>
 </form>
 </body>
 </html>
