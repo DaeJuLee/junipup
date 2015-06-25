@@ -1,9 +1,4 @@
-html {
-	height: 300px;
-	margin: 0
-}
-
-.mw_login {
+.mw_join {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -13,11 +8,11 @@ html {
 	height: 100%
 }
 
-.mw_login.open {
+.mw_join.open {
 	display: block
 }
 
-.mw_login .bg {
+.mw_join .bg {
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -26,14 +21,15 @@ html {
 	opacity: .5;
 	filter: alpha(opacity = 50)
 }
-/* 팝업창 절대 위치 */
-#login {
+
+/* 팝업창 절대 위치 및 크기*/
+#join {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	width: 328px;
-	/* height: 200px; */
-	margin: -250px 0 0 -194px;
+	height: 300px;
+	margin: -50px 0 0 -194px;
 	/*위아래 , 0 , 0 , 양옆 위치  */
 	padding: 28px 28px 0 28px;
 	border: 2px solid #555;
@@ -45,19 +41,19 @@ html {
 	white-space: normal
 }
 
-#login form {
+#join form {
 	display: none;
 	margin: 0;
 	padding: 0
 }
 
-#login fieldset {
+#join fieldset {
 	margin: 0;
 	padding: 0;
 	border: 0
 }
 
-#login legend {
+#join legend {
 	visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -68,7 +64,7 @@ html {
 	line-height: 0
 }
 
-#login .btn_login, #login .btn_login input {
+#join .btn_join, #join .btn_join input {
 	display: inline-block;
 	overflow: visible;
 	position: relative;
@@ -86,30 +82,30 @@ html {
 	cursor: pointer
 }
 
-#login .btn_login {
+#join .btn_join {
 	margin: 0 4px 0 0;
 	background-position: left top
 }
 
-#login .btn_login input {
+#join .btn_join input {
 	left: 4px;
 	padding: 0 24px 0 36px;
 	background-position: right top;
 	*vertical-align: top
 }
 
-#login .item {
+#join .item {
 	position: relative
 }
 
-#login .i_label {
+#join .i_label {
 	display: block;
 	position: static;
 	top: 9px;
 	font: bold 11px Tahoma
 }
 
-#login .i_text {
+#join .i_text {
 	display: block;
 	position: relative;
 	border: 1px solid #b7b7b7;
@@ -121,83 +117,26 @@ html {
 	color: #767676
 }
 
-#login .help {
-	float: none;
-	display: block;
-	position: relative;
-	margin: 0 -28px;
-	border: 0;
-	padding: 15px 0;
-	border-top: 1px solid #d9d9d9;
-	background: #fafafa;
-	text-align: center;
-	list-style: none;
-	*zoom: 1
-}
-
-#login .help li {
-	display: inline;
-	float: none;
-	margin: 0;
-	padding: 0 6px 0 10px;
-	border-left: 1px solid #c3c3c3 !important;
-	line-height: 1
-}
-
-#login .help li.first {
-	border: 0 !important
-}
-
-#login .help a {
-	display: inline;
-	float: none;
-	padding: 0;
-	background: none;
-	font-size: 11px;
-	font-family: Dotum, 돋움, Sans-serif;
-	color: #767676;
-	line-height: 1;
-	text-decoration: none
-}
-
-#login .help a:hover, #login .help a:active, #login .help a:focus {
-	color: #000;
-	text-decoration: underline
-}
-
-#login .g_login .i_label {
+#join .g_join .i_label {
 	left: 10px
 }
 
-#login .g_login .i_text {
+#join .g_join .i_text {
 	width: 316px;
-	height:20%;
+	height:30px;
+	/* 입력란 크기 조절 */
 	margin: 0 0 5px 0;
 	padding: 8px 0 6px 10px
 }
 
-#login .g_login .btn_login {
+#join .g_join .btn_join {
 	position: absolute;
 	top: 103px;
 	right: 28px;
 	color:black;
 }
 
-#login .g_login .keeping {
-	float: none;
-	height: 32px;
-	margin: 10px 0;
-	padding: 0;
-	line-height: 32px
-}
-
-#login .g_login .keeping label {
-	position: static;
-	font-family: Dotum, 돋움, Thahoma;
-	cursor: pointer
-}
-
-#login .g_login .i_check {
+#join .g_join .i_check {
 	width: 13px;
 	height: 13px;
 	margin: 0 4px 0 0;
@@ -205,42 +144,11 @@ html {
 	vertical-align: middle
 }
 
-#login .g_login .warning {
-	display: none;
-	float: none;
-	margin: 10px 0;
-	line-height: 1.4
-}
-
-#login .g_login .warning.open {
+#join.g_join .g_join {
 	display: block
 }
 
-#login .o_login {
-	text-align: center
-}
-
-#login .o_login .i_label {
-	left: 36px
-}
-
-#login .o_login .i_text {
-	width: 291px;
-	margin: 0;
-	padding: 8px 0 6px 35px;
-	background: url(img/ico_openid.gif) no-repeat 10px center
-}
-
-#login .o_login .btn_login {
-	margin-top: 10px;
-	margin-bottom: 10px
-}
-
-#login.g_login .g_login, #login.o_login .o_login {
-	display: block
-}
-
-#login .close {
+#join .close {
 	overflow: visible;
 	position: absolute;
 	top: 0;
@@ -256,4 +164,3 @@ html {
 	text-decoration: none !important;
 	cursor: pointer
 }
-
