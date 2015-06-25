@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DBBoard">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="DBBoardResult" type="DBBoard">
+		<result property="bnum"        column="bnum" />
+		<result property="nickname"    column="nickname" />
+		<result property="title"       column="title" />
+		<result property="mrank"       column="mrank" />
+		<result property="content"     column="content" />
+		<result property="ip"          column="ip" />
+		<result property="hits"        column="hits" />
+		<result property="category"    column="category" />
+		<result property="filesize"    column="filesize"/>
+		<result property="filename"    column="filename" /> 
+		<result property="b_date"      column="b_date" /> 
+	</resultMap>
+
+	<select id="listDB" parameterType="DBBoard" resultMap="DBBoardResult">
+    	select * from (select rownum rn, a.* from (select * from DB
+    	order by bnum desc) a) where rn between #{start} and #{end}
+    	
+	</select>
+	
+	<!-- <select id="total" resultType="int" >
+		select count(*) from DB
+	</select> -->
+	
+	<select id="DBDetail" parameterType="String" resultMap="DBBoardResult">
+		<![CDATA[select * from DB where title = #{title}]]>
+	</select>
+	
+	<insert id="DBInsert" parameterType="DBBoard">
+		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
+			select nvl(max(bnum),0)+1 from DB
+		</selectKey>
+		insert into DB
+		values (
+		#{bnum}, #{nickname}, #{title}, #{mrank} , sysdate, #{content}, #{ip}, 0, #{filesize},
+		#{filename}, #{category} )
+	</insert>
+	
+	<delete id="DBDelete" parameterType="String">
+		delete from DB where title = #{bnum}
+	</delete>
+	
+	<update id="DBUpdate" parameterType="DBBoard">
+		update DB set
+		title = #{title},
+		content = #{content},
+		filesize = #{filesize},
+		filename = #{filename},
+		ip = #{ip}
+		
+		where
+		title = #{title}
+	</update>
+	
+	<!-- <insert id="insertEmpList" parameterType="Emp">
+		insert into emp
+		values (
+		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
+	</insert>
+	 -->
+
+</mapper>

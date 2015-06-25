@@ -1,0 +1,22 @@
+.button {
+		display:inline-block;
+		padding:0 10px;
+		height:23px;
+		border:1px solid #5a94de;
+		background:#5a94de;
+		color:#fff;
+		text-decoration:none;
+		line-height:2em;
+		vertical-align:middle
+		}
+.button {
+		display:inline-block;
+		padding:0 10px;
+		height:23px;
+		border:1px solid #5a94de;
+		background:#ffffff;
+		color:#5a94de;
+		text-decoration:none;
+		line-height:2em;
+		vertical-align:middle
+		} 

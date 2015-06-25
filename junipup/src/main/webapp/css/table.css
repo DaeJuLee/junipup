@@ -1,0 +1,13 @@
+.table,.table th,.table td{border:0}
+.table th{padding:5px 0 4px;border-bottom:solid 1px #d2d2d2;background-color:#f1f1f4;color:#333;font-weight:bold;line-height:18px;vertical-align:top}
+.table td{padding:8px 0 5px 10px;border-bottom:solid 1px #d2d2d2;text-align:left}
+.table td.cont{padding:20px;line-height:1.4em}
+.table{width:70%;margin-top:15px;border-top:1px solid #999;border-bottom:1px solid #999;color:#666;font-size:12px;table-layout:fixed}
+.table,.tbl_type2 th,.tbl_type2 td{border:0}
+.table caption{display:none}
+.table td{padding:5px 0 3px 10px;line-height:1.4em;text-align:left}
+.table .input_txt td{padding:5px 0 5px 10px;border-bottom:solid 1px #d2d2d2}
+.table .input_txt td input,.tbl_type2 .input_txt td textarea{vertical-align:middle}
+.table .input_txt input.name{width:100px;padding:2px 0 1px;border:solid 1px #d2d2d2}
+.table .input_txt textarea.comment{width:80%;height:14px;padding:2px 0 1px;border:solid 1px #d2d2d2}
+.table .input_txt input.submit{width:60px;border:solid 1px #666;background-color:#f2f2f2;font-family:'돋움';font-size:12px;line-height:normal}
