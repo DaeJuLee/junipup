@@ -15,6 +15,7 @@ import java.util.List;
 
 
 
+
 import javax.servlet.http.HttpSession;
 
 import model.Member;
@@ -27,6 +28,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import service.MemberService;
 import utils.WebConstants;
@@ -40,7 +42,12 @@ public class MemberController {
 	public String memjoinForm() {
 		return "/member/joinForm";
 	}
-	@RequestMapping(value="memjoin", method=RequestMethod.GET)
+	@RequestMapping(value="memupdateForm")
+	public String updateForm() {
+		return "/member/updateForm";
+	}
+
+	@RequestMapping(value="memjoin", method=RequestMethod.POST)
 	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		int result = ms.insertMember(member);
@@ -54,9 +61,9 @@ public class MemberController {
 	@RequestMapping(value="memlogin", method=RequestMethod.GET)
 	public String memlogin(Member member, Model model, HttpSession session) {
 		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());	
-		if(member == null){
+		if(selectmem == null){
 			model.addAttribute("message", "ID또는 암호가 다릅니다");
-			return "member/login.do";
+			return "member/login";
 		}else if(selectmem.getId().matches("admin")){
 			session.setAttribute(WebConstants.USER_KEY, selectmem);
 			model.addAttribute("loginUser", selectmem);
@@ -67,8 +74,19 @@ public class MemberController {
 			session.setAttribute(WebConstants.USER_KEY, selectmem);
 			model.addAttribute("loginUser", selectmem);
 			model.addAttribute("member", selectmem);
-			return "main.do";
+			return "main";
 		}
+	}
+	@RequestMapping(value= "idchk", method=RequestMethod.POST)
+	
+	public @ResponseBody int idchk(@RequestParam("id") String id)  {
+		System.out.println("여기까진 오나?"+id);
+	    int result = 1;
+		if(ms.selectId(id) == null){
+			result = 0;
+		}
+		System.out.println(result);
+	    return result;
 	}
 	
 }
