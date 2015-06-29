@@ -19,6 +19,7 @@
 		<result property="usePoint" column="usePoint" />
 		<result property="maxPoint" column="maxPoint" />
 		<result property="regDate" column="regDate" />
+		<result property="loginDate" column="loginDate" />
 	</resultMap>
 
 	<insert id="insertMember" parameterType="Member">
@@ -30,9 +31,22 @@
 		#{mrank},
 		#{usePoint},
 		#{maxPoint},
+		sysdate,
 		sysdate
 		)
 	</insert>
+	<select id="selectIdPassword" parameterType="java.util.Map" resultType="member">
+		<![CDATA[ selesct * from member where id= #{id} and password = #{password}]]>
+	</select>
+	<select id="selectId" parameterType="String" resultType="member">
+		<![CDATA[ selesct * from member where id= #{id}]]>
+	</select>	
+	<select id="selectNickname" parameterType="String" resultType="member">
+		<![CDATA[ selesct * from member where nickname= #{nickname}]]>
+	</select>	
+	<select id="selectEmail" parameterType="String" resultType="member">
+		<![CDATA[ selesct * from member where password= #{password}]]>
+	</select>		
 	
 	
 

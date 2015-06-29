@@ -9,11 +9,13 @@ create table member (
 	mrank number(2),
 	usePoint number(7),
 	maxPoint number(7),
-	regDate date
+	regDate date,
+	loginDate date
 );
 -- 랭크는 낮은 숫자가 높은등급으로
-insert into member values('juni', 'aa.jgp', 'juni', 'juni', 'juni', 01000000000, 'juni@juni.com', 9, 100, 100, sysdate);
-insert into member values('admin', 'aa.jgp', 'admin', 'admin', 'admin', 01000001111, 'admini@juni.com', 1, 1000000, 1000000, sysdate);
+insert into member values('juni', 'aa.jgp', 'juni', 'juni', 'juni', 01000000000, 'juni@juni.com', 9, 100, 100, sysdate, sysdate);
+insert into member values('admin', 'aa.jgp', 'admin', 'admin', 'admin', 01000001111, 'admini@juni.com', 1, 1000000, 1000000, sysdate, sysdate);
+insert into member values('leejuni', 'aa.jgp', 'juni', 'juni', 'juni', 01000000000, 'juni@juni.com', 9, 100, 100, sysdate, sysdate);
 
 drop table member;
 drop table member cascade CONSTRAINTS;
