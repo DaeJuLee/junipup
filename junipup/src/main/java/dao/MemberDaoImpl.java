@@ -1,10 +1,14 @@
 package dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 
 
 
+
+
+import java.util.Map;
 
 import model.Member;
 
@@ -57,6 +61,33 @@ public class MemberDaoImpl implements MemberDao {
 
 	public int insertMember(Member member) {
 		return session.insert("insertMember", member);
+	}
+
+
+	@Override
+	public Member selectIdPass(String id, String password) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", id);
+		map.put("password", password);
+		return session.selectOne("selectIdPass", map);
+	}
+
+
+	
+	public Member selectId(String id) {
+		return session.selectOne("selectId", id);
+	}
+
+
+	@Override
+	public Member selectNickname(String nickname) {
+		return session.selectOne("selectNickname", nickname);
+	}
+
+
+	@Override
+	public Member selectEmail(String email) {
+		return session.selectOne("selectEmail", email);
 	}
 
 

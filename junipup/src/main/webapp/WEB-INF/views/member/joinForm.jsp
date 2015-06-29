@@ -28,33 +28,11 @@
 <!-- jQuery libaray 추가 -->
 <script type="text/javascript" src="../js/jquery.js"></script>
 <!-- jQuery 예약어 충동 방지 처리 -->
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 
-   jQuery.noConflict();
-   var j$ = jQuery;
-
-</script>
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-	$(function(){
-		var number;
-		$('#tel1 option:selected').text().change(function(){
-			number = $('#tel1 option:selected').text();
-		});
-		$('#phone').focusout(function(){
-			$('#phoneNumber').val('number' + $('#tel2').val() + $('tel3').val());
-			$('#phoneNumber').val(['number']);
-		});
-		$('#phone').blur(function(){
-			$('#phoneNumber').val('number' + $('#tel2').val() + $('tel3').val());
-			$('#phoneNumber').val(['number']);
-		});
-		$('#login input [type:submit]').click(function(){
-			$('#phoneNumber').val('number' + $('#tel2').val() + $('tel3').val());
-			$('#phoneNumber').val(['number']);
-		});
-	});
 	
 </script>
 </head>

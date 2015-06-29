@@ -13,6 +13,10 @@ import java.util.List;
 
 
 
+
+
+import javax.servlet.http.HttpSession;
+
 import model.Member;
 import model.Tel;
 
@@ -25,6 +29,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import service.MemberService;
+import utils.WebConstants;
 
 @Controller
 public class MemberController {
@@ -47,14 +52,23 @@ public class MemberController {
 		}
 	}
 	@RequestMapping(value="memlogin", method=RequestMethod.GET)
-	public String memlogin(Member member, Model model) {
-		
-		int result = ms.insertMember(member);
-		System.out.println(member.getPhoneNumber());
-		if (result > 0) return "redirect:main.do";
-		else {
-			model.addAttribute("msg","입력 실패 확인해 보세요");
-			return "forward:/member/joinForm.do";
+	public String memlogin(Member member, Model model, HttpSession session) {
+		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());	
+		if(member == null){
+			model.addAttribute("message", "ID또는 암호가 다릅니다");
+			return "member/login.do";
+		}else if(selectmem.getId().matches("admin")){
+			session.setAttribute(WebConstants.USER_KEY, selectmem);
+			model.addAttribute("loginUser", selectmem);
+			model.addAttribute("member", selectmem);
+			return "admin/adminMain";
+
+		}else{
+			session.setAttribute(WebConstants.USER_KEY, selectmem);
+			model.addAttribute("loginUser", selectmem);
+			model.addAttribute("member", selectmem);
+			return "main.do";
 		}
 	}
+	
 }
