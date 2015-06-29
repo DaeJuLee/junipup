@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <form action="javaUpdate.do" method="post">
-<body>
-	현재페이지<input type="text" name="currentPage" value="${currentPage }">
+<body>	
 	별명<input type="text" name="nickname" value="${javaDetail.nickname }" required="required"><p>
 	제목<input type="text" name="title" value="${javaDetail.title }" required="required"><p>
 	등급</th><td><input type="text" name="mrank" value="${javaDetail.mrank }" required="required"><p>
