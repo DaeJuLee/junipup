@@ -15,7 +15,6 @@
 		<input type="submit" value="확인"><input type="reset" value="취소">
 		</td></tr>
 	</table>
-	
 </form>
 <a href="#">회원가입</a>
 <a href="#">아이디/비밀번호 찾기</a>

@@ -8,8 +8,8 @@
 </head>
 <body>
 <%
-	//response.sendRedirect("main.do");
-	response.sendRedirect("pracmain.do");
+	response.sendRedirect("main.do");
+	//response.sendRedirect("pracmain.do");
 	//response.sendRedirect("androidDeleteCheck.do");
 	//response.sendRedirect("list.do");
 	//response.sendRedirect("listEmp.do");

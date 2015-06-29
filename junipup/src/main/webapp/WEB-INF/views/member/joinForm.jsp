@@ -34,12 +34,14 @@ $(function() {
 	$("#idchk").click(function() {
 		 alert("쿼리가 먹히나");
 		 $.ajax({
-            url : contextPath+"/idchk.do",
+            url :"idchk.do",
             type: "POST",
             data : { "id" : $("#id").val() },
             success : function(data){
-                alert("d");
-           
+                alert("d"+data.KEY);
+            },
+            error:function(request, status, error){
+            	alert("code:"+ request.status + "\n" + "error:"+error);
             }
         }); 
 
@@ -60,7 +62,7 @@ $(function() {
 		</colgroup>
 		<tr><th colspan="2">회원가입</th></tr>
 		<tr><th>아이디</th>
-			<td  colspan="3"><input type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required">
+			<td  colspan="3"><input id="id" type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required">
 			&nbsp&nbsp<input type="button" id="idchk" value="중복체크">
 			</td></tr>
 		<tr><th>패스워드</th>
