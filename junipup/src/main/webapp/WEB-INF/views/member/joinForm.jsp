@@ -25,19 +25,31 @@
 	}
 	
 </style>
-<!-- jQuery libaray 추가 -->
-<script type="text/javascript" src="../js/jquery.js"></script>
-<!-- jQuery 예약어 충동 방지 처리 -->
-
-<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 
+$(function() {
+	$("#idchk").click(function() {
+		 alert("쿼리가 먹히나");
+		 $.ajax({
+            url : contextPath+"/idchk.do",
+            type: "POST",
+            data : { "id" : $("#id").val() },
+            success : function(data){
+                alert("d");
+           
+            }
+        }); 
+
+	});
+});
 	
 </script>
 </head>
 <body>
-<form action="memjoin.do" id="login" method="get">
+<form action="memjoin.do" id="login" method="post">
 	<div align="center">		
 	<table class="join_tbl">
 		<colgroup>
@@ -48,7 +60,9 @@
 		</colgroup>
 		<tr><th colspan="2">회원가입</th></tr>
 		<tr><th>아이디</th>
-			<td  colspan="3"><input type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required"></td></tr>
+			<td  colspan="3"><input type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required">
+			&nbsp&nbsp<input type="button" id="idchk" value="중복체크">
+			</td></tr>
 		<tr><th>패스워드</th>
 			<td><input type="password" name="password" id="password" class="inputText" required="required"></td></tr>
 		<tr><th>비밀번호확인</th>
@@ -79,7 +93,7 @@
 		<tr><th>이메일</th>
 			<td colspan="3"><input type="email" name="email" class="inputText" required="required"></td></tr>
 		<tr><th>사진</th>
-			<td colspan="3"><input type="file" name="photo" class="inputText" id="photo"></td></tr>
+			<td colspan="3"><input type="file" nme="photo" class="inputText" id="photo"></td></tr>
 		<tr><td colspan="2" align="center"><input type="submit" value="확인">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="reset" value="취소"></td></tr>
 	</table>
 	</div>
