@@ -8,7 +8,7 @@ nickname varchar2(50),
 mrank varchar2(50),
 usepoint number,
 maxpoint number
-);
+); 
 
 create table Android(
 bnum number primary key,
