@@ -1,27 +1,13 @@
 package controller;
 
 
-import java.util.List;
-
-
-
-
-
-
-
-
-
-
-
-
-
+import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
 
 import model.Member;
 import model.Tel;
 
-import org.junit.runner.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,7 +40,7 @@ public class MemberController {
 		System.out.println(member.getPhoneNumber());
 		if (result > 0) return "redirect:main.do";
 		else {
-			model.addAttribute("msg","입력 실패 확인해 보세요");
+			model.addAttribute("msg","�엯�젰 �떎�뙣 �솗�씤�빐 蹂댁꽭�슂");
 			return "forward:/member/joinForm.do";
 		}
 	}
@@ -62,7 +48,7 @@ public class MemberController {
 	public String memlogin(Member member, Model model, HttpSession session) {
 		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());	
 		if(selectmem == null){
-			model.addAttribute("message", "ID또는 암호가 다릅니다");
+			model.addAttribute("message", "ID�삉�뒗 �븫�샇媛� �떎由낅땲�떎");
 			return "member/login";
 		}else if(selectmem.getId().matches("admin")){
 			session.setAttribute(WebConstants.USER_KEY, selectmem);
@@ -77,16 +63,30 @@ public class MemberController {
 			return "main";
 		}
 	}
-	@RequestMapping(value= "idchk", method=RequestMethod.POST)
-	
-	public @ResponseBody int idchk(@RequestParam("id") String id)  {
-		System.out.println("여기까진 오나?"+id);
-	    int result = 1;
+
+	@RequestMapping(value= "idchk", method=RequestMethod.POST)	
+	public @ResponseBody String idchk(@RequestParam("id") String id, Model model)  {
+		System.out.println("id넣으면?? : "+id);
+	    String result = "2";
 		if(ms.selectId(id) == null){
-			result = 0;
+			result = "0";
+		}else{
+			result = "1";
 		}
 		System.out.println(result);
+		model.addAttribute("id", id);
 	    return result;
 	}
+	
+//	@ResponseBody
+//	@RequestMapping(value= "idchk", method=RequestMethod.POST)
+//	public HashMap<String, Object> checkId(@RequestParam HashMap<String, Object> idParam)  {
+//		System.out.println("hashMap에 들어있는 정보 : " + idParam);
+//	    System.out.println("id is "+idParam.get("id"));
+//	 
+//	    HashMap<String, Object> hashmap = new HashMap<String, Object>();
+//	    hashmap.put("KEY", "YES");
+//	    return hashmap;
+//	}
 	
 }
