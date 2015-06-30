@@ -102,7 +102,7 @@ filesize number,
 filename varchar2(200),
 category varchar2(100)
 );
-
+select * from jsp;
 create table JspComment(
 commentNum varchar2(50) primary key,
 bnum varchar2(50),

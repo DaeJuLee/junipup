@@ -26,9 +26,9 @@
     	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
-<!--<select id="total" resultType="int" >
-		select count(*) from jsp
-	</select> -->
+	<select id="totalJsp" resultType="int" >
+		select count(*) from Jsp
+	</select>
 
 	<select id="jspDetail" parameterType="String" resultMap="JspBoardResult">
 		<![CDATA[select * from Jsp where title = #{title}]]>
@@ -40,7 +40,7 @@
 		</selectKey>
 		insert into jsp
 		values (
-	#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank, jdbcType=VARCHAR} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank, jdbcType=VARCHAR} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
 		#{filename}, #{category} )
 	</insert>
 	

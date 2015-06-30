@@ -18,7 +18,7 @@ public class JspDaoImpl implements JspDao{
 	}
 	
 	public int total() {
-		return session.selectOne("total");
+		return session.selectOne("totalJsp");
 	}
 
 	public List<JspBoard> listJsp(JspBoard jsp) {
@@ -44,7 +44,7 @@ public class JspDaoImpl implements JspDao{
 			board.setIp("1"+i);
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
-			session.insert("insertJsp", board);
+			session.insert("jspInsert", board);
 		}		
 	}
 

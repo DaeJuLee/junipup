@@ -26,9 +26,9 @@
     	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
-<!--<select id="total" resultType="int" >
+	<select id="totalJava" resultType="int" >
 		select count(*) from Java
-	</select> -->
+	</select>
 
 	<select id="javaDetail" parameterType="String" resultMap="JavaBoardResult">
 		<![CDATA[select * from Java where title = #{title}]]>

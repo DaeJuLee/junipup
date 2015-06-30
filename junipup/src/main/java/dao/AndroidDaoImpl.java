@@ -19,7 +19,7 @@ public class AndroidDaoImpl implements AndroidDao{
 	}
 
 	public int total() {
-		return session.selectOne("total");
+		return session.selectOne("totalAndroid");
 	}
 
 	public List<AndroidBoard> listAndroid(AndroidBoard android) {

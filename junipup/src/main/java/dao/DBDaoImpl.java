@@ -20,7 +20,7 @@ public class DBDaoImpl implements DBDao{
 
 
 	public int total() {		
-		return session.selectOne("total");
+		return session.selectOne("totalDB");
 	}
 
 	

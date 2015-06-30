@@ -8,6 +8,7 @@
 		<typeAlias alias="JavaBoard" type="model.JavaBoard" />
 		<typeAlias alias="Member" type="model.Member" />
 		<typeAlias alias="JspBoard" type="model.JspBoard" />
+		<typeAlias alias="AndroidBoard" type="model.AndroidBoard" />
 	</typeAliases>
 	<mappers>
 
@@ -15,5 +16,6 @@
 		<mapper resource="mybatis/JavaBoard.xml" />
 		<mapper resource="mybatis/Member.xml" />
 		<mapper resource="mybatis/JspBoard.xml" />
+		<mapper resource="mybatis/AndroidBoard.xml" />
 	</mappers>
 </configuration>

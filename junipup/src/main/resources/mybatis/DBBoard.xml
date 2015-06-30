@@ -27,9 +27,9 @@
     	
 	</select>
 	
-	<!-- <select id="total" resultType="int" >
+	<select id="totalDB" resultType="int" >
 		select count(*) from DB
-	</select> -->
+	</select>
 	
 	<select id="DBDetail" parameterType="String" resultMap="DBBoardResult">
 		<![CDATA[select * from DB where title = #{title}]]>
