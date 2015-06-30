@@ -18,7 +18,7 @@ public class JspDaoImpl implements JspDao{
 	}
 	
 	public int total() {
-		return session.selectOne("total");
+		return session.selectOne("totalJsp");
 	}
 
 	public List<JspBoard> listJsp(JspBoard jsp) {

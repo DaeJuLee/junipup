@@ -26,7 +26,7 @@
     	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
-	<select id="total" resultType="int" >
+	<select id="totalJsp" resultType="int" >
 		select count(*) from Jsp
 	</select>
 

@@ -19,7 +19,7 @@ public class JavaDaoImpl implements JavaDao {
 	}
 
 	public int total() {
-		return session.selectOne("total");
+		return session.selectOne("totalJava");
 	}
 
 	public List<JavaBoard> listJava(JavaBoard java) {
