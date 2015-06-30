@@ -51,7 +51,7 @@
 			<td colspan="3"><input type="text" name="nickname" id="nickname" class="inputText" required="required"></td></tr>
 		<tr><th>이름</th>
 			<td colspan="3"><input type="text" name="name" id="name" class="inputText" required="required" value="${member.name } "></td></tr>
-		<tr><th>전화번호</th>
+		<tr><th>전화번호</th> 
 			<td colspan="3"><div id="phone">
 				<input type="hidden" name="phoneNumber" id="phoneNumber">
 				<select name="tel1" id="tel1">
