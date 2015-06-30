@@ -44,7 +44,7 @@ public class JspDaoImpl implements JspDao{
 			board.setIp("1"+i);
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
-			session.insert("insertJsp", board);
+			session.insert("jspInsert", board);
 		}		
 	}
 
