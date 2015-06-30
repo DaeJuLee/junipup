@@ -20,7 +20,7 @@
 		<result property="maxPoint" column="maxPoint" />
 		<result property="regDate" column="regDate" />
 		<result property="loginDate" column="loginDate" />
-	</resultMap>
+	</resultMap> 
 
 	<insert id="insertMember" parameterType="Member">
 		insert into member

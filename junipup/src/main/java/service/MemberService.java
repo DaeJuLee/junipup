@@ -24,4 +24,4 @@ public interface MemberService {
 	//Member check(int memberno);
 	//int update(Member member);
 
-}
+} 

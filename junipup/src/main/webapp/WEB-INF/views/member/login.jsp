@@ -13,7 +13,9 @@
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript">
+	var msg = ${message};
 	jQuery(function($) {
+		alert(msg);
 		var loginWindow = $('.mw_login');
 		var login = $('#login');
 		var uid = $('.i_text.uid');
@@ -109,18 +111,18 @@
 		<div class="bg"></div>
 		<div id="login" class="g_login">
 			<a href="#login_anchor" title="로그인 레이어 닫기" class="close">X</a>
-			<form action="" id="g_login" class="g_login">
+			<form action="memlogin.do" id="g_login" class="g_login">
 				<fieldset>
 					<legend>Login</legend>
 					<div class="item">
 						<label for="uid" class="i_label"
 							style="position: absolute; visibility: visible;">ID</label><input
-							name="" type="text" value="" id="uid" class="i_text uid">
+							name="id" type="text" id="uid" class="i_text uid">
 					</div>
 					<div class="item">
 						<label for="upw" class="i_label"
 							style="position: absolute; visibility: visible;">PASSWORD</label><input
-							name="" type="password" value="" id="upw" class="i_text upw">
+							name="password" type="password" id="upw" class="i_text upw">
 					</div>
 					<p class="keeping">
 						<input name="" type="checkbox" value="" id="keepid"
@@ -135,7 +137,7 @@
 						<li><a href="memjoinForm.do" id="joinOk">회원 가입</a></li>
 					</ul>
 				</fieldset>
-				
+				 
 			</form>
 					
 			<a href="main.do" title="로그인 레이어 닫기" class="close">X</a>
