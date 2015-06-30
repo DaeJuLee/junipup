@@ -35,20 +35,45 @@
 		sysdate
 		)
 	</insert>
-	<select id="selectIdPassword" parameterType="java.util.Map" resultType="member">
-		<![CDATA[ select * from member where id= #{id} and password = #{password}]]>
+
+	<select id="selectIdPass" parameterType="java.util.Map" resultMap="member">
+		<![CDATA[ select * from member where id=#{id} and password=#{password}]]>
+
+
 	</select>
+
 	<select id="selectId" parameterType="String" resultType="member">
-		<![CDATA[ select * from member where id= #{id}]]>
+		<![CDATA[ select * from member where id=#{id}]]>
+
 	</select>	
+
 	<select id="selectNickname" parameterType="String" resultType="member">
-		<![CDATA[ select * from member where nickname= #{nickname}]]>
+		<![CDATA[ select * from member where nickname=#{nickname}]]>
+
 	</select>	
+
 	<select id="selectEmail" parameterType="String" resultType="member">
-		<![CDATA[ select * from member where password= #{password}]]>
+		<![CDATA[ select * from member where password=#{password}]]>
+
+
 	</select>		
-	
-	
+
+	<update id="updateMember" parameterType="Member">
+		update member set
+		ninkname = #{nickname},
+		photo = #{photo, jdbcType=VARCHAR},
+		password = #{password},
+		phoneNumber = #{phoneNumber},
+		email = #{email, jdbcType=VARCHAR},
+		where id = #{id}
+	</update>
+	<delete id="deleteMember" parameterType="String">
+		delete from member where id = #{id}
+	</delete>
+	<select id="list" parameterType="Member" resultMap="MemberResult">
+    	select * from (select rownum rn, a.* from (select * from member
+    	order by regDate) a) where rn between #{start} and #{end}
+	</select>
 
 <!-- 
 	<select id="list" parameterType="Emp" resultMap="EmpResult">

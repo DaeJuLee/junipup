@@ -15,7 +15,7 @@
 		<div id="h2">
 			<div align="center">
 				<a href="main.do"><img
-					src="images/junipup${loginUser.mRank }.jpg" width="100px"></a>
+					src="images/junipup${loginUser.mrank }.jpg" width="100px"></a>
 			</div>
 
 		</div>
@@ -29,14 +29,14 @@
 			<p>
 				<c:choose>
 					<c:when test="${not empty loginUser}">
-						<font color="green"><c:out value="${loginUser.mName}" />님,
+						<font color="green"><c:out value="${loginUser.nickname}" />님,
 							환영합니다. | </font>
 						<c:choose>
-							<c:when test="${loginUser.mId == 'master' }">
+							<c:when test="${loginUser.id == 'master' }">
 								<a href="adminMain.html">관리자 페이지</a>
 							</c:when>
-							<c:when test="${loginUser.mId != 'master' }">
-								<a href="mypage.html?mId=${loginUser.mId }">마이 페이지</a>
+							<c:when test="${loginUser.id != 'master' }">
+								<a href="mypage.html?id=${loginUser.id }">마이 페이지</a>
 							</c:when>
 						</c:choose>
 					</c:when>
