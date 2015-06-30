@@ -54,7 +54,7 @@
 		<tr><th>전화번호</th> 
 			<td colspan="3"><div id="phone">
 				<input type="hidden" name="phoneNumber" id="phoneNumber">
-				<select name="tel1" id="tel1">
+				<select name="tel1" id="tel1"> 
 				<option>010</option><option>011</option>
 				<option>016</option><option>017</option>
 				<option>018</option><option>019</option>

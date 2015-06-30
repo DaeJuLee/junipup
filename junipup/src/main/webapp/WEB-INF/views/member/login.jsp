@@ -137,7 +137,7 @@
 						<li><a href="memjoinForm.do" id="joinOk">회원 가입</a></li>
 					</ul>
 				</fieldset>
-				
+				 
 			</form>
 					
 			<a href="main.do" title="로그인 레이어 닫기" class="close">X</a>

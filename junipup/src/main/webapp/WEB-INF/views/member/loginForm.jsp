@@ -13,7 +13,7 @@
 		<tr><td>Password</td><td><input type="text" name="password" required="required"></td></tr>
 		<tr><td colspan="2">
 		<input type="submit" value="확인"><input type="reset" value="취소">
-		</td></tr>
+		</td></tr> 
 	</table>
 </form>
 <a href="#">회원가입</a>

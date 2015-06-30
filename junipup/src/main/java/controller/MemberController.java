@@ -43,7 +43,7 @@ public class MemberController {
 		else {
 			model.addAttribute("msg","회원가입을 환영합니다");
 			return "forward:/member/joinForm.do";
-		}
+		} 
 	}
 	@RequestMapping(value="memlogin", method=RequestMethod.GET)
 	public String memlogin(Member member, Model model, HttpSession session) {

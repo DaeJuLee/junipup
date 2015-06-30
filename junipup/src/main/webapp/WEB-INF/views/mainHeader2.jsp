@@ -18,7 +18,7 @@
 					src="images/junipup${loginUser.mrank }.jpg" width="100px"></a>
 			</div>
 
-		</div>
+		</div>   
 
 		<div id="h3">
 			<fieldset>
