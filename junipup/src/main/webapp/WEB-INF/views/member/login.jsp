@@ -97,7 +97,9 @@
 		});
 	});
 
-	
+	$(function(){
+		
+	});
 	
 </script>
 </head>
