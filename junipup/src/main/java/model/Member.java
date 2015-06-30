@@ -14,6 +14,7 @@ public class Member {
 	private int usePoint;
 	private int maxPoint;
 	private Date regDate;
+	private Date loginDate;
 	
 	public String getNickname() {
 		return nickname;

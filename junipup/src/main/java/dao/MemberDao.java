@@ -14,6 +14,10 @@ public interface MemberDao {
 	//int total();
 	//Member selectEname(int memberno);
 	public int insertMember(Member member);
+	public Member selectIdPass(String id, String password);
+	public Member selectId(String id);
+	public Member selectNickname(String nickname);
+	public Member selectEmail(String email);
 	//int deletemember(int memberno);
 	//Member check(int memberno);
 	//int update(Member member);

@@ -4,7 +4,9 @@ import java.util.List;
 
 
 
+
 import model.Member;
+
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +68,26 @@ public class MemberServiceImpl implements MemberService {
 		
 		return md.insertMember(member);
 		
+	}
+
+	@Override
+	public Member selectIdPass(String id, String password) {
+		return md.selectIdPass(id, password);
+	}
+
+	@Override
+	public Member selectId(String id) {
+		return md.selectId(id);
+	}
+
+	@Override
+	public Member selectNickname(String nickname) {
+		return md.selectNickname(nickname);
+	}
+
+	@Override
+	public Member selectEmail(String email) {
+		return md.selectEmail(email);
 	}
 	
 
