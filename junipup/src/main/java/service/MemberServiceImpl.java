@@ -89,6 +89,16 @@ public class MemberServiceImpl implements MemberService {
 	public Member selectEmail(String email) {
 		return md.selectEmail(email);
 	}
+
+	@Override
+	public int updateMember(Member member) {
+		return md.updateMember(member);
+	}
+
+	@Override
+	public int deleteMember(Member member) {
+		return md.deleteMember(member);
+	}
 	
 
 

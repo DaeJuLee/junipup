@@ -91,4 +91,19 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 
+	@Override
+	public int updateMember(Member member) {
+		return session.update("updateMember", member);
+	}
+
+
+	@Override
+	public int deleteMember(Member member) {
+		return session.update("deleteMember", member);
+	}
+	public List<Member> list(Member member) {
+		return session.selectList("list", member);
+	}
+
+
 }
