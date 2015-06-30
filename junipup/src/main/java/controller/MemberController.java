@@ -28,8 +28,10 @@ public class MemberController {
 	public String memjoinForm() {
 		return "/member/joinForm";
 	}
-	@RequestMapping(value="memupdateForm")
-	public String updateForm() {
+	@RequestMapping(value="updateForm")
+	public String updateForm(@RequestParam("id") String id, Model model) {
+		Member member = ms.selectId(id);
+		model.addAttribute("member", member);
 		return "/member/updateForm";
 	}
 
@@ -37,10 +39,9 @@ public class MemberController {
 	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		int result = ms.insertMember(member);
-		System.out.println(member.getPhoneNumber());
 		if (result > 0) return "redirect:main.do";
 		else {
-			model.addAttribute("msg","�엯�젰 �떎�뙣 �솗�씤�빐 蹂댁꽭�슂");
+			model.addAttribute("msg","회원가입을 환영합니다");
 			return "forward:/member/joinForm.do";
 		}
 	}
@@ -48,7 +49,7 @@ public class MemberController {
 	public String memlogin(Member member, Model model, HttpSession session) {
 		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());	
 		if(selectmem == null){
-			model.addAttribute("message", "ID�삉�뒗 �븫�샇媛� �떎由낅땲�떎");
+			model.addAttribute("message", "ID나 패스워드가 틀렸습니다.");
 			return "member/login";
 		}else if(selectmem.getId().matches("admin")){
 			session.setAttribute(WebConstants.USER_KEY, selectmem);
