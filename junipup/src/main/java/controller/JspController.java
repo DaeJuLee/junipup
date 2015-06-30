@@ -20,14 +20,14 @@ public class JspController {
 	@RequestMapping(value="jspMain")
 	public String jspMain(JspBoard jsp, String currentPage, Model model){
 //		service.insertBoard();
-//		int total = service.total();
-//		System.out.println("int total : " + total);
-//		Paging pg = new Paging(total, currentPage);
-//		jsp.setStart(pg.getStart());
-//		jsp.setEnd(pg.getEnd());
-//		List<JspBoard> list = service.listJsp(jsp);
-//		model.addAttribute("list", list);
-//		model.addAttribute("pg", pg);
+		int total = service.total();
+		System.out.println("int total : " + total);
+		Paging pg = new Paging(total, currentPage);
+		jsp.setStart(pg.getStart());
+		jsp.setEnd(pg.getEnd());
+		List<JspBoard> list = service.listJsp(jsp);
+		model.addAttribute("list", list);
+		model.addAttribute("pg", pg);
 		return "/jsp/jspMain";
 	}
 	

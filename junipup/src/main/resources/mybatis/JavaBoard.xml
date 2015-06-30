@@ -40,7 +40,7 @@
 		</selectKey>
 		insert into Java
 		values (
-		#{bnum}, #{nickname}, #{title}, #{mrank} , sysdate, #{content}, #{ip}, 0, #{filesize},
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank, jdbcType=VARCHAR} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
 		#{filename}, #{category} )
 	</insert>
 	
