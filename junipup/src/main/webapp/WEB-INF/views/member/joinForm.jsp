@@ -28,30 +28,124 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/log.js"></script>
+<script type="text/javascript" src="js/password.js"></script>
 <script type="text/javascript">
 
 $(function() {
+	var id = document.getElementById("id");
+	/* if(id.value.length > 2)
+	{
+		
+	} */
 	$("#idchk").click(function() {
-		 alert("쿼리가 먹히나");
+		 /* alert("쿼리가 먹히나"); */
+		 /* alert(id.value.length); */
+		 /* alert(id.value); */
+		 if(id.value.length >= 3){
+			 /* alert("두글자 넘음"); */
 		 $.ajax({
-            url :"idchk.do",
-            type: "POST",
-            data : { "id" : $("#id").val() },
-            success : function(data){
-                alert("d"+data.KEY);
-            },
-            error:function(request, status, error){
-            	alert("code:"+ request.status + "\n" + "error:"+error);
-            }
-        }); 
+           url :"idchk.do",
+           type: "POST",
+           data : { "id" : $("#id").val() },
+           datatype : "text",
+           success : function(data){
+           	alert(data);
+               if(data == "1"){
+               	alert("이미 있는 아이디입니다.");
+               }else if(data == "0"){
+               	alert("사용하세요");
+               }else{
+               	alert("id 입력해주세요");
+               }
+           },
+           error:function(request, status, error){
+           	alert("code:"+ request.status + "\n" + "error:"+error);
+           }
+       }); 
+		 
+	}/*if문 끝  */
+	else if(id.value.length < 3){
+		alert("세글자 이상을 입력하세요");
+	}
 
 	});
+});
+
+$(function(){
+	var password = document.getElementById("password");
+	var password2 = document.getElementById("password2");
+	$('#password2').attr('disabled', 'disabled');
+	var passwordFocus = $('#password');
+	var password2Focus = $('#password2');
+	var focus = 1;
+	var focus1 = 1;
+	var focus2 = 1;
+	if(focus==1){
+		passwordFocus.focus(function(){ 
+			/* alert("포커스"); */
+			/* focus1 = 2; */
+		}); 
+		passwordFocus.blur(function(){ 
+			/* alert("포커스 벗어남"); */
+			if(password.value.length != 0){
+				alert(password.value.length);
+				$('#password2').removeAttr('disabled');
+			}
+		});
+		password2Focus.focus(function(){ 
+			/* alert("포커스2"); */
+			/* focus2 = 2; */
+		}); 
+		password2Focus.blur(function(){ 
+			/* alert("포커스2 벗어남"); */
+			if(password2.value.length != 0){
+				alert(password2.value.length);
+				/* focus=4; */
+				$(function(){
+					alert("비밀번호 일치 확인");
+					/* var password = new Password(frm.password.value, frm.password2.value); */
+					var password = new Password($('#password').val(), $('#password2').val());
+					log('변경전');
+					log('넣는거야?' + password.toString());
+					alert("비밀번호 일치 확인 끝");
+				});
+			}
+		});
+	
+	}//if문 끝
+	
+	/* if(focus==4 && focus1==2 && focus2 ==2){
+	alert("비밀번호 일치 확인");
+	var password = new Password(password.value, password2.value);
+	var html = document.getElementById("passcheck");
+	if(password.getEqual()=="1"){
+		p1.innerHTML = "비밀번호 일치";
+	}
+	}else{
+		p1.innerHTML = "비밀번호 불일치";
+	} */
+	
+	/* if(focus==4 && password.value.length==password2.value.length){
+		for(var i = 0; i < password.value.length; i++){
+			if(password.value[i]==password2.value[i]){
+				focus=5;
+			}
+		}
+	}else{
+		alert("패스워드가 다릅니다.")
+	}
+	
+	if(focus==5){
+		alert("패스워드가 같습니다.");
+	} */
+	
 });
 	
 </script>
 </head>
 <body>
-<form action="memjoin.do" id="login" method="post">
+<form action="memjoin.do" id="login" method="post" name="frm">
 	<div align="center">		
 	<table class="join_tbl">
 		<colgroup>
@@ -60,15 +154,16 @@ $(function() {
 			<col width="10%" />
 			<col width="40%" />
 		</colgroup>
-		<tr><th colspan="2">회원가입</th></tr>
+		<tr><th colspan="3">회원가입</th></tr>
 		<tr><th>아이디</th>
-			<td  colspan="3"><input id="id" type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required">
+			<td  colspan="3"><input id="id" type="text" name="id" id="memberID" class="inputText" maxlength="12" value="${id }" required="required">
 			&nbsp&nbsp<input type="button" id="idchk" value="중복체크">
 			</td></tr>
 		<tr><th>패스워드</th>
 			<td><input type="password" name="password" id="password" class="inputText" required="required"></td></tr>
 		<tr><th>비밀번호확인</th>
-			<td colspan="3"><input type="password" name="password2" id="password2" class="inputText" required="required"></td></tr>
+			<td colspan="3"><input type="password" name="password2" id="password2" class="inputText" required="required">
+			<div id="passcheck"></div></td><!-- <td><div id="passcheck"></div></td> --></tr>
 		<tr><th>닉네입</th>
 			<td colspan="3"><input type="text" name="nickname" id="nickname" class="inputText" required="required"></td></tr>
 		<tr><th>이름</th>

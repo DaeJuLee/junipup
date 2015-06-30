@@ -65,13 +65,16 @@ public class MemberController {
 	}
 
 	@RequestMapping(value= "idchk", method=RequestMethod.POST)	
-	public @ResponseBody int idchk(@RequestParam("id") String id)  {
+	public @ResponseBody String idchk(@RequestParam("id") String id, Model model)  {
 		System.out.println("id넣으면?? : "+id);
-	    int result = 1;
+	    String result = "2";
 		if(ms.selectId(id) == null){
-			result = 0;
+			result = "0";
+		}else{
+			result = "1";
 		}
 		System.out.println(result);
+		model.addAttribute("id", id);
 	    return result;
 	}
 	
