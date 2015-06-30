@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-</head>
+</head> 
 <body>
 <form action = "jspInsert.do" method="post">
 	<table cellspacing="0" border="1" class="table" align="center">

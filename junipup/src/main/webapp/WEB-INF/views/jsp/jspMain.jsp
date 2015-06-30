@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 <script src="script.js"></script>
 </head>
-<body>
+<body> 
 <p>
 <c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">

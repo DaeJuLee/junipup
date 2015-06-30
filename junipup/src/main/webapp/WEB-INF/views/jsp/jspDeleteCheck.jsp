@@ -18,7 +18,7 @@
 		<form id="g_login" class="g_login">
 			정말로 삭제 하시겠습니까?
 			<fieldset>
-				<span class="btn_login">
+				<span class="btn_login"> 
 					<a href="jspDelete.do?title=${title.title }">삭제</a>
 					<a href="jspDetail.do?title=${title.title }">취소</a>
 				</span>

@@ -22,7 +22,7 @@
 			<td colspan="3">${jspDetail.title }</td>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody> 
 		<tr>
 			<th scope="row">작성자</th>
 			<td>${jspDetail.nickname }</td>
