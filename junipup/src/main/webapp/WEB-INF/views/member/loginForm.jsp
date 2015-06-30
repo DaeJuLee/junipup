@@ -18,5 +18,34 @@
 </form>
 <a href="#">회원가입</a>
 <a href="#">아이디/비밀번호 찾기</a>
+
+	<!-- <div class="bg"></div>
+	<div id="join" class="g_join">
+		<form action="" class="g_join">
+			<fieldset>
+				<legend>회원가입</legend>
+				<div class="item">
+					<label class="i_label"
+						style="position: absolute; visibility: visible;">ID</label><input
+						name="id" type="text" value="" 
+						class="i_text upw">
+				</div>
+				<div class="item">
+					<label class="i_label"
+						style="position: absolute; visibility: visible;">NICKNAME(별명)</label><input
+						name="nickname" type="text" value="" 
+						class="i_text upw">
+				</div>
+				<div class="item">
+					<label class="i_label"
+						style="position: absolute; visibility: visible;">PASSWORD</label><input
+						name="" type="password" value="" class="i_text upw">
+				</div>
+				<span ><input type="submit" value="회원가입"></span>
+				<span ><input type="button" value="취소" onclick="location.href='#'"></span>
+			</fieldset>
+		</form>
+	</div> -->
+
 </body>
 </html>
