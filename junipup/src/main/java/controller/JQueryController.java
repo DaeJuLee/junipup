@@ -24,8 +24,8 @@ public class JQueryController {
 		int total = js.total();
 		System.out.println("int total : " + total);
 		Paging pg = new Paging(total, currentPage);
-		JQueryBoard.setStart(pg.getStart());
-		JQueryBoard.setEnd(pg.getEnd());
+		JQueryboard.setStart(pg.getStart());
+		JQueryboard.setEnd(pg.getEnd());
 		List<JQueryBoard> list = js.listJQuery(JQueryboard);
 		model.addAttribute("JQueryMain", list);
 		model.addAttribute("pg", pg);
