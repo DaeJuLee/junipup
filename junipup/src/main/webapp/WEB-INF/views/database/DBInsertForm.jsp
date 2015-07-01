@@ -29,11 +29,11 @@
 			<td><input type="text" name="filename" required="required"></td></tr>		
 		<tr><th>카테고리</th>
 			<td><select name="category">
-				<option value="기초익히기">기초익히기</option>
-				<option value="등급올리기">등급올리기</option>
-				<option value="질문게시판">질문게시판</option>
-				<option value="응용게시판">응용게시판</option>
-				</select></td>
+				<option value="1">기초익히기</option>
+				<option value="2">등급올리기</option>
+				<option value="3">질문게시판</option>
+				<option value="4">응용게시판</option>
+				</select></td></tr>
 		<tr><th>내용</th>
 			<td><textarea rows="10" cols="50" name="content" required="required" ></textarea></td>
 	</table>

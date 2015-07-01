@@ -7,12 +7,61 @@
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/pagination.css">
 <link rel="stylesheet" type="text/css" href="css/button.css">
+<link rel="stylesheet" type="text/css" href="css/tab.css">
 <head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+    var tab = $('.tab_list');
+    tab.removeClass('js_off');
+    tab.css('height', tab.find('>ul>li>ul:visible').height()+40);
+    function onSelectTab(){
+        var t = $(this);
+        var myClass = t.parent('li').attr('class');
+        t.parents('.tab_list:first').attr('class', 'tab_list '+myClass);
+        tab.css('height', t.next('ul').height()+40);
+    }
+    tab.find('>ul>li>a').click(onSelectTab).focus(onSelectTab);
+});
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <p>
+<div class="tab_list m1" align="center">
+    <ul style="width:70%">
+    <li class="m1"><a href="#"><span>전체게시판</span></a>
+        <ul>
+        <li class="more">› <a href="#">전체게시판 더보기</a></li>
+        </ul>
+    </li>
+    <li class="m2"><a href="#"><span>기초익히기</span></a>
+        <ul>
+        <li class="more">› <a href="#">기초익히기 더보기</a></li>
+        </ul>
+    </li>
+
+    <li class="m3"><a href="#"><span>등급올리기</span></a>
+        <ul>
+        <li class="more">› <a href="#">등급올리기 더보기</a></li>
+        </ul>
+    </li>
+
+    <li class="m4"><a href="#"><span>질문게시판</span></a>
+        <ul>       
+        <li class="more">› <a href="#">질문게시판 더보기</a></li>
+        </ul>
+    </li>
+    
+    <li class="m5"><a href="#"><span>응용게시판</span></a>
+        <ul>       
+        <li class="more">› <a href="#">응용게시판 더보기</a></li>
+        </ul>
+    </li>
+    </ul>
+</div>
+
 <c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
 		<tr height="40px">
@@ -31,8 +80,7 @@
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-	<button type="button" onclick="location.href='DBInsertForm.do?db=${DBInsertForm}'" class="button">글쓰기</button>
-	
+<button type="button" onclick="location.href='DBInsertForm.do?db=${DBInsertForm}'" class="button">글쓰기</button>
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		
 		<%-- <a href="DBMain.do?currentPage=${pg.startPage-pg.pageBlock }" class="pre">이전</a> --%>
