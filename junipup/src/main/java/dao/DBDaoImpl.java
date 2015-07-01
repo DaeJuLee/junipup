@@ -14,10 +14,6 @@ public class DBDaoImpl implements DBDao {
 	private SqlSession session;
 
 	public int DBInsert(DBBoard db) {
-		if (db.getCategory().equals("1"))
-			db.setCategory("기초다지기");
-		/*else (db.getCategory().equals("2"))*/
-			db.setCategory("");
 		return session.insert("DBInsert", db);
 	}
 
@@ -58,6 +54,16 @@ public class DBDaoImpl implements DBDao {
 	public int DBUpdate(DBBoard db) {
 
 		return session.update("DBUpdate", db);
+	}
+
+	@Override
+	public int totalDBCategory(String category) {
+		return session.selectOne("totalDBCategory", category);
+	}
+
+	@Override
+	public List<DBBoard> listDBCategory(DBBoard db) {
+		return session.selectList("listDBCategory", db);
 	}
 
 }

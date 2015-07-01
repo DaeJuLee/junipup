@@ -12,4 +12,7 @@ public interface DBDao {
 	public void DBDelete(String title);
 	public void insertBoard();
 	public int DBUpdate(DBBoard db);
+	public int totalDBCategory(String category);
+	List<DBBoard> listDBCategory(DBBoard db);
+	
 }

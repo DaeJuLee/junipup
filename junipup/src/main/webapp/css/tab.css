@@ -2,7 +2,7 @@
 03
 .tab_list ul{position:relative;margin:0;padding:0;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
 04
-.tab_list ul:after{display:block;clear:both;content:""}
+.tab_list ul:after{clear:both;content:""}
 05
 .tab_list li{float:left;margin-bottom:-1px}
 06

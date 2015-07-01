@@ -53,6 +53,19 @@ public class DBServiceImpl implements DBService{
 	}
 
 
+	@Override
+	public int totalDBCategory(String category) {
+		
+		return dao.totalDBCategory(category);
+	}
+
+
+	@Override
+	public List<DBBoard> listDBCategory(DBBoard db) {
+		return dao.listDBCategory(db);
+	}
+
+
 	
 
 }

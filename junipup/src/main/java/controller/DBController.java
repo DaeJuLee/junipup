@@ -5,7 +5,6 @@ import java.util.List;
 import model.DBBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,17 +18,33 @@ public class DBController {
 	DBService service;
 	
 	@RequestMapping(value="DBMain")
-	public String androidMain(DBBoard db, String currentPage, Model model){
+	public String androidMain(DBBoard db, String currentPage, Model model, String category){
 //		service.insertBoard();
-		int total = service.total();
-		System.out.println("int total : " + total);
-		Paging pg = new Paging(total, currentPage);
-		db.setStart(pg.getStart());
-		db.setEnd(pg.getEnd());
-		List<DBBoard> list = service.listDB(db);
-		model.addAttribute("list", list);
-		model.addAttribute("pg", pg);
-		return "/database/DBMain";
+		if(category == null || category.equals("")){
+			int total = service.total();
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			db.setStart(pg.getStart());
+			db.setEnd(pg.getEnd());
+			System.out.println("category : " + db.getCategory());
+			List<DBBoard> list = service.listDB(db);
+			model.addAttribute("list", list);
+			model.addAttribute("pg", pg);
+			return "/database/DBMain";
+		}else{
+			int total = service.totalDBCategory(category);
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			db.setStart(pg.getStart());
+			db.setEnd(pg.getEnd());
+			db.setCategory(category);
+			System.out.println("category : " + db.getCategory());
+			List<DBBoard> list = service.listDBCategory(db);
+			model.addAttribute("list", list);
+			model.addAttribute("pg", pg);
+			return "/database/DBMain";
+		}
+		
 	}
 	
 	@RequestMapping(value="DBInsertForm")

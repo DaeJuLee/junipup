@@ -31,12 +31,12 @@ jQuery(function($){
 <p>
 <div class="tab_list m1" align="center">
     <ul style="width:70%">
-    <li class="m1"><a href="#"><span>전체게시판</span></a>
+    <li class="m1"><a href="DBMain.do"><span>전체게시판</span></a>
         <ul>
         <li class="more">› <a href="#">전체게시판 더보기</a></li>
         </ul>
     </li>
-    <li class="m2"><a href="#"><span>기초익히기</span></a>
+    <li class="m2"><a href="DBMain.do?category=기초익히기"><span>기초익히기</span></a>
         <ul>
         <li class="more">› <a href="#">기초익히기 더보기</a></li>
         </ul>
@@ -80,7 +80,7 @@ jQuery(function($){
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-<button type="button" onclick="location.href='DBInsertForm.do?db=${DBInsertForm}'" class="button">글쓰기</button>
+<button type="button" onclick="location.href='DBInsertForm.do'" class="button">글쓰기</button>
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		
 		<%-- <a href="DBMain.do?currentPage=${pg.startPage-pg.pageBlock }" class="pre">이전</a> --%>
