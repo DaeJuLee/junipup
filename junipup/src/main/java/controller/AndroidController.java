@@ -1,16 +1,9 @@
 package controller;
 
-import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import model.AndroidBoard;
-import model.Editor;
-import model.Emp;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,7 +42,6 @@ public class AndroidController {
 	@RequestMapping(value = "androidInsert", method=RequestMethod.POST)
 	public String androidInsert(AndroidBoard android, Model model){
 		android.setContent(android.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
-		
 		int result = service.androidInsert(android);
 		//int bnum = service.androidSelectBnum(android.getNickname());
 		if(result > 0){
@@ -60,15 +52,15 @@ public class AndroidController {
 	}
 	
 	@RequestMapping(value = "androidDetail")
-	public String androidDetail(String title, Model model){
-		AndroidBoard android = service.androidDetail(title);
+	public String androidDetail(int bnum, Model model){
+		AndroidBoard android = service.androidDetail(bnum);
 		model.addAttribute("androidDetail", android);
 		return "/android/androidDetail";
 	}
 	
 	@RequestMapping(value = "androidUpdateForm")
-	public String androidUpdateForm(String title, Model model){
-		AndroidBoard android = service.androidDetail(title);
+	public String androidUpdateForm(int bnum, Model model){
+		AndroidBoard android = service.androidDetail(bnum);
 		model.addAttribute("androidDetail", android);
 		return "/android/androidUpdateForm";
 	}
@@ -90,16 +82,16 @@ public class AndroidController {
 	}
 	
 	@RequestMapping(value = "androidDelete")
-	public String androidDelete(String title, Model model){
-		service.androidDelete(title);
+	public String androidDelete(int bnum, Model model){
+		service.androidDelete(bnum);
 		return "redirect:androidMain.do";
 	}
 	
 	@RequestMapping(value="androidDeleteCheck")
-	public String androidDeleteCheck(String title, Model model){
+	public String androidDeleteCheck(int bnum, Model model){
 		AndroidBoard board = new AndroidBoard();
-		board.setTitle(title);
-		model.addAttribute("title", board);
+		board.setBnum(bnum);
+		model.addAttribute("bnum", board);
 		return "/android/androidDeleteCheck";
 	}
 	
