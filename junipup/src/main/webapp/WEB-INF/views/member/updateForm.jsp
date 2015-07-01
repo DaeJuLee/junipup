@@ -30,7 +30,7 @@
 </head>
 <body>
 
-<form action="memjoin.do" id="login" method="post">
+<form action="memupdate.do" id="login" method="post">
 	<div align="center">		
 	<table class="join_tbl">
 		<colgroup>
@@ -42,7 +42,7 @@
 		<tr><th colspan="2">회원정보수정</th></tr>
 
 		<tr><th>아이디</th>
-			<td  colspan="3"><input type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required" value="${selectmem.id } "></td></tr>
+			<td  colspan="3"><input type="text" name="id" id="memberID" class="inputText" maxlength="12" required="required" value="${member.id }" disabled="disabled"></td></tr>
 		<tr><th>패스워드</th>
 			<td><input type="password" name="password" id="password" class="inputText" required="required"></td></tr>
 		<tr><th>비밀번호확인</th>
@@ -50,11 +50,11 @@
 		<tr><th>닉네입</th>
 			<td colspan="3"><input type="text" name="nickname" id="nickname" class="inputText" required="required"></td></tr>
 		<tr><th>이름</th>
-			<td colspan="3"><input type="text" name="name" id="name" class="inputText" required="required" value="${selectmem.name } "></td></tr>
-		<tr><th>전화번호</th>
+			<td colspan="3"><input type="text" name="name" id="name" class="inputText" required="required" value="${member.name } "></td></tr>
+		<tr><th>전화번호</th> 
 			<td colspan="3"><div id="phone">
 				<input type="hidden" name="phoneNumber" id="phoneNumber">
-				<select name="tel1" id="tel1">
+				<select name="tel1" id="tel1"> 
 				<option>010</option><option>011</option>
 				<option>016</option><option>017</option>
 				<option>018</option><option>019</option>

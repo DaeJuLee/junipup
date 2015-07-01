@@ -24,5 +24,5 @@ public interface MemberDao {
 	//int deletemember(int memberno);
 	//Member check(int memberno);
 	//int update(Member member);
-
+ 
 }

@@ -32,7 +32,7 @@ public class MemberServiceImpl implements MemberService {
 	public Emp selectEname(int empno){
 		return ed.selectEname(empno);
 	}
-	
+	 
 
 	public List<Dept> select() {
 		return dd.select();

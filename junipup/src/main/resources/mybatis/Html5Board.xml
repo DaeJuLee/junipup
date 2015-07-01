@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Html5Board">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="Html5BoardResult" type="Html5Board">
+		<result property="bnum"        column="bnum" />
+		<result property="nickname"    column="nickname" />
+		<result property="title"       column="title" />
+		<result property="mrank"       column="mrank" />
+		<result property="content"     column="content" />
+		<result property="ip"          column="ip" />
+		<result property="hits"        column="hits" />
+		<result property="category"    column="category" />
+		<result property="filesize"    column="filesize"/>
+		<result property="filename"    column="filename" /> 
+		<result property="b_date"      column="b_date" /> 
+	</resultMap>
+
+	<select id="listHtml5" parameterType="Html5Board" resultMap="Html5BoardResult">
+    	select * from Html5
+    	<!-- select * from (select rownum rn, a.* from (select * from Android
+    	order by bnum desc) a) where rn between #{start} and #{end} -->
+	</select>
+	
+	<insert id="html5Insert" parameterType="Html5Board">
+		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
+			select nvl(max(bnum),0)+1 from Html5
+		</selectKey>
+		insert into Html5
+		values (
+		#{bnum}, #{nickname}, #{title}, #{mrank}, sysdate, #{content}, #{ip}, 0, #{filesize},
+		#{filename}, #{category} )
+	</insert>
+	
+	 <select id="html5Detail" parameterType="Html5Board" resultMap="Html5BoardResult">
+   		<![CDATA[select * from Html5 where bnum = #{bnum}]]>
+ 	 </select>
+ 	 
+ 	 <update id="html5Update" parameterType="Html5Board">
+		update Html5 set
+		title = #{title},
+		content = #{content},
+		filesize = #{filesize},
+		filename = #{filename},
+		ip = #{ip}
+		where
+		bnum = #{bnum}
+	</update>
+	<delete id="html5Delete" parameterType="Html5Board">
+		delete from Html5 where bnum = #{bnum}
+	</delete>
+ 	 
+	<!-- <select id="total" resultType="int" >
+		select count(*) from Android
+	</select>
+	
+	<select id="androidDetail" parameterType="String" resultMap="AndroidBoardResult">
+		<![CDATA[select * from Android where title = #{title}]]>
+	</select>
+	
+	
+	<delete id="androidDelete" parameterType="String">
+		delete from Android where title = #{empno}
+	</delete>
+	
+	<update id="androidUpdate" parameterType="AndroidBoard">
+		update Android set
+		title = #{title},
+		content = #{content},
+		filesize = #{filesize},
+		filename = #{filename},
+		ip = #{ip}
+		
+		where
+		title = #{title}
+	</update>
+	
+	<insert id="insertEmpList" parameterType="Emp">
+		insert into emp
+		values (
+		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
+	</insert>
+	 -->
+
+</mapper>

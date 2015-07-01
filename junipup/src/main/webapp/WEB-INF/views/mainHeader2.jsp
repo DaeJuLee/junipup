@@ -18,7 +18,7 @@
 					src="images/junipup${loginUser.mrank }.jpg" width="100px"></a>
 			</div>
 
-		</div>
+		</div>   
 
 		<div id="h3">
 			<fieldset>
@@ -34,9 +34,9 @@
 						<c:choose>
 							<c:when test="${loginUser.id == 'master' }">
 								<a href="adminMain.html">관리자 페이지</a>
-							</c:when>
+				 			</c:when>
 							<c:when test="${loginUser.id != 'master' }">
-								<a href="mypage.html?id=${loginUser.id }">마이 페이지</a>
+								<a href="updateForm.do?id=${loginUser.id }">마이 페이지</a>
 							</c:when>
 						</c:choose>
 					</c:when>

@@ -35,7 +35,7 @@ public class MemberDaoImpl implements MemberDao {
 	public List<EmpDept> listEmp(EmpDept empDept) {
 		return session.selectList("listEmpDept", empDept);
 	}
-	
+	 
 	public Emp selectEname(int empno){
 		return session.selectOne("selectEname", empno);
 	}
