@@ -55,12 +55,12 @@
 <script type="text/javascript">
 	var onModify = function(){
 		var form = $('.viewForm')[0];
-		form.action = 'jspUpdateForm.do';
+		form.action = 'DBUpdateForm.do';
 		form.submit();
 	};
 	
 	var onList = function(){
-		location.href='jspMain.do';
+		location.href='DBMain.do';
 	};
 </script>
 </html>

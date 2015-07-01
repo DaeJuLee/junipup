@@ -30,6 +30,7 @@ public class DBController {
 			List<DBBoard> list = service.listDB(db);
 			model.addAttribute("list", list);
 			model.addAttribute("pg", pg);
+			model.addAttribute("all", "true");
 			return "/database/DBMain";
 		}else{
 			int total = service.totalDBCategory(category);
@@ -42,6 +43,7 @@ public class DBController {
 			List<DBBoard> list = service.listDBCategory(db);
 			model.addAttribute("list", list);
 			model.addAttribute("pg", pg);
+			model.addAttribute("all", "false");
 			return "/database/DBMain";
 		}
 		

@@ -28,6 +28,9 @@ jQuery(function($){
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${all != 'true'}">
+	<input type="hidden" name="category" value="${list.category }">
+</c:if>
 <p>
 <div class="tab_list m1" align="center">
     <ul style="width:70%">
