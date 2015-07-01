@@ -11,7 +11,7 @@ a.btn_b02:focus, .btn_b02:hover {text-decoration:none}
 a.btn_admin {display:inline-block;padding:0 10px;height:23px;border:1px solid #5a94de;background:#ffffff;color:#5a94de;text-decoration:none;line-height:2em;vertical-align:middle} /* 관리자 전용 버튼 */
 a.btn_admin:focus, a.btn_admin:hover {text-decoration:none}
 a.btn_b03 {display:inline-block;padding:0 5px 0;height:23px;border:1px solid #e5e5e5;background:#ffffff;color:#000;text-decoration:none;line-height:1.8em;vertical-align:middle}
-
+ 
 /* 읽기 버튼 */
 #bo_v a.btn_b01 {}
 #bo_v a.btn_b01:focus, #bo_v a.btn_b01:hover {}

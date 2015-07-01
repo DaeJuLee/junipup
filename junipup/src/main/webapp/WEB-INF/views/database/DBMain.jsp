@@ -23,7 +23,7 @@ jQuery(function($){
     }
     tab.find('>ul>li>a').click(onSelectTab).focus(onSelectTab);
 });
-</script>
+</script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>

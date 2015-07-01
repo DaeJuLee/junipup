@@ -26,7 +26,7 @@
 			${jspDetail.bnum }</td>
 		</tr>
 		<tr><th>제목</th>
-			<td><input type="text" name="title" required="required"></td></tr>
+			<td><input type="text" name="title" value="${jspDetail.title }" required="required"></td></tr>
 		<tr><th>별명</th>
 			<td><input type="hidden" name="nickname" value="${jspDetail.nickname }">${jspDetail.nickname }</td></tr>
 		<tr><th>등급</th>

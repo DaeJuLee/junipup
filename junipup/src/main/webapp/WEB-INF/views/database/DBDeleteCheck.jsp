@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" media="all" href="css/deleteCheck.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-
+ 
 </head>
 <body>
 <div class="mw_login open">

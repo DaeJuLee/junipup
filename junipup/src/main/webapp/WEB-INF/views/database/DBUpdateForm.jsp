@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <form action="DBUpdate.do" method="post">
-<body>
+<body> 
 	<table cellspacing="0" border="1" class="table" align="center">
 	<colgroup>
 		<col width="80"><col><col width="80">
