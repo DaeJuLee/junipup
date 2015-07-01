@@ -26,13 +26,13 @@ public class DBDaoImpl implements DBDao {
 		return session.selectList("listDB", db);
 	}
 
-	public DBBoard DBDetail(String title) {
+	public DBBoard DBDetail(int bnum) {
 
-		return session.selectOne("DBDetail", title);
+		return session.selectOne("DBDetail", bnum);
 	}
 
-	public void DBDelete(String title) {
-		session.delete("DBDelete", title);
+	public void DBDelete(int bnum) {
+		session.delete("DBDelete", bnum);
 	}
 
 	public void insertBoard() {

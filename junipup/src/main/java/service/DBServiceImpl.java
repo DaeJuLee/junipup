@@ -29,14 +29,14 @@ public class DBServiceImpl implements DBService{
 	}
 
 	@Override
-	public DBBoard DBDetail(String title) {
+	public DBBoard DBDetail(int bnum) {
 		
-		return dao.DBDetail(title);
+		return dao.DBDetail(bnum);
 	}
 
 	@Override
-	public void DBDelete(String title) {
-		dao.DBDelete(title);
+	public void DBDelete(int bnum) {
+		dao.DBDelete(bnum);
 		
 	}
 

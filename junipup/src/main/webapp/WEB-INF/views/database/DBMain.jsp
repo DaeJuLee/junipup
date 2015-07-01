@@ -73,9 +73,9 @@ jQuery(function($){
 		<c:forEach items="${list }" var="db">
 			<tr>
 				<td>${num }</td>
-				<td>${db.category }</td>
+				<td>${db.category }</td> 
 				<td>${db.nickname }</td>
-				<td><a href="DBDetail.do?title=${db.title}">${db.title }</a></td>
+				<td><a href="DBDetail.do?bnum=${db.bnum}">${db.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>

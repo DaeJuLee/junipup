@@ -19,8 +19,8 @@
 			정말로 삭제 하시겠습니까?
 			<fieldset>
 				<span class="btn_login">
-					<a href="DBDelete.do?title=${title.title }">삭제</a>
-					<a href="DBDetail.do?title=${title.title }">취소</a>
+					<a href="DBDelete.do?bnum=${bnum.bnum }">삭제</a>
+					<a href="DBDetail.do?bnum=${bnum.bnum }">취소</a>
 				</span>
 			</fieldset>
 		</form>

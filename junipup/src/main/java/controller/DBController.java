@@ -63,21 +63,24 @@ public class DBController {
 	}
 	
 	@RequestMapping(value = "DBDetail")
-	public String DBDetail(String title, Model model){
-		DBBoard db = service.DBDetail(title);
+	public String DBDetail(int bnum, Model model){
+		DBBoard db = service.DBDetail(bnum);
 		model.addAttribute("DBDetail", db);
+		model.addAttribute("modify", "true");
 		return "/database/DBDetail";
 	}
 	
-	@RequestMapping(value = "DBUpdateForm")
-	public String DBUpdateForm(String title, Model model){
-		DBBoard db = service.DBDetail(title);
+	@RequestMapping(value = "DBUpdateForm", method = RequestMethod.POST)
+	public String DBUpdateForm(int bnum, Model model){
+		DBBoard db = service.DBDetail(bnum);
 		model.addAttribute("DBDetail", db);
+		model.addAttribute("modify", "true");
 		return "/database/DBUpdateForm";
 	}
 	
 	@RequestMapping(value = "DBUpdate")
-	public String DBUpdate(DBBoard db, Model model){
+	public String DBUpdate(DBBoard db, Model model){	
+		db.setContent(db.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result = service.DBUpdate(db);
 		if(result > 0){
 			return "redirect:DBMain.do";
@@ -87,16 +90,16 @@ public class DBController {
 	}
 	
 	@RequestMapping(value = "DBDelete")
-	public String DBDelete(String title, Model model){
-		service.DBDelete(title);
+	public String DBDelete(int bnum, Model model){
+		service.DBDelete(bnum);
 		return "redirect:DBMain.do";
 	}
 	
 	@RequestMapping(value="DBDeleteCheck")
-	public String DBDeleteCheck(String title, Model model){
+	public String DBDeleteCheck(int bnum, Model model){
 		DBBoard board = new DBBoard();
-		board.setTitle(title);
-		model.addAttribute("title", board);
+		board.setBnum(bnum);
+		model.addAttribute("bnum", board);
 		return "/database/DBDeleteCheck";
 	}
 }

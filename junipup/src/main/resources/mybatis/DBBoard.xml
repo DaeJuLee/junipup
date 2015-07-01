@@ -39,8 +39,8 @@
 		select count(*) from DB where category = #{category}
 	</select>
 	
-	<select id="DBDetail" parameterType="String" resultMap="DBBoardResult">
-		<![CDATA[select * from DB where title = #{title}]]>
+	<select id="DBDetail" parameterType="int" resultMap="DBBoardResult">
+		<![CDATA[select * from DB where bnum = #{bnum}]]>
 	</select>
 	
 	<insert id="DBInsert" parameterType="DBBoard">
@@ -49,24 +49,24 @@
 		</selectKey>
 		insert into DB
 		values (
-		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank, jdbcType=VARCHAR} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
-		#{filename}, #{category} )
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
 	</insert>
 	
-	<delete id="DBDelete" parameterType="String">
-		delete from DB where title = #{bnum}
+	<delete id="DBDelete" parameterType="int">
+		delete from DB where bnum = #{bnum}
 	</delete>
 	
 	<update id="DBUpdate" parameterType="DBBoard">
 		update DB set
 		title = #{title},
 		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
 		
 		where
-		title = #{title}
+		bnum = #{bnum}
 	</update>
 	
 	<!-- <insert id="insertEmpList" parameterType="Emp">

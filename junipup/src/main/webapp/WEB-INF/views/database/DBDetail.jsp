@@ -45,14 +45,22 @@
 	</tbody>
 	</table>		
 
-
-
-<input type="button" value="목록보기" 
-		onclick="location.href='DBMain.do?=${DBDetail}'" class="button">
-<input type="button" value="수정" 
-		onclick="location.href='DBUpdateForm.do?title=${DBDetail.title }'" class="button">
-<input type="button" value="삭제" 
-		onclick="location.href='DBDeleteCheck.do?title=${DBDetail.title}'" class="button">
+<form class="viewForm" method="post">
+			<input type="hidden" name="bnum" value="${DBDetail.bnum }" />
+			<button type="button" onclick="onModify()" class="btn btn-primary">수정</button>
+			<button type="button" onclick="onList()" class="btn btn-primary">목록</button>
+		</form>	
 		
 </body>
+<script type="text/javascript">
+	var onModify = function(){
+		var form = $('.viewForm')[0];
+		form.action = 'jspUpdateForm.do';
+		form.submit();
+	};
+	
+	var onList = function(){
+		location.href='jspMain.do';
+	};
+</script>
 </html>
