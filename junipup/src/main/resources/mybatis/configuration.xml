@@ -3,19 +3,21 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-
+		<typeAlias alias="AndroidBoard" type="model.AndroidBoard" />
+		<typeAlias alias="Html5Board" type="model.Html5Board" />
 		<typeAlias alias="DBBoard" type="model.DBBoard" />
 		<typeAlias alias="JavaBoard" type="model.JavaBoard" />
 		<typeAlias alias="Member" type="model.Member" />
 		<typeAlias alias="JspBoard" type="model.JspBoard" />
-		<typeAlias alias="AndroidBoard" type="model.AndroidBoard" />
+		<typeAlias alias="JQueryBoard" type="model.JQueryBoard" />
 	</typeAliases>
 	<mappers>
-
+		<mapper resource="mybatis/Html5Board.xml" />
+		<mapper resource="mybatis/AndroidBoard.xml" />
 		<mapper resource="mybatis/DBBoard.xml" />
 		<mapper resource="mybatis/JavaBoard.xml" />
 		<mapper resource="mybatis/Member.xml" />
 		<mapper resource="mybatis/JspBoard.xml" />
-		<mapper resource="mybatis/AndroidBoard.xml" />
+		<mapper resource="mybatis/JQueryBoard.xml" />
 	</mappers>
 </configuration>
