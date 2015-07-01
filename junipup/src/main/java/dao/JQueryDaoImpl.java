@@ -32,7 +32,7 @@ public class JQueryDaoImpl implements JQueryDao {
 		return session.delete("JQueryDelete", bnum);
 	}
 	
-	public int total() {
-		return session.selectOne("total");
+	public int JQueryTotal() {
+		return session.selectOne("totalJQuery");
 	}
 }

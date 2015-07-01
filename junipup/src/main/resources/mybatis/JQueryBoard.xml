@@ -55,7 +55,7 @@
 		delete from JQuery where bnum = #{bnum}
 	</delete> 
  	 
-	<select id="total" resultType="int" >
+	<select id="totalJQuery" resultType="int" >
 		select count(*) from JQuery
 	</select>
 

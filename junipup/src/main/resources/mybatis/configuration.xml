@@ -10,6 +10,7 @@
 		<typeAlias alias="Member" type="model.Member" />
 		<typeAlias alias="JspBoard" type="model.JspBoard" />
 		<typeAlias alias="JQueryBoard" type="model.JQueryBoard" />
+		<typeAlias alias="AdminBoard" type="model.AdminBoard" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/Html5Board.xml" />
@@ -19,5 +20,6 @@
 		<mapper resource="mybatis/Member.xml" />
 		<mapper resource="mybatis/JspBoard.xml" />
 		<mapper resource="mybatis/JQueryBoard.xml" />
+		<mapper resource="mybatis/AdminBoard.xml" />
 	</mappers>
 </configuration>

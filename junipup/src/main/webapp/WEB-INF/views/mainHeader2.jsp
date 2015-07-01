@@ -33,7 +33,7 @@
 							환영합니다. | </font>
 						<c:choose>
 							<c:when test="${USER_KEY.id == 'master' }">
-								<a href="adminMain.html">관리자 페이지</a>
+								<a href="adminMain.do">관리자 페이지</a>
 				 			</c:when>
 							<c:when test="${USER_KEY.id != 'master' }">
 								<a href="updateForm.do?id=${USER_KEY.id }">마이 페이지</a>
@@ -64,7 +64,7 @@
 					</ul></li>
 
 				<!-- jquery -->
-				<li class="jQuery"><a href="#">jQuery</a>
+				<li class="jQuery"><a href="JQueryMain.do">jQuery</a>
 					<ul>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
@@ -98,7 +98,7 @@
 						<li><a href="#">Instagram</a></li>
 						<li><a href="#"></a></li>
 					</ul></li>
-				<li class="Html5"><a href="#">Html5</a>
+				<li class="Html5"><a href="html5Main.do">Html5</a>
 					<ul>
 						<li><a href="#">Facebook</a></li>
 						<li><a href="#">Twitter</a></li>
