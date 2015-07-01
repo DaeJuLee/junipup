@@ -19,13 +19,13 @@
 			정말로 삭제 하시겠습니까?
 			<fieldset>
 				<span class="btn_login"> 
-					<a href="jspDelete.do?title=${title.title }">삭제</a>
-					<a href="jspDetail.do?title=${title.title }">취소</a>
+					<a href="jspDelete.do?bnum=${bnum.bnum }">삭제</a>
+					<a href="jspDetail.do?bnum=${bnum.bnum }">취소</a>
 				</span>
 			</fieldset>
 		</form>
 	</div>
 </div>
-
+ 
 </body>
 </html>

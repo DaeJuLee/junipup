@@ -5,14 +5,19 @@ id varchar2(30),
 password varchar2(30),
 name varchar2(30),
 phoneNumber number,
+email varchar2(50),
 mrank number(2),
 usePoint number,
 maxPoint number,
 regDate date,
 loginDate date
 ); 
-insert into member (nickname, id) values ('master', 'master');
+--insert into member (nickname, id) values ('master', 'master');
+--insert into member (nickname, id, password, mrank) values ('nickname', 'id', 'id', 1);
+insert into member values ('이주대씨', 'aa.jpg', 'dleown', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
+--drop table member;
 select * from member where id='master';
+select * from member;
 --android--
 create table Android(
 bnum number primary key,
@@ -102,7 +107,7 @@ filesize number,
 filename varchar2(200),
 category varchar2(100)
 );
-select * from jsp;
+select * from jsp where bnum = 4008;
 create table JspComment(
 commentNum varchar2(50) primary key,
 bnum varchar2(50),

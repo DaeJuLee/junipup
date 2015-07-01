@@ -16,7 +16,7 @@
 <script src="script.js"></script>
 </head>
 <body> 
-<p>
+<p> 
 <c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
 		<tr height="40px">
@@ -30,12 +30,12 @@
 				<td>${num }</td>
 				<td>${jsp.category }</td>
 				<td>${jsp.nickname }</td>
-				<td><a href="jspDetail.do?title=${jsp.title}">${jsp.title }</a></td>
+				<td><a href="jspDetail.do?bnum=${jsp.bnum}">${jsp.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-	<button type="button" onclick="location.href='jspInsertForm.do?jsp=${jspInsertForm}'" class="button">글쓰기</button>
+	<button type="button" onclick="location.href='jspInsertForm.do'" class="button">글쓰기</button>
 	
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		

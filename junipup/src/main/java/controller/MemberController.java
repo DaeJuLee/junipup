@@ -45,6 +45,7 @@ public class MemberController {
 			return "forward:/member/joinForm.do";
 		} 
 	}
+	//로그인할때 값값값값
 	@RequestMapping(value="memlogin", method=RequestMethod.GET)
 	public String memlogin(Member member, Model model, HttpSession session) {
 		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());	

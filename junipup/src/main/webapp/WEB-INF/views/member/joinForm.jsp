@@ -34,10 +34,6 @@
 
 $(function() {
 	var id = document.getElementById("id");
-	/* if(id.value.length > 2)
-	{
-		
-	} */
 	$("#idchk").click(function() {
 		 /* alert("쿼리가 먹히나"); */
 		 /* alert(id.value.length); */

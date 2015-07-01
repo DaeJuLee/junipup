@@ -26,12 +26,12 @@ public class JspServiceImpl implements JspService{
 		return dao.listJsp(jsp);
 	}
 
-	public JspBoard jspDetail(String title) {
-		return dao.jspDetail(title);
+	public JspBoard jspDetail(int bnum) {
+		return dao.jspDetail(bnum);
 	}
 
-	public void jspDelete(String title) {
-		dao.jspDelete(title);		
+	public void jspDelete(int bnum) {
+		dao.jspDelete(bnum);		
 	}
 
 	public void insertBoard() {

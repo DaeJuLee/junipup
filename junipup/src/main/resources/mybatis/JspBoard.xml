@@ -30,8 +30,8 @@
 		select count(*) from Jsp
 	</select>
 
-	<select id="jspDetail" parameterType="String" resultMap="JspBoardResult">
-		<![CDATA[select * from Jsp where title = #{title}]]>
+	<select id="jspDetail" parameterType="int" resultMap="JspBoardResult">
+		<![CDATA[select * from Jsp where bnum = #{bnum}]]>
 	</select>
 	
 	<insert id="jspInsert" parameterType="JspBoard">
@@ -40,24 +40,24 @@
 		</selectKey>
 		insert into jsp
 		values (
-		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank, jdbcType=VARCHAR} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
-		#{filename}, #{category} )
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
 	</insert>
 	
-	<delete id="jspDelete" parameterType="String">
-		delete from jsp where title = #{bnum}
+	<delete id="jspDelete" parameterType="int">
+		delete from jsp where bnum = #{bnum}
 	</delete>
 	
 	<update id="jspUpdate" parameterType="JspBoard">
 		update jsp set
 		title = #{title},
 		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
-		
+		category = #{category},
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
 		where
-		title = #{title}
+		bnum = #{bnum}
 	</update>
 	 
 	<!-- <insert id="insertEmpList" parameterType="Emp">

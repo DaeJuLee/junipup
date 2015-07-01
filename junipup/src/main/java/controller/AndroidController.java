@@ -48,9 +48,12 @@ public class AndroidController {
 	
 	@RequestMapping(value = "androidInsert", method=RequestMethod.POST)
 	public String androidInsert(AndroidBoard android, Model model){
+		android.setContent(android.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
+		
 		int result = service.androidInsert(android);
+		//int bnum = service.androidSelectBnum(android.getNickname());
 		if(result > 0){
-			return "redirect:androidMain.do";
+			return "redirect:androidUpdateForm.do?"+android.getBnum();
 		}else{
 			return "/android/androidInsertForm";
 		}

@@ -25,12 +25,12 @@ public class JspDaoImpl implements JspDao{
 		return session.selectList("listJsp", jsp);
 	}
 
-	public JspBoard jspDetail(String title) {
-		return session.selectOne("jspDetail", title);
+	public JspBoard jspDetail(int bnum) {
+		return session.selectOne("jspDetail", bnum);
 	}
 
-	public void jspDelete(String title) {
-		session.delete("jspDelete", title);		
+	public void jspDelete(int bnum) {
+		session.delete("jspDelete", bnum);		
 	}
 
 	public void insertBoard() {

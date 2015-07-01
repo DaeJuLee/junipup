@@ -15,7 +15,7 @@
 		<div id="h2">
 			<div align="center">
 				<a href="main.do"><img
-					src="images/junipup${loginUser.mrank }.jpg" width="100px"></a>
+					src="images/junipup${USER_KEY.mrank }.jpg" width="100px"></a>
 			</div>
 
 		</div>   
@@ -28,15 +28,15 @@
 		<div id="h4">
 			<p>
 				<c:choose>
-					<c:when test="${not empty loginUser}">
-						<font color="green"><c:out value="${loginUser.nickname}" />님,
+					<c:when test="${not empty USER_KEY}">
+						<font color="green"><c:out value="${USER_KEY.nickname}" />님,
 							환영합니다. | </font>
 						<c:choose>
-							<c:when test="${loginUser.id == 'master' }">
+							<c:when test="${USER_KEY.id == 'master' }">
 								<a href="adminMain.html">관리자 페이지</a>
 				 			</c:when>
-							<c:when test="${loginUser.id != 'master' }">
-								<a href="updateForm.do?id=${loginUser.id }">마이 페이지</a>
+							<c:when test="${USER_KEY.id != 'master' }">
+								<a href="updateForm.do?id=${USER_KEY.id }">마이 페이지</a>
 							</c:when>
 						</c:choose>
 					</c:when>
