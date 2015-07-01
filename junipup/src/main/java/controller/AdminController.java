@@ -19,7 +19,7 @@ public class AdminController {
 	
 	@RequestMapping(value="adminMain")
 	public String adminMain(Model model, AdminBoard adminboard, String currentPage) {
-		as.insertBoard();
+		//as.insertBoard();
 		int total = as.adminTotal();
 		System.out.println("int total : " + total);
 		Paging pg = new Paging(total, currentPage);

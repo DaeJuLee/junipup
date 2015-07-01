@@ -24,8 +24,7 @@
 	</resultMap>
 
 	<select id="listAdmin" parameterType="AdminBoard" resultMap="AdminBoardResult">
-	select * from (select rownum rn, a.* from (select * from member
-    	order by bnum desc) a) where rn between #{start} and #{end}
+	select * from (select rownum rn, a.* from (select * from member) a) where rn between #{start} and #{end}
 	</select>
 	
 	<insert id="adminInsert" parameterType="AdminBoard">
