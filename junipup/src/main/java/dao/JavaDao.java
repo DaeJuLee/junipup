@@ -8,8 +8,8 @@ public interface JavaDao {
 	public int javaInsert(JavaBoard java);
 	int total();
 	List<JavaBoard> listJava(JavaBoard java);
-	public JavaBoard javaDetail(String title);
-	public void javaDelete(String title);
+	public JavaBoard javaDetail(int bnum);
+	public void javaDelete(int bnum);
 	public void insertBoard();
 	public int javaUpdate(JavaBoard java);
 }

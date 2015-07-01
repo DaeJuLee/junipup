@@ -46,10 +46,7 @@
 	<div class="buttonDiv">
 			<c:if test="${modify == 'true'}">
 				<button type="button" class="btn btn-primary" onclick="onModify()">수정</button>
-			</c:if>
-			<c:if test="${modify != 'true'}">
-				<button type="button" class="btn btn-primary" onclick="onWrite()">쓰기</button>
-			</c:if>
+			</c:if>			
 			 <button type="button" class="btn btn-primary" onclick="history.go(-1);"> 취소</button>
 			 <%-- <input type="hidden" name="boardid" value="${USER_KEY.id}"/>  --%>
 	</div>

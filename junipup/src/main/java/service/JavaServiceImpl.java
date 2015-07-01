@@ -26,13 +26,13 @@ public class JavaServiceImpl implements JavaService{
 	}
 
 	
-	public JavaBoard javaDetail(String title) {
-		return dao.javaDetail(title);
+	public JavaBoard javaDetail(int bnum) {
+		return dao.javaDetail(bnum);
 	}
 
 	
-	public void javaDelete(String title) {
-		dao.javaDelete(title);
+	public void javaDelete(int bnum) {
+		dao.javaDelete(bnum);
 		
 	}
 
