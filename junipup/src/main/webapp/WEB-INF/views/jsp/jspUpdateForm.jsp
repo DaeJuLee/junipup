@@ -13,7 +13,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 <div class="container">
 <form action="jspUpdate.do" id="boardWriteForm" method="post"> 
 	<table cellspacing="0" border="1" class="table" align="center">

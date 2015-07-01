@@ -16,7 +16,7 @@
 <script src="script.js"></script>
 </head>
 <body> 
-<p>
+<p> 
 <c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
 		<tr height="40px">

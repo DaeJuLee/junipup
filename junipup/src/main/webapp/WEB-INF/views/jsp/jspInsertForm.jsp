@@ -77,7 +77,7 @@ var onWrite = function(){
 	boardWriteForm.action ="jspInsert.do";              
 	boardWriteForm.submit(); 
 };
-
+ 
 var onModify = function(){
 	oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
 	var boardWriteForm = document.getElementById("boardWriteForm");  
