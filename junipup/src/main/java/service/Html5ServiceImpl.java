@@ -35,4 +35,8 @@ public class Html5ServiceImpl implements Html5Service {
 	public int html5Delete(int bnum) {
 		return hd.html5Delete(bnum);
 	}
+
+	public int html5Total() {
+		return hd.html5Total();
+	}
 }

@@ -6,8 +6,6 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import model.AndroidBoard;
 import model.Html5Board;
 @Repository
 public class Html5DaoImpl implements Html5Dao{
@@ -19,8 +17,8 @@ public class Html5DaoImpl implements Html5Dao{
 	}
 	
 	public void insertBoard() {
-		for(int i = 1 ; i < 4000 ; i++){
-			AndroidBoard board = new AndroidBoard();
+		for(int i = 1 ; i < 500 ; i++){
+			Html5Board board = new Html5Board();
 			board.setCategory("카"+i);
 			board.setTitle("제"+i);
 			board.setContent("내"+i);
@@ -30,7 +28,7 @@ public class Html5DaoImpl implements Html5Dao{
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
 
-			session.insert("html5Insert", board);
+			session.insert("insertHtml5", board);
 		}
 	}
 
@@ -48,6 +46,10 @@ public class Html5DaoImpl implements Html5Dao{
 
 	public int html5Delete(int num) {
 		return session.delete("html5Delete", num);
+	}
+
+	public int html5Total() {
+		return session.selectOne("totalHtml5");
 	}
 
 }

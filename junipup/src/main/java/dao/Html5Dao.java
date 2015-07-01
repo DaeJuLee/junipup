@@ -11,4 +11,5 @@ public interface Html5Dao {
 	int html5Update(Html5Board html5);
 	Html5Board html5Detail(int bnum);
 	int html5Delete(int num);
+	int html5Total();
 }

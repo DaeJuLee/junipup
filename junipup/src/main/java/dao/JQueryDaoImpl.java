@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+
 import model.JQueryBoard;
 
 import org.apache.ibatis.session.SqlSession;
@@ -32,7 +33,24 @@ public class JQueryDaoImpl implements JQueryDao {
 		return session.delete("JQueryDelete", bnum);
 	}
 	
-	public int total() {
-		return session.selectOne("total");
+	public int JQueryTotal() {
+		return session.selectOne("totalJQuery");
+	}
+
+	public void insertBoard() {
+		for(int i = 1 ; i < 500 ; i++){
+			JQueryBoard board = new JQueryBoard();
+			board.setCategory("카"+i);
+			board.setTitle("제"+i);
+			board.setContent("내"+i);
+			board.setFilename("파일이름"+i);
+			board.setFilesize(i);
+			board.setIp("1"+i);
+			board.setNickname("닉"+i);
+			board.setMrank("랭"+i);
+
+			session.insert("insertJQuery", board);
+		}
+		
 	}
 }

@@ -22,9 +22,8 @@
 	</resultMap>
 
 	<select id="listHtml5" parameterType="Html5Board" resultMap="Html5BoardResult">
-    	select * from Html5
-    	<!-- select * from (select rownum rn, a.* from (select * from Android
-    	order by bnum desc) a) where rn between #{start} and #{end} -->
+	select * from (select rownum rn, a.* from (select * from Html5
+    	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
 	<insert id="html5Insert" parameterType="Html5Board">
@@ -55,36 +54,7 @@
 		delete from Html5 where bnum = #{bnum}
 	</delete>
  	 
-	<!-- <select id="total" resultType="int" >
-		select count(*) from Android
+	<select id="totalHtml5" resultType="int" >
+		select count(*) from Html5
 	</select>
-	
-	<select id="androidDetail" parameterType="String" resultMap="AndroidBoardResult">
-		<![CDATA[select * from Android where title = #{title}]]>
-	</select>
-	
-	
-	<delete id="androidDelete" parameterType="String">
-		delete from Android where title = #{empno}
-	</delete>
-	
-	<update id="androidUpdate" parameterType="AndroidBoard">
-		update Android set
-		title = #{title},
-		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
-		
-		where
-		title = #{title}
-	</update>
-	
-	<insert id="insertEmpList" parameterType="Emp">
-		insert into emp
-		values (
-		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
-	</insert>
-	 -->
-
 </mapper>
