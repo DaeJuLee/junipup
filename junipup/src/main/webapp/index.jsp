@@ -8,7 +8,7 @@
 </head>
 <body>
 <%
-	response.sendRedirect("main.do");
+	response.sendRedirect("adminMain.do");
 	//response.sendRedirect("pracmain.do");
 	//response.sendRedirect("androidDeleteCheck.do");
 	//response.sendRedirect("list.do");

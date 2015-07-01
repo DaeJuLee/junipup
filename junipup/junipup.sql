@@ -18,6 +18,7 @@ insert into member values ('이주대씨', 'aa.jpg', 'dleown', '1', '이대주',
 --drop table member;
 select * from member where id='master';
 select * from member;
+
 --android--
 create table Android(
 bnum number primary key,

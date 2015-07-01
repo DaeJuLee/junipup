@@ -14,5 +14,12 @@ public class AdminServiceImpl implements AdminService{
 	public List<AdminBoard> adminMain(AdminBoard adminboard) {
 		return ad.adminMain(adminboard);
 	}
+	public void insertBoard() {
+		ad.insertBoard();
+		
+	}
+	public int adminTotal() {
+		return ad.adminTotal();
+	}
 
 }

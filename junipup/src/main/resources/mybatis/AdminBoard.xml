@@ -14,6 +14,7 @@
 		<result property="password"    column="password" />
 		<result property="name"        column="name" />
 		<result property="phoneNumber" column="phoneNumber" />
+		<result property="email"       column="email" />
 		<result property="mrank"       column="mrank" />
 		<result property="usePoint"    column="usePoint" />
 		<result property="maxPoint"    column="maxPoint"/>
@@ -23,11 +24,21 @@
 	</resultMap>
 
 	<select id="listAdmin" parameterType="AdminBoard" resultMap="AdminBoardResult">
-    	select * from Admin
-    	<!-- select * from (select rownum rn, a.* from (select * from Android
-    	order by bnum desc) a) where rn between #{start} and #{end} -->
+	select * from (select rownum rn, a.* from (select * from member
+    	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
+	
+	<insert id="adminInsert" parameterType="AdminBoard">
+		insert into member
+		values (
+		#{nickname}, #{photo}, #{id}, #{password} , #{name}, #{phoneNumber},
+		#{email}, #{mrank}, #{usePoint}, #{maxPoint}, sysdate, sysdate )
+	</insert>
 
+	<select id="totalAdmin" resultType="int" >
+		select count(*) from member
+	</select>
+	
 <!-- 	<delete id="html5Delete" parameterType="Html5Board">
 		delete from Html5 where bnum = #{bnum}
 	</delete> -->

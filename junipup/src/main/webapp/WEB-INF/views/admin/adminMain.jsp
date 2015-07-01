@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <c:set var="num" value="${pg.total - pg.start +1}" /> --%>
+<c:set var="num" value="${pg.total - pg.start +1}" />
 <h2>목록</h2>
 <table>
 	<tr>
@@ -19,11 +19,12 @@
 		<th>암호</th>
 		<th>이름</th>
 		<th>연락처</th>
+		<th>이메일</th>
 		<th>등급</th>
 		<th>사용포인트</th>
 		<th>최대포인트</th>
 		<th>날짜</th>
-		<th>로그인날짜</th>
+		<th>출석도장</th>
 	</tr>
 	<c:forEach var="admin" items="${adminMain }">
 		<tr>
@@ -35,28 +36,18 @@
 			<td>${admin.password }</td>
 			<td>${admin.name }</td>
 			<td>${admin.phoneNumber }</td>
+			<td>${admin.email }</td>
 			<td>${admin.mrank }</td>
 			<td>${admin.usePoint }</td>
 			<td>${admin.maxPoint }</td>
 			<td>${admin.regDate}</td>
 			<td>${admin.loginDate}</td>
-			
-<!-- 			private String nickname;
-	private String photo;
-	private String id;
-	private String password;
-	private String name;
-	private int phoneNumber;
-	private int mrank;
-	private int usePoint;
-	private int maxPoint;
-	private Date regDate;
-	private Date loginDate; -->
+
 		</tr>
-		<%-- <c:set var="num" value="${num-1 }" /> --%>
+		<c:set var="num" value="${num-1 }" /> 
 	</c:forEach>
 </table>
-<%-- <c:if test="${pg.startPage > pg.pageBlock}">
+ <c:if test="${pg.startPage > pg.pageBlock}">
 		<a href="adminMain.do?currentPage=${pg.startPage-pg.pageBlock }">[이전]</a>
 	</c:if>
 
@@ -67,7 +58,7 @@
 
 	<c:if test="${pg.endPage < pg.totalPage }">
 		<a href="adminMain.do?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
-	</c:if> --%>
+	</c:if>
 
 </body>
 </html>
