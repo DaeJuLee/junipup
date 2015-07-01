@@ -31,7 +31,7 @@
 	</select>
 
 	<select id="javaDetail" parameterType="String" resultMap="JavaBoardResult">
-		<![CDATA[select * from Java where title = #{title}]]>
+		<![CDATA[select * from Java where bnum = #{bnum}]]>
 	</select>
 	
 	<insert id="javaInsert" parameterType="JavaBoard">
@@ -40,24 +40,24 @@
 		</selectKey>
 		insert into Java
 		values (
-		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank, jdbcType=VARCHAR} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
-		#{filename}, #{category} )
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
 	</insert>
 	
 	<delete id="javaDelete" parameterType="String">
-		delete from java where title = #{bnum}
+		delete from java where bnum = #{bnum}
 	</delete>
 	
 	<update id="javaUpdate" parameterType="JavaBoard">
 		update java set
 		title = #{title},
 		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
-		
+		category = #{category},
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
 		where
-		title = #{title}
+		bnum = #{bnum}
 	</update>
 	 
 	<!-- <insert id="insertEmpList" parameterType="Emp">

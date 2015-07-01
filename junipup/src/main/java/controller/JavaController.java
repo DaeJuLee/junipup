@@ -48,21 +48,23 @@ public class JavaController {
 	}
 	
 	@RequestMapping(value = "javaDetail")
-	public String javaDetail(String title, Model model){
-		JavaBoard java = service.javaDetail(title);
+	public String javaDetail(int bnum, Model model){
+		JavaBoard java = service.javaDetail(bnum);
 		model.addAttribute("javaDetail", java);
 		return "/java/javaDetail";
 	}
 	
-	@RequestMapping(value = "javaUpdateForm")
-	public String javaUpdateForm(String title, Model model){
-		JavaBoard java = service.javaDetail(title);
+	@RequestMapping(value = "javaUpdateForm", method = RequestMethod.POST)
+	public String javaUpdateForm(int bnum, Model model){
+		JavaBoard java = service.javaDetail(bnum);
 		model.addAttribute("javaDetail", java);
+		model.addAttribute("modify", "true");
 		return "/java/javaUpdateForm";
 	}
 	
 	@RequestMapping(value = "javaUpdate")
 	public String javaUpdate(JavaBoard java, Model model){
+		java.setContent(java.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result = service.javaUpdate(java);
 		if(result > 0){
 			return "redirect:javaMain.do";
@@ -72,15 +74,15 @@ public class JavaController {
 	}
 	
 	@RequestMapping(value = "javaDelete")
-	public String javaDelete(String title, Model model){
-		service.javaDelete(title);
+	public String javaDelete(int bnum, Model model){
+		service.javaDelete(bnum);
 		return "redirect:javaMain.do";
 	}
 	
 	@RequestMapping(value="javaDeleteCheck")
-	public String javaDeleteCheck(String title, Model model){
+	public String javaDeleteCheck(int bnum, Model model){
 		JavaBoard java = new JavaBoard();
-		java.setTitle(title);
+		java.setBnum(bnum);
 		model.addAttribute("title", java);
 		return "/java/javaDeleteCheck";
 	}

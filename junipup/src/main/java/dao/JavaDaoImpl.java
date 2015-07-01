@@ -26,12 +26,12 @@ public class JavaDaoImpl implements JavaDao {
 		return session.selectList("listJava", java);
 	}
 
-	public JavaBoard javaDetail(String title) {
-		return session.selectOne("javaDetail", title);
+	public JavaBoard javaDetail(int bnum) {
+		return session.selectOne("javaDetail", bnum);
 	}
 	
-	public void javaDelete(String title) {
-		session.delete("javaDelete", title);
+	public void javaDelete(int bnum) {
+		session.delete("javaDelete", bnum);
 	}
 
 	public void insertBoard() {
