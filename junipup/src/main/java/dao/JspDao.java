@@ -7,8 +7,8 @@ public interface JspDao {
 	public int jspInsert(JspBoard jsp);
 	int total();
 	List<JspBoard> listJsp(JspBoard jsp);
-	public JspBoard jspDetail(String title);
-	public void jspDelete(String title);
+	public JspBoard jspDetail(int bnum);
+	public void jspDelete(int bnum);
 	public void insertBoard();
 	public int jspUpdate(JspBoard jsp);
 }

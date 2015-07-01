@@ -22,32 +22,26 @@
 	<colgroup>
 		<col width="80"><col><col width="80">
 		<col width="150"><col width="80"><col width="150">
-	</colgroup>		
+	</colgroup>	
 		<tr><th>제목</th>
 			<td><input type="text" name="title" required="required"></td></tr>
 		<tr><th>별명</th>
-			<td><input type="hidden" name="nickname" required="required"></td></tr>
+			<td><input type="hidden" name="nickname" value="${USER_KEY.nickname }">${USER_KEY.nickname }</td></tr>
 		<tr><th>등급</th>
-			<td><input type="hidden" name="mrank" required="required"></td></tr>
-		<tr><th>ip</th>
-			<td><input type="hidden" name="ip" required="required"></td></tr>
-		<tr><th>파일크기</th>
-			<td><input type="text" name="filesize" required="required"></td>
-		<tr><th>파일이름</th>
-			<td><input type="text" name="filename" required="required"></td>
+			<td><input type="hidden" name="mrank" value="${USER_KEY.mrank }" required="required">${USER_KEY.mrank }</td></tr>
 		<tr><th>카테고리</th>
 			<td><select name="category">
 				<option value="기초익히기">기초익히기</option>
 				<option value="등급올리기">등급올리기</option>
 				<option value="질문게시판">질문게시판</option>
 				<option value="응용게시판">응용게시판</option>
-				</select></td>
+				</select></td></tr>
 		<tr><th>내용</th>
 			<td><textarea rows="10" cols="50" id="txtContent" 
-			name="content" required="required" style="width:100%;"></textarea></td>
+			name="content" required="required" style="width:100%;"></textarea></td></tr>
 	</table>
 	<input type="button" value="목록보기" 
-		onclick="location.href='jspMain.do?=${jspDetail}'" class="button">
+		onclick="location.href='jspMain.do'" class="button">
 	<div class="buttonDiv">
 			<c:if test="${modify == 'true'}">
 				<button type="button" class="btn btn-primary" onclick="onModify()">수정</button>
@@ -56,7 +50,7 @@
 				<button type="button" class="btn btn-primary" onclick="onWrite()">쓰기</button>
 			</c:if>
 			 <button type="button" class="btn btn-primary" onclick="history.go(-1);"> 취소</button>
-			 <input type="hidden" name="boardid" value="${board.boardid}"/> 
+			 <%-- <input type="hidden" name="boardid" value="${USER_KEY.id}"/>  --%>
 	</div>
 </form>
 </div>
@@ -81,7 +75,7 @@ var onWrite = function(){
 	oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
 	var boardWriteForm = document.getElementById("boardWriteForm");  
 	boardWriteForm.action ="jspInsert.do";              
-	boardWriteForm.submit();  
+	boardWriteForm.submit(); 
 };
 
 var onModify = function(){

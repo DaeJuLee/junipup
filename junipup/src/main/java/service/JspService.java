@@ -8,8 +8,8 @@ public interface JspService {
 	public int jspInsert(JspBoard jsp);
 	int total();
 	List<JspBoard> listJsp(JspBoard jsp);
-	JspBoard jspDetail(String title);
-	public void jspDelete(String title);
+	JspBoard jspDetail(int bnum);
+	public void jspDelete(int bnum);
 	public void insertBoard();
 	public int jspUpdate(JspBoard jsp);
 }
