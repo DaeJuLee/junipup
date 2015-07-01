@@ -1,7 +1,8 @@
 .tbl,.tbl th,.tbl td{
 					border:0
 					}
-.tbl{width:70%;
+.tbl{width:1000px;
+	margin: 15px 130px 10px 130px;
 	border-bottom:2px solid #dcdcdc;
 	font-family:Tahoma;font-size:11px;
 	text-align:center
