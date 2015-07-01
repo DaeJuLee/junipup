@@ -11,4 +11,5 @@ public interface JQueryDao {
 	int jQueryUpdate(JQueryBoard jquery);
 	int JQueryDelete(int bnum);
 	int JQueryTotal();
+	public void insertBoard();
 }

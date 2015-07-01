@@ -36,4 +36,9 @@ public class JQueryServiceImpl implements JQueryService {
 	public int JQueryTotal() {
 		return jd.JQueryTotal();
 	}
+
+	public void insertBoard() {
+		jd.insertBoard();
+		
+	}
 }

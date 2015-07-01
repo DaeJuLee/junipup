@@ -20,7 +20,7 @@ public class JQueryController {
 	
 	@RequestMapping(value="JQueryMain")
 	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage) {
-//		hs.insertBoard();
+		//js.insertBoard();
 		int total = js.JQueryTotal();
 		System.out.println("int total : " + total);
 		Paging pg = new Paging(total, currentPage);

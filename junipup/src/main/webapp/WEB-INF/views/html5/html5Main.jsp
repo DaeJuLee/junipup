@@ -10,6 +10,7 @@
 </head>
 <body>
 <a href="html5InsertForm.do">글쓰기</a>
+<c:set var="num" value="${pg.total - pg.start +1}" />
 <h2>목록</h2>
 <table>
 	<tr>
@@ -40,7 +41,20 @@
 			<td>${Html5.filename }</td>
 			<td>${Html5.category}</td>
 		</tr>
+		<c:set var="num" value="${num-1 }" />
 	</c:forEach>
 </table>
+<c:if test="${pg.startPage > pg.pageBlock}">
+		<a href="html5Main.do?currentPage=${pg.startPage-pg.pageBlock }">[이전]</a>
+	</c:if>
+
+	<c:forEach var="pg" begin="${pg.startPage }" end="${pg.endPage }"
+		step="1">
+		<a href="html5Main.do?currentPage=${pg }">[${pg }]</a>
+	</c:forEach>
+
+	<c:if test="${pg.endPage < pg.totalPage }">
+		<a href="html5Main.do?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
+	</c:if>
 </body>
 </html>
