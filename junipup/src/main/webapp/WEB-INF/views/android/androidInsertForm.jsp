@@ -14,7 +14,7 @@
 <style type="text/css">
 #boardWriteForm{margin: 30px 0;}
 </style>
-</head> 
+</head>  
 <body>
 <div class="container">
 <form action = "androidInsert.do" id="boardWriteForm" method="post">

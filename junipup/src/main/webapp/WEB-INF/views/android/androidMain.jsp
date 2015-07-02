@@ -14,7 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="script.js"></script>
-</head>
+</head> 
 <body> 
 <p> 
 <c:set var="num" value="${pg.total - pg.start +1}" />

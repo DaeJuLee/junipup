@@ -15,7 +15,7 @@
 	}
 </script>
 </head>
-<body>
+<body> 
 <div class="mw_login open">
 	<div class="bg"></div>
 	<div id="login" class="g_login">

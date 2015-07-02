@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="css/table.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-<style type="text/css"> 
+<style type="text/css">  
 	.contents-wrap{margin:30px 0 0 0;min-height: 500px;}
 	.contents{ margin: 60px 0 0 0;}
 	.recode-wrap{text-align: right; color: #888;}
