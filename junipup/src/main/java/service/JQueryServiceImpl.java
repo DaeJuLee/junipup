@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+
 import model.JQueryBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,15 @@ public class JQueryServiceImpl implements JQueryService {
 	public void insertBoard() {
 		jd.insertBoard();
 		
+	}
+
+	@Override
+	public List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard) {
+		return jd.listJQueryCategory(JQueryboard);
+	}
+
+	@Override
+	public int totalJQueryCategory(String category) {
+		return jd.totalJQueryCategory(category);
 	}
 }

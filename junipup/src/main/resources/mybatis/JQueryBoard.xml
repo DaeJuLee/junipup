@@ -27,6 +27,15 @@
     	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
+	<select id="listJQueryCategory" parameterType="JQueryBoard" resultMap="JQueryBoardResult">
+    	select * from (select rownum rn, a.* from (select * from JQuery where category=#{category, jdbcType=VARCHAR}
+    	order by bnum desc) a) where rn between #{start} and #{end}  	
+	</select>
+	
+	<select id="totalJQueryCategory" parameterType="String" resultType="int" >
+		select count(*) from JQuery where category = #{category}
+	</select>
+	
 	<insert id="JQueryInsert" parameterType="JQueryBoard">
 		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
 			select nvl(max(bnum),0)+1 from JQuery
@@ -45,9 +54,10 @@
 		update JQuery set
 		title = #{title},
 		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
+		category = #{category},
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
 		where
 		bnum = #{bnum}
 	</update>

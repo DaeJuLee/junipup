@@ -11,4 +11,7 @@ public interface JQueryService {
 	int JQueryDelete(int bnum);
 	int JQueryTotal();
 	public void insertBoard();
+	
+	List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard);
+	int totalJQueryCategory(String category);
 }

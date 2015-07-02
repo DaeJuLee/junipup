@@ -53,4 +53,14 @@ public class JQueryDaoImpl implements JQueryDao {
 		}
 		
 	}
+
+	@Override
+	public List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard) {
+		return session.selectList("listJQueryCategory", JQueryboard);
+	}
+
+	@Override
+	public int totalJQueryCategory(String category) {
+		return session.selectOne("totalJQueryCategory", category);
+	}
 }

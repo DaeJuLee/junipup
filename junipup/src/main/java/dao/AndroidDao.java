@@ -13,4 +13,7 @@ public interface AndroidDao {
 	public void androidDelete(int bnum);
 	public void insertBoard();
 	public int androidUpdate(AndroidBoard android);
+	
+	List<AndroidBoard> listAndroidCategory(AndroidBoard android);
+	int totalAndroidCategory(String category);
 }
