@@ -15,9 +15,10 @@ loginDate date
 --insert into member (nickname, id) values ('master', 'master');
 --insert into member (nickname, id, password, mrank) values ('nickname', 'id', 'id', 1);
 insert into member values ('이주대씨', 'aa.jpg', 'dleown', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
---drop table member;
+drop table member;
 select * from member where id='master';
 select * from member;
+
 --android--
 create table Android(
 bnum number primary key,
