@@ -30,4 +30,10 @@ public class AdminController {
 		model.addAttribute("pg", pg);
 		return "/admin/adminMain";
 	}
+	
+	@RequestMapping(value="adminDelete")
+	public String adminDelete(Model model, int nickname) {
+		as.adminDelete(nickname);
+		return "redirect:adminMain.do";
+	}
 }

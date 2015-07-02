@@ -21,5 +21,8 @@ public class AdminServiceImpl implements AdminService{
 	public int adminTotal() {
 		return ad.adminTotal();
 	}
+	public int adminDelete(int nickname) {
+		return ad.adminDelete(nickname);
+	}
 
 }

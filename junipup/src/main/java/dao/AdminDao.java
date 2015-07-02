@@ -10,4 +10,5 @@ public interface AdminDao {
 	List<AdminBoard> adminMain(AdminBoard adminboard);
 	public void insertBoard();
 	int adminTotal();
+	int adminDelete(int nickname);
 }

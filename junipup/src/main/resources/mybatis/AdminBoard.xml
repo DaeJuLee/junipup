@@ -38,9 +38,9 @@
 		select count(*) from member
 	</select>
 	
-<!-- 	<delete id="html5Delete" parameterType="Html5Board">
-		delete from Html5 where bnum = #{bnum}
-	</delete> -->
+	<delete id="deleteAdmin" parameterType="AdminBoard">
+		delete from member where nickname = #{nickname}
+	</delete> 
 
 
 </mapper>
