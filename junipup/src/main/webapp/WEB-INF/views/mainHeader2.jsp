@@ -23,7 +23,7 @@
 			<fieldset>
 				<legend> 로그인 정보 </legend>
 			</fieldset>
-		</div>
+		</div> 
 		<div id="h4">
 			<p>
 				<c:choose>
