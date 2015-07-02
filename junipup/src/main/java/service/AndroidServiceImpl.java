@@ -27,12 +27,12 @@ public class AndroidServiceImpl implements AndroidService{
 		return dao.listAndroid(android);
 	}
 
-	public AndroidBoard androidDetail(String title) {
-		return dao.androidDetail(title);
+	public AndroidBoard androidDetail(int bnum) {
+		return dao.androidDetail(bnum);
 	}
 
-	public void androidDelete(String title) {
-		dao.androidDelete(title);	
+	public void androidDelete(int bnum) {
+		dao.androidDelete(bnum);	
 	}
 
 	public void insertBoard() {

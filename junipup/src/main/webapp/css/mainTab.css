@@ -1,4 +1,4 @@
-body{font-family:돋움;font-size:12px;}
+body{font-family:돋움;font-size:12px; width:1200px; margin:15px;}
 table { border-collapse:collapse; table-layout:fixed; border-spacing:0; border-collapse:separate \9; }
 #wrap {width:80%; float:left; }
 #rightBanner{width:20%; float:right;}

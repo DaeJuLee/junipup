@@ -31,7 +31,7 @@
 	</select>
 	
 	<select id="androidDetail" parameterType="String" resultMap="AndroidBoardResult">
-		<![CDATA[select * from Android where title = #{title}]]>
+		<![CDATA[select * from Android where bnum = #{bnum}]]>
 	</select>
 	
 	<insert id="androidInsert" parameterType="AndroidBoard">
@@ -40,23 +40,24 @@
 		</selectKey>
 		insert into Android
 		values (
-		#{bnum}, #{nickname}, #{title}, #{mrank} , sysdate, #{content}, #{ip}, 0, #{filesize},
-		#{filename}, #{category} )
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
 	</insert>
 	
 	<delete id="androidDelete" parameterType="String">
-		delete from Android where title = #{empno}
+		delete from Android where bnum = #{bnum}
 	</delete>
 	
 	<update id="androidUpdate" parameterType="AndroidBoard">
 		update Android set
 		title = #{title},
 		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
+		category = #{category},
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
 		where
-		title = #{title}
+		bnum = #{bnum}
 	</update>
 	
 	<!-- <insert id="insertEmpList" parameterType="Emp">

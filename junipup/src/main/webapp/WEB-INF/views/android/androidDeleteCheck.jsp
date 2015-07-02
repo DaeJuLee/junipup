@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="css/join.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<body>
+<body> 
 <div class="mw_login open">
 	<div class="bg"></div>
 	<div id="login" class="g_login">

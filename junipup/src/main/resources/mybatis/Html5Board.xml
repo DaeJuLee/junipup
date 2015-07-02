@@ -32,8 +32,8 @@
 		</selectKey>
 		insert into Html5
 		values (
-		#{bnum}, #{nickname}, #{title}, #{mrank}, sysdate, #{content}, #{ip}, 0, #{filesize},
-		#{filename}, #{category} )
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
 	</insert>
 	
 	 <select id="html5Detail" parameterType="Html5Board" resultMap="Html5BoardResult">
@@ -44,9 +44,10 @@
 		update Html5 set
 		title = #{title},
 		content = #{content},
-		filesize = #{filesize},
-		filename = #{filename},
-		ip = #{ip}
+		category = #{category},
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
 		where
 		bnum = #{bnum}
 	</update>

@@ -49,7 +49,7 @@ public class JQueryDaoImpl implements JQueryDao {
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
 
-			session.insert("insertJQuery", board);
+			session.insert("JQueryInsert", board);
 		}
 		
 	}

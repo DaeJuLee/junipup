@@ -26,12 +26,12 @@ public class AndroidDaoImpl implements AndroidDao{
 		return session.selectList("listAndroid", android);
 	}
 
-	public AndroidBoard androidDetail(String title) {
-		return session.selectOne("androidDetail", title);
+	public AndroidBoard androidDetail(int bnum) {
+		return session.selectOne("androidDetail", bnum);
 	}
 	
-	public void androidDelete(String title){
-		session.delete("androidDelete", title);
+	public void androidDelete(int bnum){
+		session.delete("androidDelete", bnum);
 	}
 	
 	public int androidUpdate(AndroidBoard android) {
