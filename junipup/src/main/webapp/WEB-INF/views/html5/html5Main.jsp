@@ -7,43 +7,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/board.css">
+<link rel="stylesheet" type="text/css" href="css/pagination.css">
+<link rel="stylesheet" type="text/css" href="css/button.css">
+<link rel="stylesheet" href="simpleBanner.css">
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="simpleBanner.js"></script>
+<script src="script.js"></script>
 </head>
 <body>
-<a href="html5InsertForm.do">글쓰기</a>
 <c:set var="num" value="${pg.total - pg.start +1}" />
-<h2>목록</h2>
-<table>
-	<tr>
-		<th>글번호</th>
-		<th>닉네임</th>
-		<th>제목</th>
-		<th>등급</th>
-		<th>날짜</th>
-		<th>내용</th>
-		<th>아이피</th>
-		<th>힛</th>
-		<th>파일 사이즈</th>
-		<th>파일 이름</th>
-		<th>카테고리</th>
-	</tr>
+	<table class="tbl" align="center">
+		<tr height="40px">
+			<th width="15%" >번호</th>
+			<th width="15%" >카테고리</th>
+			<th width="15%" >닉네임</th>
+			<th width="55%" >제목</th>
+		</tr>	
 	<c:forEach var="Html5" items="${html5Main }">
 		<tr>
-			<td><a href="html5Detail.do?bnum=${Html5.bnum }">
-					${Html5.bnum }</a></td>
-			<td>${Html5.nickname }</td>
-			<td>${Html5.title }</td>
-			<td>${Html5.mrank }</td>
-			<td>${Html5.b_date }</td>
-			<td>${Html5.content }</td>
-			<td>${Html5.ip }</td>
-			<td>${Html5.hits }</td>
-			<td>${Html5.filesize }</td>
-			<td>${Html5.filename }</td>
+			<td>${num }</td>
 			<td>${Html5.category}</td>
+			<td>${Html5.nickname }</td>			
+			<td><a href="html5Detail.do?bnum=${Html5.bnum }">${Html5.title }</a></td>	
 		</tr>
 		<c:set var="num" value="${num-1 }" />
 	</c:forEach>
-</table>
+	</table>
+	<button type="button" onclick="location.href='html5InsertForm.do'" class="button">글쓰기</button>
+	
 <c:if test="${pg.startPage > pg.pageBlock}">
 		<a href="html5Main.do?currentPage=${pg.startPage-pg.pageBlock }">[이전]</a>
 	</c:if>
@@ -55,6 +47,7 @@
 
 	<c:if test="${pg.endPage < pg.totalPage }">
 		<a href="html5Main.do?currentPage=${pg.startPage+pg.pageBlock}">[다음]</a>
-	</c:if>
+	</c:if>	
+
 </body>
 </html>
