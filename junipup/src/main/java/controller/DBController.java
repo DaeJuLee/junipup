@@ -44,6 +44,7 @@ public class DBController {
 			model.addAttribute("list", list);
 			model.addAttribute("pg", pg);
 			model.addAttribute("all", "false");
+			model.addAttribute("category", category);
 			return "/database/DBMain";
 		}
 		
