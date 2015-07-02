@@ -18,7 +18,7 @@ public class JQueryController {
 	@Autowired
 	JQueryService js;
 	
-	@RequestMapping(value="JQueryMain")
+	@RequestMapping(value="jQueryMain")
 	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage) {
 		//js.insertBoard();
 		int total = js.JQueryTotal();
@@ -27,17 +27,17 @@ public class JQueryController {
 		JQueryboard.setStart(pg.getStart());
 		JQueryboard.setEnd(pg.getEnd());
 		List<JQueryBoard> list = js.listJQuery(JQueryboard);
-		model.addAttribute("JQueryMain", list);
+		model.addAttribute("jQueryMain", list);
 		model.addAttribute("pg", pg);
 		return "/jQuery/jQueryMain";
 	}
 	
-	@RequestMapping(value="JQueryInsertForm")
+	@RequestMapping(value="jQueryInsertForm")
 	public String JQueryInsert(Model model) {
 		return "/jQuery/jQueryInsertForm";
 	}
 	
-	@RequestMapping(value="JQueryInsert", method=RequestMethod.POST)
+	@RequestMapping(value="jQueryInsert", method=RequestMethod.POST)
 	public String JQueryInsert(Model model, JQueryBoard jquery) {
 		int result =  js.JQueryInsert(jquery);
 		if(result > 0){
@@ -47,21 +47,21 @@ public class JQueryController {
 		}	
 	}
 	
-	@RequestMapping(value="JQueryDetail")
+	@RequestMapping(value="jQueryDetail")
 	public String JQueryDetail(Model model, int bnum) {
 		JQueryBoard jquery = js.JQueryDetail(bnum);
 		model.addAttribute("JQueryDetail", jquery);
 		return "/jQuery/jQueryDetail";
 	}
 	
-	@RequestMapping(value="JQueryUpdateForm")
+	@RequestMapping(value="jQueryUpdateForm")
 	public String JQueryUpdateForm(int bnum, Model model){
 		JQueryBoard jquery = js.JQueryDetail(bnum);
 		model.addAttribute("JQueryUpdateForm", jquery);
 		return "/jQuery/jQueryUpdateForm";	
 	}
 	
-	@RequestMapping(value="JQueryUpdate", method=RequestMethod.POST)
+	@RequestMapping(value="jQueryUpdate", method=RequestMethod.POST)
 	public String JQueryUpdate(Model model, JQueryBoard jquery) {
 		int result = js.JQueryUpdate(jquery);
 		if(result > 0){
@@ -71,7 +71,7 @@ public class JQueryController {
 		}
 	}
 	
-	@RequestMapping(value="JQueryDeleteCheck")
+	@RequestMapping(value="jQueryDeleteCheck")
 	public String JQueryDeleteCheck(int bnum, Model model){
 		JQueryBoard board = new JQueryBoard();
 		board.setBnum(bnum);
@@ -79,7 +79,7 @@ public class JQueryController {
 		return "/jQuery/jQueryDeleteCheck";
 	}
 	
-	@RequestMapping(value="JQueryDelete")
+	@RequestMapping(value="jQueryDelete")
 	public String JQueryDelete(int bnum, Model model){
 		js.JQueryDelete(bnum);
 		return "redirect:JQueryMain.do";
