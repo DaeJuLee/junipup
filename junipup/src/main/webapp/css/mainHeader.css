@@ -60,7 +60,7 @@ nav {
 }
 
 #menu li {
-  display: block;
+  display: inline-block;
   float: left;
   width:10%; /* tab메뉴 database java.. 크기  %지정 */
 }
@@ -86,7 +86,7 @@ nav {
   position: absolute;
   top: 70px;
   /* width: 200px; */ /* 수정 성공 */
-  width: 15%%;
+  width: 15%;
   background: #fff;
   z-index: -1;
   -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
