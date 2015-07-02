@@ -12,4 +12,7 @@ public interface JQueryDao {
 	int JQueryDelete(int bnum);
 	int JQueryTotal();
 	public void insertBoard();
+	
+	List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard);
+	public int totalJQueryCategory(String category);
 }

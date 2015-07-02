@@ -23,7 +23,7 @@
 			<fieldset>
 				<legend> 로그인 정보 </legend>
 			</fieldset>
-		</div>
+		</div> 
 		<div id="h4">
 			<p>
 				<c:choose>
@@ -41,7 +41,7 @@
 					</c:when>
 					<c:otherwise>
 						<div id="text">
-							<font>당신을 환영합니다.</font>
+							
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -52,7 +52,7 @@
 	<nav>
 		<div class="wrapper">
 			<ul id="menu" class="clearfix">
-				<li><a href="#">Home</a></li>
+				<li><a href="main.do">Home</a></li>
 				<!-- Database -->
 				<li><a href="DBMain.do">Database</a>
 					<ul>

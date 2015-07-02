@@ -70,14 +70,9 @@
 			<input type="hidden" name="bnum" value="${DBDetail.bnum }" />
 			<button type="button" onclick="onModify()" class="btn btn-primary">수정</button>
 			<button type="button" onclick="onList()" class="btn btn-primary">목록</button>
+			<button type="button" onclick="onDelete()" class="btn btn-primary">삭제</button>
 		</form>	
 </div>
-<%-- <input type="button" value="목록보기" 
-		onclick="location.href='jspMain.do?=${jspDetail}'" class="button">
-<input type="button" value="수정" 
-		onclick="location.href='jspUpdateForm.do?bnum=${jspDetail.bnum }'" class="button">
-<input type="button" value="삭제" 
-		onclick="location.href='jspDeleteCheck.do?bnum=${jspDetail.bnum}'" class="button"> --%>
 		
 </body>
 
@@ -90,6 +85,12 @@
 	
 	var onList = function(){
 		location.href='DBMain.do';
+	};
+	
+	var onDelete = function(){
+		var form = $('.viewForm')[0];
+		form.action = 'DBDelete.do';
+		form.submit();
 	};
 </script>
 </html>

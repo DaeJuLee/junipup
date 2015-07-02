@@ -4,6 +4,7 @@ import java.util.List;
 
 import model.Html5Board;
 
+
 public interface Html5Dao {
 	List<Html5Board> listHtml5(Html5Board html5board);
 	public void insertBoard();
@@ -12,4 +13,6 @@ public interface Html5Dao {
 	Html5Board html5Detail(int bnum);
 	int html5Delete(int num);
 	int html5Total();
+	public int totalHtml5Category(String category);
+	List<Html5Board> listHtml5Category(Html5Board html5);
 }

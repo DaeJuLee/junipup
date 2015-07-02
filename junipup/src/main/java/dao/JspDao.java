@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+
 import model.JspBoard;
 
 public interface JspDao {
@@ -11,4 +12,6 @@ public interface JspDao {
 	public void jspDelete(int bnum);
 	public void insertBoard();
 	public int jspUpdate(JspBoard jsp);
+	public int totalJspCategory(String category);
+	List<JspBoard> listJspCategory(JspBoard db);
 }

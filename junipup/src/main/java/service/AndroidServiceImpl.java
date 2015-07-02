@@ -43,6 +43,16 @@ public class AndroidServiceImpl implements AndroidService{
 	public int androidUpdate(AndroidBoard android) {
 		return dao.androidUpdate(android);
 	}
+
+	@Override
+	public List<AndroidBoard> listAndroidCategory(AndroidBoard android) {
+		return dao.listAndroidCategory(android);
+	}
+
+	@Override
+	public int totalAndroidCategory(String category) {
+		return dao.totalAndroidCategory(category);
+	}
 	
 
 }

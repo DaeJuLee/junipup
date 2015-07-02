@@ -12,4 +12,6 @@ public interface JspService {
 	public void jspDelete(int bnum);
 	public void insertBoard();
 	public int jspUpdate(JspBoard jsp);
+	public int totalJspCategory(String category);
+	List<JspBoard> listJspCategory(JspBoard db);
 }

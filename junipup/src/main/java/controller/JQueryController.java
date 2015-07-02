@@ -2,6 +2,7 @@ package controller;
 
 import java.util.List;
 
+import model.DBBoard;
 import model.JQueryBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,17 +20,35 @@ public class JQueryController {
 	JQueryService js;
 	
 	@RequestMapping(value="jQueryMain")
-	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage) {
+	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage, String category) {
 		//js.insertBoard();
-		int total = js.JQueryTotal();
-		System.out.println("int total : " + total);
-		Paging pg = new Paging(total, currentPage);
-		JQueryboard.setStart(pg.getStart());
-		JQueryboard.setEnd(pg.getEnd());
-		List<JQueryBoard> list = js.listJQuery(JQueryboard);
-		model.addAttribute("jQueryMain", list);
-		model.addAttribute("pg", pg);
-		return "/jQuery/jQueryMain";
+		if(category == null || category.equals("")){
+			int total = js.JQueryTotal();
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			JQueryboard.setStart(pg.getStart());
+			JQueryboard.setEnd(pg.getEnd());
+			System.out.println("category : " + JQueryboard.getCategory());
+			List<JQueryBoard> list = js.listJQuery(JQueryboard);
+			model.addAttribute("jQueryMain", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "true");
+			return "/jQuery/jQueryMain";
+		}else{
+			int total = js.totalJQueryCategory(category);
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			JQueryboard.setStart(pg.getStart());
+			JQueryboard.setEnd(pg.getEnd());
+			JQueryboard.setCategory(category);
+			System.out.println("category : " + JQueryboard.getCategory());
+			List<JQueryBoard> list = js.listJQueryCategory(JQueryboard);
+			model.addAttribute("jQueryMain", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "false");
+			model.addAttribute("category", category);
+			return "/jQuery/jQueryMain";
+		}
 	}
 	
 	@RequestMapping(value="jQueryInsertForm")
@@ -41,7 +60,7 @@ public class JQueryController {
 	public String JQueryInsert(Model model, JQueryBoard jquery) {
 		int result =  js.JQueryInsert(jquery);
 		if(result > 0){
-			return "redirect:JQueryMain.do";
+			return "redirect:jQueryMain.do";
 		}else{
 			return "/jQuery/jQueryInsertForm";
 		}	
@@ -50,14 +69,14 @@ public class JQueryController {
 	@RequestMapping(value="jQueryDetail")
 	public String JQueryDetail(Model model, int bnum) {
 		JQueryBoard jquery = js.JQueryDetail(bnum);
-		model.addAttribute("JQueryDetail", jquery);
+		model.addAttribute("jQueryDetail", jquery);
 		return "/jQuery/jQueryDetail";
 	}
 	
-	@RequestMapping(value="jQueryUpdateForm")
+	@RequestMapping(value="jQueryUpdateForm", method=RequestMethod.POST)
 	public String JQueryUpdateForm(int bnum, Model model){
 		JQueryBoard jquery = js.JQueryDetail(bnum);
-		model.addAttribute("JQueryUpdateForm", jquery);
+		model.addAttribute("jQueryUpdateForm", jquery);
 		return "/jQuery/jQueryUpdateForm";	
 	}
 	
@@ -65,7 +84,7 @@ public class JQueryController {
 	public String JQueryUpdate(Model model, JQueryBoard jquery) {
 		int result = js.JQueryUpdate(jquery);
 		if(result > 0){
-			return "redirect:JQueryMain.do";
+			return "redirect:jQueryMain.do";
 		}else{
 			return "forward:jQueryUpdateForm.do";
 		}
@@ -79,11 +98,9 @@ public class JQueryController {
 		return "/jQuery/jQueryDeleteCheck";
 	}
 	
-	@RequestMapping(value="jQueryDelete")
+	@RequestMapping(value="jQueryDelete", method=RequestMethod.POST)
 	public String JQueryDelete(int bnum, Model model){
 		js.JQueryDelete(bnum);
-		return "redirect:JQueryMain.do";
-	}
-	
-	
+		return "redirect:jQueryMain.do";
+	}	
 }

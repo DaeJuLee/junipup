@@ -3,9 +3,11 @@ package dao;
 import java.util.List;
 
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import model.Html5Board;
 @Repository
 public class Html5DaoImpl implements Html5Dao{
@@ -50,6 +52,16 @@ public class Html5DaoImpl implements Html5Dao{
 
 	public int html5Total() {
 		return session.selectOne("totalHtml5");
+	}
+
+	@Override
+	public int totalHtml5Category(String category) {
+		return session.selectOne("totalHtml5Category", category);
+	}
+
+	@Override
+	public List<Html5Board> listHtml5Category(Html5Board html5) {
+		return session.selectList("listHtml5Category", html5);
 	}
 
 }
