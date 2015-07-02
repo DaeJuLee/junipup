@@ -52,4 +52,12 @@ public class JspDaoImpl implements JspDao{
 		return session.update("jspUpdate", jsp);
 	}
 
+	public int totalJspCategory(String category) {
+		return session.selectOne("totalJspCategory", category);
+	}
+
+	public List<JspBoard> listJspCategory(JspBoard db) {
+		return session.selectList("listJspCategory", db);
+	}
+
 }

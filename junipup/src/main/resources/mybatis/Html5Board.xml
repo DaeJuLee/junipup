@@ -26,6 +26,11 @@
     	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
+	<select id="listHtml5Category" parameterType="Html5Board" resultMap="Html5BoardResult">
+    	select * from (select rownum rn, a.* from (select * from html5 where category=#{category, jdbcType=VARCHAR}
+    	order by bnum desc) a) where rn between #{start} and #{end}    	
+	</select>
+	
 	<insert id="html5Insert" parameterType="Html5Board">
 		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
 			select nvl(max(bnum),0)+1 from Html5
@@ -57,5 +62,9 @@
  	 
 	<select id="totalHtml5" resultType="int" >
 		select count(*) from Html5
+	</select>
+	
+	<select id="totalHtml5Category" parameterType="String" resultType="int" >
+		select count(*) from html5 where category = #{category}
 	</select>
 </mapper>

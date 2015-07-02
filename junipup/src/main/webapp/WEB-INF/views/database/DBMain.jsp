@@ -36,7 +36,6 @@ jQuery(function($){
 <c:if test="${all != 'true'}">
 	<input type="hidden" name="category" id="category" value="${category }">
 </c:if>
-<p>
 <div class="tab_list m1" align="center">
     <ul class="tabs">
     <li class="tab1"><a href="DBMain.do"><span>전체게시판</span></a>

@@ -19,8 +19,9 @@ public class Html5Controller {
 	private Html5Service hs;
 	
 	@RequestMapping(value="html5Main")
-	public String listHtml5(Model model, Html5Board html5board, String currentPage) {
+	public String listHtml5(Model model, Html5Board html5board, String currentPage, String category) {
 		//hs.insertBoard();
+		if(category == null || category.equals("")){
 		int total = hs.html5Total();
 		System.out.println("int total : " + total);
 		Paging pg = new Paging(total, currentPage);
@@ -29,7 +30,24 @@ public class Html5Controller {
 		List<Html5Board> list = hs.listHtml5(html5board);
 		model.addAttribute("html5Main", list);
 		model.addAttribute("pg", pg);
+		model.addAttribute("all", "true");
 		return "/html5/html5Main";
+		
+		}else{
+			int total = hs.totalHtml5Category(category);
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			html5board.setStart(pg.getStart());
+			html5board.setEnd(pg.getEnd());
+			html5board.setCategory(category);
+			System.out.println("category : " + html5board.getCategory());
+			List<Html5Board> list = hs.listHtml5Category(html5board);
+			model.addAttribute("html5Main", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "false");
+			model.addAttribute("category", category);
+			return "/html5/html5Main";
+		}
 	}
 	
 	@RequestMapping(value="html5InsertForm")

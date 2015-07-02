@@ -26,10 +26,19 @@
     	order by bnum desc) a) where rn between #{start} and #{end}
 	</select>
 	
+	<select id="listJspCategory" parameterType="JspBoard" resultMap="JspBoardResult">
+    	select * from (select rownum rn, a.* from (select * from jsp where category=#{category, jdbcType=VARCHAR}
+    	order by bnum desc) a) where rn between #{start} and #{end}    	
+	</select>
+	
 	<select id="totalJsp" resultType="int" >
 		select count(*) from Jsp
 	</select>
-
+	
+	<select id="totalJspCategory" parameterType="String" resultType="int" >
+		select count(*) from jsp where category = #{category}
+	</select>
+	
 	<select id="jspDetail" parameterType="int" resultMap="JspBoardResult">
 		<![CDATA[select * from Jsp where bnum = #{bnum}]]>
 	</select>

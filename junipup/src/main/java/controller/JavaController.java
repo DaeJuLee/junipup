@@ -19,17 +19,35 @@ public class JavaController {
 	JavaService service;
 	
 	@RequestMapping(value="javaMain")
-	public String javaMain(JavaBoard java, String currentPage, Model model){
+	public String javaMain(JavaBoard java, String currentPage, Model model , String category){
 //		service.insertBoard();
-		int total = service.total();
-		System.out.println("int total : " + total);
-		Paging pg = new Paging(total, currentPage);
-		java.setStart(pg.getStart());
-		java.setEnd(pg.getEnd());
-		List<JavaBoard> list = service.listJava(java);
-		model.addAttribute("list", list);
-		model.addAttribute("pg", pg);
-		return "/java/javaMain";
+		if(category == null || category.equals("")){
+			int total = service.total();
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			java.setStart(pg.getStart());
+			java.setEnd(pg.getEnd());
+			List<JavaBoard> list = service.listJava(java);
+			model.addAttribute("list", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "true");
+			return "/java/javaMain";
+		
+		}else{
+			int total = service.totalJavaCategory(category);
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			java.setStart(pg.getStart());
+			java.setEnd(pg.getEnd());
+			java.setCategory(category);
+			System.out.println("category : " + java.getCategory());
+			List<JavaBoard> list = service.listJavaCategory(java);
+			model.addAttribute("list", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "false");
+			model.addAttribute("category", category);
+			return "/java/javaMain";
+		}
 	}
 	
 	@RequestMapping(value="javaInsertForm")

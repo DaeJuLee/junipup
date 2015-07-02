@@ -24,12 +24,21 @@
 	<select id="listJava" parameterType="JavaBoard" resultMap="JavaBoardResult">
     	select * from (select rownum rn, a.* from (select * from java
     	order by bnum desc) a) where rn between #{start} and #{end}
+	</select>	
+	
+ 	<select id="listJavaCategory" parameterType="JavaBoard" resultMap="JavaBoardResult">
+    	select * from (select rownum rn, a.* from (select * from Java where category=#{category, jdbcType=VARCHAR}
+    	order by bnum desc) a) where rn between #{start} and #{end}    	
 	</select>
 	
 	<select id="totalJava" resultType="int" >
 		select count(*) from Java
 	</select>
 
+	<select id="totalJavaCategory" parameterType="String" resultType="int" >
+		select count(*) from java where category = #{category}
+	</select>
+	
 	<select id="javaDetail" parameterType="String" resultMap="JavaBoardResult">
 		<![CDATA[select * from Java where bnum = #{bnum}]]>
 	</select>

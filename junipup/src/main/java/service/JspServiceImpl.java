@@ -41,4 +41,13 @@ public class JspServiceImpl implements JspService{
 	public int jspUpdate(JspBoard jsp) {
 		return dao.jspUpdate(jsp);
 	}
+
+	public int totalJspCategory(String category) {
+		return dao.totalJspCategory(category);
+	}
+
+	public List<JspBoard> listJspCategory(JspBoard db) {
+		return dao.listJspCategory(db);
+	}
+
 }

@@ -39,4 +39,14 @@ public class Html5ServiceImpl implements Html5Service {
 	public int html5Total() {
 		return hd.html5Total();
 	}
+
+	@Override
+	public int totalHtml5Category(String category) {
+		return hd.totalHtml5Category(category);
+	}
+
+	@Override
+	public List<Html5Board> listHtml5Category(Html5Board html5) {
+		return hd.listHtml5Category(html5);
+	}
 }

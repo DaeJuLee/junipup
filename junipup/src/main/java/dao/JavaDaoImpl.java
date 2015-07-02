@@ -53,4 +53,12 @@ public class JavaDaoImpl implements JavaDao {
 		return session.update("javaUpdate", java);
 	}
 
+	public int totalJavaCategory(String category) {
+		return session.selectOne("totalJavaCategory", category);
+	}
+
+	public List<JavaBoard> listJavaCategory(JavaBoard java) {
+		return session.selectList("listJavaCategory", java);
+	}
+
 }
