@@ -28,7 +28,7 @@ public class Html5DaoImpl implements Html5Dao{
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
 
-			session.insert("insertHtml5", board);
+			session.insert("html5Insert", board);
 		}
 	}
 

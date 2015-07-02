@@ -33,8 +33,8 @@
 		</selectKey>
 		insert into JQuery
 		values (
-		#{bnum}, #{nickname}, #{title}, #{mrank}, sysdate, #{content}, #{ip}, 0, #{filesize},
-		#{filename}, #{category} )
+		#{bnum}, #{nickname, jdbcType=VARCHAR}, #{title}, #{mrank}, sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
 	</insert>
 	
 	<select id="JQueryDetail" parameterType="JQueryBoard" resultMap="JQueryBoardResult">

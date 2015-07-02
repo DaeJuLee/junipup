@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<form action="html5UpdateCheck.do" method="post">
+<form action="html5Update.do" method="post">
 	글번호 : ${html5UpdateForm.bnum }<p>
 	닉네임 : ${html5UpdateForm.nickname }<p>
 	등급 : ${html5UpdateForm.mrank }<p>
