@@ -1,0 +1,38 @@
+body {
+width:1250px;
+margin:0 auto;
+}
+/* header */
+#header {
+margin:0 0 10px 0;
+padding:10px;
+border:1px solid #000;
+background-color:#CCC;
+width:778px;
+}
+/* Content */
+#container {
+
+}
+#content {
+float:left;
+padding:10px;
+background-color:#CCC;
+border:1px solid #000;
+width:700px;
+margin-bottom:10px;
+}
+/* Sidebar A */
+#STATICMENU {
+float:left;
+padding:10px;
+border:1px solid #000;
+width:150px;
+background-color:#999;
+}
+/* Footer */
+#footer {
+clear:both;
+padding:10px;
+width:1250px;
+}
