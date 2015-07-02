@@ -33,7 +33,12 @@ public class JQueryServiceImpl implements JQueryService {
 		return jd.JQueryDelete(bnum);
 	}
 	
-	public int total() {
-		return jd.total();
+	public int JQueryTotal() {
+		return jd.JQueryTotal();
+	}
+
+	public void insertBoard() {
+		jd.insertBoard();
+		
 	}
 }

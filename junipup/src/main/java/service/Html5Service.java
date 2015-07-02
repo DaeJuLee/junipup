@@ -11,4 +11,5 @@ public interface Html5Service {
 	int html5Insert(Html5Board html5);
 	int html5Update(Html5Board html5);
 	int html5Delete(int bnum);
+	int html5Total();
 }

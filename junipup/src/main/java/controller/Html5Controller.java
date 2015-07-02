@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.List;
+
 import model.Html5Board;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import service.Html5Service;
+import service.Paging;
 
 @Controller
 public class Html5Controller {
@@ -17,10 +19,16 @@ public class Html5Controller {
 	private Html5Service hs;
 	
 	@RequestMapping(value="html5Main")
-	public String listHtml5(Model model, Html5Board html5board) {
-//		hs.insertBoard();
+	public String listHtml5(Model model, Html5Board html5board, String currentPage) {
+		//hs.insertBoard();
+		int total = hs.html5Total();
+		System.out.println("int total : " + total);
+		Paging pg = new Paging(total, currentPage);
+		html5board.setStart(pg.getStart());
+		html5board.setEnd(pg.getEnd());
 		List<Html5Board> list = hs.listHtml5(html5board);
 		model.addAttribute("html5Main", list);
+		model.addAttribute("pg", pg);
 		return "/html5/html5Main";
 	}
 	

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminBoard">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="AdminBoardResult" type="AdminBoard">
+		<result property="nickname"    column="nickname" />
+		<result property="photo"       column="photo" />
+		<result property="id"          column="id" />
+		<result property="password"    column="password" />
+		<result property="name"        column="name" />
+		<result property="phoneNumber" column="phoneNumber" />
+		<result property="email"       column="email" />
+		<result property="mrank"       column="mrank" />
+		<result property="usePoint"    column="usePoint" />
+		<result property="maxPoint"    column="maxPoint"/>
+		<result property="regDate"     column="regDate" /> 
+		<result property="loginDate"   column="loginDate" /> 
+		
+	</resultMap>
+
+	<select id="listAdmin" parameterType="AdminBoard" resultMap="AdminBoardResult">
+	select * from (select rownum rn, a.* from (select * from member) a) where rn between #{start} and #{end}
+	</select>
+	
+	<insert id="adminInsert" parameterType="AdminBoard">
+		insert into member
+		values (
+		#{nickname}, #{photo}, #{id}, #{password} , #{name}, #{phoneNumber},
+		#{email}, #{mrank}, #{usePoint}, #{maxPoint}, sysdate, sysdate )
+	</insert>
+
+	<select id="totalAdmin" resultType="int" >
+		select count(*) from member
+	</select>
+	
+<!-- 	<delete id="html5Delete" parameterType="Html5Board">
+		delete from Html5 where bnum = #{bnum}
+	</delete> -->
+
+
+</mapper>

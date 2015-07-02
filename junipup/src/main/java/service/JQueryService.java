@@ -9,5 +9,6 @@ public interface JQueryService {
 	JQueryBoard JQueryDetail(int bnum);
 	int JQueryUpdate(JQueryBoard jquery);
 	int JQueryDelete(int bnum);
-	int total();
+	int JQueryTotal();
+	public void insertBoard();
 }
