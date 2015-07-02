@@ -45,7 +45,7 @@ public class AndroidController {
 		int result = service.androidInsert(android);
 		//int bnum = service.androidSelectBnum(android.getNickname());
 		if(result > 0){
-			return "redirect:androidUpdateForm.do?"+android.getBnum();
+			return "redirect:androidMain.do";
 		}else{
 			return "/android/androidInsertForm";
 		}
