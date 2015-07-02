@@ -60,11 +60,13 @@
 		bnum = #{bnum}
 	</update>
 	
-	<!-- <insert id="insertEmpList" parameterType="Emp">
-		insert into emp
-		values (
-		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
-	</insert>
-	 -->
+	<select id="listAndroidCategory" parameterType="AndroidBoard" resultMap="AndroidBoardResult">
+    	select * from (select rownum rn, a.* from (select * from Android where category = #{category, jdbcType=VARCHAR}
+    	order by bnum desc) a) where rn between #{start} and #{end}
+	</select>
+	
+	<select id="totalAndroidCategory" parameterType="String" resultType="int" >
+		select count(*) from Android where category = #{category} 
+	</select>
 
 </mapper>

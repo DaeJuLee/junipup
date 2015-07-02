@@ -5,6 +5,8 @@ import java.util.List;
 import model.AndroidBoard;
 
 
+import model.JQueryBoard;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,19 +23,36 @@ public class AndroidController {
 	AndroidService service;
 	
 	@RequestMapping(value="androidMain")
-	public String androidMain(AndroidBoard android, String currentPage, Model model){
-//		service.insertBoard();
-		int total = service.total();
-		System.out.println("int total : " + total);
-		Paging pg = new Paging(total, currentPage);
-		android.setStart(pg.getStart());
-		android.setEnd(pg.getEnd());
-		List<AndroidBoard> list = service.listAndroid(android);
-		model.addAttribute("list", list);
-		model.addAttribute("pg", pg);
-		return "/android/androidMain";
+	public String androidMain(AndroidBoard android, String currentPage, Model model, String category){
+//		service.insertBoard();		
+		if(category == null || category.equals("")){
+			int total = service.total();
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			android.setStart(pg.getStart());
+			android.setEnd(pg.getEnd());
+			System.out.println("category : " + android.getCategory());
+			List<AndroidBoard> list = service.listAndroid(android);
+			model.addAttribute("list", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "true");
+			return "/android/androidMain";
+		}else{
+			int total = service.totalAndroidCategory(category);
+			System.out.println("int total : " + total);
+			Paging pg = new Paging(total, currentPage);
+			android.setStart(pg.getStart());
+			android.setEnd(pg.getEnd());
+			android.setCategory(category);
+			System.out.println("category : " + android.getCategory());
+			List<AndroidBoard> list = service.listAndroidCategory(android);
+			model.addAttribute("list", list);
+			model.addAttribute("pg", pg);
+			model.addAttribute("all", "false");
+			model.addAttribute("category", category);
+			return "/android/androidMain";
+		}
 	}
-	
 	@RequestMapping(value="androidInsertForm")
 	public String androidInsertForm(Model model){
 		return "/android/androidInsertForm";

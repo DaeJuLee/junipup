@@ -17,7 +17,7 @@
 </head> 
 <body>
 <div class="container">
-<form action = "jspInsert.do" id="boardWriteForm" method="post">
+<form action = "jQueryInsert.do" id="boardWriteForm" method="post">
 	<table cellspacing="0" border="1" class="table" align="center">
 	<colgroup>
 		<col width="80"><col><col width="80">
@@ -41,16 +41,10 @@
 			name="content" required="required" style="width:100%;"></textarea></td></tr>
 	</table>
 	<input type="button" value="목록보기" 
-		onclick="location.href='jspMain.do'" class="button">
+		onclick="location.href='jQueryMain.do'" class="button">
 	<div class="buttonDiv">
-			<c:if test="${modify == 'true'}">
-				<button type="button" class="btn btn-primary" onclick="onModify()">수정</button>
-			</c:if>
-			<c:if test="${modify != 'true'}">
-				<button type="button" class="btn btn-primary" onclick="onWrite()">쓰기</button>
-			</c:if>
-			 <button type="button" class="btn btn-primary" onclick="history.go(-1);"> 취소</button>
-			 <%-- <input type="hidden" name="boardid" value="${USER_KEY.id}"/>  --%>
+		<button type="button" class="btn btn-primary" onclick="onWrite()">쓰기</button>
+		<button type="button" class="btn btn-primary" onclick="history.go(-1);"> 취소</button>
 	</div>
 </form>
 </div>
@@ -74,15 +68,8 @@ var oEditors = [];
 var onWrite = function(){
 	oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
 	var boardWriteForm = document.getElementById("boardWriteForm");  
-	boardWriteForm.action ="jspInsert.do";              
+	boardWriteForm.action ="jQueryInsert.do";              
 	boardWriteForm.submit(); 
-};
- 
-var onModify = function(){
-	oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
-	var boardWriteForm = document.getElementById("boardWriteForm");  
-	boardWriteForm.action ="modifySubmit.do";              
-	boardWriteForm.submit();  
 };
 
 var pasteHTML = function(filename){

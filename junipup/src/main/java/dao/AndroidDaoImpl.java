@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import model.AndroidBoard;
 
 
@@ -52,6 +53,16 @@ public class AndroidDaoImpl implements AndroidDao{
 
 			session.insert("insertAndroid", board);
 		}
+	}
+
+	@Override
+	public List<AndroidBoard> listAndroidCategory(AndroidBoard android) {
+		return session.selectList("listAndroidCategory", android);
+	}
+
+	@Override
+	public int totalAndroidCategory(String category) {
+		return session.selectOne("totalAndroidCategory", category);
 	}
 	
 }

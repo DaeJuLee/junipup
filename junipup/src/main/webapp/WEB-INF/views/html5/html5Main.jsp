@@ -5,10 +5,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/board.css">
-<link rel="stylesheet" type="text/css" href="css/pagination.css">
-<link rel="stylesheet" type="text/css" href="css/button.css">
-<link rel="stylesheet" href="simpleBanner.css">
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="simpleBanner.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/pagination.css">
 <link rel="stylesheet" type="text/css" href="css/button.css">
-<link rel="stylesheet" href="simpleBanner.css">
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="simpleBanner.js"></script>
 <script src="script.js"></script>
@@ -35,7 +30,7 @@
 	
 	<button type="button" onclick="location.href='html5InsertForm.do'" class="button">글쓰기</button>
 	
-		<c:forEach items="${list }" var="html5">
+		<c:forEach items="${html5Main }" var="html5">
 			<tr>
 				<td>${num }</td>
 				<td>${html5.category }</td>
@@ -62,6 +57,5 @@
 	</c:if>	
 
 	</div>
->>>>>>> branch 'master' of https://github.com/DaeJuLee/junipup.git
 </body>
 </html>
