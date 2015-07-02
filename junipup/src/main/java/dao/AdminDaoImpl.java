@@ -36,7 +36,7 @@ public class AdminDaoImpl implements AdminDao{
 		return session.selectOne("totalAdmin");
 	}
 
-	public int adminDelete(int nickname) {
+	public int adminDelete(String nickname) {
 		return session.delete("deleteAdmin", nickname);
 	}
 

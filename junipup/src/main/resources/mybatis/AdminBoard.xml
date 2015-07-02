@@ -38,7 +38,7 @@
 		select count(*) from member
 	</select>
 	
-	<delete id="deleteAdmin" parameterType="AdminBoard">
+	<delete id="deleteAdmin" parameterType="String">
 		delete from member where nickname = #{nickname}
 	</delete> 
 

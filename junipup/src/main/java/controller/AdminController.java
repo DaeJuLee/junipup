@@ -31,8 +31,14 @@ public class AdminController {
 		return "/admin/adminMain";
 	}
 	
-	@RequestMapping(value="adminDelete")
-	public String adminDelete(Model model, int nickname) {
+	@RequestMapping(value="memberDeleteCheck")
+	public String adminDelete(Model model, String nickname) {
+		model.addAttribute("nickname", nickname);
+		return "/admin/memberDeleteCheck";
+	}
+	
+	@RequestMapping(value="completeDelete")
+	public String completeDelete(Model model, String nickname) {
 		as.adminDelete(nickname);
 		return "redirect:adminMain.do";
 	}
