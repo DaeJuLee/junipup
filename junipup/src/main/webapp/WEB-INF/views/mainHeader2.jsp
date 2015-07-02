@@ -41,7 +41,7 @@
 					</c:when>
 					<c:otherwise>
 						<div id="text">
-							<font>당신을 환영합니다.</font>
+							
 						</div>
 					</c:otherwise>
 				</c:choose>
@@ -52,7 +52,7 @@
 	<nav>
 		<div class="wrapper">
 			<ul id="menu" class="clearfix">
-				<li><a href="#">Home</a></li>
+				<li><a href="main.do">Home</a></li>
 				<!-- Database -->
 				<li><a href="DBMain.do">Database</a>
 					<ul>

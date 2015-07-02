@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/pagination.css">
 <link rel="stylesheet" type="text/css" href="css/button.css">
-<link rel="stylesheet" href="simpleBanner.css">
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="simpleBanner.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,6 +19,7 @@
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="simpleBanner.js"></script>
 <script src="script.js"></script>
+
 </head>
 <body>
 <body> 
@@ -33,7 +33,6 @@
 			<th width="55%" >제목</th>
 		</tr>	
 	
-	<button type="button" onclick="location.href='html5InsertForm.do'" class="button">글쓰기</button>
 	
 		<c:forEach items="${list }" var="html5">
 			<tr>
@@ -62,6 +61,6 @@
 	</c:if>	
 
 	</div>
->>>>>>> branch 'master' of https://github.com/DaeJuLee/junipup.git
+
 </body>
 </html>
