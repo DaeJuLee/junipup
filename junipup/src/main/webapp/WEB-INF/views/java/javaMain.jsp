@@ -8,14 +8,67 @@
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/pagination.css">
 <link rel="stylesheet" type="text/css" href="css/button.css">
-<link rel="stylesheet" href="simpleBanner.css">
+<link rel="stylesheet" type="text/css" href="css/tab.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script src="script.js"></script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+	var category = $('#category').val();
+	if(category == 'null'){
+		$('.tab1>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+	}else if(category == '기초익히기'){
+		$('.tab2>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+	}else if(category == '등급올리기'){
+		$('.tab3>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+	}else if(category == '질문게시판'){
+		$('.tab4>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+	}else if(category == '응용게시판'){
+		$('.tab5>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+	}
+});
+</script> 
 </head>
 <body> 
-<p> 
+<c:if test="${all == 'true' }">
+	<input type="hidden" name="category" id="category" value="null">
+</c:if>
+<c:if test="${all != 'true'}">
+	<input type="hidden" name="category" id="category" value="${category }">
+</c:if>
+<div class="tab_list m1" align="center">
+    <ul class="tabs">
+    <li class="tab1"><a href="javaMain.do"><span>전체게시판</span></a>
+        <ul>
+        <li class="more">? <a href="#">전체게시판 더보기</a></li>
+        </ul>
+    </li>
+    <li class="tab2"><a href="javaMain.do?category=기초익히기"><span>기초익히기</span></a>
+        <ul>
+        <li class="more">? <a href="#">기초익히기 더보기</a></li>
+        </ul>
+    </li>
+
+    <li class="tab3"><a href="javaMain.do?category=등급올리기"><span>등급올리기</span></a>
+        <ul>
+        <li class="more">? <a href="#">등급올리기 더보기</a></li>
+        </ul>
+    </li>
+
+    <li class="tab4"><a href="javaMain.do?category=질문게시판"><span>질문게시판</span></a>
+        <ul>       
+        <li class="more">? <a href="#">질문게시판 더보기</a></li>
+        </ul>
+    </li>
+    
+    <li class="tab5"><a href="javaMain.do?category=응용게시판"><span>응용게시판</span></a>
+        <ul>       
+        <li class="more">? <a href="#">응용게시판 더보기</a></li>
+        </ul>
+    </li>
+    </ul>
+</div>
+
 <c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
 		<tr height="40px">

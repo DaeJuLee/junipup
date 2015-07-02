@@ -44,4 +44,14 @@ public class JavaServiceImpl implements JavaService{
 		return dao.javaUpdate(java);
 	}
 
+	@Override
+	public int totalJavaCategory(String category) {
+		return dao.totalJavaCategory(category);
+	}
+
+	@Override
+	public List<JavaBoard> listJavaCategory(JavaBoard java) {
+		return dao.listJavaCategory(java);
+	}
+
 }

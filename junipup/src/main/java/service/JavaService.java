@@ -12,4 +12,6 @@ public interface JavaService {
 	public void javaDelete(int bnum);
 	public void insertBoard();
 	public int javaUpdate(JavaBoard java);
+	public int totalJavaCategory(String category);
+	List<JavaBoard> listJavaCategory(JavaBoard java);
 }
