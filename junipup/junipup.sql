@@ -1,7 +1,6 @@
 create table member(
 nickname varchar2(30) primary key,
 photo varchar2(50),
-id varchar2(30),
 password varchar2(30),
 name varchar2(30),
 phoneNumber number,
@@ -12,11 +11,12 @@ maxPoint number,
 regDate date,
 loginDate date
 ); 
---insert into member (nickname, id) values ('master', 'master');
---insert into member (nickname, id, password, mrank) values ('nickname', 'id', 'id', 1);
-insert into member values ('이주대씨', 'aa.jpg', 'dleown', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
 drop table member;
-select * from member where id='master';
+insert into member values ('이주대씨', 'aa.jpg', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into member values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
+insert into member values ('amin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
+drop table member;
+select * from member where id='admin';
 select * from member;
 select * from jquery;
 --android--
