@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+
+import service.MailService;
 import service.MemberService;
 import utils.WebConstants;
 
@@ -23,6 +26,8 @@ import utils.WebConstants;
 public class MemberController {
 	@Autowired
 	MemberService ms;
+	@Autowired
+	MailService mail;
 	
 	@RequestMapping(value="memjoinForm")
 	public String memjoinForm() {
@@ -42,15 +47,20 @@ public class MemberController {
 		if (result > 0) return "redirect:main.do";
 		else {
 			model.addAttribute("msg","회원가입을 환영합니다");
+			
 			return "forward:/member/joinForm.do";
 		} 
 	}
-	//로그인할때 값값값값
-	@RequestMapping(value="memlogin", method=RequestMethod.GET)
+	@RequestMapping(value="memlogin")
 	public String memlogin(Member member, Model model, HttpSession session) {
-		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());	
+		
+		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());
+		
+		mail.sendMail("junibatni@gmail.com", "beatmini@naver.com", "히히", "ㅋㅋㅋ");
+
 		if(selectmem == null){
-			model.addAttribute("message", "ID나 패스워드가 틀렸습니다.");
+			String msg = "ID나 패스워드가 틀렸습니다.";
+			model.addAttribute("message", msg);
 			return "member/login";
 		}else if(selectmem.getId().matches("admin")){
 			session.setAttribute(WebConstants.USER_KEY, selectmem);
