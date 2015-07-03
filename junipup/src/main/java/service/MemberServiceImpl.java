@@ -75,10 +75,6 @@ public class MemberServiceImpl implements MemberService {
 		return md.selectIdPass(id, password);
 	}
 
-	@Override
-	public Member selectId(String id) {
-		return md.selectId(id);
-	}
 
 	@Override
 	public Member selectNickname(String nickname) {

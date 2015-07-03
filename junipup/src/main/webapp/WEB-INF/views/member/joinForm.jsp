@@ -41,9 +41,9 @@ $(function() {
 		 if(id.value.length >= 3){
 			 /* alert("두글자 넘음"); */
 		 $.ajax({
-           url :"idchk.do",
+           url :"emailchk.do",
            type: "POST",
-           data : { "id" : $("#id").val() },
+           data : { "email" : $("#email").val() },
            datatype : "text",
            success : function(data){
            	alert(data);
@@ -152,9 +152,9 @@ $(function(){
 		</colgroup> 
 		<tr><th colspan="3">회원가입</th></tr>
 		<tr><th colspan="1">아이디</th>
-			<td><input id="id" type="text" name="id" id="memberID" class="inputText" maxlength="12" value="${id }" required="required">
-			&nbsp&nbsp<input type="button" id="idchk" value="중복체크"></td><td></td></tr>
-			
+		<tr>
+			<td><input type="email" name="email" class="inputText" required="required">
+			&nbsp&nbsp<input type="button" id="emailchk" value="중복체크"></td><td></td></tr>
 		<tr><th colspan="1">패스워드</th>
 			<td><input type="password" name="password" id="password" class="inputText" required="required"></td><td></td></tr>
 			
@@ -188,8 +188,7 @@ $(function(){
 			<input type="text" name="tel3" id="tel3" class="inputText" size="4" maxlength="4" required="required"></div>
 		</td><td></td></tr>
 		
-		<tr><th>이메일</th>
-			<td ><input type="email" name="email" class="inputText" required="required"></td><td></td></tr>
+		
 			
 		<tr><th>사진</th>
 			<td ><input type="file" name="photo"  id="photo"></td><td></td></tr>

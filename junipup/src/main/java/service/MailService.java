@@ -1,5 +1,7 @@
 package service;
 
+import java.io.File;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
@@ -58,7 +60,7 @@ public class MailService {
 		mailSender.send(message);
 	}
 
-	public void sendMailWithAttachment(String dear, String content) {
+	public void sendMailWithAttachment(String dear, String content, FileSystemResource file1) {
 
 		MimeMessage message = javaMailSender.createMimeMessage();
 
@@ -70,9 +72,13 @@ public class MailService {
 			helper.setSubject(templateMailMessage.getSubject());
 			helper.setText(String.format(templateMailMessage.getText(), dear,
 					content));
-
-			FileSystemResource file = new FileSystemResource("C:\\hello\\java.txt");
-			helper.addAttachment(file.getFilename(), file);
+			if(file1 == null){
+				FileSystemResource file = new FileSystemResource("C:\\hello\\java.txt");
+				helper.addAttachment(file.getFilename(), file);
+			}else{
+				helper.addAttachment(file1.getFilename(), file1);
+			}
+			
 
 		} catch (MessagingException e) {
 			throw new MailParseException(e);

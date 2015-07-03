@@ -5,7 +5,6 @@ import java.sql.Date;
 public class Member {
 	private String nickname;
 	private String photo;
-	private String id;
 	private String password;
 	private String name;
 	private String phoneNumber;
@@ -28,12 +27,7 @@ public class Member {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getPassword() {
 		return password;
 	}

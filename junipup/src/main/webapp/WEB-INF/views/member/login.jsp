@@ -117,7 +117,7 @@
 					<div class="item">
 						<label for="uid" class="i_label"
 							style="position: absolute; visibility: visible;">ID</label><input
-							name="id" type="text" id="uid" class="i_text uid">
+							name="email" type="text" id="uid" class="i_text uid">
 					</div>
 					<div class="item">
 						<label for="upw" class="i_label"

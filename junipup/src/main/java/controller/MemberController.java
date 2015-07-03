@@ -34,8 +34,8 @@ public class MemberController {
 		return "/member/joinForm";
 	}
 	@RequestMapping(value="updateForm")
-	public String updateForm(@RequestParam("id") String id, Model model) {
-		Member member = ms.selectId(id);
+	public String updateForm(@RequestParam("email") String email, Model model) {
+		Member member = ms.selectEmail(email);
 		model.addAttribute("member", member);
 		return "/member/updateForm";
 	}
@@ -54,7 +54,7 @@ public class MemberController {
 	@RequestMapping(value="memlogin")
 	public String memlogin(Member member, Model model, HttpSession session) {
 		
-		Member selectmem = ms.selectIdPass(member.getId(), member.getPassword());
+		Member selectmem = ms.selectIdPass(member.getEmail(), member.getPassword());
 		
 		mail.sendMail("junibatni@gmail.com", "beatmini@naver.com", "히히", "ㅋㅋㅋ");
 
@@ -62,7 +62,7 @@ public class MemberController {
 			String msg = "ID나 패스워드가 틀렸습니다.";
 			model.addAttribute("message", msg);
 			return "member/login";
-		}else if(selectmem.getId().matches("admin")){
+		}else if(selectmem.getEmail().matches("admin")){
 			session.setAttribute(WebConstants.USER_KEY, selectmem);
 			model.addAttribute("loginUser", selectmem);
 			model.addAttribute("member", selectmem);
@@ -76,17 +76,17 @@ public class MemberController {
 		}
 	}
 
-	@RequestMapping(value= "idchk", method=RequestMethod.POST)	
-	public @ResponseBody String idchk(@RequestParam("id") String id, Model model)  {
-		System.out.println("id넣으면?? : "+id);
+	@RequestMapping(value= "emailchk", method=RequestMethod.POST)	
+	public @ResponseBody String idchk(@RequestParam("email") String email, Model model)  {
+		System.out.println("id넣으면?? : "+email);
 	    String result = "2";
-		if(ms.selectId(id) == null){
+		if(ms.selectEmail(email) == null){
 			result = "0";
 		}else{
 			result = "1";
 		}
 		System.out.println(result);
-		model.addAttribute("id", id);
+		model.addAttribute("email", email);
 	    return result;
 	}
 	

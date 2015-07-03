@@ -16,7 +16,7 @@ public interface MemberDao {
 	List<Member> list(Member member);
 	public int insertMember(Member member);
 	public Member selectIdPass(String id, String password);
-	public Member selectId(String id);
+
 	public Member selectNickname(String nickname);
 	public Member selectEmail(String email);
 	public int updateMember(Member member);

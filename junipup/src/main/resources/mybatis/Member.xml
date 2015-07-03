@@ -10,7 +10,7 @@
 	<resultMap id="MemberResult" type="Member">
 		<result property="nickname" column="nickname" />
 		<result property="photo" column="photo" />
-		<result property="id" column="id" />
+
 		<result property="password" column="password" />
 		<result property="name" column="name" />
 		<result property="phoneNumber" column="phoneNumber" />
@@ -25,7 +25,7 @@
 	<insert id="insertMember" parameterType="Member">
 		insert into member
 		values (
-		#{nickname}, #{photo, jdbcType=VARCHAR}, #{id},
+		#{nickname}, #{photo, jdbcType=VARCHAR},
 		#{password}, #{name}, #{phoneNumber},
 		#{email, jdbcType=VARCHAR},
 		#{mrank},
@@ -36,16 +36,12 @@
 		)
 	</insert>
 
-	<select id="selectIdPass" parameterType="java.util.Map" resultMap="MemberResult">
-		<![CDATA[ select * from member where id=#{id} and password=#{password}]]>
+	<select id="selectEmailPass" parameterType="java.util.Map" resultMap="MemberResult">
+		<![CDATA[ select * from member where email=#{email} and password=#{password}]]>
 
 
 	</select>
 
-	<select id="selectId" parameterType="String" resultMap="MemberResult">
-		<![CDATA[ select * from member where id=#{id}]]>
-
-	</select>	
 
 	<select id="selectNickname" parameterType="String" resultMap="MemberResult">
 		<![CDATA[ select * from member where nickname=#{nickname}]]>
@@ -61,9 +57,9 @@
 		ninkname = #{nickname},
 		photo = #{photo, jdbcType=VARCHAR},
 		password = #{password},
-		phoneNumber = #{phoneNumber},
-		email = #{email, jdbcType=VARCHAR},
-		where id = #{id}
+		phoneNumber = #{phoneNumber}
+
+		where email = #{email}
 	</update>
 	<delete id="deleteMember" parameterType="String">
 		delete from member where id = #{id}

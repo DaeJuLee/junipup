@@ -4,7 +4,7 @@ photo varchar2(50),
 password varchar2(30),
 name varchar2(30),
 phoneNumber number,
-email varchar2(50),
+email varchar2(60),
 mrank number(2),
 usePoint number,
 maxPoint number,
@@ -19,6 +19,14 @@ drop table member;
 select * from member where id='admin';
 select * from member;
 select * from jquery;
+
+-- Email --
+create table EmailTemplet(
+title varchar2(300) primary key,
+content varchar2(4000),
+recever varcha22(60)
+);
+
 --android--
 create table Android(
 bnum number primary key,
