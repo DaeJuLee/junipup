@@ -55,6 +55,7 @@
 	</delete>
 
 
+
 <!-- 
 	<insert id="insertMember" parameterType="Member">
 		insert into member
