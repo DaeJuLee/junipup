@@ -59,7 +59,8 @@ public class MailService {
 				content));
 		mailSender.send(message);
 	}
-
+	// if 쓰지 말고 오버로딩 하자~~
+	
 	public void sendMailWithAttachment(String dear, String content, FileSystemResource file1) {
 
 		MimeMessage message = javaMailSender.createMimeMessage();

@@ -10,22 +10,38 @@ usePoint number,
 maxPoint number,
 regDate date,
 loginDate date
-); 
+);
+
 drop table member;
 insert into member values ('이주대씨', 'aa.jpg', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
 insert into member values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
-insert into member values ('amin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into member values ('amdin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
 drop table member;
 select * from member where id='admin';
-select * from member;
+select * from member;1
 select * from jquery;
 
+-- message --
+create table message(
+nickname varchar2(30) primary key,
+msgnum number(4),
+title varchar2(300),
+message varchar2(1200),
+regdate date,
+confirm number(2)
+);
+
 -- Email --
-create table EmailTemplet(
+create table Email()
 title varchar2(300) primary key,
 content varchar2(4000),
-recever varcha22(60)
+recever varchar2(60),
+filename varchar2(256),
+category number(2),
+regdate date
 );
+
+
 
 --android--
 create table Android(
