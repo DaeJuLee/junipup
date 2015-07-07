@@ -19,7 +19,7 @@
 <a href="#">회원가입</a>
 <a href="#">아이디/비밀번호 찾기</a>
 
-	<!-- <div class="bg"></div>
+	<div class="bg"></div>
 	<div id="join" class="g_join">
 		<form action="" class="g_join">
 			<fieldset>
@@ -45,7 +45,7 @@
 				<span ><input type="button" value="취소" onclick="location.href='#'"></span>
 			</fieldset>
 		</form>
-	</div> -->
+	</div>
 
 </body>
 </html>
