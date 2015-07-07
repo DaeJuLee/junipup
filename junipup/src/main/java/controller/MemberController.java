@@ -104,6 +104,12 @@ public class MemberController {
 		model.addAttribute("nickname", nickname);
 	    return result;
 	}
+	@RequestMapping(value= "findmember")	
+	public @ResponseBody String findmember(@RequestParam("nickname") String nickname, Model model)  {
+		Member member = ms.selectNickname(nickname);
+	    model.addAttribute("member", member);
+	    return null;
+	}
 	
 //	@ResponseBody
 //	@RequestMapping(value= "idchk", method=RequestMethod.POST)
