@@ -1,12 +1,15 @@
 /* main Header */
 #wrab{width:100%;position:relative;margin:0 0 0 0;  display:inline-block;height:180px;}
-#h2 img{width: 100px; height:100px;}/* 이미지 크기  */
+#h2 img{width: 300px; height:100px;}/* 이미지 크기  */
 #h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;} 
 #h2 p a{font:bold 12px/1.3em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
-.loginInfomation{ float:right;  width:100px; height:200px;}
+.login_div{width:1250px; height:80px; }
+.inputUser{float:left; width:1000px; height:80px; display:inline-block; padding:0 25px 0 25px;}
+.information{ float:right;  width:200px; height:80px; }
+.login_table{width:200px;}
+.login_table td{text-align: center;}
 
 #h3 fieldset{float:right; width:150px; height:80px}
-#h4 {height:80px}
 #text {font:bold 14px/1.3em '맑은고딕'; color:blue; text-align: center;} 
 
 .top {float:right;}
@@ -51,7 +54,8 @@ nav {
   position: relative;
   float: left;
   padding: 0 0 0 0;
-  font-size: 1.0em;
+  /* font-size: 1.0em; */
+  font-size: 1.5em;
   line-height: 70px;
   font-weight: bold;
   text-decoration: none;
@@ -86,7 +90,7 @@ nav {
   width: 200px;
 }
 /* #menu li ul.expanded li { margin-right: 200px; } */
-#menu li ul li a {/* 마우스 올렸을때 효과를 나타냄 */
+#menu li ul li a {
   display: block;
   float: none;
   color: #4e5b67;
@@ -96,7 +100,7 @@ nav {
   width:200px;
   text-align: center;
 }
-#menu li ul li a:hover {
+#menu li ul li a:hover {/* 마우스 올렸을때 효과를 나타냄 */
   background: #384958;
   color: #fff;
   width:100%; */ /* 수정 성공?  */
@@ -153,9 +157,7 @@ html[xmlns] .clearfix { display: block; }
 body{font-family:돋움;font-size:12px; width:1250px; margin:auto; padding-top: 20px;}
 #wrap {width:80%; float:left; }
 #rightBanner{width:20%; float:right;}
-/* #rightBanner..spaceBanner table {width:100%; height:600px; border: 1px solid black;} */
 .spaceBanner {width:100%; height:600px; border: 1px solid black;}
-/* .rightBanner.spaceBanner table {width:100%; height:600px; border: 1px solid black;} */
 
 .tab_list{height:160px}
 .tab_list ul{position:relative;margin:0;padding:0;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
