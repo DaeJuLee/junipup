@@ -46,7 +46,7 @@ public class MemberController {
 		int result = ms.insertMember(member);
 		if (result > 0){
 			model.addAttribute("msg","회원가입을 환영합니다");
-			mail.sendMail("junibatni@gmail.com", member.getEmail(), "회원가입을 환영합니다", "<약관>");
+			mail.sendMail("junibatnipup@gmail.com", member.getEmail(), "회원가입을 환영합니다", "<약관>");
 			return "redirect:main.do";
 		}
 		else {
