@@ -65,9 +65,9 @@ public class MemberDaoImpl implements MemberDao {
 
 
 	@Override
-	public Member selectIdPass(String id, String password) {
+	public Member selectIdPass(String email, String password) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("id", id);
+		map.put("email", email);
 		map.put("password", password);
 		return session.selectOne("selectIdPass", map);
 	}
@@ -101,6 +101,32 @@ public class MemberDaoImpl implements MemberDao {
 	}
 	public List<Member> list(Member member) {
 		return session.selectList("list", member);
+	}
+	@Override
+	public void pointUp2(String nickname) {
+		session.update("pointUp2", nickname);
+		
+	}
+
+
+	@Override
+	public void pointUp5(String nickname) {
+		session.update("pointUp5", nickname);
+		
+	}
+
+
+	@Override
+	public void pointUp7(String nickname) {
+		session.update("pointUp7", nickname);
+		
+	}
+
+
+	@Override
+	public void pointUp10(String nickname) {
+		session.update("pointUp10", nickname);
+		
 	}
 
 

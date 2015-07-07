@@ -68,6 +68,27 @@
     	select * from (select rownum rn, a.* from (select * from member
     	order by regDate) a) where rn between #{start} and #{end}
 	</select>
+	
+	<update id="pointUp2" parameterType="String">
+		update member set
+		maxPoint + 2
+		where nickname = #{nickname}
+	</update>
+	<update id="pointUp5" parameterType="String">
+		update member set
+		maxPoint + 5
+		where nickname = #{nickname}
+	</update>
+	<update id="pointUp7" parameterType="String">
+		update member set
+		maxPoint + 7
+		where nickname = #{nickname}
+	</update>
+	<update id="pointUp10" parameterType="String">
+		update member set
+		maxPoint + 10
+		where nickname = #{nickname}
+	</update>
 
 <!-- 
 	<select id="list" parameterType="Emp" resultMap="EmpResult">

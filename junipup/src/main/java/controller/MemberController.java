@@ -56,7 +56,8 @@ public class MemberController {
 	}
 	@RequestMapping(value="memlogin")
 	public String memlogin(Member member, Model model, HttpSession session) {
-		
+		System.out.println(member.getEmail());
+		System.out.println(member.getPassword());
 		Member selectmem = ms.selectIdPass(member.getEmail(), member.getPassword());
 		if(selectmem == null){
 			String msg = "ID나 패스워드가 틀렸습니다.";
