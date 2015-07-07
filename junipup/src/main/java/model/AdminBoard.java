@@ -5,7 +5,6 @@ import java.util.Date;
 public class AdminBoard {
 	private String nickname;
 	private String photo;
-	private String id;
 	private String password;
 	private String name;
 	private int phoneNumber;
@@ -34,12 +33,7 @@ public class AdminBoard {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
+
 	public String getPassword() {
 		return password;
 	}

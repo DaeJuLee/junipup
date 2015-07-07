@@ -10,7 +10,6 @@
 	<resultMap id="AdminBoardResult" type="AdminBoard">
 		<result property="nickname"    column="nickname" />
 		<result property="photo"       column="photo" />
-		<result property="id"          column="id" />
 		<result property="password"    column="password" />
 		<result property="name"        column="name" />
 		<result property="phoneNumber" column="phoneNumber" />
@@ -24,22 +23,22 @@
 	</resultMap>
 
 	<select id="listAdmin" parameterType="AdminBoard" resultMap="AdminBoardResult">
-	select * from (select rownum rn, a.* from (select * from member) a) where rn between #{start} and #{end}
+	select * from (select rownum rn, a.* from (select * from Admin) a) where rn between #{start} and #{end}
 	</select>
 	
 	<insert id="adminInsert" parameterType="AdminBoard">
-		insert into member
+		insert into Admin
 		values (
-		#{nickname}, #{photo}, #{id}, #{password} , #{name}, #{phoneNumber},
+		#{nickname}, #{photo}, #{password} , #{name}, #{phoneNumber},
 		#{email}, #{mrank}, #{usePoint}, #{maxPoint}, sysdate, sysdate )
 	</insert>
 
 	<select id="totalAdmin" resultType="int" >
-		select count(*) from member
+		select count(*) from Admin
 	</select>
 	
 	<delete id="deleteAdmin" parameterType="String">
-		delete from member where nickname = #{nickname}
+		delete from Admin where nickname = #{nickname}
 	</delete> 
 
 
