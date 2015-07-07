@@ -12,6 +12,7 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
 	var msg = ${message};
 	jQuery(function($) {
