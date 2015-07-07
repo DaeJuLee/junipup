@@ -19,11 +19,6 @@
 			</div>
 		</div>   
 
-		<div id="h3">
-			<fieldset>
-				<legend> 로그인 정보 </legend>
-			</fieldset>
-		</div> 
 		<div id="h4">
 			<p>
 				<c:choose>
@@ -52,7 +47,7 @@
 	<nav>
 		<div class="wrapper">
 			<ul id="menu" class="clearfix">
-				<li><a href="main.do">Home</a></li>
+				<li><a href="main.do">Notice</a></li>
 				<!-- Database -->
 				<li><a href="DBMain.do">Database</a>
 					<ul>
@@ -65,48 +60,45 @@
 				<!-- jquery -->
 				<li class="jQuery"><a href="jQueryMain.do">jQuery</a>
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">YouTube</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#">기초익히기</a></li>
+						<li><a href="#">등급올리기</a></li>
+						<li><a href="#">질문게시판</a></li>
+						<li><a href="#">응용게시판</a></li>
 					</ul></li>
 				<!-- jsp -->
 				<li class="Jsp"><a href="jspMain.do">Jsp</a>
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">YouTube</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#">기초익히기</a></li>
+						<li><a href="#">등급올리기</a></li>
+						<li><a href="#">질문게시판</a></li>
+						<li><a href="#">응용게시판</a></li>
 					</ul></li>
 				<li class="Java"><a href="javaMain.do">Java</a>
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">YouTube</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#">기초익히기</a></li>
+						<li><a href="#">등급올리기</a></li>
+						<li><a href="#">질문게시판</a></li>
+						<li><a href="#">응용게시판</a></li>
 					</ul></li>
 
 				<li class="Android"><a href="androidMain.do">Android</a> <!-- <li class="Android"><a href="#">Android</a> -->
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">YouTube</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#">기초익히기</a></li>
+						<li><a href="#">등급올리기</a></li>
+						<li><a href="#">질문게시판</a></li>
+						<li><a href="#">응용게시판</a></li>
 					</ul></li>
 				<li class="Html5"><a href="html5Main.do">Html5</a>
 					<ul>
-						<li><a href="#">Facebook</a></li>
-						<li><a href="#">Twitter</a></li>
-						<li><a href="#">YouTube</a></li>
-						<li><a href="#">Instagram</a></li>
-						<li><a href="#"></a></li>
+						<li><a href="#">기초익히기</a></li>
+						<li><a href="#">등급올리기</a></li>
+						<li><a href="#">질문게시판</a></li>
+						<li><a href="#">응용게시판</a></li>
 					</ul></li>
+				<li class="QNA"><a href="#">QnA</a></li>
+				<li class="Check"><a href="#">출석체크!</a></li>
 				<li class="Login"><a href="login.do">Login</a></li>
-
+	
 			</ul>
 			<!-- id="menu" 끝 -->
 		</div>
