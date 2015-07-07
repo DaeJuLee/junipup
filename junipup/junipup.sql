@@ -21,6 +21,28 @@ select * from member where id='admin';
 select * from member;1
 select * from jquery;
 
+-- admin --
+create table Admin(
+nickname varchar2(30) primary key,
+photo varchar2(50),
+password varchar2(30),
+name varchar2(30),
+phoneNumber number,
+email varchar2(60),
+mrank number(2),
+usePoint number,
+maxPoint number,
+regDate date,
+loginDate date
+);
+
+select * from admin;
+
+drop table admin cascade constraint;
+
+insert into Admin values ('이주대씨', 'aa.jpg', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into Admin values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
+insert into Admin values ('amdin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
 -- message --
 create table message(
 nickname varchar2(30) primary key,

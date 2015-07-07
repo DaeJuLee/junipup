@@ -61,7 +61,6 @@
             
             <th>닉네임</th>
 			<th>사진</th>
-			<th>아이디</th>
 			<th>암호</th>
 			<th>이름</th>
 			<th>연락처</th>
@@ -78,7 +77,6 @@
             
             <td>${admin.nickname }</td>
 			<td>${admin.photo }</td>
-			<td>${admin.id }</td>
 			<td>${admin.password }</td>
 			<td>${admin.name }</td>
 			<td>${admin.phoneNumber }</td>
