@@ -242,7 +242,7 @@ $(function(){
 				<select name="tel1" id="tel1">
 				<option>010</option><option>011</option>
 				<option>016</option><option>017</option>
-				<option>018</option><option>019</option>
+			<option>018</option><option>019</option>
 				<option>02</option>
 				<option>031</option>
 				<option>032</option><option>033</option>

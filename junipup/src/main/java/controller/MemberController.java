@@ -52,6 +52,7 @@ public class MemberController {
 		else {
 			return "forward:/member/joinForm.do";
 		} 
+		
 	}
 	@RequestMapping(value="memlogin")
 	public String memlogin(Member member, Model model, HttpSession session) {
