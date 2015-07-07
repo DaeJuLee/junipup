@@ -32,7 +32,7 @@
 							환영합니다. | </font>
 						<c:choose>
 							<c:when test="${USER_KEY.id == 'master' }">
-								<a href="adminMain.do">관리자 페이지</a>
+								<a href="adminForm.do?id=${USER_KEY.id }">관리자 페이지</a>
 				 			</c:when>
 							<c:when test="${USER_KEY.id != 'master' }">
 								<a href="updateForm.do?id=${USER_KEY.id }">마이 페이지</a>
