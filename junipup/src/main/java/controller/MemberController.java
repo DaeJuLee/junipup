@@ -1,7 +1,7 @@
 package controller;
 
 
-import java.util.HashMap;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -44,10 +44,12 @@ public class MemberController {
 	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		int result = ms.insertMember(member);
-		if (result > 0) return "redirect:main.do";
-		else {
+		if (result > 0){
 			model.addAttribute("msg","회원가입을 환영합니다");
-			
+			mail.sendMail("junibatni@gmail.com", member.getEmail(), "회원가입을 환영합니다", "<약관>");
+			return "redirect:main.do";
+		}
+		else {
 			return "forward:/member/joinForm.do";
 		} 
 	}
@@ -55,9 +57,6 @@ public class MemberController {
 	public String memlogin(Member member, Model model, HttpSession session) {
 		
 		Member selectmem = ms.selectIdPass(member.getEmail(), member.getPassword());
-		
-		mail.sendMail("junibatni@gmail.com", "beatmini@naver.com", "히히", "ㅋㅋㅋ");
-
 		if(selectmem == null){
 			String msg = "ID나 패스워드가 틀렸습니다.";
 			model.addAttribute("message", msg);

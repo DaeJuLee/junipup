@@ -15,6 +15,12 @@ public class Member {
 	private Date regDate;
 	private Date loginDate;
 	
+	public Date getLoginDate() {
+		return loginDate;
+	}
+	public void setLoginDate(Date loginDate) {
+		this.loginDate = loginDate;
+	}
 	public String getNickname() {
 		return nickname;
 	}

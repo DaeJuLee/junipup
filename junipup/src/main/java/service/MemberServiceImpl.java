@@ -20,6 +20,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDao md;
+
 	
 /*	public List<Emp> list(Emp emp) {
 		return ed.list(emp);
@@ -65,6 +66,7 @@ public class MemberServiceImpl implements MemberService {
 		member.setMrank(10);
 		member.setUsePoint(0);
 		member.setMaxPoint(50);
+		
 		
 		return md.insertMember(member);
 		
