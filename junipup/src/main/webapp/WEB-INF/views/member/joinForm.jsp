@@ -10,6 +10,13 @@
 	 width: 50%;
 	 
 	}
+
+	#chk1{
+		color: red;
+	}
+	#chk2{
+		color: red;
+	}
 	.join_tbl th {
 		width: 980px; border-collapse:collapse; border-spacing:0; border-top:2px solid #ddd;
 			border-bottom:2px solid #ddd; font-size:11px; font-family:dotum; margin-bottom:30px
@@ -28,31 +35,38 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="js/log.js"></script>
 <script type="text/javascript" src="js/password.js"></script>
 <script type="text/javascript">
-
+var tchk1 = 0, tchk2 = 0, tchk3 =0;
 $(function() {
-	var id = document.getElementById("id");
-	$("#idchk").click(function() {
-		 /* alert("쿼리가 먹히나"); */
-		 /* alert(id.value.length); */
-		 /* alert(id.value); */
-		 if(id.value.length >= 3){
-			 /* alert("두글자 넘음"); */
+	
+	var id = document.getElementById("email");
+	var Resultchkhtml1 = "Email을 입력해주세요";
+	$("#chk1").html(Resultchkhtml1);
+
+
+	$("#emailchk").click(function() {
+		if(id.value.length >= 3){
+			 
 		 $.ajax({
            url :"emailchk.do",
            type: "POST",
            data : { "email" : $("#email").val() },
            datatype : "text",
            success : function(data){
-           	alert(data);
+     
                if(data == "1"){
-               	alert("이미 있는 아이디입니다.");
+            	   Resultchkhtml1 = "이미 있는 아이디입니다.";
+            	   $("#chk1").html(Resultchkhtml1);
                }else if(data == "0"){
-               	alert("사용하세요");
+            	   Resultchkhtml1 = "사용가능한 Email입니다.";
+            	   $("#chk1").html(Resultchkhtml1);
+            	   tchk1 = 1;
                }else{
-               	alert("id 입력해주세요");
+            	   Resultchkhtml1 = "id 입력해주세요";
+            	   $("#chk1").html(Resultchkhtml1);
                }
            },
            error:function(request, status, error){
@@ -62,7 +76,8 @@ $(function() {
 		 
 	}/*if문 끝  */
 	else if(id.value.length < 3){
-		alert("세글자 이상을 입력하세요");
+		Resultchkhtml1 = "세글자 이상을 입력하세요";
+		$("#chk1").html(Resultchkhtml1);
 	}
 
 	});
@@ -79,63 +94,115 @@ $(function(){
 	var focus2 = 1;
 	if(focus==1){
 		passwordFocus.focus(function(){ 
-			/* alert("포커스"); */
-			/* focus1 = 2; */
+			
 		}); 
 		passwordFocus.blur(function(){ 
-			/* alert("포커스 벗어남"); */
 			if(password.value.length != 0){
-				alert(password.value.length);
 				$('#password2').removeAttr('disabled');
 			}
 		});
 		password2Focus.focus(function(){ 
-			/* alert("포커스2"); */
-			/* focus2 = 2; */
+
 		}); 
 		password2Focus.blur(function(){ 
 			/* alert("포커스2 벗어남"); */
 			if(password2.value.length != 0){
-				alert(password2.value.length);
-				/* focus=4; */
-				$(function(){
-					alert("비밀번호 일치 확인");
-					/* var password = new Password(frm.password.value, frm.password2.value); */
-					var password = new Password($('#password').val(), $('#password2').val());
-					log('변경전');
-					/* log('넣는거야?' + password.toString()); */
-					alert("비밀번호 일치 확인 끝");
-				});
+				if(password.value == password2.value){
+					$(function(){
+						alert("비밀번호 일치");
+						tchk2 = 1;
+					});
+				}else{
+					alert("비밀번호 불일치");
+				}		
+				
 			}
 		});
 	
-	}//if문 끝
-	
-	/* if(focus==4 && focus1==2 && focus2 ==2){
-	alert("비밀번호 일치 확인");
-	var password = new Password(password.value, password2.value);
-	var html = document.getElementById("passcheck");
-	if(password.getEqual()=="1"){
-		p1.innerHTML = "비밀번호 일치";
 	}
-	}else{
-		p1.innerHTML = "비밀번호 불일치";
-	} */
 	
-	/* if(focus==4 && password.value.length==password2.value.length){
-		for(var i = 0; i < password.value.length; i++){
-			if(password.value[i]==password2.value[i]){
-				focus=5;
-			}
+	$(function() {
+		
+		var nick = document.getElementById("nickname");
+		var Resultchkhtml2 = "닉네임을 입력해주세요";
+		$("#chk2").html(Resultchkhtml2);
+		
+
+		$("#nicknamechk").click(function() {
+			if(nick.value.length >= 3){
+				 
+			 $.ajax({
+	           url :"nicknamechk.do",
+	           type: "POST",
+	           data : { "nickname" : $("#nickname").val() },
+	           datatype : "text",
+	           success : function(data){
+	         
+	               if(data == "1"){
+	            	   Resultchkhtml2 = "이미 있는 닉네임입니다.";
+	            	   $("#chk2").html(Resultchkhtml2);
+	               }else if(data == "0"){
+	            	   Resultchkhtml2 = "사용가능한 닉네임입니다.";
+	            	   $("#chk2").html(Resultchkhtml2);
+	            	   tchk3 = 1;
+
+	               }else{
+	            	   Resultchkhtml2 = "닉네임을 입력해주세요";
+	            	   $("#chk2").html(Resultchkhtml2);
+	               }
+	           },
+	           error:function(request, status, error){
+	           	alert("code:"+ request.status + "\n" + "error:"+error);
+	           }
+	       }); 
+			 
+		}/*if문 끝  */
+		else if(id.value.length < 3){
+			Resultchkhtml2 = "세글자 이상을 입력하세요";
+			$("#chk2").html(Resultchkhtml2);
 		}
-	}else{
-		alert("패스워드가 다릅니다.")
-	}
+
+		});
+	});
 	
-	if(focus==5){
-		alert("패스워드가 같습니다.");
-	} */
+
+});
+
+	$(function(){
+		$("#email").change(function(){
+			tchk1 = 0;
+		});
+		$("#password2").change(function(){
+			tchk2 = 0;
+		});
+		$("#nickname").change(function(){
+			tchk3 = 0;
+		});
+	});
+		
+			
+		
+
+$(function(){
+
+	$("#login").submit(function() {
 	
+		if(tchk1 == 0){
+			alert("아이디 중복확인을 해주세요");
+			return false;
+		}
+		if(tchk2 == 0){
+			alert("비밀번호 일치확인을 해주세요");
+			return false;			
+		}
+		if(tchk3 == 0){
+			alert("닉네임 중복확인을 해주세요");
+			return false;
+		}
+		if(tck1 == 1 && tchk2 == 1 && tchk3 == 1){
+			return true;
+		}
+	});
 });
 	
 </script>
@@ -150,11 +217,11 @@ $(function(){
 		 	<col width="35%" /> 
 			<!-- <col width="40%" />  -->
 		</colgroup> 
-		<tr><th colspan="3">회원가입</th></tr>
+		<tr><th colspan="3" id="title"><h2>회원가입</h2></th></tr>
 		<tr><th colspan="1">아이디</th>
-		<tr>
-			<td><input type="email" name="email" class="inputText" required="required">
-			&nbsp&nbsp<input type="button" id="emailchk" value="중복체크"></td><td></td></tr>
+		
+			<td><input title="Email을 입력해 주세요" type="email" name="email" id="email" class="inputText" required="required">
+			&nbsp&nbsp<input type="button" id="emailchk" value="중복체크">&nbsp&nbsp<td><div id="chk1"></div></td>
 		<tr><th colspan="1">패스워드</th>
 			<td><input type="password" name="password" id="password" class="inputText" required="required"></td><td></td></tr>
 			
@@ -163,7 +230,8 @@ $(function(){
 			<!-- <div id="passcheck"></div> --></td><td><div id="passcheck"></div></td></tr>
 			
 		<tr><th>닉네입</th>
-			<td ><input type="text" name="nickname" id="nickname" class="inputText" required="required"></td><td></td></tr>
+			<td ><input type="text" name="nickname" id="nickname" class="inputText" required="required">
+			&nbsp&nbsp<input type="button" id="nicknamechk" value="중복체크">&nbsp&nbsp<td><div id="chk2"></div></td></tr>
 			
 		<tr><th>이름</th>
 			<td ><input type="text" name="name" id="name" class="inputText" required="required"></td><td></td></tr>
@@ -190,7 +258,7 @@ $(function(){
 		
 		
 			
-		<tr><th>사진</th>
+		<tr><th>프로필사진</th>
 			<td ><input type="file" name="photo"  id="photo"></td><td></td></tr>
 			
 		<tr><td></td><td align="center"><input type="submit" value="확인">&nbsp&nbsp<input type="reset" value="취소"></td><td></td></tr>

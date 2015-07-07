@@ -77,15 +77,29 @@ public class MemberController {
 
 	@RequestMapping(value= "emailchk", method=RequestMethod.POST)	
 	public @ResponseBody String idchk(@RequestParam("email") String email, Model model)  {
-		System.out.println("id넣으면?? : "+email);
+		
 	    String result = "2";
 		if(ms.selectEmail(email) == null){
 			result = "0";
 		}else{
 			result = "1";
 		}
-		System.out.println(result);
+		
 		model.addAttribute("email", email);
+	    return result;
+	}
+	
+	@RequestMapping(value= "nicknamechk", method=RequestMethod.POST)	
+	public @ResponseBody String nicknamechk(@RequestParam("nickname") String nickname, Model model)  {
+		
+	    String result = "2";
+		if(ms.selectNickname(nickname) == null){
+			result = "0";
+		}else{
+			result = "1";
+		}
+		
+		model.addAttribute("nickname", nickname);
 	    return result;
 	}
 	
