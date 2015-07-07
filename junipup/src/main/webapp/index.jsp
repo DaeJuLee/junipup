@@ -9,8 +9,8 @@
 <body>
 <%
 
-	response.sendRedirect("main2.do");
-    //response.sendRedirect("main.do");
+	//response.sendRedirect("main2.do");
+    response.sendRedirect("main.do");
 	//response.sendRedirect("adminMain.do");
 	//response.sendRedirect("ScrollTest.do");
 	//response.sendRedirect("androidDeleteCheck.do");

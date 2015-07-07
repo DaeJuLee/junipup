@@ -89,17 +89,17 @@ $(function(){
 	$('#password2').attr('disabled', 'disabled');
 	var passwordFocus = $('#password');
 	var password2Focus = $('#password2');
-	var focus = 1;
+	
 	var focus1 = 1;
 	var focus2 = 1;
-	if(focus==1){
-		passwordFocus.focus(function(){ 
-			
-		}); 
-		passwordFocus.blur(function(){ 
+	
+		passwordFocus.keyup(function(){ 
 			if(password.value.length != 0){
 				$('#password2').removeAttr('disabled');
 			}
+		}); 
+		passwordFocus.blur(function(){ 
+			
 		});
 		password2Focus.focus(function(){ 
 
@@ -119,7 +119,7 @@ $(function(){
 			}
 		});
 	
-	}
+
 	
 	$(function() {
 		
@@ -230,7 +230,7 @@ $(function(){
 			<!-- <div id="passcheck"></div> --></td><td><div id="passcheck"></div></td></tr>
 			
 		<tr><th>닉네입</th>
-			<td ><input type="text" name="nickname" id="nickname" class="inputText" required="required">
+			<td ><input type="text" name="nickname" id="nickname" title="닉네임의 최대길이는 16글자 입니다." class="inputText" size="16" maxlength="16" required="required">
 			&nbsp&nbsp<input type="button" id="nicknamechk" value="중복체크">&nbsp&nbsp<td><div id="chk2"></div></td></tr>
 			
 		<tr><th>이름</th>
