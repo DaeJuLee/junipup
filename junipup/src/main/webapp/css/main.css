@@ -1,8 +1,10 @@
 /* main Header */
-#wrab{width:100%;position:relative;margin:0 0 0 0;  display:inline-block;height:100px;}
-#h2 img{width: 100px; height:100px}/* 이미지 크기  */
+#wrab{width:100%;position:relative;margin:0 0 0 0;  display:inline-block;height:180px;}
+#h2 img{width: 100px; height:100px;}/* 이미지 크기  */
 #h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;} 
 #h2 p a{font:bold 12px/1.3em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
+.loginInfomation{ float:right;  width:100px; height:200px;}
+
 #h3 fieldset{float:right; width:150px; height:80px}
 #h4 {height:80px}
 #text {font:bold 14px/1.3em '맑은고딕'; color:blue; text-align: center;} 
@@ -13,8 +15,6 @@ blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 strong, b { font-weight: bold; }
 em, i { font-style: italic; }
-
-table { border-collapse: collapse; border-spacing: 0; }
 img { border: 0; max-width: 100%; height: auto; width: 100%; }
 
 
@@ -29,7 +29,8 @@ nav {
 .wrapper { 
   display: block;
   margin: 0;
-  width: 1300px;
+  width: 1250px;
+  float: right;
 } 
 
 #menu {
@@ -149,8 +150,7 @@ html[xmlns] .clearfix { display: block; }
 
 /* mainTab*/
 
-body{font-family:돋움;font-size:12px; width:1200px; margin:15px;}
-table { border-collapse:collapse; table-layout:fixed; border-spacing:0; border-collapse:separate \9; }
+body{font-family:돋움;font-size:12px; width:1250px; margin:auto; padding-top: 20px;}
 #wrap {width:80%; float:left; }
 #rightBanner{width:20%; float:right;}
 /* #rightBanner..spaceBanner table {width:100%; height:600px; border: 1px solid black;} */
@@ -229,6 +229,7 @@ table { border-collapse:collapse; table-layout:fixed; border-spacing:0; border-c
 .clsBannerScreen .images {
     position: absolute;
     display: none;
+    width:100%;
 }
  
 ul, li {

@@ -14,8 +14,15 @@
 	<div id="wrab">
 		<div id="h2">
 			<div align="center">
-				<a href="main.do"><img
-					src="images/junipup${USER_KEY.mrank }.jpg" width="100px"></a>
+				<a href="main.do"><img src="images/junipup${USER_KEY.mrank }.jpg" width="100px"></a>
+			</div>
+			
+			<div class="loginInfomation">
+				<table border="1">
+					<col width="100px"><col width="100px">
+					<tr><td>아</td><td>하</td></tr>
+					<tr><td>역</td><td>시</td></tr>
+				</table>
 			</div>
 		</div>   
 

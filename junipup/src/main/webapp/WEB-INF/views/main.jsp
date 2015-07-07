@@ -234,7 +234,7 @@
 	</table>	
 	
 	<div id="STATICMENU">
-	--사이드배너, 광고, 메뉴 소스 넣어줍니다--
+	
 	</div>
 	
 <!-- 	<div id="rightBanner">
