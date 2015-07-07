@@ -66,9 +66,12 @@ jQuery(function($){
         <li class="more">› <a href="#">응용게시판 더보기</a></li>
         </ul>
     </li>
+    
+    <button type="button" onclick="location.href='DBInsertForm.do'" class="button">글쓰기</button>
+    
     </ul>
-</div>
-
+    
+</div>	
 	<div class="tab_content">
 	<c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
@@ -89,7 +92,6 @@ jQuery(function($){
 	</c:forEach>
 	</table>
 	</div >
-<button type="button" onclick="location.href='DBInsertForm.do'" class="button">글쓰기</button>
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		
 		<%-- <a href="DBMain.do?currentPage=${pg.startPage-pg.pageBlock }" class="pre">이전</a> --%>

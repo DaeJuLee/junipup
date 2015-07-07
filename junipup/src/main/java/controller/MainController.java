@@ -16,5 +16,8 @@ public class MainController {
 	public String login(Model model){
 		return "/member/login";
 	}
-
+	@RequestMapping(value = "main2")
+	public String main2(Model model){	
+		return "main2";
+	}
 }
