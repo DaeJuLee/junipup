@@ -1,8 +1,9 @@
 /* main Header */
 #wrab{width:100%;position:relative;margin:0 0 0 0;  display:inline-block;height:180px;}
 #h2 img{width: 300px; height:100px;}/* 이미지 크기  */
-#h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;} 
-#h2 p a{font:bold 12px/1.3em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
+#h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;}
+h2 {height:100%; display: inline-block;}
+#h2 p a{font:bold 12px/2.0em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
 .login_div{width:1250px; height:80px; }
 .inputUser{float:left; width:1000px; height:80px; display:inline-block; padding:0 25px 0 25px;}
 .information{ float:right;  width:200px; height:80px; }
@@ -154,7 +155,7 @@ html[xmlns] .clearfix { display: block; }
 
 /* mainTab*/
 
-body{font-family:돋움;font-size:12px; width:1250px; margin:auto; padding-top: 20px;}
+body{width:1250px; margin:auto; padding-top: 20px;}
 #wrap {width:80%; float:left; }
 #rightBanner{width:20%; float:right;}
 .spaceBanner {width:100%; height:600px; border: 1px solid black;}

@@ -23,8 +23,8 @@
 				<p>
 				<c:choose>
 					<c:when test="${not empty USER_KEY}">
-						<font color="green"><c:out value="${USER_KEY.nickname}" />님,
-							환영합니다. | </font>
+						<h2><c:out value="${USER_KEY.nickname}" />님,
+							환영합니다. |</h2> 
 						<c:choose>
 							<c:when test="${USER_KEY.nickname == 'master' }">
 								<a href="adminForm.do?id=${USER_KEY.id }">관리자 페이지</a>
@@ -50,7 +50,6 @@
 				</table>
 			</div>
 		</div>   
-
 	</div>
 	<!-- wrab 끝 -->
 	<nav>
