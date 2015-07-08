@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <!--스타일시트 추가-->
+    <link rel="stylesheet" href="css/style.css">
     <!--jQuery 라이브러리 추가-->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <!--jQuery 플러그인 추가-->
@@ -29,7 +31,7 @@
 	});
 </script>
 <script type="text/javascript">
- var stmnLEFT = 100; // 오른쪽 여백 
+ var stmnLEFT = 10; // 오른쪽 여백 
  var stmnGAP1 = 0; // 위쪽 여백 
  var stmnGAP2 = 150; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
  var stmnBASE = 150; // 스크롤 시작위치 
@@ -54,6 +56,8 @@
   document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px'; 
   RefreshStaticMenu();
   }
+ 
+ 
 </script>
 <style type="text/css">
 #STATICMENU { margin: 0pt; padding: 0pt;  position: absolute; right: 0px; top: 0px;}
@@ -61,198 +65,121 @@
 
 
 </head>
-<body  onload="InitializeStaticMenu();">	
-    <div id="image_list_2" align="center">
-        <div class="clsBannerScreen">
-            <div class="images" style="display:block">
-                <img src="images/google.jpg">
-            </div>
-            <div class="images"><img src="images/daum.jpg"></div>
-            <div class="images"><img src="images/naver.jpg"></div>
-            <div class="images"><img src="images/nate.jpg"></div>
-            <div class="images"><img src="images/yahoo.jpg"></div>
-        </div>
+<body  onload="InitializeStaticMenu();">
+
+<div class="center">
+	
+	<div class="left_center">
+    	<div class="left_center1" id="image_list_2" align="center">
+        	<div class="clsBannerScreen">
+            	<div class="images" style="display:block">
+                	<img src="images/google.jpg">
+            	</div>
+            	<div class="images"><img src="images/daum.jpg"></div>
+            	<div class="images"><img src="images/naver.jpg"></div>
+            	<div class="images"><img src="images/nate.jpg"></div>
+            	<div class="images"><img src="images/yahoo.jpg"></div>
+        	</div>
  
-        <ul class="clsBannerButton" id="label_2">
-            <li class="fir">구글<br>(google.co.kr)</li>
-            <li>다음<br>(daum.net)</li>
-            <li>네이버<br>(naver.com)</li>
-            <li>네이트<br>(nate.com)</li>
-            <li>야후<br>(kr.yahoo.com)</li>
-        </ul>
+        	<ul class="clsBannerButton" id="label_2">
+            	<li class="fir">구글<br>(google.co.kr)</li>
+            	<li>다음<br>(daum.net)</li>
+            	<li>네이버<br>(naver.com)</li>
+            	<li>네이트<br>(nate.com)</li>
+            	<li>야후<br>(kr.yahoo.com)</li>
+        	</ul>
+    	</div>
+    	
+    	<div class="left_center2">
+    		<div class="left11">
+    			<ul class="tabs">
+    				<li class="tab1"><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    				
+    				<li class="tab2"><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</div>
+    		
+    		<div class="left12">
+    			<ul>
+    				<li><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    				
+    				<li><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+    	
+    	<div class="left_center3">
+    		<div class="left21">
+    			<ul>
+    				<li><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    				
+    				<li><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</div>
+    		
+    		<div class="left22">
+    			<ul>
+    				<li><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    				
+    				<li><a href="#">공지사항</a>
+    					<ul>
+    						<li>서브메뉴</li>
+    						<li>서브메뉴</li>
+    					</ul>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
     </div>
-   		
-	<table id="wrap">
-		<colgroup>
-			<col width="50%">
-			<col width="50%">
-		</colgroup>
-		<thead>
-			<tr>
-				<th scope="col"></th>
-				<th scope="col"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><div class="tab_list m1" style="height: 112px;">
-						<ul>
-							<li class="m1"><a href="#"><span>1행1열</span></a>
-								<ul>
-									<li>› <a href="#">1행1열</a></li>
-									<li>› <a href="#">1행1열</a></li>
-									<li>› <a href="#">1행1열</a></li>
-									<li>› <a href="#">1행1열</a></li>
-									<li>› <a href="#">1행1열</a></li>
-									
-								</ul></li>
-							<li class="m2"><a href="#"><span>메인테스트</span></a>
-								<ul>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
+    
+    <div class="right_center">
+    	asldkj
+    </div>
+    
+    
+</div>
 
-								</ul></li>
-							<li class="m3"><a href="#"><span>메인테스트</span></a>
-								<ul>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									
-								</ul></li>
-						</ul>
-					</div>
-					</div></td>
-				<td><div class="one_row_two_column">
-						<div class="tab_list m1" style="height: 112px;">
-							<ul>
-								<li class="m1"><a href="#"><span>1행2열</span></a>
-									<ul>
-										<li>› <a href="#">1행2열</a></li>
-										<li>› <a href="#">1행2열</a></li>
-										<li>› <a href="#">1행2열</a></li>
-										<li>› <a href="#">1행2열</a></li>
-										<li>› <a href="#">1행2열</a></li>
-										
-									</ul></li>
-								<li class="m2"><a href="#"><span>메인테스트</span></a>
-									<ul>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										
-									</ul></li>
-								<li class="m3"><a href="#"><span>메인테스트</span></a>
-									<ul>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										
-									</ul></li>
-							</ul>
-						</div></td>
-			</tr>
-
-			<tr>
-				<td><div class="tab_list m1" style="height: 112px;">
-						<ul>
-							<li class="m1"><a href="#"><span>2행1열</span></a>
-								<ul>
-									<li>› <a href="#">2행1열</a></li>
-									<li>› <a href="#">2행1열</a></li>
-									<li>› <a href="#">2행1열</a></li>
-									<li>› <a href="#">2행1열</a></li>
-									<li>› <a href="#">2행1열</a></li>
-									
-								</ul></li>
-							<li class="m2"><a href="#"><span>메인테스트</span></a>
-								<ul>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									
-								</ul></li>
-							<li class="m3"><a href="#"><span>메인테스트</span></a>
-								<ul>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									<li>› <a href="#">메인테스트</a></li>
-									
-								</ul></li>
-						</ul>
-					</div>
-					</div></td>
-				<td><div class="one_row_two_column">
-						<div class="tab_list m1" style="height: 112px;">
-							<ul>
-								<li class="m1"><a href="#"><span>1행2열</span></a>
-									<ul>
-										<li>› <a href="#">2행2열</a></li>
-										<li>› <a href="#">2행2열</a></li>
-										<li>› <a href="#">2행2열</a></li>
-										<li>› <a href="#">2행2열</a></li>
-										<li>› <a href="#">2행2열</a></li>
-										
-									</ul></li>
-								<li class="m2"><a href="#"><span>메인테스트</span></a>
-									<ul>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										
-									</ul></li>
-								<li class="m3"><a href="#"><span>메인테스트</span></a>
-									<ul>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										<li>› <a href="#">메인테스트</a></li>
-										
-									</ul></li>
-							</ul>
-						</div></td>
-			</tr>
-
-		</tbody>
-	</table>	
 	
-	<div id="STATICMENU">
-		<div>1
-		</div>
-		<div>2
-		</div>
-		<div>3
-		</div>
-		<div>4
-		</div>
-	</div>
-	
-<!-- 	<div id="rightBanner">
-		<div>
-			<table width="100%" height="600" border="1">
-			<table class="spaceBanner">
-				<tr><td>응?</td></tr>
-			</table>
-		</div>
-	</div> -->
-	
-	<div id = "footer">
-		
-	</div>
 </body>
 </html>
