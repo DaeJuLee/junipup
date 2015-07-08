@@ -1,0 +1,60 @@
+
+/* UI Object */
+.left11{height:160px}
+.left11 ul{position:relative;margin:0;padding:0;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
+.left11 ul:after{display:block;clear:both;content:""}
+.left11 li{float:left;margin-bottom:-1px}
+.left11 li a{float:left;position:relative;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666;text-decoration:none}
+.left11 li a span{display:inline-block;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
+.left11 li ul{display:none;position:absolute;top:40px;left:0;width:100%;margin:0;padding:0;border:0;list-style:none;*zoom:1}
+.left11 li ul:after{display:block;clear:both;content:""}
+.left11 li li{float:none;position:relative;margin:0 0 8px 0;color:#999}
+.left11 li li a{float:none;margin:0;padding:0;border:0 !important;background:transparent;font-weight:normal;color:#666 !important;letter-spacing:normal}
+.left11 li li a:hover,
+.left11 li li a:active,
+.left11 li li a:focus{color:#000 !important;text-decoration:underline}
+.left11 li li.more{position:absolute;top:-30px;right:0;border:0 !important;background:transparent}
+.left11.m1 .m1 a,
+.left11.m2 .m2 a,
+.left11.m3 .m3 a,
+.left11.m4 .m4 a,
+.left11.m5 .m5 a,
+.left11.m6 .m6 a,
+.left11.m7 .m7 a,
+.left11.m8 .m8 a,
+.left11.m9 .m9 a,
+.left11.m10 .m10 a,
+.left11.m11 .m11 a,
+.left11.m12 .m12 a{margin-top:-1px;border:1px solid #ccc;border-bottom:1px solid #fff;background:transparent;color:#333}
+.left11.m1 .m1 a span,
+.left11.m2 .m2 a span,
+.left11.m3 .m3 a span,
+.left11.m4 .m4 a span,
+.left11.m5 .m5 a span,
+.left11.m6 .m6 a span,
+.left11.m7 .m7 a span,
+.left11.m8 .m8 a span,
+.left11.m9 .m9 a span,
+.left11.m10 .m10 a span,
+.left11.m11 .m11 a span,
+.left11.m12 .m12 a span{padding-top:7px;font-weight:bold}
+.left11.m1 .m1 ul,
+.left11.m2 .m2 ul,
+.left11.m3 .m3 ul,
+.left11.m4 .m4 ul,
+.left11.m5 .m5 ul,
+.left11.m6 .m6 ul,
+.left11.m7 .m7 ul,
+.left11.m8 .m8 ul,
+.left11.m9 .m9 ul,
+.left11.m10 .m10 ul,
+.left11.m11 .m11 ul,
+.left11.m12 .m12 ul{display:block}
+.left11.js_off{height:auto}
+.left11.js_off ul{border:0}
+.left11.js_off li{float:none;position:relative}
+.left11.js_off li a{display:block;float:none;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important;font-weight:bold;color:#333}
+.left11.js_off li ul{position:static;display:block;left:0;top:0;padding:5px 0}
+.left11.js_off li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
+.left11.js_off li li.more{top:7px;right:15px}
+/* //UI Object */
