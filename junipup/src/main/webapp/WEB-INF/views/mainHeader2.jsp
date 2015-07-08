@@ -59,49 +59,49 @@
 				<!-- Database -->
 				<li><a href="DBMain.do">Database</a>
 					<ul>
-						<li><a href="#">기초익히기</a></li>
-						<li><a href="#">등급올리기</a></li>
-						<li><a href="#">질문게시판</a></li>
-						<li><a href="#">응용게시판</a></li>
+						<li><a href="DBMain.do?category=기초익히기">기초익히기</a></li>
+						<li><a href="DBMain.do?category=등급올리기">등급올리기</a></li>
+						<li><a href="DBMain.do?category=질문게시판">질문게시판</a></li>
+						<li><a href="DBMain.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 
 				<!-- jquery -->
 				<li class="jQuery"><a href="jQueryMain.do">jQuery</a>
 					<ul>
-						<li><a href="#">기초익히기</a></li>
-						<li><a href="#">등급올리기</a></li>
-						<li><a href="#">질문게시판</a></li>
-						<li><a href="#">응용게시판</a></li>
+						<li><a href="jQueryMain.do?category=기초익히기">기초익히기</a></li>
+						<li><a href="jQueryMain.do?category=등급올리기">등급올리기</a></li>
+						<li><a href="jQueryMain.do?category=질문게시판">질문게시판</a></li>
+						<li><a href="jQueryMain.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<!-- jsp -->
 				<li class="Jsp"><a href="jspMain.do">Jsp</a>
 					<ul>
-						<li><a href="#">기초익히기</a></li>
-						<li><a href="#">등급올리기</a></li>
-						<li><a href="#">질문게시판</a></li>
-						<li><a href="#">응용게시판</a></li>
+						<li><a href="jspMain.do?category=기초익히기">기초익히기</a></li>
+						<li><a href="jspMain.do?category=등급올리기">등급올리기</a></li>
+						<li><a href="jspMain.do?category=질문게시판">질문게시판</a></li>
+						<li><a href="jspMain.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="Java"><a href="javaMain.do">Java</a>
 					<ul>
-						<li><a href="#">기초익히기</a></li>
-						<li><a href="#">등급올리기</a></li>
-						<li><a href="#">질문게시판</a></li>
-						<li><a href="#">응용게시판</a></li>
+						<li><a href="javaMain.do?category=기초익히기">기초익히기</a></li>
+						<li><a href="javaMain.do?category=등급올리기">등급올리기</a></li>
+						<li><a href="javaMain.do?category=질문게시판">질문게시판</a></li>
+						<li><a href="javaMain.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 
 				<li class="Android"><a href="androidMain.do">Android</a> <!-- <li class="Android"><a href="#">Android</a> -->
 					<ul>
-						<li><a href="#">기초익히기</a></li>
-						<li><a href="#">등급올리기</a></li>
-						<li><a href="#">질문게시판</a></li>
-						<li><a href="#">응용게시판</a></li>
+						<li><a href="androidMain.do?category=기초익히기">기초익히기</a></li>
+						<li><a href="androidMain.do?category=등급올리기">등급올리기</a></li>
+						<li><a href="androidMain.do?category=질문게시판">질문게시판</a></li>
+						<li><a href="androidMain.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="Html5"><a href="html5Main.do">Html5</a>
 					<ul>
-						<li><a href="#">기초익히기</a></li>
-						<li><a href="#">등급올리기</a></li>
-						<li><a href="#">질문게시판</a></li>
-						<li><a href="#">응용게시판</a></li>
+						<li><a href="html5Main.do?category=기초익히기">기초익히기</a></li>
+						<li><a href="html5Main.do?category=등급올리기">등급올리기</a></li>
+						<li><a href="html5Main.do?category=질문게시판">질문게시판</a></li>
+						<li><a href="html5Main.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="QNA"><a href="#">QnA</a></li>
 				<li class="Check"><a href="#">출석체크!</a></li>
