@@ -1,8 +1,5 @@
 package controller;
 
-
-
-
 import javax.servlet.http.HttpSession;
 
 import model.Member;

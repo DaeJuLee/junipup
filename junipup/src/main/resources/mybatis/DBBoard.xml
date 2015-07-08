@@ -26,10 +26,15 @@
     	order by bnum desc) a) where rn between #{start} and #{end}    	
 	</select>
 	
- 	<select id="listDBCategory" parameterType="DBBoard" resultMap="DBBoardResult">
-    	select * from (select rownum rn, a.* from (select * from DB where category=#{category, jdbcType=VARCHAR}
+	<select id="listDBCategory" parameterType="DBBoard" resultMap="DBBoardResult">
+    	select * from (select rownum rn, a.* from (select * from DB
     	order by bnum desc) a) where rn between #{start} and #{end}    	
 	</select>
+	
+ 	<select id="DBRecent" resultMap="DBBoardResult">
+    	select * from (select rownum rn, a.* from (select * from DB
+    	order by bnum desc) a)  where rn between 1 and 4 	
+	</select> 
 
 	<select id="totalDB" resultType="int" >
 		select count(*) from DB
