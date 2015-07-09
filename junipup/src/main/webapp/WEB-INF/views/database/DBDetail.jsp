@@ -72,7 +72,13 @@
 			<button type="button" onclick="onList()" class="btn btn-primary">목록</button>
 			<button type="button" onclick="onDelete()" class="btn btn-primary">삭제</button>
 		</form>	
+		
+	<form class="comment" method="post">
+		<input type="hidden" name="bnum"/>
+		
+	</form>
 </div>
+	
 		
 </body>
 

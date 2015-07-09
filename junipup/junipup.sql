@@ -12,7 +12,10 @@ regDate date,
 loginDate date
 );
 
-drop table member;
+select * from (select rownum rn, a.* from (select * from DB
+    	order by bnum desc) a)  where rn between 1 and 5 
+select * from member;
+--drop table member;
 insert into member values ('이주대씨', 'aa.jpg', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
 insert into member values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
 insert into member values ('amdin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
@@ -20,7 +23,7 @@ drop table member;
 select * from member where id='admin';
 select * from member;1
 select * from jquery;
-
+select * from java;
 -- admin --
 create table Admin(
 nickname varchar2(30) primary key,

@@ -32,6 +32,11 @@
     	order by bnum desc) a) where rn between #{start} and #{end}  	
 	</select>
 	
+	<select id="JQueryRecent" resultMap="JQueryBoardResult">
+    	select * from (select rownum rn, a.* from (select * from JQuery
+    	order by bnum desc) a) where rn between 1 and 4
+	</select>
+	
 	<select id="totalJQueryCategory" parameterType="String" resultType="int" >
 		select count(*) from JQuery where category = #{category}
 	</select>

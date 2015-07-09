@@ -45,8 +45,8 @@
 			<div class="information">
 				<table class="login_table">
 					<col width="40px"><col width="160px">
-					<tr height="40px"><td>${USER_mrank}</td><td>${USER_nickname }</td></tr>
-					<tr height="40px"><td>POINT</td><td>1234점</td></tr>
+					<tr height="40px"><td>${USER_KEY.mrank}</td><td>${USER_KEY.nickname }</td></tr>
+					<tr height="40px"><td>POINT</td><td>${USER_KEY.usePoint }</td></tr>
 				</table>
 			</div>
 		</div>   
