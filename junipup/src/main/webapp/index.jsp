@@ -10,7 +10,7 @@
 <%
 	
 	//response.sendRedirect("main2.do");
-    //response.sendRedirect("main.do");
+    response.sendRedirect("main.do");
     //response.sendRedirect("inputBoard.do");
 	//response.sendRedirect("adminMain.do");
 	//response.sendRedirect("ScrollTest.do");
@@ -20,7 +20,7 @@
 	//response.sendRedirect("insertEmpList.do");
 	//response.sendRedirect("insert.do");
 	/*insert.do는 선생님이 했던 방식  */
-	response.sendRedirect("attendCheck.do");
+	//response.sendRedirect("attendCheck.do");
 %>
 </body>
 </html>

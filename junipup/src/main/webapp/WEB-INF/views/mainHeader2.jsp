@@ -9,53 +9,84 @@
 <meta name="author" content="Jake Rocheleau">
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+<style type="text/css">
+.css-bar{
+font-family : monospace;
+
+display: inline-block;
+position: relative;
+margin: 10px 10px 3px 0;
+padding: 0;
+background: #000;
+}
+.css-bar, .css-bar:before, .css-bar:after{
+width: 100px;
+height: 3px;
+}
+.css-bar:before, .css-bar:after{
+display: block;
+content: "";
+position: absolute;
+top: 50%;
+left: 0;
+background: #000;
+}
+
+#right {
+float: right;
+height : 40px;
+width : 90px;
+}
+
+#right img {
+margin: 10px 0 3px 0;
+}
+</style>
+
 </head>
-<body>
+<body>	
 	<div id="wrab">
-		<div id="h2">
-			<div align="center">
-				<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
-			</div>
-		</div>
-		
-		<div class="login_div">
-			<div class="inputUser">
-				<p>
-				<c:choose>
-					<c:when test="${not empty USER_KEY}">
-						<h2><c:out value="${USER_KEY.nickname}" />님,
-							환영합니다. |</h2> 
-						<c:choose>
+		<div id="right">
+			<c:choose>
+				<c:when test="${empty USER_KEY}">
+					<span class="css-bar"></span>
+					<a href="login.do"><img src="img/login.JPG"></a>						
+				</c:when>
+				
+				<c:otherwise>
+					<span class="css-bar"></span>
+					<a href="logout.do"><img src="img/logout.JPG"></a>
+					<c:choose>							
 							<c:when test="${USER_KEY.nickname == 'master' }">
+								<span class="css-bar"></span>
 								<a href="adminForm.do?id=${USER_KEY.id }">관리자 페이지</a>
 				 			</c:when>
 							<c:when test="${USER_KEY.nickname != 'master' }">
-								<a href="updateForm.do?id=${USER_KEY.email }">마이 페이지</a>
+								<span class="css-bar"></span>
+								<a href="updateForm.do?id=${USER_KEY.email }"><img src="img/mypage.JPG"></a>
 							</c:when>
-						</c:choose>
-					</c:when>
-					<c:otherwise>
-						<div id="text">
-							
-						</div>
+					</c:choose>						
 					</c:otherwise>
-				</c:choose>
-			</p>
-			</div>
-			<div class="information">
-				<table class="login_table">
-					<col width="40px"><col width="160px">
-					<tr height="40px"><td>${USER_KEY.mrank}</td><td>${USER_KEY.nickname }</td></tr>
-					<tr height="40px"><td>POINT</td><td>${USER_KEY.usePoint }</td></tr>
-				</table>
-			</div>
+				</c:choose>									
+		</div>
+		
+		<div id="h2" >			
+			<div align="center">
+				<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
+			</div>			
+		</div>
+		<p>		
+		<div class="login_div" align="right">		
+			${USER_KEY.nickname } |
+			${USER_KEY.mrank} |				
+			${USER_KEY.usePoint } |							
 		</div>   
 	</div>
 	<!-- wrab 끝 -->
 	<nav>
 		<div class="wrapper">
 			<ul id="menu" class="clearfix">
-				<li><a href="main.do">Notice</a></li>
+				<li><a href="noticeMain.do">Notice</a></li>
 				<!-- Database -->
 				<li><a href="DBMain.do">Database</a>
 					<ul>
@@ -104,8 +135,7 @@
 						<li><a href="html5Main.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="QNA"><a href="#">QnA</a></li>
-				<li class="Check"><a href="#">출석체크!</a></li>
-				<li class="Login"><a href="login.do">Login</a></li>
+				<li class="Check"><a href="#">출석체크!</a></li>				
 	
 			</ul>
 			<!-- id="menu" 끝 -->

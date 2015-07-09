@@ -4,8 +4,7 @@ import java.util.List;
 
 import model.AndroidBoard;
 
-
-import model.JQueryBoard;
+import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.NoticeDao;
 import service.AndroidService;
 import service.Paging;
 
@@ -21,9 +21,11 @@ public class AndroidController {
 
 	@Autowired
 	AndroidService service;
+	@Autowired
+	NoticeDao nd;
 	
 	@RequestMapping(value="androidMain")
-	public String androidMain(AndroidBoard android, String currentPage, Model model, String category){
+	public String androidMain(AndroidBoard android, String currentPage, Model model, String category,NoticeBoard notice){
 //		service.insertBoard();		
 		if(category == null || category.equals("")){
 			int total = service.total();
@@ -33,7 +35,9 @@ public class AndroidController {
 			android.setEnd(pg.getEnd());
 			System.out.println("category : " + android.getCategory());
 			List<AndroidBoard> list = service.listAndroid(android);
+			List<NoticeBoard> noticeRecent = nd.noticeRecent(notice);
 			model.addAttribute("list", list);
+			model.addAttribute("noticeRecent", noticeRecent);
 			model.addAttribute("pg", pg);
 			model.addAttribute("all", "true");
 			return "/android/androidMain";
