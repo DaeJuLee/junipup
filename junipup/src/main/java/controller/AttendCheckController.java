@@ -5,6 +5,9 @@ import model.AttendCheck;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.*;
 
 @Controller
@@ -13,26 +16,70 @@ public class AttendCheckController {
 	
 	@RequestMapping(value="attendCheck")
 	public String attendCheck(Model model){
+
 		AttendCheck ac = new AttendCheck();
 		Calendar cal = Calendar.getInstance();
 		ac.setYear(cal.get(Calendar.YEAR));
-		System.out.println("ÇöÀç³âµµ : " + ac.getYear());
-		ac.setMonth(cal.get(Calendar.MONTH));
-		System.out.println("ÇöÀç ´Ş : " + ac.getMonth());
+		System.out.println("í˜„ì¬ë…„ë„ : " + ac.getYear());
+		ac.setMonth(cal.get(Calendar.MONTH)+1);
+		System.out.println("í˜„ì¬ ë‹¬ : " + (ac.getMonth()));
 		ac.setDay(cal.get(Calendar.DATE));
-		System.out.println("ÇöÀç ÀÏ : " + ac.getDay());
+		System.out.println("í˜„ì¬ ì¼ : " + ac.getDay());
+		
 		cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), 1);
+//		cal.set(ac.getYear(), ac.getMonth(), 1);
 		
 		ac.setStartDay(cal.getMinimum(Calendar.DATE));
-		System.out.println("±× ´ŞÀÇ ½ÃÀÛ ÀÏ : " + ac.getStartDay());
+		System.out.println("ê·¸ ë‹¬ì˜ ì‹œì‘ ì¼ : " + ac.getStartDay());//1ê°’ì¶œë ¥ ë¬´ì¡°ê±´
 		ac.setEndDay(cal.getActualMaximum(Calendar.DAY_OF_MONTH));
-		System.out.println("±× ´ŞÀÇ ¸¶Áö¸· ÀÏ : " + ac.getEndDay());
-		ac.setCurrentDay(cal.get(Calendar.DAY_OF_WEEK));
-		System.out.println("±× ´ŞÀÇ ÇöÀç ¿äÀÏ : " + ac.getCurrentDay());
+		System.out.println("ê·¸ ë‹¬ì˜ ë§ˆì§€ë§‰ ì¼ : " + ac.getEndDay());//ì–´ë–¤ ë‹¬ì˜ ì´ì¼ìˆ˜
+		ac.setCurrentDay(cal.get(Calendar.DAY_OF_WEEK)-1);
+		System.out.println("ê·¸ ë‹¬ì˜ ì‹œì‘ ìš”ì¼ : " + (ac.getCurrentDay()+1));
 		ac.setNewLine(0);
 		model.addAttribute("attendCheck", ac);
 		
 		return "/attendCheck/attendCheck";
+	}
+	
+	@RequestMapping(value="attendCheckChange")
+	public @ResponseBody Map<String, Object> attendCheckChange(Model model, 
+			@RequestParam("year") String year, @RequestParam("month") String month){
+
+		Map<String, Object> jsonObject = new HashMap<String, Object>();
+		Map<String, Object> jsonSubObject = null;
+		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
+		
+		AttendCheck ac = new AttendCheck();
+		Calendar cal = Calendar.getInstance();
+		ac.setYear(Integer.parseInt(year));
+		System.out.println("ë°”ë€ë…„ë„ : " + ac.getYear());
+		ac.setMonth(Integer.parseInt(month));
+		System.out.println("ë°”ë€ ë‹¬ : " + (ac.getMonth()));
+		ac.setDay(cal.get(Calendar.DATE));
+		System.out.println("ëª¨ë¥´ê² ë„¤... í˜„ì¬ì¼ : " + ac.getDay());
+		
+		cal.set(ac.getYear(), ac.getMonth()-1, 1);
+		
+		ac.setStartDay(cal.getMinimum(Calendar.DATE));
+		System.out.println("ê·¸ ë‹¬ì˜ ì‹œì‘ ì¼ : " + ac.getStartDay());//1ê°’ì¶œë ¥ ë¬´ì¡°ê±´
+		ac.setEndDay(cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+		System.out.println("ê·¸ ë‹¬ì˜ ë§ˆì§€ë§‰ ì¼ : " + ac.getEndDay());//ì–´ë–¤ ë‹¬ì˜ ì´ì¼ìˆ˜
+		ac.setCurrentDay(cal.get(Calendar.DAY_OF_WEEK)-1);
+		System.out.println("ê·¸ ë‹¬ì˜ ì‹œì‘ ìš”ì¼ : " + (ac.getCurrentDay()+1));
+		ac.setNewLine(0);
+		
+		jsonSubObject = new HashMap<String, Object>();
+		jsonSubObject.put("year", ac.getYear());
+		jsonSubObject.put("month", ac.getMonth());
+		jsonSubObject.put("day", ac.getDay());
+		jsonSubObject.put("startDay", ac.getStartDay());
+		jsonSubObject.put("endDay", ac.getEndDay());
+		jsonSubObject.put("currentDay", ac.getCurrentDay());
+		jsonSubObject.put("newLine", ac.getNewLine());
+		jsonList.add(jsonSubObject);
+		jsonObject.put("data", jsonList);
+		
+		return jsonObject;
 	}
 	
 }
