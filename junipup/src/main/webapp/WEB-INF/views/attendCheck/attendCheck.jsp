@@ -58,19 +58,12 @@ $(function(){
 		$.ajax({
 			url:"attendCheckChange.do",
 			type: "POST",
-			dataType: 'json',
+			dataType: "json",
 			data:{"month" : beforeMonth,
 				  "year" : year},
-		    success : function(responseJsonObject){
+		    success : function(responseObject, status){
 		    	alert("성공");
-		    	var list = result[key];
-		    	
-		    	/* var year = data.year;
-		    	var month = data.month;
-		    	var endDay = data.endDay;
-		    	alert(year);
-		    	alert(month);
-		    	alert(endDay); */
+		    	alert(responseObject.month);
 		    	alert("달력 바뀌냐??");
 		    },
 			error:function(request, status, error){

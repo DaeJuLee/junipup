@@ -1,14 +1,19 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+
 import model.AttendCheck;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.*;
 
 @Controller
 public class AttendCheckController {
@@ -46,8 +51,6 @@ public class AttendCheckController {
 			@RequestParam("year") String year, @RequestParam("month") String month){
 
 		Map<String, Object> jsonObject = new HashMap<String, Object>();
-		Map<String, Object> jsonSubObject = null;
-		ArrayList<Map<String, Object>> jsonList = new ArrayList<Map<String, Object>>();
 		
 		AttendCheck ac = new AttendCheck();
 		Calendar cal = Calendar.getInstance();
@@ -67,19 +70,40 @@ public class AttendCheckController {
 		ac.setCurrentDay(cal.get(Calendar.DAY_OF_WEEK)-1);
 		System.out.println("그 달의 시작 요일 : " + (ac.getCurrentDay()+1));
 		ac.setNewLine(0);
-		
-		jsonSubObject = new HashMap<String, Object>();
-		jsonSubObject.put("year", ac.getYear());
-		jsonSubObject.put("month", ac.getMonth());
-		jsonSubObject.put("day", ac.getDay());
-		jsonSubObject.put("startDay", ac.getStartDay());
-		jsonSubObject.put("endDay", ac.getEndDay());
-		jsonSubObject.put("currentDay", ac.getCurrentDay());
-		jsonSubObject.put("newLine", ac.getNewLine());
-		jsonList.add(jsonSubObject);
-		jsonObject.put("data", jsonList);
+
+		jsonObject.put("year", Integer.toString(ac.getYear()));
+		jsonObject.put("month", Integer.toString(ac.getMonth()));
 		
 		return jsonObject;
 	}
+	
+//	@RequestMapping(value="attendCheckChange")
+//	public @ResponseBody String attendCheckChange(Model model, 
+//			@RequestParam("year") String year, @RequestParam("month") String month){
+//
+//		
+//		AttendCheck ac = new AttendCheck();
+//		Calendar cal = Calendar.getInstance();
+//		ac.setYear(Integer.parseInt(year));
+//		System.out.println("바뀐년도 : " + ac.getYear());
+//		ac.setMonth(Integer.parseInt(month));
+//		System.out.println("바뀐 달 : " + (ac.getMonth()));
+//		ac.setDay(cal.get(Calendar.DATE));
+//		System.out.println("모르겠네... 현재일 : " + ac.getDay());
+//		
+//		cal.set(ac.getYear(), ac.getMonth()-1, 1);
+//		
+//		ac.setStartDay(cal.getMinimum(Calendar.DATE));
+//		System.out.println("그 달의 시작 일 : " + ac.getStartDay());//1값출력 무조건
+//		ac.setEndDay(cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+//		System.out.println("그 달의 마지막 일 : " + ac.getEndDay());//어떤 달의 총일수
+//		ac.setCurrentDay(cal.get(Calendar.DAY_OF_WEEK)-1);
+//		System.out.println("그 달의 시작 요일 : " + (ac.getCurrentDay()+1));
+//		ac.setNewLine(0);
+//		
+//		model.addAttribute("attendCheckChange", ac);
+//		
+//		return Integer.toString(ac.getMonth());
+//	}
 	
 }
