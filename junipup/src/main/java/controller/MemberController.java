@@ -1,8 +1,5 @@
 package controller;
 
-
-
-
 import javax.servlet.http.HttpSession;
 
 import model.Member;
@@ -45,8 +42,8 @@ public class MemberController {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		int result = ms.insertMember(member);
 		if (result > 0){
-			model.addAttribute("msg","회원가입을 환영합니다");
-			mail.sendMail("junibatnipup@gmail.com", member.getEmail(), "회원가입을 환영합니다", "<약관>");
+			model.addAttribute("msg","ȸ�������� ȯ���մϴ�");
+			mail.sendMail("junibatnipup@gmail.com", member.getEmail(), "ȸ�������� ȯ���մϴ�", "<���>");
 			return "redirect:main.do";
 		}
 		else {
@@ -60,7 +57,7 @@ public class MemberController {
 		System.out.println(member.getPassword());
 		Member selectmem = ms.selectIdPass(member.getEmail(), member.getPassword());
 		if(selectmem == null){
-			String msg = "ID나 패스워드가 틀렸습니다.";
+			String msg = "ID�� �н����尡 Ʋ�Ƚ��ϴ�.";
 			model.addAttribute("message", msg);
 			return "member/login";
 		}else if(selectmem.getEmail().matches("admin")){
@@ -114,7 +111,7 @@ public class MemberController {
 //	@ResponseBody
 //	@RequestMapping(value= "idchk", method=RequestMethod.POST)
 //	public HashMap<String, Object> checkId(@RequestParam HashMap<String, Object> idParam)  {
-//		System.out.println("hashMap에 들어있는 정보 : " + idParam);
+//		System.out.println("hashMap�� ����ִ� ���� : " + idParam);
 //	    System.out.println("id is "+idParam.get("id"));
 //	 
 //	    HashMap<String, Object> hashmap = new HashMap<String, Object>();

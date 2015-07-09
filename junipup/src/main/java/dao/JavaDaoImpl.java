@@ -45,7 +45,7 @@ public class JavaDaoImpl implements JavaDao {
 			board.setIp("1"+i);
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
-			session.insert("insertJava", board);
+			session.insert("javaInsert", board);
 		}
 	}
 

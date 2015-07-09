@@ -19,7 +19,7 @@ public class DBController {
 	
 	@RequestMapping(value="DBMain")
 	public String androidMain(DBBoard db, String currentPage, Model model, String category){
-//		service.insertBoard();
+		//service.insertBoard();
 		if(category == null || category.equals("")){
 			int total = service.total();
 			System.out.println("int total : " + total);

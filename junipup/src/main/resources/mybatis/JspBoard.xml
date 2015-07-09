@@ -31,6 +31,11 @@
     	order by bnum desc) a) where rn between #{start} and #{end}    	
 	</select>
 	
+	<select id="JspRecent" resultMap="JspBoardResult">
+    	select * from (select rownum rn, a.* from (select * from Jsp
+    	order by bnum desc) a) where rn between 1 and 4
+	</select>
+	
 	<select id="totalJsp" resultType="int" >
 		select count(*) from Jsp
 	</select>

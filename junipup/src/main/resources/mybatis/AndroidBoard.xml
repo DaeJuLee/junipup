@@ -30,6 +30,11 @@
 		select count(*) from Android
 	</select>
 	
+	<select id="AndroidRecent" parameterType="AndroidBoard" resultMap="AndroidBoardResult">
+    	select * from (select rownum rn, a.* from (select * from Android
+    	order by bnum desc) a) where rn between 1 and 4
+	</select> 
+	
 	<select id="androidDetail" parameterType="String" resultMap="AndroidBoardResult">
 		<![CDATA[select * from Android where bnum = #{bnum}]]>
 	</select>

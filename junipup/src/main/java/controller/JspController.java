@@ -19,7 +19,7 @@ public class JspController {
 	JspService service;
 	@RequestMapping(value="jspMain")
 	public String jspMain(JspBoard jsp, String currentPage, Model model,String category){
-//		service.insertBoard();
+		//service.insertBoard();
 		if(category == null || category.equals("")){
 			int total = service.total();
 			System.out.println("int total : " + total);

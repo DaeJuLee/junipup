@@ -14,7 +14,7 @@
 	<div id="wrab">
 		<div id="h2">
 			<div align="center">
-				<a href="main.do"><img src="images/junipup${USER_KEY.mrank }.jpg" width="100px"></a>
+				<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
 			</div>
 		</div>
 		
@@ -27,7 +27,7 @@
 							환영합니다. |</h2> 
 						<c:choose>
 							<c:when test="${USER_KEY.nickname == 'master' }">
-								<a href="adminForm.do?id=${USER_KEY.id }">관리자 페이지</a>
+								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자 페이지</a>
 				 			</c:when>
 							<c:when test="${USER_KEY.nickname != 'master' }">
 								<a href="updateForm.do?id=${USER_KEY.email }">마이 페이지</a>
@@ -45,8 +45,8 @@
 			<div class="information">
 				<table class="login_table">
 					<col width="40px"><col width="160px">
-					<tr height="40px"><td>${USER_mrank}</td><td>${USER_nickname }</td></tr>
-					<tr height="40px"><td>POINT</td><td>1234점</td></tr>
+					<tr height="40px"><td>${USER_KEY.mrank}</td><td>${USER_KEY.nickname }</td></tr>
+					<tr height="40px"><td>POINT</td><td>${USER_KEY.usePoint }</td></tr>
 				</table>
 			</div>
 		</div>   

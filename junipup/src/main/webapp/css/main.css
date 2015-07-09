@@ -1,12 +1,18 @@
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+body{font-size:15px; width:1250px; margin:auto; padding-top: 20px; height: 890px;}
+
 /* main Header */
 #wrab{width:100%;position:relative;margin:0 0 0 0;  display:inline-block;height:180px;}
 #h2 img{width: 300px; height:100px;}/* 이미지 크기  */
 #h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;}
 h2 {height:100%; display: inline-block;}
 #h2 p a{font:bold 12px/2.0em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
-.login_div{width:1250px; height:80px; }
+.login_div{width:1250px; height:80px; text-align: center;}
 .inputUser{float:left; width:1000px; height:80px; display:inline-block; padding:0 25px 0 25px;}
 .information{ float:right;  width:200px; height:80px; }
+
+
 .login_table{width:200px;}
 .login_table td{text-align: center;}
 
@@ -95,7 +101,7 @@ nav {
   display: block;
   float: none;
   color: #4e5b67;
-  font-size: 1.0em; /*sub menu 글씨 크기  */
+  font-size: 1.3em; /*sub menu 글씨 크기  */
   line-height: 50px;
   padding: 0 0 0 0;
   width:200px;
@@ -107,61 +113,13 @@ nav {
   width:100%; */ /* 수정 성공?  */
 }
 
-/* #menu li ul.expanded {
-  width: 400px; 수정
-  width: 50%;
-} */
-
-/* #menu li ul li ul {
-  display: none;
-  position: absolute;
-  left: 200px;
-  top: 0;
-  height: 100%;
-  background: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  width:100%; *//* 수정
-} */
-/* #menu li ul li ul li a { color: #fff; }
-#menu li ul li ul li a:hover { text-decoration: underline; }
-
-#menu li ul li.Design a:hover, #menu li ul li.Design a.active { background: #4f4c83; color: #fff; }
-#menu li ul li.Design ul { background: #4f4c83; }
-
-#menu li ul li.green a:hover, #menu li ul li.green a.active { background: #65834c; color: #fff; }
-#menu li ul li.green ul { background: #65834c; }
-
-#menu li ul li.aqua a:hover, #menu li ul li.aqua a.active { background: #4c7983; color: #fff; }
-#menu li ul li.aqua ul { background: #4c7983; color: #fff; }
-
-#menu li ul li.red a:hover, #menu li ul li.red a.active { background: #834c4c; color: #fff; }
-#menu li ul li.red ul { background: #834c4c; }
-
-#menu li ul li.blue a:hover, #menu li ul li.blue a.active { background: #4d6899; color: #fff; }
-#menu li ul li.blue ul { background: #4d6899; }
-
-#menu li ul li.gold a:hover, #menu li ul li.gold a.active { background: #97944c; color: #fff; }
-#menu li ul li.gold ul { background: #97944c; }
- */
-
-/** clearfix **/
 .clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
 .clearfix { display: inline-block; }
- 
-html[xmlns] .clearfix { display: block; }
-* html .clearfix { height: 1%; }
 
-/* mainTab*/
-
-body{width:1250px; margin:auto; padding-top: 20px;}
-#wrap {width:80%; float:left; }
-#rightBanner{width:20%; float:right;}
-.spaceBanner {width:100%; height:600px; border: 1px solid black;}
+/* 게시판 텝메뉴 css임*/
 
 .tab_list{height:160px}
-.tab_list ul{position:relative;margin:0;padding:0;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
+.tab_list ul{position:relative;margin:0;padding:0;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
 .tab_list ul:after{display:block;clear:both;content:""}
 .tab_list li{float:left;margin-bottom:-1px}
 .tab_list li a{float:left;position:relative;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666;text-decoration:none}
@@ -217,7 +175,27 @@ body{width:1250px; margin:auto; padding-top: 20px;}
 .tab_list.js_off li ul{position:static;display:block;left:0;top:0;padding:5px 0}
 .tab_list.js_off li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
 .tab_list.js_off li li.more{top:7px;right:15px}
+/* 하는중 */
+/* center */
+.center {height: 600px; width: 100%;}
+/* left */
+.left_center {float:left; width:70%; height: 100%; }
+.left_center1 {height:200px; width:100%; }
+.left_center2 {height:200px; width:100%; display: inline-block; }
+.left_center3 {height:200px; width:100%; display: inline-block; }
+.left11 {width:50%; height:100%; float:left;}
 
+.left12 {width:50%; height:100%; float:right;}
+.left21 {width:50%; height:100%; float:left;}
+.left22 {width:50%; height:100%; float:right;}
+
+.cate{ font-size:13px; font-weight: bold;}
+td a{ font-size:13px;}
+
+/* right */
+.right_center {float:right; width:30%; height: 100%; }
+.banner{width:100%; height:20%; padding:10px 10px 10px 10px;}
+.wow {font-size: 20px; font-style: italic; text-align: center; background: #f1f8fe;}
 /* banner */
 .clsBannerScreen {
     overflow: hidden;

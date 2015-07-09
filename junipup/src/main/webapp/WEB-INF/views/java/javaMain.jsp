@@ -81,7 +81,7 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${java.category }</td>
-				<td>${java.nickname }</td>
+				<td><a href="findMember.do?nickname=${java.nickname}">${java.nickname }</a></td>
 				<td><a href="javaDetail.do?bnum=${java.bnum}">${java.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />

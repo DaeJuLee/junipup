@@ -20,7 +20,7 @@ public class JavaController {
 	
 	@RequestMapping(value="javaMain")
 	public String javaMain(JavaBoard java, String currentPage, Model model , String category){
-//		service.insertBoard();
+		//service.insertBoard();
 		if(category == null || category.equals("")){
 			int total = service.total();
 			System.out.println("int total : " + total);
