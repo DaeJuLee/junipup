@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.JspBoard;
+import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.NoticeDao;
 import service.JspService;
 import service.Paging;
 
@@ -17,8 +19,12 @@ import service.Paging;
 public class JspController {
 	@Autowired
 	JspService service;
+	@Autowired
+	NoticeDao nd;
+	
 	@RequestMapping(value="jspMain")
-	public String jspMain(JspBoard jsp, String currentPage, Model model,String category){
+
+	public String jspMain(JspBoard jsp, String currentPage, Model model,String category, NoticeBoard notice){
 //		service.insertBoard();
 		if(category == null || category.equals("")){
 			int total = service.total();
@@ -27,7 +33,9 @@ public class JspController {
 			jsp.setStart(pg.getStart());
 			jsp.setEnd(pg.getEnd());
 			List<JspBoard> list = service.listJsp(jsp);
+			List<NoticeBoard> noticeRecent = nd.noticeRecent(notice);	
 			model.addAttribute("list", list);
+			model.addAttribute("noticeRecent", noticeRecent);
 			model.addAttribute("pg", pg);
 			model.addAttribute("all", "true");
 			return "/jsp/jspMain";

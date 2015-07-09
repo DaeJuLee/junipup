@@ -30,12 +30,7 @@ public class AdminController {
 		model.addAttribute("pg", pg);
 		return "/admin/adminMain";
 	}
-	
-	@RequestMapping(value="ScrollTest")
-	public String ScrollTest(Model model) {
-	return "/admin/ScrollTest";
-	}
-	
+		
 	@RequestMapping(value="memberDeleteCheck")
 	public String adminDelete(Model model, String nickname) {
 		model.addAttribute("nickname", nickname);

@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.DBBoard;
+import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,16 +11,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.NoticeDao;
 import service.DBService;
 import service.Paging;
 @Controller
 public class DBController {
 	@Autowired
 	DBService service;
+	@Autowired
+	NoticeDao nd;
 	
 	@RequestMapping(value="DBMain")
-	public String androidMain(DBBoard db, String currentPage, Model model, String category){
+	public String androidMain(DBBoard db, String currentPage, Model model, String category, NoticeBoard notice){
 //		service.insertBoard();
+
 		if(category == null || category.equals("")){
 			int total = service.total();
 			System.out.println("int total : " + total);
@@ -28,7 +33,9 @@ public class DBController {
 			db.setEnd(pg.getEnd());
 			System.out.println("category : " + db.getCategory());
 			List<DBBoard> list = service.listDB(db);
+			List<NoticeBoard> noticeRecent = nd.noticeRecent(notice);			
 			model.addAttribute("list", list);
+			model.addAttribute("noticeRecent", noticeRecent);
 			model.addAttribute("pg", pg);
 			model.addAttribute("all", "true");
 			return "/database/DBMain";

@@ -46,8 +46,8 @@ public class JspServiceImpl implements JspService{
 		return dao.totalJspCategory(category);
 	}
 
-	public List<JspBoard> listJspCategory(JspBoard db) {
-		return dao.listJspCategory(db);
+	public List<JspBoard> listJspCategory(JspBoard jsp) {
+		return dao.listJspCategory(jsp);
 	}
 
 }

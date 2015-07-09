@@ -74,19 +74,35 @@ jQuery(function($){
 </div>	
 	<div class="tab_content">
 	<c:set var="num" value="${pg.total - pg.start +1}" />
+	
 	<table class="tbl" align="center">
 		<tr height="40px">
-			<th width="15%" >번호</th>
+			<th width="10%" >번호</th>
 			<th width="15%" >카테고리</th>
 			<th width="15%" >닉네임</th>
-			<th width="55%" >제목</th>
+			<th width="50%" >제목</th>
+			<th width="10">작성일</th>
 		</tr>
+		
+	<c:set var="noticenum" value="4" />	
+	<c:forEach items="${noticeRecent }" var="notice">
+		<tr class="notice">
+		<td>${noticenum }</td>
+		<td>${notice.category }</td>
+		<td>${notice.nickname }</td>		
+		<td><a href="noticeDetail.do?bnum=${notice.bnum }">${notice.title }</a></td>
+		<td>${notice.b_date }</td>
+		</tr>
+	<c:set var="noticenum" value="${noticenum-1 }" />	
+	</c:forEach>
+	
 	<c:forEach items="${list }" var="db">
 		<tr>
 			<td>${num }</td>
 			<td>${db.category }</td> 
 			<td><a href="findMember.do?nickname=${db.nickname}">${db.nickname }</a></td>
 			<td><a href="DBDetail.do?bnum=${db.bnum}">${db.title }</a></td>
+			<td>${db.b_date }</td>
 		</tr>
 		<c:set var="num" value="${num-1 }" />
 	</c:forEach>
