@@ -27,7 +27,7 @@
 							환영합니다. |</h2> 
 						<c:choose>
 							<c:when test="${USER_KEY.nickname == 'master' }">
-								<a href="adminForm.do?id=${USER_KEY.id }">관리자 페이지</a>
+								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자 페이지</a>
 				 			</c:when>
 							<c:when test="${USER_KEY.nickname != 'master' }">
 								<a href="updateForm.do?id=${USER_KEY.email }">마이 페이지</a>
