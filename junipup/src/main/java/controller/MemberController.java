@@ -42,8 +42,8 @@ public class MemberController {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		int result = ms.insertMember(member);
 		if (result > 0){
-			model.addAttribute("msg","È¸¿ø°¡ÀÔÀ» È¯¿µÇÕ´Ï´Ù");
-			mail.sendMail("junibatnipup@gmail.com", member.getEmail(), "È¸¿ø°¡ÀÔÀ» È¯¿µÇÕ´Ï´Ù", "<¾à°ü>");
+			model.addAttribute("msg","È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¯ï¿½ï¿½ï¿½Õ´Ï´ï¿½");
+			mail.sendMail("junibatnipup@gmail.com", member.getEmail(), "È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¯ï¿½ï¿½ï¿½Õ´Ï´ï¿½", "<ï¿½ï¿½ï¿½>");
 			return "redirect:main.do";
 		}
 		else {
@@ -57,7 +57,7 @@ public class MemberController {
 		System.out.println(member.getPassword());
 		Member selectmem = ms.selectIdPass(member.getEmail(), member.getPassword());
 		if(selectmem == null){
-			String msg = "ID³ª ÆÐ½º¿öµå°¡ Æ²·È½À´Ï´Ù.";
+			String msg = "IDï¿½ï¿½ ï¿½Ð½ï¿½ï¿½ï¿½ï¿½å°¡ Æ²ï¿½È½ï¿½ï¿½Ï´ï¿½.";
 			model.addAttribute("message", msg);
 			return "member/login";
 		}else if(selectmem.getEmail().matches("admin")){
@@ -111,7 +111,7 @@ public class MemberController {
 //	@ResponseBody
 //	@RequestMapping(value= "idchk", method=RequestMethod.POST)
 //	public HashMap<String, Object> checkId(@RequestParam HashMap<String, Object> idParam)  {
-//		System.out.println("hashMap¿¡ µé¾îÀÖ´Â Á¤º¸ : " + idParam);
+//		System.out.println("hashMapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ : " + idParam);
 //	    System.out.println("id is "+idParam.get("id"));
 //	 
 //	    HashMap<String, Object> hashmap = new HashMap<String, Object>();
