@@ -63,7 +63,7 @@ margin: 10px 0 3px 0;
 				 			</c:when>
 							<c:when test="${USER_KEY.nickname != 'master' }">
 								<span class="css-bar"></span>
-								<a href="updateForm.do?id=${USER_KEY.email }"><img src="img/mypage.JPG"></a>
+								<a href="updateForm.do?email=${USER_KEY.email }"><img src="img/mypage.JPG"></a>
 							</c:when>
 					</c:choose>						
 					</c:otherwise>
@@ -75,12 +75,21 @@ margin: 10px 0 3px 0;
 				<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
 			</div>			
 		</div>
-		<p>		
-		<div class="login_div" align="right">		
-			${USER_KEY.nickname } |
-			${USER_KEY.mrank} |				
-			${USER_KEY.usePoint } |							
-		</div>   
+		<p>
+		<c:choose>
+		<c:when test="${empty USER_KEY}">		
+			<div class="login_div" align="right">		
+										
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div class="login_div" align="right">		
+				${USER_KEY.nickname } |
+				${USER_KEY.mrank} |				
+				${USER_KEY.usePoint } |							
+			</div>
+		</c:otherwise>
+		</c:choose>   
 	</div>
 	<!-- wrab 끝 -->
 	<nav>
@@ -135,7 +144,7 @@ margin: 10px 0 3px 0;
 						<li><a href="html5Main.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="QNA"><a href="#">QnA</a></li>
-				<li class="Check"><a href="#">출석체크!</a></li>				
+				<li class="Check"><a href="attendCheck.do">출석체크!</a></li>				
 	
 			</ul>
 			<!-- id="menu" 끝 -->
