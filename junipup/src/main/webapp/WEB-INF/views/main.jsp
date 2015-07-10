@@ -86,6 +86,7 @@ jQuery(function($){
 </script>
 
 <style type="text/css">
+
 #STATICMENU {
 	margin: 0pt;
 	padding: 0pt;
@@ -97,8 +98,9 @@ jQuery(function($){
 
 
 </head>
-<body onload="InitializeStaticMenu();">
 
+<body onload="InitializeStaticMenu();">
+	
 	<div class="center">
 
 		<div class="left_center">
