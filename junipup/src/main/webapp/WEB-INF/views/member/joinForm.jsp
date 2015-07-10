@@ -45,7 +45,7 @@ $(function() {
 	var id = document.getElementById("email");
 	var Resultchkhtml1 = "Email을 입력해주세요";
 	$("#chk1").html(Resultchkhtml1);
-
+	
 
 	$("#emailchk").click(function() {
 		if(id.value.length >= 3){

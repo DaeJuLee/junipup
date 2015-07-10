@@ -31,12 +31,12 @@ public class InputBoardController {
 	
 	@RequestMapping(value="inputBoard")
 	public String inputBoard(Model model){
-//		ad.insertBoard();
-//		db.insertBoard();
-//		hd.insertBoard();
-		jd.insertBoard();
-//		jqd.insertBoard();
-//		jsp.insertBoard();
+		ad.insertBoard();
+		db.insertBoard();
+		hd.insertBoard();
+		//jd.insertBoard();
+		jqd.insertBoard();
+		jsp.insertBoard();
 		return "inputBoard";
 	}
 	

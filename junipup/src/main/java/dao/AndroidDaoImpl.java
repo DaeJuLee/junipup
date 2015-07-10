@@ -50,8 +50,8 @@ public class AndroidDaoImpl implements AndroidDao{
 			board.setIp("1"+i);
 			board.setNickname("닉"+i);
 			board.setMrank("랭"+i);
-
-			session.insert("insertAndroid", board);
+			
+			session.insert("androidInsert", board);
 		}
 	}
 
