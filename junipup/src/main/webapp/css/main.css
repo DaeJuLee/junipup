@@ -1,0 +1,254 @@
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+body{font-size:15px; width:1250px; margin:auto; padding-top: 20px; height: 890px;}
+
+/* main Header */
+#wrab{width:100%;position:relative;margin:0 0 0 0;  display:inline-block;height:180px;}
+#h2 img{width: 300px; height:100px;}/* 이미지 크기  */
+#h2 p{margin-bottom:5px; text-align: right; color: #8CBA34;}
+h2 {height:100%; display: inline-block;}
+#h2 p a{font:bold 12px/2.0em '맑은고딕',Malgun Gothic, ;color:#6d6d6d; }
+.login_div{width:1250px; height:80px; text-align: center;}
+.inputUser{float:left; width:1000px; height:80px; display:inline-block; padding:0 25px 0 25px;}
+.information{ float:right;  width:200px; height:80px; }
+
+
+.login_table{width:200px;}
+.login_table td{text-align: center;}
+
+#h3 fieldset{float:right; width:150px; height:80px}
+#text {font:bold 14px/1.3em '맑은고딕'; color:blue; text-align: center;} 
+
+.top {float:right;}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+strong, b { font-weight: bold; }
+em, i { font-style: italic; }
+img { border: 0; max-width: 100%; height: auto; width: 100%; }
+
+
+/** page structure **/
+nav {
+  display: block;
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  display: block;
+  margin: 0 0 12px;
+  padding: 0 24px -10px;
+  border-bottom: 6px solid #999;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.wrapper { 
+  display: block;
+  margin: 0;
+  width: 1250px;
+  float: right;
+} 
+
+#menu {
+  display: block;
+  position: relative;
+  z-index: 99;
+  width:100%;
+  
+}
+
+#menu li {
+  display: inline-block;
+  float: left;
+  width:115px; /* tab메뉴 database java.. 크기  %지정 */
+}
+#menu li a {
+  display: block;
+  position: relative;
+  float: left;
+  padding: 0 0 0 0;
+  /* font-size: 1.0em; */
+  font-size: 1.3em;
+  line-height: 70px;
+  font-weight: normal;
+  text-decoration: none;
+  color: #666666;
+  width:115px;
+  text-align: center;
+  /* width:10%; *//* tab메뉴 database java.. 크기  %지정 */
+}
+#menu li a:hover, #menu li a.active {
+  background: #fff;
+  color: #666666;
+  width:115px;
+  text-align: center;
+}
+
+#menu li ul {
+  display: none;
+  position: absolute;
+  top: 70px;
+  padding: 0 0 0 0;
+  /* width: 200px; */ /* 수정 성공 */
+  width: 100px;
+  background: #fff;
+  z-index: -1;
+  -webkit-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0 2px 7px rgba(0,0,0,0.45);
+  box-shadow: 0 2px 7px rgba(0,0,0,0.45);
+  border:6px solid #000000;
+}
+#menu li ul li {
+  display: block;
+  padding: 0 0 0 -35px;
+  width: 100px;
+  
+}
+/* #menu li ul.expanded li { margin-right: 200px; } */
+#menu li ul li a {
+  display: block;
+  float: none;
+  color: #666666;
+  font-size: 16px; /*sub menu 글씨 크기  */
+  line-height: 19.5px;
+  width:100px;
+  text-align: center;
+  height: 25;
+}
+#menu li ul li a:hover {/* 마우스 올렸을때 효과를 나타냄 */
+  background: #ffffff;
+  color: #000000;
+  width: 100%;
+}
+
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+
+/* 게시판 텝메뉴 css임*/
+
+.tab_list{height:160px}
+.tab_list ul{position:relative;margin:0;padding:0;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
+.tab_list ul:after{display:block;clear:both;content:""}
+.tab_list li{float:left;margin-bottom:-1px}
+.tab_list li a{float:left;position:relative;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666;text-decoration:none}
+.tab_list li a span{display:inline-block;padding:6px 25px 6px 25px;letter-spacing:-1px;cursor:pointer}
+.tab_list li ul{display:none;position:absolute;top:40px;left:0;width:100%;margin:0;padding:0;border:0;list-style:none;*zoom:1}
+.tab_list li ul:after{display:block;clear:both;content:""}
+.tab_list li li{float:none;position:relative;margin:0 0 8px 0;color:#999}
+.tab_list li li a{float:none;margin:0;padding:0;border:0 !important;background:transparent;font-weight:normal;color:#666 !important;letter-spacing:normal}
+.tab_list li li a:hover,
+.tab_list li li a:active,
+.tab_list li li a:focus{color:#000 !important;text-decoration:underline}
+.tab_list li li.more{position:absolute;top:-30px;right:0;border:0 !important;background:transparent}
+.tab_list.m1 .m1 a,
+.tab_list.m2 .m2 a,
+.tab_list.m3 .m3 a,
+.tab_list.m4 .m4 a,
+.tab_list.m5 .m5 a,
+.tab_list.m6 .m6 a,
+.tab_list.m7 .m7 a,
+.tab_list.m8 .m8 a,
+.tab_list.m9 .m9 a,
+.tab_list.m10 .m10 a,
+.tab_list.m11 .m11 a,
+.tab_list.m12 .m12 a{margin-top:-1px;border:1px solid #ccc;border-bottom:1px solid #fff;background:transparent;color:#333}
+.tab_list.m1 .m1 a span,
+.tab_list.m2 .m2 a span,
+.tab_list.m3 .m3 a span,
+.tab_list.m4 .m4 a span,
+.tab_list.m5 .m5 a span,
+.tab_list.m6 .m6 a span,
+.tab_list.m7 .m7 a span,
+.tab_list.m8 .m8 a span,
+.tab_list.m9 .m9 a span,
+.tab_list.m10 .m10 a span,
+.tab_list.m11 .m11 a span,
+.tab_list.m12 .m12 a span{padding-top:7px;font-weight:bold}
+.tab_list.m1 .m1 ul,
+.tab_list.m2 .m2 ul,
+.tab_list.m3 .m3 ul,
+.tab_list.m4 .m4 ul,
+.tab_list.m5 .m5 ul,
+.tab_list.m6 .m6 ul,
+.tab_list.m7 .m7 ul,
+.tab_list.m8 .m8 ul,
+.tab_list.m9 .m9 ul,
+.tab_list.m10 .m10 ul,
+.tab_list.m11 .m11 ul,
+.tab_list.m12 .m12 ul{display:block}
+.tab_list.js_off{height:auto}
+.tab_list.js_off ul{border:0}
+.tab_list.js_off li{float:none;position:relative}
+.tab_list.js_off li a{display:block;float:none;border:1px solid #eee !important;border-bottom-color:#ccc !important;background:#fafafa !important;font-weight:bold;color:#333}
+.tab_list.js_off li ul{position:static;display:block;left:0;top:0;padding:5px 0}
+.tab_list.js_off li li a{display:inline;border:0 !important;background:none !important;font-weight:normal}
+.tab_list.js_off li li.more{top:7px;right:15px}
+/* 하는중 */
+/* center */
+.center {height: 600px; width: 100%;}
+/* left */
+.left_center {float:left; width:70%; height: 100%; }
+.left_center1 {height:200px; width:100%; }
+.left_center2 {height:200px; width:100%; display: inline-block; }
+.left_center3 {height:200px; width:100%; display: inline-block; }
+.left11 {width:50%; height:100%; float:left;}
+
+.left12 {width:50%; height:100%; float:right;}
+.left21 {width:50%; height:100%; float:left;}
+.left22 {width:50%; height:100%; float:right;}
+
+.cate{ font-size:13px; font-weight: bold;}
+td a{ font-size:13px;}
+
+/* right */
+.right_center {float:right; width:30%; height: 100%; }
+.banner{width:100%; height:20%; padding:10px 10px 10px 10px;}
+.wow {font-size: 20px; font-style: italic; text-align: center; background: #f1f8fe;}
+/* banner */
+.clsBannerScreen {
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+    width: 600px;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    clear: both;
+}
+ 
+.clsBannerScreen .images {
+    position: absolute;
+    display: none;
+    width:100%;
+}
+ 
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 10pt;
+}
+ 
+.clsBannerButton {
+    width: 600px;
+    cursor: pointer;
+    border-bottom: 1px solid #e1e1e1;
+}
+ 
+.clsBannerButton li {
+    width: 100px;
+    float: left;
+    padding: 2px;
+    border-right: 1px solid #e1e1e1;
+}
+ 
+.clsBannerButton li.fir {
+    border-left: 1px solid #e1e1e1;
+}
+ 
+.clsBannerButton li.labelOverClass {
+    font-weight: bold;
+}
