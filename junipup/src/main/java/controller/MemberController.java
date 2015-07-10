@@ -107,7 +107,7 @@ public class MemberController {
 	    model.addAttribute("member", member);
 	    return null;
 	}
-
+ 
 	@RequestMapping(value = "logout")
 	public String logout(Member member, Model model, HttpSession session) {
 		session.removeAttribute(WebConstants.USER_KEY);
