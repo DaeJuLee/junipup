@@ -5,3 +5,4 @@
 .weekday {  }
 .weekday td{ width : 14%; text-align: center; background: #cccccc;}
 .date { height : 90px; }
+#month_value_num{ padding:10px 10px 100px 10px;}

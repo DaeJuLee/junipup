@@ -91,5 +91,11 @@
 		form.action = 'jQueryDelete.do';
 		form.submit();
 	};
+
+	var onDelete = function(){	
+		var form = $('.viewForm')[0];
+		form.action = 'jQueryDeleteCheck.do';
+		form.submit();
+	};
 </script>
 </html>

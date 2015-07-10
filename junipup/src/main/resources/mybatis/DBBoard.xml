@@ -27,7 +27,7 @@
 	</select>
 	
 	<select id="listDBCategory" parameterType="DBBoard" resultMap="DBBoardResult">
-    	select * from (select rownum rn, a.* from (select * from DB
+    	select * from (select rownum rn, a.* from (select * from DB where category = #{category}
     	order by bnum desc) a) where rn between #{start} and #{end}    	
 	</select>
 	

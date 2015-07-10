@@ -14,16 +14,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <button type="button" onclick="location.href='noticeInsertForm.do'" class="button">글쓰기</button>
-
+	<c:choose>
+		<c:when test="${empty USER_KEY}">					
+			<button type="button" class="button"  onclick="location.href='login.do'">글쓰기</button>					
+		</c:when>				
+		<c:otherwise>
+			<c:choose>							
+				<c:when test="${USER_KEY.nickname == 'master' }">
+					<button type="button" onclick="location.href='noticeInsertForm.do'" class="button">글쓰기</button>									
+				</c:when>
+				<c:when test="${USER_KEY.nickname != 'master' }">
+				</c:when>
+					
+			</c:choose>							
+		</c:otherwise>		
+	</c:choose>
+	
 	<div class="tab_content">
 	<c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
 		<tr height="40px">
-			<th width="15%" >번호</th>
-			<th width="15%" >카테고리</th>
+			<th width="10%" >번호</th>
+			<th width="10%" >카테고리</th>
 			<th width="15%" >닉네임</th>
-			<th width="55%" >제목</th>
+			<th width="50%" >제목</th>
+			<th width="15">작성일</th>
 		</tr>
 	<c:forEach items="${list }" var="notice">
 		<tr>

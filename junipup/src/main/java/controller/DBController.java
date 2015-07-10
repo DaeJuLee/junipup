@@ -48,10 +48,13 @@ public class DBController {
 			db.setCategory(category);
 			System.out.println("category : " + db.getCategory());
 			List<DBBoard> list = service.listDBCategory(db);
+			List<NoticeBoard> noticeRecent = nd.noticeRecent(notice);	
 			model.addAttribute("list", list);
+			model.addAttribute("noticeRecent", noticeRecent);
 			model.addAttribute("pg", pg);
 			model.addAttribute("all", "false");
 			model.addAttribute("category", category);
+			System.out.println("카테고리 : " + category);
 			return "/database/DBMain";
 		}
 		

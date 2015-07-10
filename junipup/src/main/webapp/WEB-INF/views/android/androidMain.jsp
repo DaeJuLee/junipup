@@ -14,15 +14,15 @@
 jQuery(function($){
 	var category = $('#category').val();
 	if(category == 'null'){
-		$('.tab1>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+		$('.tab1>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}else if(category == '기초익히기'){
-		$('.tab2>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+		$('.tab2>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}else if(category == '등급올리기'){
-		$('.tab3>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+		$('.tab3>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}else if(category == '질문게시판'){
-		$('.tab4>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+		$('.tab4>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}else if(category == '응용게시판'){
-		$('.tab5>a').css("color","green").css("background", "#aaa").css("zoom", "1");
+		$('.tab5>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}
 });
 </script> 
@@ -68,6 +68,14 @@ jQuery(function($){
         <li class="more">› <a href="#">응용게시판 더보기</a></li>
         </ul>
     </li>
+    	<c:choose>
+			<c:when test="${empty USER_KEY}">					
+				<button type="button" class="button"  onclick="location.href='login.do'">글쓰기</button>					
+			</c:when>				
+			<c:otherwise>					
+				<button type="button" onclick="location.href='androidInsertForm.do'" class="button">글쓰기</button>										
+			</c:otherwise>
+		</c:choose>
     </ul>
 </div>
 
@@ -75,10 +83,10 @@ jQuery(function($){
 	<table class="tbl" align="center">
 		<tr height="40px">
 			<th width="10%" >번호</th>
-			<th width="15%" >카테고리</th>
+			<th width="10%" >카테고리</th>
 			<th width="15%" >닉네임</th>
 			<th width="50%" >제목</th>
-			<th width="10">작성일</th>
+			<th width="15">작성일</th>
 		</tr>
 		
 		<c:set var="noticenum" value="4" />	
@@ -103,8 +111,7 @@ jQuery(function($){
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-	<button type="button" onclick="location.href='androidInsertForm.do'" class="button">글쓰기</button>
-	
+		
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		
 		<%-- <a href="DBMain.do?currentPage=${pg.startPage-pg.pageBlock }" class="pre">이전</a> --%>

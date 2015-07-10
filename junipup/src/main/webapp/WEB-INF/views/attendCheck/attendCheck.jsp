@@ -54,7 +54,6 @@ $(function(){
 		beforeMonth=12;
 		year = year-1;
 	}
-	alert("1");
 	$("#before_button").click(function(){
 		$.ajax({
 			url:"attendCheckChange.do",
@@ -86,7 +85,7 @@ $(function(){
 <body onload="init()">
 <div class="calendar_year_month">
 	<button type="button" id="before_button">이전</button>
-	<div id="month_value_num"></div>
+	<h2 id="month_value_num"></h2>
 	<button type="button" id="after_button">다음</button>
 </div>
 

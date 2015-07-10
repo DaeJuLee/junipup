@@ -9,4 +9,4 @@
 <body>
 ${String.nickname}
 </body>
-</html>
+</html> 

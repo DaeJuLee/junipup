@@ -9,7 +9,7 @@
 	}
 .tbl th{padding:7px 0 4px;
 		border-top:2px solid #dcdcdc;
-		background-color:#FFFF00;color:#666;
+		background-color:#f5f5f5;color:#666;
 		font-family:'돋움',dotum;
 		font-size:12px;
 		font-weight:bold}
@@ -19,5 +19,6 @@
 		
 .notice td{
 	font-weight: bold;
+	background-color: #f5f5f5;
 	
 }

@@ -41,8 +41,6 @@
 			<td><textarea rows="10" cols="50" id="txtContent" 
 			name="content" required="required" style="width:100%;"></textarea></td></tr>
 	</table>
-	<input type="button" value="목록보기" 
-		onclick="location.href='jQueryMain.do'" class="button">
 	<div class="buttonDiv">
 		<button type="button" class="btn btn-primary" onclick="onWrite()">쓰기</button>
 		<button type="button" class="btn btn-primary" onclick="history.go(-1);"> 취소</button>
@@ -69,7 +67,7 @@ var oEditors = [];
 var onWrite = function(){
 	oEditors.getById["txtContent"].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용이 textarea에 적용됨
 	var boardWriteForm = document.getElementById("boardWriteForm");  
-	boardWriteForm.action ="jQueryInsert.do";              
+	boardWriteForm.action ="jspInsert.do";              
 	boardWriteForm.submit(); 
 };
 

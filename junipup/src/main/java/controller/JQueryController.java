@@ -103,7 +103,7 @@ public class JQueryController {
 		return "/jQuery/jQueryDeleteCheck";
 	}
 	
-	@RequestMapping(value="jQueryDelete", method=RequestMethod.POST)
+	@RequestMapping(value="JQueryDelete")
 	public String JQueryDelete(int bnum, Model model){
 		js.JQueryDelete(bnum);
 		return "redirect:jQueryMain.do";
