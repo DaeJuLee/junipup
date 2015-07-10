@@ -55,23 +55,31 @@ $(function(){
 		year = year-1;
 	}
 	$("#before_button").click(function(){
-		$.ajax({
+		/* $.ajax({
 			url:"attendCheckChange.do",
 			type: "POST",
 			dataType: "text",
-			/* contentType:"application/json; charset=UTF-8", */
 			data: {
 				"month" : beformMonth,
 				"year" : year
 			},
 		    success : function(responseObject, status){
 		    	alert("성공");
-		    	alert(responseObject.month);
+		    	alert(responseObject);
 		    	alert("달력 바뀌냐??");
 		    },
 			error:function(request, status, error){
 				alert("code:"+ request.status + "\n" + "error:"+error);
 			}
+		}); */
+		
+		$.getJSON("attendCheckChange.do", function(data) {
+			alert(data.foo);
+			
+		 /*$.each( data, function( index, data) {
+			  
+		  });
+		  */
 		});
 		
 	});

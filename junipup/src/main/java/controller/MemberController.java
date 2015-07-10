@@ -133,7 +133,7 @@ public class MemberController {
 		}
 		return result;
 	}
-	@RequestMapping(value= "findmember")	
+	@RequestMapping(value= "findmember")//토글창 넣기
 	public @ResponseBody String findmember(@RequestParam("nickname") String nickname, Model model)  {
 		Member member = ms.selectNickname(nickname);
 	    model.addAttribute("member", member);
