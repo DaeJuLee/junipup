@@ -54,13 +54,17 @@ $(function(){
 		beforeMonth=12;
 		year = year-1;
 	}
+	alert("1");
 	$("#before_button").click(function(){
 		$.ajax({
 			url:"attendCheckChange.do",
 			type: "POST",
-			dataType: "json",
-			data:{"month" : beforeMonth,
-				  "year" : year},
+			dataType: "text",
+			/* contentType:"application/json; charset=UTF-8", */
+			data: {
+				"month" : beformMonth,
+				"year" : year
+			},
 		    success : function(responseObject, status){
 		    	alert("성공");
 		    	alert(responseObject.month);

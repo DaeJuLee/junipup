@@ -247,3 +247,17 @@ content varchar2(4000),
 re_step varchar2(50),
 re_level varchar2(50)
 );
+
+create table notice(
+bnum number primary key,
+nickname varchar2(50),
+title varchar2(50),
+mrank varchar2(50),
+b_date Date,
+content varchar2(4000),
+ip varchar2(400),
+hits varchar2(50),
+filesize number,
+filename varchar2(200),
+category varchar2(100)
+);

@@ -26,11 +26,25 @@
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
 
-	<!-- 대주 수정 json -->
+	<!-- 대주 추가 json -->
 	<!-- <mvc:annotation-driven> <mvc:message-converters> <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"> 
 		<property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/> </bean> 
 		</mvc:message-converters> </mvc:annotation-driven> -->
-
+	<!-- 대주 추가 json -->
+	<!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+        <list>    
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>            
+        </list>
+        </property>                        
+    </bean> -->
 
 	<!-- AOP사용 xml 밑에 쫙 트랜잭선 관리 하기... -->
 	<!-- transactionmanager 선언 -->
