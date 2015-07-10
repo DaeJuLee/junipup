@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Messaging">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="MessagingResult" type="Messaging">
+		<result property="mnum"        column="mnum" />
+		<result property="nickname"        column="nickname" />
+		<result property="title"    column="title" />
+		<result property="msg"       column="msg" />
+		<result property="regdate"       column="regdate" />
+		<result property="confirm"     column="confirm" />
+
+	</resultMap>
+
+	<insert id="insertMessage" parameterType="Html5Board">
+		<selectKey order="BEFORE" keyProperty="mnum" resultType="int">
+			select nvl(max(mnum),0)+1 from Messaging
+		</selectKey>
+		insert into messaging
+		values (
+				#{mnum},
+				#{nickname},
+				#{title},
+				#{msg} ,
+				sysdate,
+				1
+				)
+	</insert>
+	
+	<select id="listMessageNick" parameterType="String" resultMap="MessagingResult">
+    	select * from (select rownum rn, a.* from
+    	(select b.* from (select * from messaging where nickname = #{nickname} b)b order by mnum desc)
+    	a) where rn between #{start} and #{end}
+	</select>
+	
+ 	<select id="selectMessageNick" parameterType="int" resultMap="DBBoardResult">
+    	select * from messaging where mnum = #{mum}
+	</select>
+
+	<delete id="deleteMessaging" parameterType="int">
+		delete from messaging where mnum = #{mnum}
+	</delete>
+	
+	<update id="upDateMessagingConfirm" parameterType="int">
+		update messaging set
+		confirm = 2
+		where
+		mnum = #{mnum}
+	</update>
+	
+
+
+</mapper>

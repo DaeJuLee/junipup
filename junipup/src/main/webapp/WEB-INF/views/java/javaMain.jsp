@@ -72,11 +72,25 @@ jQuery(function($){
 <c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">
 		<tr height="40px">
-			<th width="15%" >번호</th>
+			<th width="10%" >번호</th>
 			<th width="15%" >카테고리</th>
 			<th width="15%" >닉네임</th>
-			<th width="55%" >제목</th>
+			<th width="50%" >제목</th>
+			<th width="10">작성일</th>
 		</tr>
+		
+	<c:set var="noticenum" value="4" />	
+	<c:forEach items="${noticeRecent }" var="notice">
+		<tr class="notice">
+		<td>${noticenum }</td>
+		<td>${notice.category }</td>
+		<td>${notice.nickname }</td>		
+		<td><a href="noticeDetail.do?bnum=${notice.bnum }">${notice.title }</a></td>
+		<td>${notice.b_date }</td>
+		</tr>
+	<c:set var="noticenum" value="${noticenum-1 }" />	
+	</c:forEach>
+	
 		<c:forEach items="${list }" var="java">
 			<tr>
 				<td>${num }</td>

@@ -12,6 +12,7 @@
 		<typeAlias alias="JspBoard" type="model.JspBoard" />
 		<typeAlias alias="JQueryBoard" type="model.JQueryBoard" />
 		<typeAlias alias="AdminBoard" type="model.AdminBoard" />
+		<typeAlias alias="NoticeBoard" type="model.NoticeBoard" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/Email.xml" />
@@ -23,5 +24,6 @@
 		<mapper resource="mybatis/JspBoard.xml" />
 		<mapper resource="mybatis/JQueryBoard.xml" />
 		<mapper resource="mybatis/AdminBoard.xml" /> 
+		<mapper resource="mybatis/NoticeBoard.xml" /> 
 	</mappers>
 </configuration>

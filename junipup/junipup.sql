@@ -46,9 +46,9 @@ insert into Admin values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnip
 insert into Admin values ('amdin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
 insert into Admin values ('master', 'aa.jpg', '1', '정기윤', 10101010, 'venus_@naver.com', 9, 100, 100, sysdate, sysdate);
 -- message --
-create table message(
-nickname varchar2(30) primary key,
-msgnum number(4),
+create table messaging(
+mnum number(8) primary key,
+nickname varchar2(30),
 title varchar2(300),
 message varchar2(1200),
 regdate date,
@@ -246,4 +246,18 @@ c_date Date,
 content varchar2(4000),
 re_step varchar2(50),
 re_level varchar2(50)
+);
+
+create table notice(
+bnum number primary key,
+nickname varchar2(50),
+title varchar2(50),
+mrank varchar2(50),
+b_date Date,
+content varchar2(4000),
+ip varchar2(400),
+hits varchar2(50),
+filesize number,
+filename varchar2(200),
+category varchar2(100)
 );

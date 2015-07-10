@@ -69,21 +69,20 @@
 	}
 </script>
 
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-	jQuery(function($) {
-		var tab = $('.left11');
-		tab.removeClass('js_off');
-		tab.css('height', tab.find('>ul>li>ul:visible').height() + 40);
-		function onSelectTab() {
-			var t = $(this);
-			var myClass = t.parent('li').attr('class');
-			t.parents('.left11:first').attr('class', 'left11 ' + myClass);
-			tab.css('height', t.next('ul').height());
-		}
-		tab.find('>ul>li>a').click(onSelectTab).focus(onSelectTab);
-	});
+jQuery(function($){
+    var tab = $('.tab_list');
+    tab.removeClass('js_off');
+    tab.css('height', tab.find('>ul>li>ul:visible').height()+40);
+    function onSelectTab(){
+        var t = $(this);
+        var myClass = t.parent('li').attr('class');
+        t.parents('.tab_list:first').attr('class', 'tab_list '+myClass);
+        tab.css('height', t.next('ul').height()+40);
+    }
+    tab.find('>ul>li>a').click(onSelectTab).focus(onSelectTab);
+});
 </script>
 
 <style type="text/css">
@@ -133,41 +132,45 @@
 				</ul>
 			</div>
 
-			<div class="left_center2">
+			<div>
 				<!-- 공지사항  -->
-				<div class="left11 m1">
+				<div class="tab_list m1" style="height:112px;">
 					<ul>
-						<li class="m1"><a href="#">Notice</a>
+						<li class="m1"><a href="#"><span>Notice</span></a>
 							<ul>
-								<li></li>
-								
-							</ul></li>
-
-						<li class="m2"><a href="#">Database</a>
-							<ul>
-								<c:forEach items="${DB }" var="db">
+								<c:forEach items="${Notice }" var="Notice">
 									<li>
 										<table>
+											
 											<col width="120px">
 											<col width="50px">
 											<col width="290px">
-											<tr height="20px">
-												<td calss="cate_value">${db.category }</td>
+											<tr height="20px">												
+												<td calss="cate_value">${Notice.category }</td>
 												<td class="cate">제목 : </td>
-												<td><a href="DBDetail.do?bnum=${db.bnum}">${db.title }</a></td>
+												<td><a href="noticeDetail.do?bnum=${Notice.bnum}">${Notice.title }</a></td>
 											</tr>
 										</table>
 									<li>
 								</c:forEach>
-							</ul></li>
+							</ul>
+						</li>
+						<li class="m2"><a href="#"><span>QnA</span></a>
+							<ul>
+								<li>메뉴</li>
+								<li>메뉴</li>
+								<li>메뉴</li>
+								<li>메뉴</li>
+								<li>메뉴</li>
+							</ul>
+						</li>						
 					</ul>
-				</div>
-				<!-- 공지사항  -->
-
-				<!-- 공지사항  -->
-				<div class="left11 m1">
+				</div>			
+				
+				
+				<div class="tab_list m1">
 					<ul>
-						<li class="m1"><a href="#">jQuery</a>
+						<li class="m1"><a href="#"><span>jQuery</span></a>
 							<ul>
 								<c:forEach items="${jQuery }" var="jQuery">
 									<li>
@@ -185,9 +188,28 @@
 										</table>
 									<li>
 								</c:forEach>
-							</ul></li>
-
-						<li class="m2"><a href="#">Jsp</a>
+							</ul>
+						</li>
+							
+						<li class="m2"><a href="#"><span>Database</span></a>
+							<ul>
+								<c:forEach items="${DB }" var="db">
+									<li>
+										<table>
+											<col width="120px">
+											<col width="50px">
+											<col width="290px">
+											<tr height="20px">
+												<td calss="cate_value">${db.category }</td>
+												<td class="cate">제목 : </td>
+												<td><a href="DBDetail.do?bnum=${db.bnum}">${db.title }</a></td>
+											</tr>
+										</table>
+									<li>
+								</c:forEach>
+							</ul>
+						</li>						
+						<li class="m3"><a href="#"><span>Jsp</span></a>
 							<ul>
 								<c:forEach items="${Jsp }" var="Jsp">
 									<li>
@@ -205,17 +227,9 @@
 										</table>
 									<li>
 								</c:forEach>
-							</ul></li>
-					</ul>
-				</div>
-				<!-- 공지사항  -->
-			</div>
-
-			<div class="left_center3">
-				<!-- 공지사항  -->
-				<div class="left11 m1">
-					<ul>
-						<li class="m1"><a href="#">Java</a>
+							</ul>
+						</li>					
+						<li class="m4"><a href="#"><span>Java</span></a>
 							<ul>
 								<c:forEach items="${Java }" var="Java">
 									<li>
@@ -233,9 +247,10 @@
 										</table>
 									<li>
 								</c:forEach>
-							</ul></li>
+							</ul>
+						</li>
 
-						<li class="m2"><a href="#">Android</a>
+						<li class="m5"><a href="#"><span>Android</span></a>
 							<ul>
 								<c:forEach items="${Android }" var="Android">
 									<li>
@@ -253,15 +268,9 @@
 										</table>
 									<li>
 								</c:forEach>
-							</ul></li>
-					</ul>
-				</div>
-				<!-- 공지사항  -->
-
-				<!-- 공지사항  -->
-				<div class="left11 m1">
-					<ul>
-						<li class="m1"><a href="#">Html5</a>
+							</ul>
+						</li>				
+						<li class="m6"><a href="#"><span>Html5</span></a>
 							<ul>
 								<c:forEach items="${Html5 }" var="Html5">
 									<li>
@@ -279,16 +288,8 @@
 										</table>
 									<li>
 								</c:forEach>
-							</ul></li>
-
-						<li class="m2"><a href="#">QnA</a>
-							<ul>
-								<li>메뉴</li>
-								<li>메뉴</li>
-								<li>메뉴</li>
-								<li>메뉴</li>
-								<li>메뉴</li>
-							</ul></li>
+							</ul>
+						</li>						
 					</ul>
 				</div>
 				<!-- 공지사항  -->

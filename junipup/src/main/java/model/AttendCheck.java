@@ -2,14 +2,14 @@ package model;
 
 public class AttendCheck {
 
-	private int year; //ÇöÀç ³âµµ
-	private int month; //ÇöÀç ¿ù ex)7¿ùÀÌ¸é 6°ª Ãâ·Â
-	private int day; //ÇöÀç ³¯Â¥
+	private int year; //í˜„ì¬ ë…„ë„
+	private int month; //í˜„ì¬ ì›” ex)7ì›”ì´ë©´ 6ê°’ ì¶œë ¥
+	private int day; //í˜„ì¬ ë‚ ì§œ
 	
-	private int startDay; //¾î¶²´ŞÀÇ ½ÃÀÛÀÏ ->¹«Á¶°Ç1°ª Ãâ·Â
-	private int endDay; //¾î¶²´ŞÀÇ ¸¶Áö¸· ÀÏ-> ¸Å´Ş 28ÀÏ 30ÀÏ 31ÀÏ °¢°¢ ´Ù¸§
-	private int currentDay; //¾î¶²´ŞÀÇ ½ÃÀÛ¿äÀÏ
-	private int newLine; //ÇÑ ÁÖÀÇ 7¿¡¼­ Ã¤¿öÁöÁö ¾ÊÀº °÷À» Ã¤¿ì´Â º¯¼ö
+	private int startDay; //ì–´ë–¤ë‹¬ì˜ ì‹œì‘ì¼ ->ë¬´ì¡°ê±´1ê°’ ì¶œë ¥
+	private int endDay; //ì–´ë–¤ë‹¬ì˜ ë§ˆì§€ë§‰ ì¼-> ë§¤ë‹¬ 28ì¼ 30ì¼ 31ì¼ ê°ê° ë‹¤ë¦„
+	private int currentDay; //ì–´ë–¤ë‹¬ì˜ ì‹œì‘ìš”ì¼
+	private int newLine; //í•œ ì£¼ì˜ 7ì—ì„œ ì±„ì›Œì§€ì§€ ì•Šì€ ê³³ì„ ì±„ìš°ëŠ” ë³€ìˆ˜
 	public int getYear() {
 		return year;
 	}

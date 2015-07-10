@@ -9,6 +9,7 @@ import model.Html5Board;
 import model.JQueryBoard;
 import model.JavaBoard;
 import model.JspBoard;
+import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,12 +39,15 @@ public class MainController {
 		ad = ms.AndroidRecent();
 		List<Html5Board> hb = new ArrayList<Html5Board>();
 		hb = ms.Html5Recent();
+		List<NoticeBoard> nb = new ArrayList<NoticeBoard>();
+		nb = ms.NoticeRecent();
 		model.addAttribute("DB", db);
 		model.addAttribute("jQuery", jqb);
 		model.addAttribute("Jsp", jb);
 		model.addAttribute("Java", jab);
 		model.addAttribute("Android", ad);
 		model.addAttribute("Html5", hb);
+		model.addAttribute("Notice",nb);
 		return "main";
 	}
 	

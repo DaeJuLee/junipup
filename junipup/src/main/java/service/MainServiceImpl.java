@@ -12,6 +12,7 @@ import model.Html5Board;
 import model.JQueryBoard;
 import model.JavaBoard;
 import model.JspBoard;
+import model.NoticeBoard;
 
 @Service
 public class MainServiceImpl implements MainService{
@@ -47,6 +48,11 @@ public class MainServiceImpl implements MainService{
 	@Override
 	public List<Html5Board> Html5Recent() {
 		return md.Html5Recent();
+	}
+
+	@Override
+	public List<NoticeBoard> NoticeRecent() {		
+		return md.NoticeRecent();
 	}
 
 }
