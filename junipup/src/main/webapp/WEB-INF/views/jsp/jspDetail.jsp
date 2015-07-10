@@ -70,6 +70,8 @@
 			<input type="hidden" name="bnum" value="${jspDetail.bnum }" />
 			<button type="button" onclick="onModify()" class="btn btn-primary">수정</button>
 			<button type="button" onclick="onList()" class="btn btn-primary">목록</button>
+			<button type="button" onclick="onDelete()" class="btn btn-primary">삭제</button>
+			
 		</form>	
 </div>
 <%-- <input type="button" value="목록보기" 
@@ -90,6 +92,12 @@
 	
 	var onList = function(){
 		location.href='jspMain.do';
+	};
+	
+	var onDelete = function(){	
+		var form = $('.viewForm')[0];
+		form.action = 'jspDeleteCheck.do';
+		form.submit();
 	};
 </script>
 </html>

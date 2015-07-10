@@ -68,6 +68,14 @@ jQuery(function($){
         <li class="more">› <a href="#">응용게시판 더보기</a></li>
         </ul>
     </li>
+    	<c:choose>
+			<c:when test="${empty USER_KEY}">					
+				<button type="button" class="button"  onclick="location.href='login.do'">글쓰기</button>					
+			</c:when>				
+			<c:otherwise>					
+				<button type="button" onclick="location.href='androidInsertForm.do'" class="button">글쓰기</button>										
+			</c:otherwise>
+		</c:choose>
     </ul>
 </div>
 
@@ -103,8 +111,7 @@ jQuery(function($){
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-	<button type="button" onclick="location.href='androidInsertForm.do'" class="button">글쓰기</button>
-	
+		
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		
 		<%-- <a href="DBMain.do?currentPage=${pg.startPage-pg.pageBlock }" class="pre">이전</a> --%>

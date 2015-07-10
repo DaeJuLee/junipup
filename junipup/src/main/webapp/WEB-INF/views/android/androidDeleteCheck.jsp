@@ -23,9 +23,9 @@
 					<%-- <a href="androidDelete.do?title=${title.title }">삭제</a>
 					<a href="androidDetail.do?title=${title.title }">취소</a> --%>
 					<input type="button" value="삭제" 
-						onclick="location.href='androidDelete.do?title=${title.title }'">
+						onclick="location.href='androidDelete.do?bnum=${bnum.bnum }'">
 					<input type="button" value="취소" 
-						onclick="location.href='androidDetail.do?title=${title.title }'">
+						onclick="location.href='androidDetail.do?bnum=${bnum.bnum }'">
 				</span>
 			</fieldset>
 			

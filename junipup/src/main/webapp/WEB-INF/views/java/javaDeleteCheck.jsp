@@ -19,8 +19,8 @@
 			정말로 삭제 하시겠습니까?
 			<fieldset>
 				<span class="btn_login">
-					<a href="javaDelete.do?bnum=${bnum.bnum }">삭제</a>
-					<a href="javaDelete.do?bnum=${bnum.bnum }">취소</a>
+					<a href="javaDelete.do?bnum=${java.bnum }">삭제</a>
+					<a href="javaDelete.do?bnum=${java.bnum }">취소</a>
 				</span>
 			</fieldset>
 		</form>

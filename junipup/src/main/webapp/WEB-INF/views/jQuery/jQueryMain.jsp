@@ -68,6 +68,14 @@ jQuery(function($){
         <li class="more">› <a href="#">응용게시판 더보기</a></li>
         </ul>
     </li>
+    	<c:choose>
+			<c:when test="${empty USER_KEY}">					
+				<button type="button" class="button"  onclick="location.href='login.do'">글쓰기</button>					
+			</c:when>				
+			<c:otherwise>					
+				<button type="button" onclick="location.href='jQueryInsertForm.do'" class="button">글쓰기</button>										
+			</c:otherwise>
+		</c:choose>
     </ul>
 </div>
 

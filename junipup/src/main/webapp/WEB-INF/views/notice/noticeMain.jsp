@@ -14,8 +14,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <button type="button" onclick="location.href='noticeInsertForm.do'" class="button">글쓰기</button>
-
+	<c:choose>
+		<c:when test="${empty USER_KEY}">					
+			<button type="button" class="button"  onclick="location.href='login.do'">글쓰기</button>					
+		</c:when>				
+		<c:otherwise>
+			<c:choose>							
+				<c:when test="${USER_KEY.nickname == 'master' }">
+					<button type="button" onclick="location.href='noticeInsertForm.do'" class="button">글쓰기</button>									
+				</c:when>
+				<c:when test="${USER_KEY.nickname != 'master' }">
+				</c:when>
+					
+			</c:choose>							
+		</c:otherwise>		
+	</c:choose>
+	
 	<div class="tab_content">
 	<c:set var="num" value="${pg.total - pg.start +1}" />
 	<table class="tbl" align="center">

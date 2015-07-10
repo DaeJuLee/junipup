@@ -102,7 +102,7 @@ public class NoticeController {
 	public String noticeDeleteCheck(int bnum, Model model){
 		NoticeBoard notice = new NoticeBoard();
 		notice.setBnum(bnum);
-		model.addAttribute("title", notice);
+		model.addAttribute("notice", notice);
 		return "/notice/noticeDeleteCheck";
 	}
 }

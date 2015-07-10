@@ -19,8 +19,8 @@
 			정말로 삭제 하시겠습니까?
 			<fieldset>
 				<span class="btn_login">
-					<a href="noticeDelete.do?bnum=${bnum.bnum }">삭제</a>
-					<a href="noticeDelete.do?bnum=${bnum.bnum }">취소</a>
+					<a href="noticeDelete.do?bnum=${notice.bnum }">삭제</a>
+					<a href="noticeDelete.do?bnum=${notice.bnum }">취소</a>
 				</span>
 			</fieldset>
 		</form>

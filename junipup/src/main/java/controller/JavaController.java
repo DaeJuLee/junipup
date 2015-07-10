@@ -108,7 +108,7 @@ public class JavaController {
 	public String javaDeleteCheck(int bnum, Model model){
 		JavaBoard java = new JavaBoard();
 		java.setBnum(bnum);
-		model.addAttribute("title", java);
+		model.addAttribute("java", java);
 		return "/java/javaDeleteCheck";
 	}
 }
