@@ -100,14 +100,7 @@
 		<property name="from" value="junibatnipup@gmail.com" />
 		<property name="to" value="beatmini@naver.com" />
 		<property name="subject" value="Hello" />
-		<property name="text">
-			<value>
-		<![CDATA[
-			Dear %s,
-			Mail Content : %s
-		]]>
-			</value>
-		</property>
+		
 	</bean>
 
 </beans>

@@ -34,8 +34,9 @@ public class EmailDaoImpl implements EmailDao {
 	@Override
 	public void templetEmailDelete(String title) {
 		session.delete("templetEmailDelete", title);
-		
 	}
+	
+	
 
 	
 

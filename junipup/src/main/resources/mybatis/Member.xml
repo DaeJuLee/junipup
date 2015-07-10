@@ -49,12 +49,12 @@
 	</select>	
 
 	<select id="selectEmail" parameterType="String" resultMap="MemberResult">
-		<![CDATA[ select * from member where password=#{password}]]>
+		<![CDATA[ select * from member where email=#{email}]]>
 	</select>		
 
-	<update id="updateMember" parameterType="Member">
+	<update id="update1Member" parameterType="Member">
 		update member set
-		ninkname = #{nickname},
+		nickname = #{nickname},
 		photo = #{photo, jdbcType=VARCHAR},
 		password = #{password},
 		phoneNumber = #{phoneNumber}
