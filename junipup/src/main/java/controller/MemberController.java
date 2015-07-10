@@ -112,7 +112,7 @@ public class MemberController {
 	public @ResponseBody String idchk(@RequestParam("email") String email, Model model)  {
 		
 	    String result = "2";
-	    System.out.println(ms.selectEmail(email) == null);
+
 		if(ms.selectEmail(email) == null){
 			result = "0";
 		}else{

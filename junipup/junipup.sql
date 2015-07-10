@@ -23,6 +23,7 @@ select * from member;
 select * from jquery;
 select * from java;
 
+
 -- admin --
 create table Admin(
 nickname varchar2(30) primary key,
@@ -47,6 +48,7 @@ insert into Admin values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnip
 insert into Admin values ('amdin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
 insert into Admin values ('master', 'aa.jpg', '1', '정기윤', 10101010, 'venus_@naver.com', 9, 100, 100, sysdate, sysdate);
 -- message --
+-- 보낸사람과 받는사람 구분을 까먹었음  닉네임 하나 더 추가하면 완료-- 
 create table messaging(
 mnum number(8) primary key,
 nickname varchar2(30),
