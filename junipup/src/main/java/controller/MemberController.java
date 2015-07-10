@@ -107,7 +107,12 @@ public class MemberController {
 	    model.addAttribute("member", member);
 	    return null;
 	}
-	
+ 
+	@RequestMapping(value = "logout")
+	public String logout(Member member, Model model, HttpSession session) {
+		session.removeAttribute(WebConstants.USER_KEY);
+		return "main";
+	}
 //	@ResponseBody
 //	@RequestMapping(value= "idchk", method=RequestMethod.POST)
 //	public HashMap<String, Object> checkId(@RequestParam HashMap<String, Object> idParam)  {
