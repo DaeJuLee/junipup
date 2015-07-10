@@ -91,7 +91,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public int updateMember(Member member) {
-		return session.update("updateMember", member);
+		return session.update("update1Member", member);
 	}
 
 

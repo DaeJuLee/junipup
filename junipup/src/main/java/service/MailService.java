@@ -2,7 +2,9 @@ package service;
 
 import java.io.File;
 
+import javax.mail.Message;
 import javax.mail.MessagingException;
+import javax.mail.Session;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,14 +44,11 @@ public class MailService {
 
 		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 
-		System.out.println(from);
-		System.out.println(to);
-		System.out.println(subject);
-		System.out.println(msg);
 		simpleMailMessage.setFrom(from);
 		simpleMailMessage.setTo(to);
 		simpleMailMessage.setSubject(subject);
 		simpleMailMessage.setText(msg);
+		
 		mailSender.send(simpleMailMessage);
 	}
 
@@ -61,21 +60,39 @@ public class MailService {
 	}
 	// if 쓰지 말고 오버로딩 하자~~
 	
-	public void sendMailWithAttachment(String dear, String content, FileSystemResource file1) {
+	public void sendMailWithAttachment(String from, String to, String subject, String html) {
 
 		MimeMessage message = javaMailSender.createMimeMessage();
-
+		
 		try {
 			MimeMessageHelper helper = new MimeMessageHelper(message, true);
+			
+			helper.setFrom(from);
+			helper.setTo(to);
+			helper.setSubject(subject);
+			message.setText(html, "UTF-8", "html");
+			
+						
 
-			helper.setFrom(templateMailMessage.getFrom());
-			helper.setTo(templateMailMessage.getTo());
-			helper.setSubject(templateMailMessage.getSubject());
-			helper.setText(String.format(templateMailMessage.getText(), dear,
-					content));
+		} catch (MessagingException e) {
+			throw new MailParseException(e);
+		}
+		javaMailSender.send(message);
+	}
+	public void sendMailWithAttachment(String from, String to, String subject, String html, FileSystemResource file1) {
+
+		MimeMessage message = javaMailSender.createMimeMessage();
+		
+		try {
+			MimeMessageHelper helper = new MimeMessageHelper(message, true);
+			
+			helper.setFrom(from);
+			helper.setTo(to);
+			helper.setSubject(subject);
+			message.setText(html, "UTF-8", "html");
+			
 			if(file1 == null){
-				FileSystemResource file = new FileSystemResource("C:\\hello\\java.txt");
-				helper.addAttachment(file.getFilename(), file);
+				
 			}else{
 				helper.addAttachment(file1.getFilename(), file1);
 			}
