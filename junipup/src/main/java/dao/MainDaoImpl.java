@@ -12,6 +12,7 @@ import model.Html5Board;
 import model.JQueryBoard;
 import model.JavaBoard;
 import model.JspBoard;
+import model.NoticeBoard;
 @Repository
 public class MainDaoImpl implements MainDao{
 	
@@ -45,6 +46,11 @@ public class MainDaoImpl implements MainDao{
 	@Override
 	public List<Html5Board> Html5Recent() {
 		return session.selectList("Html5Recent");
+	}
+
+	@Override
+	public List<NoticeBoard> NoticeRecent() {
+		return session.selectList("noticeRecent");
 	}
 
 }

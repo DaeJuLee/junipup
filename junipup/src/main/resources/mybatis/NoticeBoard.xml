@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NoticeBoard">
+
+	<!-- Result maps describe the mapping between the columns returned from 
+		a query, and the class properties. A result map isn't necessary if the columns 
+		(or aliases) match to the properties exactly. -->
+	<resultMap id="NoticeBoardResult" type="NoticeBoard">
+		<result property="bnum"        column="bnum" />
+		<result property="nickname"    column="nickname" />
+		<result property="title"       column="title" />
+		<result property="mrank"       column="mrank" />
+		<result property="content"     column="content" />
+		<result property="ip"          column="ip" />
+		<result property="hits"        column="hits" />
+		<result property="category"    column="category" />
+		<result property="filesize"    column="filesize"/>
+		<result property="filename"    column="filename" /> 
+		<result property="b_date"      column="b_date" /> 
+	</resultMap>
+
+	<select id="listNotice" parameterType="NoticeBoard" resultMap="NoticeBoardResult">
+    	select * from (select rownum rn, a.* from (select * from notice
+    	order by bnum desc) a) where rn between #{start} and #{end}
+	</select>
+	
+	<select id="listNoticeCategory" parameterType="NoticeBoard" resultMap="NoticeBoardResult">
+    	select * from (select rownum rn, a.* from (select * from notice where category=#{category, jdbcType=VARCHAR}
+    	order by bnum desc) a) where rn between #{start} and #{end}    	
+	</select>
+	
+	<select id="noticeRecent" resultMap="NoticeBoardResult">
+    	select *
+    	 from (select rownum rn, a.* from (select * from notice
+    	order by bnum desc) a) where rn between 1 and 4
+	</select>
+	
+	<select id="totalNotice" resultType="int" >
+		select count(*) from notice
+	</select>
+	
+	<select id="totalNoticeCategory" parameterType="String" resultType="int" >
+		select count(*) from notice where category = #{category}
+	</select>
+	
+	<select id="noticeDetail" parameterType="int" resultMap="NoticeBoardResult">
+		<![CDATA[select * from notice where bnum = #{bnum}]]>
+	</select>
+	
+	<insert id="noticeInsert" parameterType="NoticeBoard">
+		<selectKey order="BEFORE" keyProperty="bnum" resultType="int">
+			select nvl(max(bnum),0)+1 from notice
+		</selectKey>
+		insert into notice
+		values (
+		#{bnum}, #{nickname , jdbcType=VARCHAR}, #{title}, #{mrank} , sysdate, #{content}, #{ip, jdbcType=VARCHAR}, 0, #{filesize, jdbcType=VARCHAR},
+		#{filename, jdbcType=VARCHAR}, #{category} )
+	</insert>
+	
+	<delete id="noticeDelete" parameterType="int">
+		delete from notice where bnum = #{bnum}
+	</delete>
+	
+	<update id="noticeUpdate" parameterType="NoticeBoard">
+		update notice set
+		title = #{title},
+		content = #{content},
+		category = #{category},
+		filesize = #{filesize, jdbcType=VARCHAR},
+		filename = #{filename, jdbcType=VARCHAR},
+		ip = #{ip, jdbcType=VARCHAR}
+		where
+		bnum = #{bnum}
+	</update>
+	 
+	<!-- <insert id="insertEmpList" parameterType="Emp">
+		insert into emp
+		values (
+		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
+	</insert>
+	 -->
+
+</mapper>

@@ -2,8 +2,8 @@ package controller;
 
 import java.util.List;
 
-import model.DBBoard;
 import model.JQueryBoard;
+import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.NoticeDao;
 import service.JQueryService;
 import service.Paging;
 
@@ -18,9 +19,11 @@ import service.Paging;
 public class JQueryController {
 	@Autowired
 	JQueryService js;
+	@Autowired
+	NoticeDao nd;
 	
 	@RequestMapping(value="jQueryMain")
-	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage, String category) {
+	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage, String category, NoticeBoard notice) {
 		//js.insertBoard();
 		if(category == null || category.equals("")){
 			int total = js.JQueryTotal();
@@ -30,7 +33,9 @@ public class JQueryController {
 			JQueryboard.setEnd(pg.getEnd());
 			System.out.println("category : " + JQueryboard.getCategory());
 			List<JQueryBoard> list = js.listJQuery(JQueryboard);
+			List<NoticeBoard> noticeRecent = nd.noticeRecent(notice);	
 			model.addAttribute("jQueryMain", list);
+			model.addAttribute("noticeRecent", noticeRecent);
 			model.addAttribute("pg", pg);
 			model.addAttribute("all", "true");
 			return "/jQuery/jQueryMain";

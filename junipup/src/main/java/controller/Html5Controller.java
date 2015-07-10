@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.Html5Board;
+import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.NoticeDao;
 import service.Html5Service;
 import service.Paging;
 
@@ -17,9 +19,11 @@ import service.Paging;
 public class Html5Controller {
 	@Autowired
 	private Html5Service hs;
+	@Autowired
+	NoticeDao nd;
 	
 	@RequestMapping(value="html5Main")
-	public String listHtml5(Model model, Html5Board html5board, String currentPage, String category) {
+	public String listHtml5(Model model, Html5Board html5board, String currentPage, String category,NoticeBoard notice) {
 		//hs.insertBoard();
 		if(category == null || category.equals("")){
 		int total = hs.html5Total();
@@ -28,7 +32,9 @@ public class Html5Controller {
 		html5board.setStart(pg.getStart());
 		html5board.setEnd(pg.getEnd());
 		List<Html5Board> list = hs.listHtml5(html5board);
+		List<NoticeBoard> noticeRecent = nd.noticeRecent(notice);		
 		model.addAttribute("html5Main", list);
+		model.addAttribute("noticeRecent", noticeRecent);
 		model.addAttribute("pg", pg);
 		model.addAttribute("all", "true");
 		return "/html5/html5Main";

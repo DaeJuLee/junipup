@@ -8,6 +8,7 @@ import model.Html5Board;
 import model.JQueryBoard;
 import model.JavaBoard;
 import model.JspBoard;
+import model.NoticeBoard;
 
 public interface MainDao {
 
@@ -22,5 +23,6 @@ public interface MainDao {
 	List<AndroidBoard> AndroidRecent();
 
 	List<Html5Board> Html5Recent();
-
+	
+	List<NoticeBoard> NoticeRecent();
 }

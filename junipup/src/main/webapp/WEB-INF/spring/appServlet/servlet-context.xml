@@ -19,6 +19,4 @@
 	</beans:bean>	
 	<context:component-scan base-package="controller,service,dao,model" />
 	
-
-	
 </beans:beans>

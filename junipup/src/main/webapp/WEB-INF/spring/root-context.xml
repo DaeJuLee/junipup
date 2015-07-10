@@ -7,7 +7,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 	<!-- //Oracle 접속부분 -->
-	<context:property-placeholder location="classpath:mybatis/jdbc.properties"/>
+	<context:property-placeholder location="classpath:mybatis/jdbc.properties" />
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="${jdbc.driverClassName}" />
@@ -25,6 +25,12 @@
 	<bean id="session" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
+
+	<!-- 대주 수정 json -->
+	<!-- <mvc:annotation-driven> <mvc:message-converters> <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"> 
+		<property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/> </bean> 
+		</mvc:message-converters> </mvc:annotation-driven> -->
+
 
 	<!-- AOP사용 xml 밑에 쫙 트랜잭선 관리 하기... -->
 	<!-- transactionmanager 선언 -->
@@ -56,38 +62,38 @@
 		<!-- 파일 업로드 최대 용량 -->
 		<property name="maxUploadSize" value="104857600" />
 	</bean>
-	
-		<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="465" />
 		<property name="username" value="junibatnipup@gmail.com" />
 		<property name="password" value="xkoiutejvvnrwino" />
 		<property name="javaMailProperties">
-		   <props>
- 	       	      <prop key="mail.smtp.auth">true</prop>
-	       	      <prop key="mail.smtp.starttls.enable">true</prop>
-	       	      <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
-	       	      <prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
-	       	      <prop key="mail.smtp.socketFactory.fallback">false</prop>
-	       	      <prop key="mail.smtp.port">465</prop>
-	       	      <prop key="mail.smtp.socketFactory.port">465</prop>
-	       	      <prop key="mail.transport.protocol">smtp</prop>
-	       	   </props>
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+				<prop key="mail.smtp.socketFactory.fallback">false</prop>
+				<prop key="mail.smtp.port">465</prop>
+				<prop key="mail.smtp.socketFactory.port">465</prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+			</props>
 		</property>
 	</bean>
-	
-	<bean id="templateMailMessage" class="org.springframework.mail.SimpleMailMessage"> 
-	<property name="from" value="junibatnipup@gmail.com" />
-	<property name="to" value="beatmini@naver.com" />
-	<property name="subject" value="Hello" />
-	<property name="text">
-	   <value>
+
+	<bean id="templateMailMessage" class="org.springframework.mail.SimpleMailMessage">
+		<property name="from" value="junibatnipup@gmail.com" />
+		<property name="to" value="beatmini@naver.com" />
+		<property name="subject" value="Hello" />
+		<property name="text">
+			<value>
 		<![CDATA[
 			Dear %s,
 			Mail Content : %s
 		]]>
-	   </value>
-        </property>
+			</value>
+		</property>
 	</bean>
 
 </beans>
