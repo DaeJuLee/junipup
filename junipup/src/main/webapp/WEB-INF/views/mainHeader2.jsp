@@ -58,12 +58,8 @@ margin: 10px 0 3px 0;
 					<a href="logout.do"><img src="img/logout.JPG"></a>
 					<c:choose>							
 							<c:when test="${USER_KEY.nickname == 'master' }">
-<<<<<<< HEAD
-								<span class="css-bar"></span>
-								<a href="adminForm.do?id=${USER_KEY.id }">관리자 페이지</a>
-=======
+								<span class="css-bar"></span>							
 								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자 페이지</a>
->>>>>>> branch 'master' of https://github.com/DaeJuLee/junipup.git
 				 			</c:when>
 							<c:when test="${USER_KEY.nickname != 'master' }">
 								<span class="css-bar"></span>
