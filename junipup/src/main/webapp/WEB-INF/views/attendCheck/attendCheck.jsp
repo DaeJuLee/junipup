@@ -45,17 +45,7 @@ function init(){
 			
 }
 /* 이전 */
-$(function(){
-	var month = "<h2>"+${attendCheck.month}+"</h2>";
-	$("#month_value_num").html(month);
-	var beforeMonth = ${attendCheck.month} - 1;
-	var year = ${attendCheck.year};
-	if(beforeMonth == 0){
-		beforeMonth=12;
-		year = year-1;
-	}
-	$("#before_button").click(function(){
-		/* $.ajax({
+/* $.ajax({
 			url:"attendCheckChange.do",
 			type: "POST",
 			dataType: "text",
@@ -72,10 +62,18 @@ $(function(){
 				alert("code:"+ request.status + "\n" + "error:"+error);
 			}
 		}); */
-		
+$(function(){
+	var month = "<h2>"+${attendCheck.month}+"</h2>";
+	$("#month_value_num").html(month);
+	var beforeMonth = ${attendCheck.month} - 1;
+	var year = ${attendCheck.year};
+	if(beforeMonth == 0){
+		beforeMonth=12;
+		year = year-1;
+	}
+	$("#before_button").click(function(){
 		$.getJSON("attendCheckChange.do", function(data) {
-			alert(data.foo);
-			
+			alert(data.foo);	
 		 /*$.each( data, function( index, data) {
 			  
 		  });
