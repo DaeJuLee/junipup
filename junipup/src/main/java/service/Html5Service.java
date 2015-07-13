@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import model.Html5Board;
+import model.Member;
 
 public interface Html5Service {
 	List<Html5Board> listHtml5(Html5Board html5board);
@@ -14,5 +15,5 @@ public interface Html5Service {
 	int html5Total();
 	public int totalHtml5Category(String category);
 	List<Html5Board> listHtml5Category(Html5Board html5);
-	void htmlPointUp5(String nickname);
+	void htmlPointUp5(Member member);
 }

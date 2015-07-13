@@ -69,24 +69,25 @@
     	order by regDate) a) where rn between #{start} and #{end}
 	</select>
 	
-	<update id="pointUp2" parameterType="String">
+	<update id="pointUp2" parameterType="Member">
 		update member set
-		maxPoint + 2
+		maxPoint = #{maxPoint}
 		where nickname = #{nickname}
 	</update>
-	<update id="pointUp5" parameterType="String">
+	<update id="pointUp5" parameterType="Member">
 		update member set
-		maxPoint = #{maxPoint+5}
+		usePoint = #{usePoint},
+		maxPoint = #{maxPoint}
 		where nickname = #{nickname}
 	</update>
-	<update id="pointUp7" parameterType="String">
+	<update id="pointUp7" parameterType="Member">
 		update member set
-		maxPoint + 7
+		maxPoint = #{maxPoint}
 		where nickname = #{nickname}
 	</update>
-	<update id="pointUp10" parameterType="String">
+	<update id="pointUp10" parameterType="Member">
 		update member set
-		maxPoint + 10
+		maxPoint = #{maxPoint}
 		where nickname = #{nickname}
 	</update>
 
