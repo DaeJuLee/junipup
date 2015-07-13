@@ -49,4 +49,9 @@ public class Html5ServiceImpl implements Html5Service {
 	public List<Html5Board> listHtml5Category(Html5Board html5) {
 		return hd.listHtml5Category(html5);
 	}
+
+	@Override
+	public void htmlPointUp5(String nickname) {
+		hd.htmlPointUp5(nickname);
+	}
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -62,6 +63,11 @@ public class Html5DaoImpl implements Html5Dao{
 	@Override
 	public List<Html5Board> listHtml5Category(Html5Board html5) {
 		return session.selectList("listHtml5Category", html5);
+	}
+
+	@Override
+	public void htmlPointUp5(String nickname) {
+		session.insert("pointUp5", nickname);
 	}
 
 }

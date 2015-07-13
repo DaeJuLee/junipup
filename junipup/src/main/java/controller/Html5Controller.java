@@ -62,9 +62,10 @@ public class Html5Controller {
 	}
 	
 	@RequestMapping(value="html5Insert", method=RequestMethod.POST)	
-	public String html5Insert(Model model, Html5Board html5) {
+	public String html5Insert(Model model, Html5Board html5, String nickname ) {
 		html5.setContent(html5.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result =  hs.html5Insert(html5);
+		hs.htmlPointUp5(nickname);
 		if(result > 0){
 			return "redirect:html5Main.do";
 		}else{

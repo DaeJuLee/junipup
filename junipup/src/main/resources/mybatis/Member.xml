@@ -76,7 +76,7 @@
 	</update>
 	<update id="pointUp5" parameterType="String">
 		update member set
-		maxPoint + 5
+		maxPoint = #{maxPoint+5}
 		where nickname = #{nickname}
 	</update>
 	<update id="pointUp7" parameterType="String">
