@@ -52,11 +52,14 @@ insert into Admin values ('master', 'aa.jpg', '1', '정기윤', 10101010, 'venus
 create table messaging(
 mnum number(8) primary key,
 nickname varchar2(30),
+receiver varchar2(30),
 title varchar2(300),
 message varchar2(1200),
 regdate date,
 confirm number(2)
 );
+
+select * from messaging;
 
 -- Email --
 create table Email(

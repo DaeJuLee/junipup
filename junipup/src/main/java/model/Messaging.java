@@ -5,6 +5,7 @@ import java.util.Date;
 public class Messaging {
 	private int mnum;
 	private String nickname;
+	private String receiver;
 	private String title;
 	private String msg;
 	private Date regdate;
@@ -21,6 +22,12 @@ public class Messaging {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	public String getReceiver() {
+		return receiver;
+	}
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
 	}
 	public String getTitle() {
 		return title;
@@ -46,5 +53,6 @@ public class Messaging {
 	public void setConfirm(int confirm) {
 		this.confirm = confirm;
 	}
+	
 	
 }
