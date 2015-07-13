@@ -5,11 +5,13 @@ import java.util.List;
 
 
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.Html5Board;
+import model.Member;
 @Repository
 public class Html5DaoImpl implements Html5Dao{
 	@Autowired
@@ -66,8 +68,8 @@ public class Html5DaoImpl implements Html5Dao{
 	}
 
 	@Override
-	public void htmlPointUp5(String nickname) {
-		session.insert("pointUp5", nickname);
+	public void htmlPointUp5(Member member) {
+		session.insert("pointUp5", member);
 	}
 
 }

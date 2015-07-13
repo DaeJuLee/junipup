@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import dao.Html5Dao;
 import model.Html5Board;
+import model.Member;
 @Service
 public class Html5ServiceImpl implements Html5Service {
 	@Autowired
@@ -51,7 +52,7 @@ public class Html5ServiceImpl implements Html5Service {
 	}
 
 	@Override
-	public void htmlPointUp5(String nickname) {
-		hd.htmlPointUp5(nickname);
+	public void htmlPointUp5(Member member) {
+		hd.htmlPointUp5(member);
 	}
 }
