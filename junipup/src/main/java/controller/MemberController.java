@@ -49,8 +49,7 @@ public class MemberController {
 	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		String html = "<img src='http://211.183.2.57:8181/junipup/images/welcome.jpg'>";
-				
-		
+
 		int result = ms.insertMember(member);
 		if (result > 0){
 			model.addAttribute("msg","zzz");

@@ -28,6 +28,7 @@ jQuery(function($){
 </script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 <c:if test="${all == 'true' }">
@@ -105,7 +106,10 @@ jQuery(function($){
 		<tr>
 			<td>${num }</td>
 			<td>${db.category }</td> <!-- 눈에 띄게 !!!@#!@#!@#!@# -->
-			<td><button href="#"  class="more" value="${db.nickname }">${db.nickname }</button></td>
+			<!-- onclick="toggle(document.all.hideshow)" -->
+			<td><a class="more">${db.nickname }</a></td>
+			<%-- <td><button class="more" value="${db.nickname }">${db.nickname }</button></td> --%>
+			<%-- <td><button class="more" value="${db.nickname }" onclick="toggle(document.all.hideshow)">${db.nickname }</button></td> --%>
 			<!-- onclick="toggle(document.all.hideshow)" -->
 			<td><a href="DBDetail.do?bnum=${db.bnum}">${db.title }</a></td>
 			<td>${db.b_date }</td>
@@ -129,49 +133,79 @@ jQuery(function($){
 		<button type="button" class="button" onclick="location.href='DBMain.do?currentPage=${pg.startPage+pg.pageBlock}'">다음</button>
 	</c:if>
 	</div>
-	
-	<div class="hideshow"
-	style="visibility:hidden; position:absolute; left:369px; top:227px; width:157px; height:74px; z-index:1;">
+	<!-- left:369px; top:227px; -->
+ 	<div class="hideshow" id="hideshow"
+	style="visibility:hidden; position:absolute;  width:157px; height:74px; z-index:1;">
 	<table height="100" width="200" border="1" cellspacing="1" bgcolor="cccccc">
-		<tr><td>닉네임</td> <td>닉네임</td></tr>
+		<tr><td>닉네임</td><td id="nickName"></td><td>닉네임</td></tr>
 	</table>
 	</div>
 <script type="text/javascript">
 
-$(".more").click(function(){
+$(function () {
+	$(".more").click(function(e) {
+		var y = e.clientY;
+		var x = e.clientX;
+		
+		/* var y = event.y;
+		var x = event.x; */
+		
+		var hideshow = $(".hideshow");
+		hideshow.css("top", y);
+		hideshow.css("left", x);
+		hideshow.css("visibility","visible");
+		
+		var nickname1 = $(this).val();
+		$.ajax({
+			url:"findMember.do",
+			type: "POST",
+			dataType: "json",
+			data: {
+				"nickname" : "master"
+			},
+		    success : function(data1){
+		    	$("#hideshow").find("#nickName").html(data1.nickname);
+		    },
+			error:function(request, status, error){
+				alert("code:"+ request.status + "\n" + "error:"+error);
+			}
+		});
+	});
+});
+
+/* $(".more").click(function(){
 	var nickname1 = $(this).val();
-	alert("1");
 	$.ajax({
 		url:"findMember.do",
 		type: "POST",
 		dataType: "json",
 		data: {
-			"nickname" : nickname1
+			"nickname" : "master"
 		},
-	    success : function(data){
-	    	alert("성공");
-	    	alert(data.nickname);
-	    	alert(data.mrank);
-	    	alert(data.maxPoint);
-	    	$('.hideshow').toggle(function(){
-	    		
-	    	});
+	    success : function(data1){
+	    	$("#hideshow").find("#nickName").html(data1.nickname);
+			toggle(document.all.hideshow);
 	    },
 		error:function(request, status, error){
 			alert("code:"+ request.status + "\n" + "error:"+error);
 		}
 	});
-});
+}); */
+
+/* $(".hideshow").toggle().css('visibility', 'visible'); */
 
 /* function toggle(e){
-	if(e.style.visibility == "hidden"){
+	
+	
+ 	if(e.style.visibility == "hidden"){
 		e.style.top = event.y;
+		
 		e.style.left = event.x;
 		e.style.visibility = "visible";
 	}
 	else{
 		e.style.visibility = "hidden";
-	} 
+	}
 } */
 /* 되는거 주석 */
 /* $(".more").click(function(){
