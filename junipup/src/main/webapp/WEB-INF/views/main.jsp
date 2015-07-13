@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp"%>
 <%@ include file="mainHeader2.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="stylesheet" type="text/css" media="all" href="css/prac.css">
@@ -107,28 +107,38 @@ jQuery(function($){
 			<div class="left_center1" id="image_list_2" align="center">
 				<div class="clsBannerScreen">
 					<div class="images" style="display: block">
+					<a href="http://www.google.com">
 						<img src="images/google.jpg">
+					</a>
 					</div>
 					<div class="images">
+						<a href="http://www.naver.com">
 						<img src="images/daum.jpg">
+						</a>
 					</div>
 					<div class="images">
+					<a href="http://www.daum.net">
 						<img src="images/naver.jpg">
+						</a>
 					</div>
 					<div class="images">
+					<a href="http://www.nate.com">
 						<img src="images/nate.jpg">
+						</a>
 					</div>
 					<div class="images">
+					<a href="http://www.yahoo.com">
 						<img src="images/yahoo.jpg">
+						</a>
 					</div>
 				</div>
 
 				<ul class="clsBannerButton" id="label_2">
-					<li class="fir">구글<br></li>
-					<li>다음<br></li>
-					<li>네이버<br></li>
-					<li>네이트<br></li>
-					<li>야후<br></li>
+					<a href="http://www.google.com"><li class="fir">구글<br></li></a>
+					<a href="http://www.daum.net"><li>다음<br></li></a>
+					<a href="http://www.naver.com"><li>네이버<br></li></a>
+					<a href="http://www.nate.com"><li>네이트<br></li></a>
+					<a href="http://www.yahoo.com"><li>야후<br></li></a>
 				</ul>
 			</div>
 
