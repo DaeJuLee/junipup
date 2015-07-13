@@ -107,38 +107,38 @@ jQuery(function($){
 			<div class="left_center1" id="image_list_2" align="center">
 				<div class="clsBannerScreen">
 					<div class="images" style="display: block">
-					<a href="http://www.google.com">
+					<a href="http://www.google.com" target="_blank">
 						<img src="images/google.jpg">
 					</a>
 					</div>
 					<div class="images">
-						<a href="http://www.naver.com">
+						<a href="http://www.naver.com" target="_blank">
 						<img src="images/daum.jpg">
 						</a>
 					</div>
 					<div class="images">
-					<a href="http://www.daum.net">
+					<a href="http://www.daum.net" target="_blank">
 						<img src="images/naver.jpg">
 						</a>
 					</div>
 					<div class="images">
-					<a href="http://www.nate.com">
+					<a href="http://www.nate.com" target="_blank">
 						<img src="images/nate.jpg">
 						</a>
 					</div>
 					<div class="images">
-					<a href="http://www.yahoo.com">
+					<a href="http://www.yahoo.com" target="_blank">
 						<img src="images/yahoo.jpg">
 						</a>
 					</div>
 				</div>
 
 				<ul class="clsBannerButton" id="label_2">
-					<a href="http://www.google.com"><li class="fir">구글<br></li></a>
-					<a href="http://www.daum.net"><li>다음<br></li></a>
-					<a href="http://www.naver.com"><li>네이버<br></li></a>
-					<a href="http://www.nate.com"><li>네이트<br></li></a>
-					<a href="http://www.yahoo.com"><li>야후<br></li></a>
+					<a href="http://www.google.com" target="_blank"><li class="fir">구글<br></li></a>
+					<a href="http://www.daum.net" target="_blank"><li>다음<br></li></a>
+					<a href="http://www.naver.com" target="_blank"><li>네이버<br></li></a>
+					<a href="http://www.nate.com" target="_blank"><li>네이트<br></li></a>
+					<a href="http://www.yahoo.com" target="_blank"><li>야후<br></li></a>
 				</ul>
 			</div>
 
