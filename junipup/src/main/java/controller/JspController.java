@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.JspBoard;
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.JspService;
+import service.MemberService;
 import service.Paging;
 
 @Controller
@@ -21,6 +23,8 @@ public class JspController {
 	JspService service;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="jspMain")
 
@@ -112,5 +116,12 @@ public class JspController {
 		jsp.setBnum(bnum);
 		model.addAttribute("bnum", jsp);
 		return "/jsp/jspDeleteCheck";
+	}
+	
+	@RequestMapping(value="jspPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/jsp/jspPop";	
 	}
 }

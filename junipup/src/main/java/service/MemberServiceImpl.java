@@ -5,7 +5,9 @@ import java.util.List;
 
 
 
+
 import model.Member;
+
 
 
 
@@ -120,7 +122,6 @@ public class MemberServiceImpl implements MemberService {
 		md.pointUp10(nickname);
 		
 	}
-	
 
 
 

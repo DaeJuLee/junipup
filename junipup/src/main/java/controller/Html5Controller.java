@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.Html5Board;
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.Html5Service;
+import service.MemberService;
 import service.Paging;
 
 @Controller
@@ -21,6 +23,8 @@ public class Html5Controller {
 	private Html5Service hs;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="html5Main")
 	public String listHtml5(Model model, Html5Board html5board, String currentPage, String category,NoticeBoard notice) {
@@ -65,7 +69,13 @@ public class Html5Controller {
 	public String html5Insert(Model model, Html5Board html5, String nickname ) {
 		html5.setContent(html5.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result =  hs.html5Insert(html5);
-		hs.htmlPointUp5(nickname);
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		System.out.println("최대포인트 : " + member.getMaxPoint());
+		member.setUsePoint(member.getUsePoint()+5);
+		System.out.println("최대포인트 : " + member.getUsePoint());
+		hs.htmlPointUp5(member);
 		if(result > 0){
 			return "redirect:html5Main.do";
 		}else{
