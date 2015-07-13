@@ -107,28 +107,38 @@ jQuery(function($){
 			<div class="left_center1" id="image_list_2" align="center">
 				<div class="clsBannerScreen">
 					<div class="images" style="display: block">
+					<a href="www.google.com">
 						<img src="images/google.jpg">
+					</a>
 					</div>
 					<div class="images">
+						<a href="www.naver.com">
 						<img src="images/daum.jpg">
+						</a>
 					</div>
 					<div class="images">
+					<a href="www.daum.net">
 						<img src="images/naver.jpg">
+						</a>
 					</div>
 					<div class="images">
+					<a href="www.nate.com">
 						<img src="images/nate.jpg">
+						</a>
 					</div>
 					<div class="images">
+					<a href="www.yahoo.com">
 						<img src="images/yahoo.jpg">
+						</a>
 					</div>
 				</div>
 
 				<ul class="clsBannerButton" id="label_2">
-					<li class="fir">구글<br></li>
-					<li>다음<br></li>
-					<li>네이버<br></li>
-					<li>네이트<br></li>
-					<li>야후<br></li>
+					<a href="www.google.com"><li class="fir">구글<br></li></a>
+					<a href="www.daum.net"><li>다음<br></li></a>
+					<a href="www.naver.com"><li>네이버<br></li></a>
+					<a href="www.nate.com"><li>네이트<br></li></a>
+					<a href="www.yahoo.com"><li>야후<br></li></a>
 				</ul>
 			</div>
 
