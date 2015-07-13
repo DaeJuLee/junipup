@@ -47,7 +47,7 @@
 				document.getElementById('STATICMENU').style.top, 10);
 		stmnEndPoint = Math.max(document.documentElement.scrollTop,
 				document.body.scrollTop)
-				+ stmnGAP2;
+				+ stmnGAP2; 
 		if (stmnEndPoint < stmnGAP1)
 			stmnEndPoint = stmnGAP1;
 		if (stmnStartPoint != stmnEndPoint) {
