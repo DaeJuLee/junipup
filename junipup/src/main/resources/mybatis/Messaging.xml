@@ -10,6 +10,7 @@
 	<resultMap id="MessagingResult" type="Messaging">
 		<result property="mnum"        column="mnum" />
 		<result property="nickname"        column="nickname" />
+		<result property="receiver"        column="receiver" />
 		<result property="title"    column="title" />
 		<result property="msg"       column="msg" />
 		<result property="regdate"       column="regdate" />
@@ -25,6 +26,7 @@
 		values (
 				#{mnum},
 				#{nickname},
+				#{receiver},
 				#{title},
 				#{msg} ,
 				sysdate,
