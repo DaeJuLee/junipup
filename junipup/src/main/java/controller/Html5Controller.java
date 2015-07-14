@@ -124,4 +124,10 @@ public class Html5Controller {
 		model.addAttribute("board", board);
 		return "/html5/html5UpdateCheck";
 	}
+	@RequestMapping(value="html5Pop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/html5/html5Pop";	
+	}
 }

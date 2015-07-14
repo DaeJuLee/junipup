@@ -126,6 +126,13 @@ public class AndroidController {
 		return "/android/androidDeleteCheck";
 	}
 	
+	@RequestMapping(value="androidPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/android/androidPop";	
+	}
+	
 //	@RequestMapping(value="file_uploader")
 //	public String fileUploader(HttpServletRequest request, HttpServletResponse response, Editor editor ){
 //		String return1 = request.getParameter("callback");

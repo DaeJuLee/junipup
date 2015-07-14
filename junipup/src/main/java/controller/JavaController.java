@@ -120,4 +120,10 @@ public class JavaController {
 		model.addAttribute("java", java);
 		return "/java/javaDeleteCheck";
 	}
+	@RequestMapping(value="javaPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/java/javaPop";	
+	}
 }

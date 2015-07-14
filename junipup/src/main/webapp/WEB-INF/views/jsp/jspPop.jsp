@@ -11,19 +11,38 @@
 <body>
 <div id="pop">
 
-<table border="1" style="background: aqua;">
-	<tr><td>으악</td><td>으악</td></tr>
-</table>
+<table border="0" align="center" width="350px" style="font-size: 15px; border-top:2px ; border-top-color: #999" >
+	<th>
 		회원 정보
-		등급 : ${nick.mrank }
-		
-	닉네임 : ${nick.nickname }<p>
-	${nick.photo }<p>
-	이름 : ${nick.name }<p>
-	전화 번호 : ${nick.phoneNumber }<p>
-	이메일 : ${nick.email }<p>
-	마지막으로 로그인 한 날짜 : ${nick.loginDate }
-	
+	</th>
+	<tr>
+		${nick.photo }
+	</tr>
+	<tr>
+		<td>등급  </td>
+		<td>${nick.mrank }</td>
+	</tr>
+	<tr>
+		<td>닉네임</td>
+		<td>${nick.nickname }</td>
+	</tr>
+	<tr>
+		<td>이름</td>
+		<td>${nick.name }</td>
+	</tr>
+	<tr>
+		<td>전화번호</td>
+		<td> ${nick.phoneNumber }</td>
+	</tr>
+	<tr>
+		<td>이메일</td>
+		<td> ${nick.email }</td>
+	</tr>
+	<tr>
+		<td>최근로그인 날짜</td>
+		<td> ${nick.loginDate }</td>
+	</tr>
+</table>
 </div>
 </body>
 </html>
