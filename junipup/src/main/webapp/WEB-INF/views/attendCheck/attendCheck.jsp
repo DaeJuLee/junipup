@@ -74,10 +74,7 @@ $(function(){
 	$("#before_button").click(function(){
 		$.getJSON("attendCheckChange.do", function(data) {
 			alert(data.foo);	
-		 /*$.each( data, function( index, data) {
-			  
-		  });
-		  */
+		
 		});
 		
 	});
