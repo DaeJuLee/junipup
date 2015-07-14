@@ -18,7 +18,7 @@
 
 	</resultMap>
 
-	<insert id="insertMessage" parameterType="Html5Board">
+	<insert id="insertMessage" parameterType="Messaging">
 		<selectKey order="BEFORE" keyProperty="mnum" resultType="int">
 			select nvl(max(mnum),0)+1 from Messaging
 		</selectKey>
@@ -40,7 +40,7 @@
     	a) where rn between #{start} and #{end}
 	</select>
 	
- 	<select id="selectMessageNick" parameterType="int" resultMap="DBBoardResult">
+ 	<select id="selectMessageNick" parameterType="int" resultMap="MessagingResult">
     	select * from messaging where mnum = #{mum}
 	</select>
 

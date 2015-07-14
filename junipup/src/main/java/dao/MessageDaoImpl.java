@@ -15,7 +15,7 @@ public class MessageDaoImpl implements MessageDao {
 	private SqlSession session;
 	
 	public int insertMessage(Messaging message) {
-		
+		System.out.println("여긴 다오");
 		return session.insert("insertMessage", message);
 	}
 

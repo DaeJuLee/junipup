@@ -28,6 +28,8 @@ jQuery(function($){
 	}
 });
 	function go_pop(nick) {
+	var nikk = '${USER_KEY.nickname}';
+
 		window.open(
 						"jspPop.do?nickname="+nick,
 						"new",
