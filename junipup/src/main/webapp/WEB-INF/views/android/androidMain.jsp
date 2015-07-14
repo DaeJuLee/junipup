@@ -25,6 +25,14 @@ jQuery(function($){
 		$('.tab5>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}
 });
+
+function go_pop(nick) {
+	window.open(
+					"androidPop.do?nickname="+nick,
+					"new",
+					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+					"background='yellow'");
+}
 </script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -105,7 +113,7 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${android.category }</td>
-				<td><a href="findMember.do?nickname=${android.nickname}">${android.nickname }</a></td>
+				<td><input type="button" value="${android.nickname }" onclick="go_pop('${android.nickname}')" class="button"></td>
 				<td><a href="androidDetail.do?bnum=${android.bnum}">${android.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />

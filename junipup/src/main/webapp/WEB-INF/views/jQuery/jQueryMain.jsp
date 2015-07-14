@@ -27,6 +27,14 @@ jQuery(function($){
 		$('.tab5>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}
 });
+
+function go_pop(nick) {
+	window.open(
+					"javaPop.do?nickname="+nick,
+					"new",
+					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+					"background='yellow'");
+}
 </script> 
 </head>
 <body> 
@@ -104,7 +112,7 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${jQuery.category }</td>
-				<td><a href="findMember.do?nickname=${jQuery.nickname}">${jQuery.nickname }</a></td>
+				<td><input type="button" value="${jQuery.nickname }" onclick="go_pop('${jQuery.nickname}')" class="button"></td>
 				<td><a href="jQueryDetail.do?bnum=${jQuery.bnum}">${jQuery.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />

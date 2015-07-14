@@ -25,6 +25,14 @@ jQuery(function($){
 		$('.tab5>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}
 });
+
+function go_pop(nick) {
+	window.open(
+					"javaPop.do?nickname="+nick,
+					"new",
+					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+					"background='yellow'");
+}
 </script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -107,7 +115,7 @@ jQuery(function($){
 			<td>${num }</td>
 			<td>${db.category }</td> <!-- 눈에 띄게 !!!@#!@#!@#!@# -->
 			<!-- onclick="toggle(document.all.hideshow)" -->
-			<td><a class="more">${db.nickname }</a></td>
+			<td><input type="button" value="${db.nickname }" onclick="go_pop('${db.nickname}')" class="button"></td>
 			<%-- <td><button class="more" value="${db.nickname }">${db.nickname }</button></td> --%>
 			<%-- <td><button class="more" value="${db.nickname }" onclick="toggle(document.all.hideshow)">${db.nickname }</button></td> --%>
 			<!-- onclick="toggle(document.all.hideshow)" -->
@@ -161,7 +169,7 @@ $(function () {
 			type: "POST",
 			dataType: "json",
 			data: {
-				"nickname" : "master"
+				"nickname" : nickname1
 			},
 		    success : function(data1){
 		    	$("#hideshow").find("#nickName").html(data1.nickname);

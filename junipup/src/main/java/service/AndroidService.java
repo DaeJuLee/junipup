@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import model.AndroidBoard;
+import model.Member;
 
 public interface AndroidService {
 
@@ -16,5 +17,5 @@ public interface AndroidService {
 	
 	List<AndroidBoard> listAndroidCategory(AndroidBoard android);
 	int totalAndroidCategory(String category);
-	
+	void androidPointUp5(Member member);
 }

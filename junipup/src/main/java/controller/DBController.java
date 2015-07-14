@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.DBBoard;
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.DBService;
+import service.MemberService;
 import service.Paging;
 @Controller
 public class DBController {
@@ -20,6 +22,8 @@ public class DBController {
 	DBService service;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="DBMain")
 	public String androidMain(DBBoard db, String currentPage, Model model, String category, NoticeBoard notice){
@@ -66,8 +70,13 @@ public class DBController {
 	}
 	
 	@RequestMapping(value = "DBInsert", method=RequestMethod.POST)
-	public String DBInsert(DBBoard db, Model model){
+	public String DBInsert(DBBoard db, Model model, String nickname){
 		int result = service.DBInsert(db);
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		member.setUsePoint(member.getUsePoint()+5);		
+		service.DBPointUp5(member);
 		if(result > 0){
 			return "redirect:DBMain.do";
 		}else{
@@ -114,5 +123,11 @@ public class DBController {
 		board.setBnum(bnum);
 		model.addAttribute("bnum", board);
 		return "/database/DBDeleteCheck";
+	}
+	@RequestMapping(value="DBPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/DB/DBPop";	
 	}
 }

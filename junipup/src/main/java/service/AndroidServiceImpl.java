@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import model.AndroidBoard;
+import model.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +53,12 @@ public class AndroidServiceImpl implements AndroidService{
 	@Override
 	public int totalAndroidCategory(String category) {
 		return dao.totalAndroidCategory(category);
+	}
+
+	@Override
+	public void androidPointUp5(Member member) {
+		dao.androidPointUp5(member);
+		
 	}
 	
 

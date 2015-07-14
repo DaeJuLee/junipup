@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.JQueryBoard;
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.JQueryService;
+import service.MemberService;
 import service.Paging;
 
 @Controller
@@ -21,6 +23,8 @@ public class JQueryController {
 	JQueryService js;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="jQueryMain")
 	public String listJQuery(Model model, JQueryBoard JQueryboard, String currentPage, String category, NoticeBoard notice) {
@@ -62,8 +66,13 @@ public class JQueryController {
 	}
 	
 	@RequestMapping(value="jQueryInsert", method=RequestMethod.POST)
-	public String JQueryInsert(Model model, JQueryBoard jquery) {
+	public String JQueryInsert(Model model, JQueryBoard jquery,String nickname) {
 		int result =  js.JQueryInsert(jquery);
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		member.setUsePoint(member.getUsePoint()+5);		
+		js.jQueryPointUp5(member);
 		if(result > 0){
 			return "redirect:jQueryMain.do";
 		}else{
@@ -108,4 +117,10 @@ public class JQueryController {
 		js.JQueryDelete(bnum);
 		return "redirect:jQueryMain.do";
 	}	
+	@RequestMapping(value="jQueryPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/jQuery/jQueryPop";	
+	}
 }

@@ -4,6 +4,7 @@
 <%@ include file="../mainHeader2.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<link rel="stylesheet" type="text/css" href="css/button.css">
 <head>
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/pagination.css">
@@ -33,7 +34,8 @@ jQuery(function($){
 		window.open(
 						"jspPop.do?nickname="+nick,
 						"new",
-						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250");
+						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+						"background='yellow'");
 	}
 </script>
 </head>
@@ -111,13 +113,12 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${jsp.category }</td>
-				<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}')"></td>
+				<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}')" class="button"></td>			
 				<td><a href="jspDetail.do?bnum=${jsp.bnum}">${jsp.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-	<button type="button" onclick="location.href='jspInsertForm.do'" class="button">글쓰기</button>
 	
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		

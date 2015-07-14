@@ -27,6 +27,14 @@ jQuery(function($){
 		$('.tab5>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}
 });
+
+function go_pop(nick) {
+	window.open(
+					"javaPop.do?nickname="+nick,
+					"new",
+					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+					"background='yellow'");
+}
 </script> 
 </head>
 <body> 
@@ -103,13 +111,12 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${java.category }</td>
-				<td><a href="findMember.do?nickname=${java.nickname}">${java.nickname }</a></td>
+				<td><input type="button" value="${java.nickname }" onclick="go_pop('${java.nickname}')" class="button"></td>
 				<td><a href="javaDetail.do?bnum=${java.bnum}">${java.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>
 	</table>
-	<button type="button" onclick="location.href='javaInsertForm.do'" class="button">글쓰기</button>
 	
 	<div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		

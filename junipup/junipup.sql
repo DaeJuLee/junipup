@@ -23,7 +23,6 @@ select * from member;
 select * from jquery;
 select * from java;
 
-
 -- admin --
 create table Admin(
 nickname varchar2(30) primary key,

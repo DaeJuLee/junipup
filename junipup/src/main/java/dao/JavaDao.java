@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import model.JavaBoard;
+import model.Member;
 
 public interface JavaDao {
 	public int javaInsert(JavaBoard java);
@@ -14,4 +15,5 @@ public interface JavaDao {
 	public int javaUpdate(JavaBoard java);
 	public int totalJavaCategory(String category);
 	List<JavaBoard> listJavaCategory(JavaBoard java);
+	void javaPointUp5(Member member);
 }

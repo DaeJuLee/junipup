@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.JavaBoard;
+import model.Member;
 
 @Repository
 public class JavaDaoImpl implements JavaDao {
@@ -59,6 +60,12 @@ public class JavaDaoImpl implements JavaDao {
 
 	public List<JavaBoard> listJavaCategory(JavaBoard java) {
 		return session.selectList("listJavaCategory", java);
+	}
+
+	@Override
+	public void javaPointUp5(Member member) {
+		session.insert("pointUp5", member);
+		
 	}
 
 }

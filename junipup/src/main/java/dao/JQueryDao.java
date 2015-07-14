@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import model.JQueryBoard;
+import model.Member;
 
 public interface JQueryDao {
 	List<JQueryBoard> listJQuery(JQueryBoard jQueryboard);
@@ -15,4 +16,5 @@ public interface JQueryDao {
 	
 	List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard);
 	public int totalJQueryCategory(String category);
+	void jQueryPointUp5(Member member);
 }

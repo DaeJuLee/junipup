@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.JavaBoard;
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.JavaService;
+import service.MemberService;
 import service.Paging;
 
 @Controller
@@ -21,6 +23,8 @@ public class JavaController {
 	JavaService service;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="javaMain")
 	public String javaMain(JavaBoard java, String currentPage, Model model , String category, NoticeBoard notice){
@@ -63,8 +67,13 @@ public class JavaController {
 	}
 	
 	@RequestMapping(value = "javaInsert", method=RequestMethod.POST)
-	public String javaInsert(JavaBoard java, Model model){
+	public String javaInsert(JavaBoard java, Model model,String nickname){
 		int result = service.javaInsert(java);
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		member.setUsePoint(member.getUsePoint()+5);		
+		service.javaPointUp5(member);
 		if(result > 0){
 			return "redirect:javaMain.do";
 		}else{
@@ -110,5 +119,11 @@ public class JavaController {
 		java.setBnum(bnum);
 		model.addAttribute("java", java);
 		return "/java/javaDeleteCheck";
+	}
+	@RequestMapping(value="javaPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/java/javaPop";	
 	}
 }

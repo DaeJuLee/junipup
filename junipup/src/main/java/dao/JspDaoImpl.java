@@ -66,4 +66,10 @@ public class JspDaoImpl implements JspDao{
 		return session.selectOne("selectNickname", nickname);
 	}
 
+	@Override
+	public void jspPointUp5(Member member) {
+		session.insert("pointUp5", member);
+		
+	}
+
 }

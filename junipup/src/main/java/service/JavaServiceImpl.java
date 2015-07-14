@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import dao.JavaDao;
 import model.JavaBoard;
+import model.Member;
 
 @Service
 public class JavaServiceImpl implements JavaService{
@@ -52,6 +53,11 @@ public class JavaServiceImpl implements JavaService{
 	@Override
 	public List<JavaBoard> listJavaCategory(JavaBoard java) {
 		return dao.listJavaCategory(java);
+	}
+
+	@Override
+	public void javaPointUp5(Member member) {
+		dao.javaPointUp5(member);
 	}
 
 }

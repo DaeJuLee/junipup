@@ -5,7 +5,9 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import model.DBBoard;
+import model.Member;
 
 @Repository
 public class DBDaoImpl implements DBDao {
@@ -64,6 +66,12 @@ public class DBDaoImpl implements DBDao {
 	@Override
 	public List<DBBoard> listDBCategory(DBBoard db) {
 		return session.selectList("listDBCategory", db);
+	}
+
+	@Override
+	public void DBPointUp5(Member member) {
+		session.insert("pointUp5", member);
+		
 	}
 
 }

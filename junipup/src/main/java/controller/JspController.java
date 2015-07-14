@@ -66,9 +66,14 @@ public class JspController {
 	}
 	
 	@RequestMapping(value = "jspInsert", method=RequestMethod.POST)
-	public String jspInsert(JspBoard jsp, Model model){
+	public String jspInsert(JspBoard jsp, Model model,String nickname){
 		jsp.setContent(jsp.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result = service.jspInsert(jsp);
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		member.setUsePoint(member.getUsePoint()+5);		
+		service.jspPointUp5(member);
 		if(result > 0){
 			return "redirect:jspMain.do";
 		}else{

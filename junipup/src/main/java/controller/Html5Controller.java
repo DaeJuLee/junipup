@@ -72,9 +72,7 @@ public class Html5Controller {
 		Member member = new Member();
 		member = ms.selectNickname(nickname);
 		member.setMaxPoint(member.getMaxPoint()+5);
-		System.out.println("최대포인트 : " + member.getMaxPoint());
-		member.setUsePoint(member.getUsePoint()+5);
-		System.out.println("최대포인트 : " + member.getUsePoint());
+		member.setUsePoint(member.getUsePoint()+5);		
 		hs.htmlPointUp5(member);
 		if(result > 0){
 			return "redirect:html5Main.do";
@@ -125,5 +123,11 @@ public class Html5Controller {
 	public String html5UpdateCheck(Html5Board board , Model model){
 		model.addAttribute("board", board);
 		return "/html5/html5UpdateCheck";
+	}
+	@RequestMapping(value="html5Pop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/html5/html5Pop";	
 	}
 }
