@@ -158,7 +158,7 @@ margin: 10px 0 3px 0;
 					</ul></li>
 				<li class="QNA"><a href="#">QnA</a></li>
 				<li class="Check"><a href="attendCheck.do">출석체크!</a></li>				
-	
+				<li class="Message"><a href="messageCheck.do?nickname=${USER_KEY.nickname }">Message</a></li>
 			</ul>
 			<!-- id="menu" 끝 -->
 		</div>

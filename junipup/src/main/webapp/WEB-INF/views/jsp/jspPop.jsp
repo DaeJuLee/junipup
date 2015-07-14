@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
-function go_pop(nick) {
+function go_pop(receiver, sender) {
 	window.open(
-					"messageInsertForm.do?nickname="+nick,
+					"messageInsertForm.do?receiver="+receiver+"&sender="+sender,
 					"new",
 					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250");
 }
@@ -26,37 +26,37 @@ function go_pop(nick) {
 		회원 정보
 	</th>
 	<tr>
-		${nick.photo }
+		${receiver.photo }
 	</tr>
 	<tr>
 		<td>등급  </td>
-		<td>${nick.mrank }</td>
+		<td>${receiver.mrank }</td>
 	</tr>
 	<tr>
 		<td>닉네임</td>
-		<td>${nick.nickname }</td>
+		<td>${receiver.nickname }</td>
 	</tr>
 	<tr>
 		<td>이름</td>
-		<td>${nick.name }</td>
+		<td>${receiver.name }</td>
 	</tr>
 	<tr>
 		<td>전화번호</td>
-		<td> ${nick.phoneNumber }</td>
+		<td> ${receiver.phoneNumber }</td>
 	</tr>
 	<tr>
 		<td>이메일</td>
-		<td> ${nick.email }</td>
+		<td> ${receiver.email }</td>
 	</tr>
 	<tr>
 		<td>최근로그인 날짜</td>
-		<td> ${nick.loginDate }</td>
+		<td> ${receiver.loginDate } 보내는 사람 : ${sender }</td>
 	</tr>
 </table>
 </div>
-<input type="hidden" name="receiver" value="${nick.nickname }"> 
+	<input type="hidden" name="receiver" value="${receiver.nickname }"> 
 	<input type="button" value="쪽지 보내기" 
-			onclick="go_pop('${jsp.nickname}')">
+			onclick="go_pop('${receiver.nickname}' , '${sender}')">
 
 </body>
 </html>

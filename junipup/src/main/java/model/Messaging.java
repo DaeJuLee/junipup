@@ -7,7 +7,7 @@ public class Messaging {
 	private String nickname;
 	private String receiver;
 	private String title;
-	private String msg;
+	private String message;
 	private Date regdate;
 	private int confirm;
 	
@@ -35,11 +35,11 @@ public class Messaging {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getMsg() {
-		return msg;
+	public String getMessage() {
+		return message;
 	}
-	public void setMsg(String msg) {
-		this.msg = msg;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	public Date getRegdate() {
 		return regdate;

@@ -28,11 +28,11 @@ jQuery(function($){
 		$('.tab5>a').css("color","#ffffff").css("background", "#000000").css("zoom", "1");
 	}
 });
-	function go_pop(nick) {
+	function go_pop(receiver, sender) {
 	var nikk = '${USER_KEY.nickname}';
 
 		window.open(
-						"jspPop.do?nickname="+nick,
+						"jspPop.do?receiver="+receiver+"&sender="+sender,
 						"new",
 						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
 						"background='yellow'");
@@ -113,7 +113,7 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${jsp.category }</td>
-				<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}')" class="button"></td>			
+				<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}', '${USER_KEY.nickname}')" class="button"></td>			
 				<td><a href="jspDetail.do?bnum=${jsp.bnum}">${jsp.title }</a></td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
