@@ -77,6 +77,7 @@ margin: 10px 0 3px 0;
 			</div>			
 		</div>
 		<p>
+		
 		<c:choose>
 		<c:when test="${empty USER_KEY}">		
 			<div class="login_div" align="right">		
@@ -87,15 +88,16 @@ margin: 10px 0 3px 0;
 		<c:otherwise>
 			<div class="login_div" align="right">	
 				
-				${USER_KEY.nickname } |
-				<c:if test="${USER_KEY.maxPoint > 700}  "><img src="images/Challenger.png"/></c:if>	
-				<c:if test="${USER_KEY.maxPoint > 600}  "></c:if>					
-				<c:if test="${USER_KEY.maxPoint > 500}  "></c:if>	
-				<c:if test="${USER_KEY.maxPoint > 400}  "></c:if>
-				<c:if test="${USER_KEY.maxPoint > 300}  "></c:if>
-				<c:if test="${USER_KEY.maxPoint > 200}  "></c:if>
-				<c:if test="${USER_KEY.maxPoint > 100}  "></c:if>
-				<c:if test="${USER_KEY.mrank <= 100} "><img src="images/Brones.png"/></c:if>				
+				${USER_KEY.nickname } 
+				<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Bronss.png"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '200'}"><img src="images/Silver.png"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '300'}"><img src="images/Gold.png"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '400'}"><img src="images/a.jpg"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '500'}"><img src="images/a.jpg"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '600'}"><img src="images/a.jpg"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '700'}"><img src="images/a.jpg"/></c:if>
+				<c:if test="${USER_KEY.maxPoint > '800'}"><img src="images/a.jpg"/></c:if>
+				${USER_KEY.maxPoint } |
 				${USER_KEY.mrank} |				
 				${USER_KEY.usePoint } |							
 			</div>

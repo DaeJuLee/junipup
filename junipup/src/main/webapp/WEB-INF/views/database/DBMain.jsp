@@ -161,7 +161,7 @@ $(function () {
 			type: "POST",
 			dataType: "json",
 			data: {
-				"nickname" : "master"
+				"nickname" : nickname1
 			},
 		    success : function(data1){
 		    	$("#hideshow").find("#nickName").html(data1.nickname);
