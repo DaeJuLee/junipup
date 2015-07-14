@@ -1,4 +1,4 @@
-.button {
+/* .button {
 		display:inline-block;
 		padding:0 10px;
 		height:23px;
@@ -8,15 +8,18 @@
 		text-decoration:none;
 		line-height:2em;
 		vertical-align:middle
-		}
+		} */
 .button {
-		display:inline-block;
+		font-size : 10px;
+		display : inline;
 		padding:0 10px;
-		height:23px;
-		border:1px solid #5a94de;
+		height : 18px;
+		width : 70px;
+		border:1px solid #585858;
 		background:#ffffff;
-		color:#5a94de;
+		color:#585858;
 		text-decoration:none;
 		line-height:2em;
-		vertical-align:middle
+		vertical-align:middle;
+		text-align: center;	
 		} 
