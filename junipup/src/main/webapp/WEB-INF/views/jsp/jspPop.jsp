@@ -11,7 +11,7 @@
 <body>
 <div id="pop">
 
-<table>
+<table border="1" style="background: aqua;">
 	<tr><td>으악</td><td>으악</td></tr>
 </table>
 		회원 정보
