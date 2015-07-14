@@ -7,9 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 <div id="pop">
 
+<table>
+	<tr><td>으악</td><td>으악</td></tr>
+</table>
 		회원 정보
 		등급 : ${nick.mrank }
 		
