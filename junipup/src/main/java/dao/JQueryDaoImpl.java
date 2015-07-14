@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import model.JQueryBoard;
+import model.Member;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,5 +63,11 @@ public class JQueryDaoImpl implements JQueryDao {
 	@Override
 	public int totalJQueryCategory(String category) {
 		return session.selectOne("totalJQueryCategory", category);
+	}
+
+	@Override
+	public void jQueryPointUp5(Member member) {
+		session.insert("pointUp5", member);
+		
 	}
 }

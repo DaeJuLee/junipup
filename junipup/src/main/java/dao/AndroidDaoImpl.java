@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.AndroidBoard;
+import model.Member;
 
 
 @Repository
@@ -63,6 +64,12 @@ public class AndroidDaoImpl implements AndroidDao{
 	@Override
 	public int totalAndroidCategory(String category) {
 		return session.selectOne("totalAndroidCategory", category);
+	}
+
+	@Override
+	public void androidPointUp5(Member member) {
+		session.insert("pointUp5", member);
+		
 	}
 	
 }

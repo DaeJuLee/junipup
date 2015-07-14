@@ -3,7 +3,7 @@ package controller;
 import java.util.List;
 
 import model.AndroidBoard;
-
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.AndroidService;
+import service.MemberService;
 import service.Paging;
 
 @Controller
@@ -23,6 +24,8 @@ public class AndroidController {
 	AndroidService service;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="androidMain")
 	public String androidMain(AndroidBoard android, String currentPage, Model model, String category,NoticeBoard notice){
@@ -63,10 +66,15 @@ public class AndroidController {
 	}
 	
 	@RequestMapping(value = "androidInsert", method=RequestMethod.POST)
-	public String androidInsert(AndroidBoard android, Model model){
+	public String androidInsert(AndroidBoard android, Model model, String nickname){
 		android.setContent(android.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result = service.androidInsert(android);
 		//int bnum = service.androidSelectBnum(android.getNickname());
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		member.setUsePoint(member.getUsePoint()+5);		
+		service.androidPointUp5(member);
 		if(result > 0){
 			return "redirect:androidMain.do";
 		}else{

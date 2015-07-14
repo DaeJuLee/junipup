@@ -1,7 +1,9 @@
 package service;
 
 import java.util.List;
+
 import model.JQueryBoard;
+import model.Member;
 
 public interface JQueryService {
 	List<JQueryBoard> listJQuery(JQueryBoard jQueryboard);
@@ -14,4 +16,5 @@ public interface JQueryService {
 	
 	List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard);
 	int totalJQueryCategory(String category);
+	void jQueryPointUp5(Member member);
 }

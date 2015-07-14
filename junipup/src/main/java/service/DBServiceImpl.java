@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import dao.DBDao;
 import model.DBBoard;
+import model.Member;
 
 @Service
 public class DBServiceImpl implements DBService{
@@ -63,6 +64,13 @@ public class DBServiceImpl implements DBService{
 	@Override
 	public List<DBBoard> listDBCategory(DBBoard db) {
 		return dao.listDBCategory(db);
+	}
+
+
+	@Override
+	public void DBPointUp5(Member member) {
+		dao.DBPointUp5(member);
+		
 	}
 
 

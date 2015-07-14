@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import model.JspBoard;
+import model.Member;
 
 public interface JspDao {
 	public int jspInsert(JspBoard jsp);
@@ -14,4 +15,5 @@ public interface JspDao {
 	public int jspUpdate(JspBoard jsp);
 	public int totalJspCategory(String category);
 	List<JspBoard> listJspCategory(JspBoard db);
+	void jspPointUp5(Member member);
 }

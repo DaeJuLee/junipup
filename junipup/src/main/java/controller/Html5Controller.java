@@ -72,9 +72,7 @@ public class Html5Controller {
 		Member member = new Member();
 		member = ms.selectNickname(nickname);
 		member.setMaxPoint(member.getMaxPoint()+5);
-		System.out.println("최대포인트 : " + member.getMaxPoint());
-		member.setUsePoint(member.getUsePoint()+5);
-		System.out.println("최대포인트 : " + member.getUsePoint());
+		member.setUsePoint(member.getUsePoint()+5);		
 		hs.htmlPointUp5(member);
 		if(result > 0){
 			return "redirect:html5Main.do";

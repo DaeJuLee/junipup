@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import model.JspBoard;
+import model.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,6 +49,12 @@ public class JspServiceImpl implements JspService{
 
 	public List<JspBoard> listJspCategory(JspBoard jsp) {
 		return dao.listJspCategory(jsp);
+	}
+
+	@Override
+	public void jspPointUp5(Member member) {
+		dao.jspPointUp5(member);
+		
 	}
 
 }

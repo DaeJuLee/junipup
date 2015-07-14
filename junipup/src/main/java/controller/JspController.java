@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.JspBoard;
+import model.Member;
 import model.NoticeBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.NoticeDao;
 import service.JspService;
+import service.MemberService;
 import service.Paging;
 
 @Controller
@@ -21,6 +23,8 @@ public class JspController {
 	JspService service;
 	@Autowired
 	NoticeDao nd;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="jspMain")
 
@@ -62,9 +66,14 @@ public class JspController {
 	}
 	
 	@RequestMapping(value = "jspInsert", method=RequestMethod.POST)
-	public String jspInsert(JspBoard jsp, Model model){
+	public String jspInsert(JspBoard jsp, Model model,String nickname){
 		jsp.setContent(jsp.getContent().replaceAll("\n", "").replaceAll("\t", "").replaceAll("\r", "").replaceAll("'", "&apos;"));
 		int result = service.jspInsert(jsp);
+		Member member = new Member();
+		member = ms.selectNickname(nickname);
+		member.setMaxPoint(member.getMaxPoint()+5);
+		member.setUsePoint(member.getUsePoint()+5);		
+		service.jspPointUp5(member);
 		if(result > 0){
 			return "redirect:jspMain.do";
 		}else{

@@ -1,7 +1,9 @@
 package dao;
 
 import java.util.List;
+
 import model.DBBoard;
+import model.Member;
 
 
 public interface DBDao {
@@ -14,5 +16,5 @@ public interface DBDao {
 	public int DBUpdate(DBBoard db);
 	public int totalDBCategory(String category);
 	List<DBBoard> listDBCategory(DBBoard db);
-	
+	void DBPointUp5(Member member);
 }

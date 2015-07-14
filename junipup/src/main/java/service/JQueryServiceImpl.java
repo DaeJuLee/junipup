@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import model.JQueryBoard;
+import model.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,5 +52,10 @@ public class JQueryServiceImpl implements JQueryService {
 	@Override
 	public int totalJQueryCategory(String category) {
 		return jd.totalJQueryCategory(category);
+	}
+
+	@Override
+	public void jQueryPointUp5(Member member) {
+		jd.jQueryPointUp5(member);
 	}
 }
