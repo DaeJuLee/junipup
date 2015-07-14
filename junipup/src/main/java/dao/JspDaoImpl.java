@@ -60,6 +60,11 @@ public class JspDaoImpl implements JspDao{
 	public List<JspBoard> listJspCategory(JspBoard db) {
 		return session.selectList("listJspCategory", db);
 	}
+	
+	@Override
+	public Member selectNickname(String nickname) {
+		return session.selectOne("selectNickname", nickname);
+	}
 
 	@Override
 	public void jspPointUp5(Member member) {

@@ -122,4 +122,11 @@ public class JspController {
 		model.addAttribute("bnum", jsp);
 		return "/jsp/jspDeleteCheck";
 	}
+	
+	@RequestMapping(value="jspPop")
+	public String selectNickname(String nickname, Model model){
+		Member mem = ms.selectNickname(nickname);
+		model.addAttribute("nick", mem);
+		return"/jsp/jspPop";	
+	}
 }
