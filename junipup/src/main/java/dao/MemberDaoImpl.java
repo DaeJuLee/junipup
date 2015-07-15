@@ -99,7 +99,7 @@ public class MemberDaoImpl implements MemberDao {
 	public int deleteMember(Member member) {
 		return session.update("deleteMember", member);
 	}
-	public List<Member> list(Member member) {
+	public List<Member> memberList(Member member) {
 		return session.selectList("list", member);
 	}
 	@Override
@@ -127,6 +127,13 @@ public class MemberDaoImpl implements MemberDao {
 	public void pointUp10(String nickname) {
 		session.update("pointUp10", nickname);
 		
+	}
+
+
+	
+	public int memberTotal() {
+		
+		return session.selectOne("totalMember");
 	}
 
 }

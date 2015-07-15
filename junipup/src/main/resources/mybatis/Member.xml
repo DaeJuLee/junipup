@@ -22,6 +22,10 @@
 		<result property="loginDate" column="loginDate" />
 	</resultMap> 
 
+	<select id="totalMember" resultType="int" >
+		select count(*) from Member
+	</select>
+
 	<insert id="insertMember" parameterType="Member">
 		insert into member
 		values (
