@@ -71,8 +71,6 @@ public class MailService {
 			helper.setTo(to);
 			helper.setSubject(subject);
 			message.setText(html, "UTF-8", "html");
-			
-						
 
 		} catch (MessagingException e) {
 			throw new MailParseException(e);

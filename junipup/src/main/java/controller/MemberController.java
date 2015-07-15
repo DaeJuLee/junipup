@@ -1,8 +1,18 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import model.AndroidBoard;
+import model.DBBoard;
+import model.Html5Board;
+import model.JQueryBoard;
+import model.JavaBoard;
+import model.JspBoard;
 import model.Member;
+import model.NoticeBoard;
 import model.Tel;
 
 import org.apache.catalina.Context;
@@ -23,7 +33,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 
+
+
 import service.MailService;
+import service.MainService;
 import service.MemberService;
 import utils.WebConstants;
 
@@ -33,6 +46,8 @@ public class MemberController {
 	MemberService ms;
 	@Autowired
 	MailService mail;
+	@Autowired
+	MainService mss;
 	
 	@RequestMapping(value="memjoinForm")
 	public String memjoinForm() {
@@ -48,8 +63,8 @@ public class MemberController {
 	@RequestMapping(value="memjoin", method=RequestMethod.POST)
 	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
-		String html = "<img src='http://211.183.2.57:8181/junipup/images/welcome.jpg'>";
-
+		String html = "<img src='http://211.183.2.55:8181/junipup/images/welcome.jpg'>";
+		
 		int result = ms.insertMember(member);
 		if (result > 0){
 			model.addAttribute("msg","zzz");
@@ -86,6 +101,28 @@ public class MemberController {
 	}
 	@RequestMapping(value="memlogin")
 	public String memlogin(Member member, Model model, HttpSession session) {
+		List<DBBoard> db = new ArrayList<DBBoard>();
+		db = mss.DBRecent();
+		System.out.println("제목추출: " + db.get(0).getTitle());
+		List<JQueryBoard> jqb = new ArrayList<JQueryBoard>();
+		jqb = mss.JQueryRecent();
+		List<JspBoard> jb = new ArrayList<JspBoard>();
+		jb = mss.JspRecent();
+		List<JavaBoard> jab = new ArrayList<JavaBoard>();
+		jab = mss.JavaRecent();
+		List<AndroidBoard> ad = new ArrayList<AndroidBoard>();
+		ad = mss.AndroidRecent();
+		List<Html5Board> hb = new ArrayList<Html5Board>();
+		hb = mss.Html5Recent();
+		List<NoticeBoard> nb = new ArrayList<NoticeBoard>();
+		nb = mss.NoticeRecent();
+		model.addAttribute("DB", db);
+		model.addAttribute("jQuery", jqb);
+		model.addAttribute("Jsp", jb);
+		model.addAttribute("Java", jab);
+		model.addAttribute("Android", ad);
+		model.addAttribute("Html5", hb);
+		model.addAttribute("Notice",nb);
 		System.out.println(member.getEmail());
 		System.out.println(member.getPassword());
 		Member selectmem = ms.selectIdPass(member.getEmail(), member.getPassword());
