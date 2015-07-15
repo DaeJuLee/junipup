@@ -266,3 +266,20 @@ filesize number,
 filename varchar2(200),
 category varchar2(100)
 );
+
+create table qna(
+bnum number primary key,
+nickname varchar2(50),
+title varchar2(50),
+mrank varchar2(50),
+b_date Date,
+content varchar2(4000),
+ip varchar2(400),
+hits varchar2(50),
+filesize number,
+filename varchar2(200),
+category varchar2(100),
+ref number,
+ref_step number,
+ref_level number
+);
