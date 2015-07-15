@@ -89,7 +89,7 @@ margin: 10px 0 3px 0;
 			<div class="login_div" align="right">	
 				
 				${USER_KEY.nickname } 
-				<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Bronss.png"/></c:if>
+				<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Brone.png" width="30" height="30"/></c:if>
 				<c:if test="${USER_KEY.maxPoint > '200'}"><img src="images/Silver.png"/></c:if>
 				<c:if test="${USER_KEY.maxPoint > '300'}"><img src="images/Gold.png"/></c:if>
 				<c:if test="${USER_KEY.maxPoint > '400'}"><img src="images/a.jpg"/></c:if>

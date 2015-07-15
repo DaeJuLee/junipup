@@ -16,4 +16,5 @@ public interface DBService {
 	public int totalDBCategory(String category);
 	List<DBBoard> listDBCategory(DBBoard db);
 	void DBPointUp5(Member member);
+	public int HitsUpdate(int bnum);
 }

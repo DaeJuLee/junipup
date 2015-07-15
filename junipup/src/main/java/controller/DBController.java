@@ -87,6 +87,7 @@ public class DBController {
 	@RequestMapping(value = "DBDetail")
 	public String DBDetail(int bnum, Model model){
 		DBBoard db = service.DBDetail(bnum);
+		service.HitsUpdate(bnum);
 		model.addAttribute("DBDetail", db);
 		model.addAttribute("modify", "true");
 		return "/database/DBDetail";

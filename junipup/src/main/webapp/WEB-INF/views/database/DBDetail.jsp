@@ -54,7 +54,9 @@
 			<th scope="row">파일크기</th>
 			<td> ${DBDetail.filesize }</td>
 			<th scope="row">파일이름</th>
-			<td>${DBDetail.filename }</td>			
+			<td>${DBDetail.filename }</td>
+			<th scope="row">조회수</th>
+			<td>${DBDetail.hits }</td>				
 		</tr>
 		<tr>
 		<td colspan="6">

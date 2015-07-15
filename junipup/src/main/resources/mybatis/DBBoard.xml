@@ -74,6 +74,10 @@
 		bnum = #{bnum}
 	</update>
 	
+	<update id="HitsUpdate" parameterType="int">
+	<![CDATA[ update DB set hits = hits+1 where bnum=#{bnum} ]]>
+	</update>
+	
 	<!-- <insert id="insertEmpList" parameterType="Emp">
 		insert into emp
 		values (
