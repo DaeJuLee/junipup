@@ -74,6 +74,11 @@ public class DBServiceImpl implements DBService{
 	}
 
 
+	public int HitsUpdate(int bnum) {
+		return dao.HitsUpdate(bnum);
+	}
+
+
 	
 
 }

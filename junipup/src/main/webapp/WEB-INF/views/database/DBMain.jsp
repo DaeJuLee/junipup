@@ -96,6 +96,7 @@ function go_pop(nick) {
 			<th width="15%" >닉네임</th>
 			<th width="50%" >제목</th>
 			<th width="15">작성일</th>
+			<th width="5%">조회수</th>
 		</tr>
 		
 	<c:set var="noticenum" value="4" />	
@@ -106,6 +107,7 @@ function go_pop(nick) {
 		<td>${notice.nickname }</td>		
 		<td><a href="noticeDetail.do?bnum=${notice.bnum }">${notice.title }</a></td>
 		<td>${notice.b_date }</td>
+		<td>${notice.hits }</td>
 		</tr>
 	<c:set var="noticenum" value="${noticenum-1 }" />	
 	</c:forEach>
@@ -121,6 +123,7 @@ function go_pop(nick) {
 			<!-- onclick="toggle(document.all.hideshow)" -->
 			<td><a href="DBDetail.do?bnum=${db.bnum}">${db.title }</a></td>
 			<td>${db.b_date }</td>
+			<td>${db.hits }</td>
 		</tr>
 		<c:set var="num" value="${num-1 }" />
 	</c:forEach>

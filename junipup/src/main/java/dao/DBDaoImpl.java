@@ -73,5 +73,8 @@ public class DBDaoImpl implements DBDao {
 		session.insert("pointUp5", member);
 		
 	}
-
+	@Override
+	public int HitsUpdate(int bnum) {
+		return session.update("HitsUpdate", bnum);
+	}
 }
