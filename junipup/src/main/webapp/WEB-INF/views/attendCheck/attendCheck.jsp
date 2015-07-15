@@ -5,9 +5,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
+<!-- /* 이전 */
+$.ajax({
+			url:"attendCheckChange.do",
+			type: "POST",
+			dataType: "text",
+			data: {
+				"month" : beformMonth,
+				"year" : year
+			},
+		    success : function(responseObject, status){
+		    	alert("성공");
+		    	alert(responseObject);
+		    	alert("달력 바뀌냐??");
+		    },
+			error:function(request, status, error){
+				alert("code:"+ request.status + "\n" + "error:"+error);
+			}
+});
+ -->
+
 <script type="text/javascript">
 
 function init(){
@@ -44,24 +66,7 @@ function init(){
 	document.getElementById("calendar").innerHTML = str;
 			
 }
-/* 이전 */
-/* $.ajax({
-			url:"attendCheckChange.do",
-			type: "POST",
-			dataType: "text",
-			data: {
-				"month" : beformMonth,
-				"year" : year
-			},
-		    success : function(responseObject, status){
-		    	alert("성공");
-		    	alert(responseObject);
-		    	alert("달력 바뀌냐??");
-		    },
-			error:function(request, status, error){
-				alert("code:"+ request.status + "\n" + "error:"+error);
-			}
-		}); */
+
 $(function(){
 	var month = "<h2>"+${attendCheck.month}+"</h2>";
 	$("#month_value_num").html(month);
@@ -74,15 +79,10 @@ $(function(){
 	$("#before_button").click(function(){
 		$.getJSON("attendCheckChange.do", function(data) {
 			alert(data.foo);	
-		
-		});
-		
+		});			
 	});
 });
-/* 다음 */
-$(function(){
-	
-});
+		
 
 </script>
 <body onload="init()">

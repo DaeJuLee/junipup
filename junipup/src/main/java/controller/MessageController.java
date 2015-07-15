@@ -58,11 +58,25 @@ public class MessageController {
 	}
 	@RequestMapping(value="messageCheck")
 	public String messageCheck(Model model, String nickname){
-		List<Messaging> list = new ArrayList<Messaging>();
-		list = ms.listMessageNick(nickname);
-		System.out.println("닉네임 : " + list.get(0).getNickname());
-		System.out.println("받은사람 : " + list.get(0).getReceiver());
-		model.addAttribute("message", list);
+		int index = 0;
+		List<Messaging> listSend = new ArrayList<Messaging>();
+		listSend = ms.listMessageNick(nickname);//보낸 메세지 함
+		List<Messaging> listReceive = new ArrayList<Messaging>();
+		for(int i = 0; i < listSend.size(); i++){
+			Messaging receiveMessage = new Messaging();
+			if((listSend.get(i).getReceiver()).equals(nickname)){
+				receiveMessage.setReceiver(listSend.get(i).getReceiver());
+				receiveMessage.setNickname(listSend.get(i).getNickname());
+				receiveMessage.setMessage(listSend.get(i).getMessage());
+				receiveMessage.setTitle(listSend.get(i).getTitle());
+				receiveMessage.setRegdate(listSend.get(i).getRegdate());
+				receiveMessage.setConfirm(listSend.get(i).getConfirm());
+				listReceive.add(index, receiveMessage);;
+				index++;
+			}	
+		}
+		model.addAttribute("sendMessage", listSend);
+		model.addAttribute("receiveMessage", listReceive);
 		return "/message/messageCheck";
 	}
 }

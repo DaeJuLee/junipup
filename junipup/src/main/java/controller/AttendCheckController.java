@@ -51,9 +51,9 @@ public class AttendCheckController {
 	}
 	
 	@RequestMapping(value="attendCheckChange")
-	// @ResponseBody Map<String, Object>
+	//@ResponseBody Map<String, Object>
 	//@RequestParam("year") String year, @RequestParam("month") String month
-	public String attendCheckChange(Model model, @RequestParam("month") String month, HttpServletResponse rep, HttpServletRequest req) throws Exception {
+	public String attendCheckChange(Model model, HttpServletResponse rep, HttpServletRequest req) throws Exception {
 		/*Map<String, Object> jsonObject = new HashMap<String, Object>();
 		
 		AttendCheck ac = new AttendCheck();

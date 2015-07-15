@@ -12,7 +12,7 @@
 		<result property="nickname"        column="nickname" />
 		<result property="receiver"        column="receiver" />
 		<result property="title"    column="title" />
-		<result property="msg"       column="msg" />
+		<result property="message"       column="message" />
 		<result property="regdate"       column="regdate" />
 		<result property="confirm"     column="confirm" />
 
@@ -28,7 +28,7 @@
 				#{nickname},
 				#{receiver},
 				#{title},
-				#{msg} ,
+				#{message} ,
 				sysdate,
 				1
 				)
