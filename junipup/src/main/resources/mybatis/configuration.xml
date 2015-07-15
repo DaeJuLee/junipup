@@ -14,6 +14,7 @@
 		<typeAlias alias="AdminBoard" type="model.AdminBoard" />
 		<typeAlias alias="NoticeBoard" type="model.NoticeBoard" />
 		<typeAlias alias="Messaging" type="model.Messaging" />
+		<typeAlias alias="AttendCheck" type="model.AttendCheck"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mybatis/Email.xml" />
@@ -26,6 +27,7 @@
 		<mapper resource="mybatis/JQueryBoard.xml" />
 		<mapper resource="mybatis/AdminBoard.xml" /> 
 		<mapper resource="mybatis/NoticeBoard.xml" />
-		<mapper resource="mybatis/Messaging.xml" /> 
+		<mapper resource="mybatis/Messaging.xml" />
+		<mapper resource="mybatis/AttendCheck.xml" />  
 	</mappers>
 </configuration>

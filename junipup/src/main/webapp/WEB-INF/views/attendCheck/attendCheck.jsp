@@ -9,27 +9,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-
-<!-- /* 이전 */
-$.ajax({
-			url:"attendCheckChange.do",
-			type: "POST",
-			dataType: "text",
-			data: {
-				"month" : beformMonth,
-				"year" : year
-			},
-		    success : function(responseObject, status){
-		    	alert("성공");
-		    	alert(responseObject);
-		    	alert("달력 바뀌냐??");
-		    },
-			error:function(request, status, error){
-				alert("code:"+ request.status + "\n" + "error:"+error);
-			}
-});
- -->
-
 <script type="text/javascript">
 
 function init(){
@@ -40,8 +19,11 @@ function init(){
 	var endDay = ${attendCheck.endDay};
 	var currentDay = ${attendCheck.currentDay};
 	var newLine = ${attendCheck.newLine};
+	/* var attend = '${attendCheck.attend}'; */
+	/* alert(attend); */
 	var str = "";
-	
+	var monthHtml = "<h2>"+${attendCheck.month}+"</h2>";
+	$("#month_value_num").html(monthHtml);
 	str += "<table class='calendar_check'><tr class='weekday'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
 	str += "<tr class='date'>"
 	for(var i = 1; i <= currentDay ; i++){
@@ -50,7 +32,21 @@ function init(){
 	}
 	
 	for(var i = 1; i <= endDay ; i++){
-		str += "<td>" + i + "</td>";
+		/* str += "<td>" + i + "</td>"; */
+		<c:set value='${attendCheck.attend}' var='check'/>
+		var check = '${check}';
+		var img = check.substring(i-1,i);
+		/* alert(img); */
+		str += "<td><table class='day'><tr class='checkday'><td align='center'>" + i + "</td></tr>";
+		str += "<tr class='checkimg'><td>";
+		if(img == 1){
+			str += "<img src='images/Master.png'/>";
+		}
+		else{
+			str += "없다."
+		}
+		str += "</td></tr>";
+		str += "</table></td>";
 		newLine++;
 		if(newLine == 7){
 			str += "</tr>";
@@ -66,24 +62,159 @@ function init(){
 	document.getElementById("calendar").innerHTML = str;
 			
 }
-
+/* 이전 *//* 로그인했을때 mainHeader2의 USER_KEY와 연결 */
 $(function(){
-	var month = "<h2>"+${attendCheck.month}+"</h2>";
-	$("#month_value_num").html(month);
-	var beforeMonth = ${attendCheck.month} - 1;
-	var year = ${attendCheck.year};
-	if(beforeMonth == 0){
-		beforeMonth=12;
-		year = year-1;
-	}
+	/* alert("init"); */
+	var state = 1;
+	var minusMonth = 1;
+	var minusYear = 1;
+	/* alert(state); */
+	var yearyear;
+	var monthmonth=13;
+	var nickname="master";
 	$("#before_button").click(function(){
-		$.getJSON("attendCheckChange.do", function(data) {
-			alert(data.foo);	
-		});			
+		var year1 = ${attendCheck.year};
+		var month1 = ${attendCheck.month};
+		/* alert("상태  : "+state); */
+		yearyear = year1;
+		
+		if(monthmonth==1){
+			alert("올해만 확인할 수 있습니다.");
+			return false;
+		}
+		if(monthmonth > month1){
+			monthmonth = month1 - 1;
+		}else{
+			monthmonth = monthmonth - 1;
+		}
+		
+		/* monthmonth=monthmonth-minusMonth; */
+		
+		if(state==0 && (yearyear < year1 || monthmonth < month1)){
+			/* alert("if"); */			
+		}else{
+			/* alert("else"); */
+			state = 0;
+			/* alert(state); */
+		}
+		
+		/* alert("조건문 나와서 바뀐 월 : " + monthmonth); */
+		
+		$.getJSON("attendCheckChangeBefore.do",{year: yearyear, month: monthmonth, nickname: nickname}) 
+			.done(function(data) {
+				var str = "";
+				var newLine = data.newLine;
+				var monthHtml = "<h2>"+data.month+"</h2>";
+				$("#month_value_num").html(monthHtml);
+				str += "<table class='calendar_check'><tr class='weekday'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
+				str += "<tr class='date'>"
+				for(var i = 1; i <= data.currentDay ; i++){
+					str += "<td>&nbsp</td>";
+					newLine++;
+				}
+				
+				for(var i = 1; i <= data.endDay ; i++){
+					/* str += "<td>" + i + "</td>"; */
+					var check = data.attend;
+					/* alert(check); */
+					var img = check.substring(i-1,i);
+					/* alert(img); */
+					str += "<td><table class='day'><tr class='checkday'><td align='center'>" + i + "</td></tr>";
+					str += "<tr class='checkimg'><td>";
+					if(img == 1){
+						str += "<img src='images/Master.png'/>";
+					}
+					else{
+						str += "없다."
+					}
+					str += "</td></tr>";
+					str += "</table></td>";
+					newLine++;
+					if(newLine == 7){
+						str += "</tr>";
+						newLine = 0;
+						str += "<tr class='date'>";
+					}
+				}
+				for(var i = 1; i <= (7-newLine); i++){
+					str += "<td>&nbsp</td>";
+				}
+				str += "</tr></table>";
+				
+				document.getElementById("calendar").innerHTML = str;
+			});
+	});
+	
+	$("#after_button").click(function(){
+		if(state==1){
+			alert("현재달 까지만 확인할 수 있습니다.");
+			return false;
+		}
+		/* alert("상태  : "+state); */
+		var month1 = ${attendCheck.month};
+		
+		if(monthmonth==month1){
+			alert("현재달 까지만 확인할 수 있습니다.");
+			return false;
+		}
+		monthmonth=monthmonth+1;
+		
+		/* alert("조건문 나와서 바뀐 월 : " + monthmonth); */
+		
+		$.getJSON("attendCheckChangeAfter.do",{year: yearyear, month: monthmonth, nickname: nickname}) 
+			.done(function(data) {
+				var str = "";
+				var newLine = data.newLine;
+				var monthHtml = "<h2>"+data.month+"</h2>";
+				$("#month_value_num").html(monthHtml);
+				str += "<table class='calendar_check'><tr class='weekday'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
+				str += "<tr class='date'>"
+				for(var i = 1; i <= data.currentDay ; i++){
+					str += "<td>&nbsp</td>";
+					newLine++;
+				}
+				
+				for(var i = 1; i <= data.endDay ; i++){
+					var check = data.attend;
+					/* alert(check); */
+					var img = check.substring(i-1,i);
+					/* alert(img); */
+					str += "<td><table class='day'><tr class='checkday'><td align='center'>" + i + "</td></tr>";
+					str += "<tr class='checkimg'><td>";
+					if(img == 1){
+						str += "<img src='images/Master.png'/>";
+					}
+					else{
+						str += "없다."
+					}
+					str += "</td></tr>";
+					str += "</table></td>";
+					newLine++;
+					if(newLine == 7){
+						str += "</tr>";
+						newLine = 0;
+						str += "<tr class='date'>";
+					}
+				}
+				for(var i = 1; i <= (7-newLine); i++){
+					str += "<td>&nbsp</td>";
+				}
+				str += "</tr></table>";
+				
+				document.getElementById("calendar").innerHTML = str;
+			});
 	});
 });
-		
-
+/* 
+$(function(){
+	var state = 1;
+	var minusMonth = 1;
+	var minusYear = 1;
+	alert(state);
+	var yearyear;
+	var monthmonth=13;
+	
+}); */
 </script>
 <body onload="init()">
 <div class="calendar_year_month">

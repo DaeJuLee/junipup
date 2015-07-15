@@ -5,4 +5,30 @@
 .weekday {  }
 .weekday td{ width : 14%; text-align: center; background: #cccccc;}
 .date { height : 90px; }
+.date td{
+	padding :0;
+}
 #month_value_num{ padding:10px 10px 100px 10px;}
+.day{
+	text-align: center;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:0px;
+	padding-botton:0px;
+	height: 100px;
+}
+.day .checkday{
+	height:15px;
+}
+.day .checkday td{
+	height:15px;
+	width:100%
+}
+.day .checkimg td{
+	padding:0;
+}
+.day .checkimg img{
+	width:75px;
+	height: 75px;
+	float: none;
+}

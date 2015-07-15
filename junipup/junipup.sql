@@ -11,13 +11,14 @@ maxPoint number,
 regDate date,
 loginDate date
 );
+--drop table member;
 
 select * from (select rownum rn, a.* from (select * from DB
     	order by bnum desc) a)  where rn between 1 and 5 
 select * from member;
 drop table member;
-insert into member values ('이주대씨', 'aa.jpg', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
-insert into member values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
+insert into member values ('�씠二쇰��뵪', 'aa.jpg', '1', '�씠��二�', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into member values ('juni', 'aa.jpg', '1', '二쇰땲', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
 drop table member;
 select * from member;
 select * from jquery;
@@ -42,12 +43,12 @@ select * from admin;
 
 drop table admin cascade constraint;
 
-insert into Admin values ('이주대씨', 'aa.jpg', '1', '이대주', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
-insert into Admin values ('juni', 'aa.jpg', '1', '주니', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
-insert into Admin values ('amdin', 'aa.jpg', '1', '이대주', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
-insert into Admin values ('master', 'aa.jpg', '1', '정기윤', 10101010, 'venus_@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into Admin values ('�씠二쇰��뵪', 'aa.jpg', '1', '�씠��二�', 10101010, 'dleown2420@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into Admin values ('juni', 'aa.jpg', '1', '二쇰땲', 10101010, 'junibatnipup@gmail.com', 9, 100, 100, sysdate, sysdate);
+insert into Admin values ('amdin', 'aa.jpg', '1', '�씠��二�', 10101010, 'minibeat@naver.com', 9, 100, 100, sysdate, sysdate);
+insert into Admin values ('master', 'aa.jpg', '1', '�젙湲곗쑄', 10101010, 'venus_@naver.com', 9, 100, 100, sysdate, sysdate);
 -- message --
--- 보낸사람과 받는사람 구분을 까먹었음  닉네임 하나 더 추가하면 완료-- 
+-- 蹂대궦�궗�엺怨� 諛쏅뒗�궗�엺 援щ텇�쓣 源뚮㉨�뿀�쓬  �땳�꽕�엫 �븯�굹 �뜑 異붽��븯硫� �셿猷�-- 
 create table messaging(
 mnum number(8) primary key,
 nickname varchar2(30),
@@ -228,31 +229,6 @@ re_step varchar2(50),
 re_level varchar2(50)
 );
 
--- qna
-create table qna(
-bnum number primary key,
-nickname varchar2(50),
-title varchar2(50),
-mrank varchar2(50),
-b_date Date,
-content varchar2(4000),
-ip varchar2(400),
-hits varchar2(50),
-filesize number,
-filename varchar2(200),
-category varchar2(100)
-);
-
-create table qnaComment(
-commentNum varchar2(50) primary key,
-bnum varchar2(50),
-nick varchar2(50),
-c_date Date,
-content varchar2(4000),
-re_step varchar2(50),
-re_level varchar2(50)
-);
-
 create table notice(
 bnum number primary key,
 nickname varchar2(50),
@@ -283,3 +259,20 @@ ref number,
 ref_step number,
 ref_level number
 );
+
+create table attend(
+anum number primary key,
+nickname varchar2(50),
+year number,
+month number,
+currentDay number,
+startDay number,
+endDay number,
+attend varchar2(50)
+);
+
+select * from attend;
+
+insert into attend values (1 , 'master', 2015, 6, 1, 1, 30, '111111111111111111111111111111');
+insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '11100011100011');
+insert into attend values (3 , 'master', 0, 0, 0, 0, 0 , '');

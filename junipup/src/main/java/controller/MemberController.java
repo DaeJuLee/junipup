@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import model.AndroidBoard;
+import model.AttendCheck;
 import model.DBBoard;
 import model.Html5Board;
 import model.JQueryBoard;
@@ -35,6 +36,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 
+
+
+import dao.AttendCheckDao;
 import service.MailService;
 import service.MainService;
 import service.MemberService;
@@ -48,6 +52,8 @@ public class MemberController {
 	MailService mail;
 	@Autowired
 	MainService mss;
+	@Autowired
+	AttendCheckDao acdm;
 	
 	@RequestMapping(value="memjoinForm")
 	public String memjoinForm() {
@@ -64,7 +70,9 @@ public class MemberController {
 	public String meminsert(Member member, Tel tel, Model model) {
 		member.setPhoneNumber(tel.getTel1()+tel.getTel2()+tel.getTel3());
 		String html = "<img src='http://211.183.2.55:8181/junipup/images/welcome.jpg'>";
-		
+		AttendCheck ac = new AttendCheck();
+		ac.setNickname(member.getNickname());
+		acdm.insertAttendPlus(ac);
 		int result = ms.insertMember(member);
 		if (result > 0){
 			model.addAttribute("msg","zzz");

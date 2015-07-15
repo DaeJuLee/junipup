@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AttendCheck">
+	<resultMap id="AttendCheckResult" type="AttendCheck">
+		<result property="anum"        column="year" />
+		<result property="nickname"    column="nickname" />
+		<result property="year"        column="year" />
+		<result property="month"       column="month" />
+		<result property="currentDay"  column="currentDay" />
+		<result property="startDay"    column="startDay" />
+		<result property="endDay"      column="endDay" />
+		<result property="attend"      column="attend" />
+	</resultMap>
+	
+	<select id="selectAttend" parameterType="AttendCheck" resultMap="AttendCheckResult">
+    	select * from attend
+    	where year=#{year} and month=#{month} and nickname=#{nickname} 
+	</select>
+	
+	<insert id="insertAttendPlus" parameterType="AttendCheck">
+		<selectKey order="BEFORE" keyProperty="anum" resultType="int">
+			select nvl(max(anum),0)+1 from attend
+		</selectKey>
+		insert into attend
+		values (
+		#{anum}, #{nickname}, #{year}, #{month}, #{currentDay}, #{startDay},#{endDay},
+		#{attend})
+	</insert>
+
+</mapper>
