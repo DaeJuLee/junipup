@@ -3,12 +3,15 @@ package controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import dao.EmailDao;
 import service.MailService;
 
 @Controller
 public class MailController {
 	@Autowired
 	MailService ms;
+	@Autowired
+	EmailDao ed;
 
 /*	@RequestMapping(value="jspMain")
 	public String jspMain(JspBoard jsp, String currentPage, Model model,String category){
