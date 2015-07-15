@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import model.AdminBoard;
+import model.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,22 +11,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import service.AdminService;
+import service.MemberService;
 import service.Paging;
 
 @Controller
 public class AdminController {
 	@Autowired
 	AdminService as;
+	@Autowired
+	MemberService ms;
 	
 	@RequestMapping(value="adminMain")
-	public String adminMain(Model model, AdminBoard adminboard, String currentPage) {
+	public String adminMain(Model model, Member member, String currentPage) {
 		//as.insertBoard();
-		int total = as.adminTotal();
+		int total = ms.memberTotal();
 		System.out.println("int total : " + total);
 		Paging pg = new Paging(total, currentPage);
-		adminboard.setStart(pg.getStart());
-		adminboard.setEnd(pg.getEnd());
-		List<AdminBoard> list = as.adminMain(adminboard);
+		member.setStart(pg.getStart());
+		member.setEnd(pg.getEnd());
+		List<Member> list = ms.memberList(member);
 		model.addAttribute("adminMain", list);
 		model.addAttribute("pg", pg);
 		return "/admin/adminMain";

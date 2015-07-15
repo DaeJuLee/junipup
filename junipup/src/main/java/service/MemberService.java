@@ -10,7 +10,7 @@ import model.Member;
 
 public interface MemberService {
 		
-	//List<Member> list(Member member);
+	List<Member> memberList(Member member);
 	//int total();
 	//Member selectEname(int memberno);
 	public int insertMember(Member member);
@@ -23,6 +23,7 @@ public interface MemberService {
 	public void pointup5(String nickname);
 	public void pointup7(String nickname);
 	public void pointup10(String nickname);
+	int memberTotal();
 	//int deletemember(int memberno);
 	//Member check(int memberno);
 	//int update(Member member);

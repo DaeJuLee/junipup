@@ -129,9 +129,6 @@
 						<input name="" type="checkbox" value="" id="keepid"
 							class="i_check"><label for="keepid">로그인 유지</label>
 					</p>
-					<p class="warning">브라우저를 닫더라도 로그인이 계속 유지될 수 있습니다. 로그인 유지 기능을
-						사용할 경우 다음 접속부터는 로그인을 하실 필요가 없습니다. 단, 게임방, 학교 등 공공장소에서 이용 시 개인정보가
-						유출될 수 있으니 꼭 로그아웃을 해주세요.</p>
 					<span class="btn_login"><input type="submit" value="로그인"></span>
 					<ul class="help">
 						<li class="first"><a href="#">아이디/비밀번호 찾기</a></li>
@@ -145,35 +142,5 @@
 
 		</div>
 	</div>
-	
-		
-	<!-- <div class="bg"></div>
-	<div id="join" class="g_join">
-		<form action="" class="g_join">
-			<fieldset>
-				<legend>회원가입</legend>
-				<div class="item">
-					<label class="i_label"
-						style="position: absolute; visibility: visible;">ID</label><input
-						name="id" type="text" value="" 
-						class="i_text upw">
-				</div>
-				<div class="item">
-					<label class="i_label"
-						style="position: absolute; visibility: visible;">NICKNAME(별명)</label><input
-						name="nickname" type="text" value="" 
-						class="i_text upw">
-				</div>
-				<div class="item">
-					<label class="i_label"
-						style="position: absolute; visibility: visible;">PASSWORD</label><input
-						name="" type="password" value="" class="i_text upw">
-				</div>
-				<span ><input type="submit" value="회원가입"></span>
-				<span ><input type="button" value="취소" onclick="location.href='#'"></span>
-			</fieldset>
-		</form>
-	</div> -->
-
 </body>
 </html>

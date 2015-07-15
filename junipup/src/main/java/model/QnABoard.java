@@ -1,13 +1,13 @@
 package model;
 
-import java.sql.Date;
+import java.util.Date;
+public class QnABoard {
 
-public class Member {
 	private String nickname;
 	private String photo;
 	private String password;
 	private String name;
-	private String phoneNumber;
+	private int phoneNumber;
 	private String email;
 	private int mrank;
 	private int usePoint;
@@ -15,48 +15,17 @@ public class Member {
 	private Date regDate;
 	private Date loginDate;
 	
+	//답변용
+	private int ref;//어떤 게시글인지 기준
+	private int re_step;//ref를 기준으로 답글개수
+	private int re_level;//ref를 기준으로 답변의 답변
+	
+	//조회용
 	private String search;
 	private String keyword;
 	private String pageNum;
 	private int start;
 	private int end;
-	
-	public String getSearch() {
-		return search;
-	}
-	public void setSearch(String search) {
-		this.search = search;
-	}
-	public String getKeyword() {
-		return keyword;
-	}
-	public void setKeyword(String keyword) {
-		this.keyword = keyword;
-	}
-	public String getPageNum() {
-		return pageNum;
-	}
-	public void setPageNum(String pageNum) {
-		this.pageNum = pageNum;
-	}
-	public int getStart() {
-		return start;
-	}
-	public void setStart(int start) {
-		this.start = start;
-	}
-	public int getEnd() {
-		return end;
-	}
-	public void setEnd(int end) {
-		this.end = end;
-	}
-	public Date getLoginDate() {
-		return loginDate;
-	}
-	public void setLoginDate(Date loginDate) {
-		this.loginDate = loginDate;
-	}
 	public String getNickname() {
 		return nickname;
 	}
@@ -69,7 +38,6 @@ public class Member {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -82,10 +50,10 @@ public class Member {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPhoneNumber() {
+	public int getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getEmail() {
@@ -118,5 +86,59 @@ public class Member {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	
+	public Date getLoginDate() {
+		return loginDate;
+	}
+	public void setLoginDate(Date loginDate) {
+		this.loginDate = loginDate;
+	}
+	public int getRef() {
+		return ref;
+	}
+	public void setRef(int ref) {
+		this.ref = ref;
+	}
+	public int getRe_step() {
+		return re_step;
+	}
+	public void setRe_step(int re_step) {
+		this.re_step = re_step;
+	}
+	public int getRe_level() {
+		return re_level;
+	}
+	public void setRe_level(int re_level) {
+		this.re_level = re_level;
+	}
+	public String getSearch() {
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	public String getPageNum() {
+		return pageNum;
+	}
+	public void setPageNum(String pageNum) {
+		this.pageNum = pageNum;
+	}
+	public int getStart() {
+		return start;
+	}
+	public void setStart(int start) {
+		this.start = start;
+	}
+	public int getEnd() {
+		return end;
+	}
+	public void setEnd(int end) {
+		this.end = end;
+	}
+
 }

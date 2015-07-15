@@ -10,10 +10,10 @@ import model.Member;
 
 public interface MemberDao {
 		
-	
+	 
 	//int total();
 	//Member selectEname(int memberno);
-	List<Member> list(Member member);
+	List<Member> memberList(Member member);
 	public int insertMember(Member member);
 	public Member selectIdPass(String email, String password);
 
@@ -25,6 +25,7 @@ public interface MemberDao {
 	public void pointUp5(String nickname);
 	public void pointUp7(String nickname);
 	public void pointUp10(String nickname);
+	int memberTotal();
 	//int deletemember(int memberno);
 	//Member check(int memberno);
 	//int update(Member member);

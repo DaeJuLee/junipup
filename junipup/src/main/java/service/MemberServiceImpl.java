@@ -123,6 +123,17 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public int memberTotal() {
+		return md.memberTotal();
+	}
+
+	@Override
+	public List<Member> memberList(Member member) {
+		
+		return md.memberList(member);
+	}
+
 
 
 }
