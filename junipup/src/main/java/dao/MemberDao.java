@@ -10,7 +10,7 @@ import model.Member;
 
 public interface MemberDao {
 		
-	
+	 
 	//int total();
 	//Member selectEname(int memberno);
 	List<Member> memberList(Member member);
