@@ -70,7 +70,7 @@
 	</delete>
 	<select id="list" parameterType="Member" resultMap="MemberResult">
     	select * from (select rownum rn, a.* from (select * from member
-    	order by regDate) a) where rn between #{start} and #{end}
+    	order by regDate desc) a) where rn between #{start} and #{end}
 	</select>
 	
 	<update id="pointUp2" parameterType="Member">

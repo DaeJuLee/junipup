@@ -1,7 +1,12 @@
 package controller;
 
+import model.Email;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import dao.EmailDao;
 import service.MailService;
@@ -12,7 +17,21 @@ public class MailController {
 	MailService ms;
 	@Autowired
 	EmailDao ed;
+	
+	@RequestMapping(value="mailSendForm")
+	public String mailSendForm(Model model, @RequestParam("recever") String recever){
+		model.addAttribute("recever",recever);
+		return "/admin/mailSendForm";
+	}
 
+	@RequestMapping(value="mailsend")
+	public String mailsend(Model model, Email email){
+		ms.sendMail("junibatnipup@gmail.com", email.getRecever(), email.getTitle(), email.getContent());
+		String msg = "성공적으로 메일을 보냈습니다";
+		model.addAttribute("msg", msg);
+		return "/admin/mailSendinComplete";
+	}
+	
 /*	@RequestMapping(value="jspMain")
 	public String jspMain(JspBoard jsp, String currentPage, Model model,String category){
 //		service.insertBoard();

@@ -10,7 +10,18 @@
 <link rel="stylesheet" type="text/css" href="css/button.css">
 <link rel="stylesheet" type="text/css" href="css/tab.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	function go_pop(recever) {
+	
+			window.open(
+						"mailSendForm.do?recever="+recever,
+						"new",
+						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+						"background='yellow'");
+	}
 
+
+</script>
      
     <style>
         #checkboxTestTbl {border-collapse: collapse;}
@@ -42,6 +53,7 @@
 			<th>날짜</th>
 			<th>출석도장</th>
 			<th>삭제</th>
+			<th>메일보내기</th>
         </tr>
         <c:forEach var="admin" items="${adminMain }">
         <tr>
@@ -57,7 +69,8 @@
 			<td>${admin.maxPoint }</td>
 			<td>${admin.regDate}</td>
 			<td>${admin.loginDate}</td>
-			<td><a href="memberDeleteCheck.do?nickname=${admin.nickname }">삭제하기</a></td>	
+			<td><a href="memberDeleteCheck.do?nickname=${admin.nickname }">삭제하기</a></td>
+			<td><button onclick="go_pop('${admin.email}')">메일보내기</button></td>	
         </tr>
         
         <c:set var="num" value="${num-1 }" /> 
