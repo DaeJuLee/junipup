@@ -311,7 +311,7 @@ jQuery(function($){
 				<table border="1">
 					<col width="350px">
 					<tr height="130px">
-						<td class="wow">배너광고를 구합니다~</td>
+						<td class="wow"><img src="images/cap01.JPG"/></td>
 					<tr>
 				</table>
 			</div>
