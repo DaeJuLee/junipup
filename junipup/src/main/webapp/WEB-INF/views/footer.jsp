@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<p><!-- 광고문의 -->
+		&nbsp;&bull;&nbsp;
+		<a href="adMessageForm.do">광고 / 제휴문의</a>
+		&nbsp;&nbsp;
+		&copy;2011 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://211.183.2.57:8181/junipup/main.do">tobogo.net</a>.
+	</p>
 </body>
 </html>

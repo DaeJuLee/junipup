@@ -17,6 +17,20 @@ public class MailController {
 	MailService ms;
 	@Autowired
 	EmailDao ed;
+	@RequestMapping(value="adMail")
+	public String adMail(Model model,@RequestParam("subject") String subject, @RequestParam("name") String name,
+			@RequestParam("tel") String tel, @RequestParam("email") String email,
+			@RequestParam("homepage") String homepage, @RequestParam("contents") String contents){
+		String content;
+		content = "이름 : "+name+"/n";
+		content += "전화번호 : "+tel+"/n";
+		content += "이메일 : " +email+"/n";
+		content += "홈페이지 : " +homepage+"/n";
+		content += "내용 " +contents+"/n";
+		
+		ms.sendMail("junibatnipup@gmail.com", "junibatnipup@gmail.com", subject, content);
+		return "main";
+	}
 	
 	@RequestMapping(value="mailSendForm")
 	public String mailSendForm(Model model, @RequestParam("recever") String recever){

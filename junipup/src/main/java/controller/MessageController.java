@@ -8,9 +8,11 @@ import model.Member;
 import model.Messaging;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import service.JspService;
 import service.MemberService;
@@ -24,6 +26,15 @@ public class MessageController {
 	JspService js;
 	@Autowired
 	MemberService mems;
+
+	
+
+	@RequestMapping(value="adMessageForm")
+	public String adMessageForm(Model model){
+	
+	
+		return "adMessageForm";
+	}
 	
 	@RequestMapping(value="messageInsertForm")
 	public String messageInsertForm(Model model, String receiver, String sender){
