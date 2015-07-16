@@ -73,7 +73,7 @@
 			<button type="button" onclick="onDelete()" class="btn btn-primary">삭제</button>
 		</form>
 </div>
-</body>
+</body><%@ include file="../footer.jsp" %>
 
 <script type="text/javascript">
 	var onModify = function(){

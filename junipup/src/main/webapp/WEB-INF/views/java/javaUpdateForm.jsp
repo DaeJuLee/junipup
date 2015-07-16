@@ -52,7 +52,7 @@
 	</div>
 	</form>
 </div>
-</body>
+</body><%@ include file="../footer.jsp" %>
 <script type="text/javascript">
 var oEditors = [];
 	nhn.husky.EZCreator.createInIFrame({

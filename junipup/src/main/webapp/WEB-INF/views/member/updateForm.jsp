@@ -225,6 +225,6 @@ $(function(){
 	</table>
 	</div>
 </form>
-</body>
+</body><%@ include file="../footer.jsp" %>
 
 </html>

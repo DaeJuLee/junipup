@@ -75,5 +75,5 @@
 	</c:if>
 	</div>
 	   
-</body>
+</body><%@ include file="../footer.jsp" %>
 </html>

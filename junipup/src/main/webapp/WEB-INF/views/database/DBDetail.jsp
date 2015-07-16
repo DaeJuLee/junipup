@@ -82,7 +82,7 @@
 </div>
 	
 		
-</body>
+</body><%@ include file="../footer.jsp" %>
 
 <script type="text/javascript">
 	var onModify = function(){

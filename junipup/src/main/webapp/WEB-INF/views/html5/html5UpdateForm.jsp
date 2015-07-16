@@ -72,7 +72,7 @@
 	<input type="reset" value="취소" onclick="location.href='html5Main.do'">
 
 >>>>>>> branch 'master' of https://github.com/DaeJuLee/junipup.git
-</body>
+</body><%@ include file="../footer.jsp" %>
 <script type="text/javascript">
 var oEditors = [];
 	nhn.husky.EZCreator.createInIFrame({

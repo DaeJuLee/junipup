@@ -81,7 +81,7 @@
 <input type="button" value="삭제" 
 		onclick="location.href='jspDeleteCheck.do?bnum=${jspDetail.bnum}'" class="button"> --%>
 		
-</body>
+</body><%@ include file="../footer.jsp" %>
 
 <script type="text/javascript">
 	var onModify = function(){

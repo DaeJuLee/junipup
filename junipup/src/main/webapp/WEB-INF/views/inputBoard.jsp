@@ -8,5 +8,5 @@
 </head>
 <body>
 입력완료!
-</body>
+</body><%@ include file="footer.jsp" %>
 </html>

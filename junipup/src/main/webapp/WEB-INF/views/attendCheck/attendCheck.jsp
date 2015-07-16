@@ -226,5 +226,5 @@ $(function(){
 <div id="calendar" class="calendar">
 
 </div>
-</body>
+</body><%@ include file="../footer.jsp" %>
 </html>

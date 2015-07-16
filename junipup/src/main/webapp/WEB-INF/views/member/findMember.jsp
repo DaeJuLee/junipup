@@ -8,5 +8,5 @@
 </head>
 <body>
 ${String.nickname}
-</body>
+</body><%@ include file="../footer.jsp" %>
 </html> 

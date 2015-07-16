@@ -245,5 +245,5 @@ $(function () {
 }); */
 
 </script>
-</body>
+</body><%@ include file="../footer.jsp" %>
 </html>

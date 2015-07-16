@@ -58,5 +58,5 @@ function go_pop(receiver, sender) {
 	<input type="button" value="쪽지 보내기" 
 			onclick="go_pop('${receiver.nickname}' , '${sender}')">
 
-</body>
+
 </html>

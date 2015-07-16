@@ -138,5 +138,5 @@ function go_pop(receiver, sender) {
 		<button type="button" class="button" onclick="location.href='javaMain.do?currentPage=${pg.startPage+pg.pageBlock}'">다음</button>
 	</c:if>
 	</div>
-</body>
+</body><%@ include file="../footer.jsp" %>
 </html>

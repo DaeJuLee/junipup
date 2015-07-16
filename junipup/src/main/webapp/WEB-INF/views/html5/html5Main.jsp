@@ -137,5 +137,5 @@ function go_pop(receiver, sender) {
 	</c:if>	
 
 	</div>
-</body>
+</body><%@ include file="../footer.jsp" %>
 </html>
