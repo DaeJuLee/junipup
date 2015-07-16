@@ -1,5 +1,10 @@
-.calendar_year_month { width:875px; height:100px; text-align: center;}
-#before_button{ }
+.calendar_year_month{width: 875px;  height: 100px;  text-align: center; display: inline-block;}
+
+.calendar_year_month_left{ width: 675px; height: 100%; margin: 0; float: left;}
+
+.calendar_year_month_right{ width:200px; height: 100%; float: right;}
+
+#before_button{ margin-left: 20px;}
 .calendar {  }
 .calendar_check { width:875px; }
 .weekday {  }
@@ -8,7 +13,7 @@
 .date td{
 	padding :0;
 }
-#month_value_num{ padding:10px 10px 100px 10px;}
+#month_value_num{ padding:0; width:50px; height:20px;}
 .day{
 	text-align: center;
 	padding-left:20px;

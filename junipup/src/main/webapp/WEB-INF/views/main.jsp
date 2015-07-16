@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp"%>
 <%@ include file="mainHeader2.jsp"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -307,59 +305,58 @@ jQuery(function($){
 				<!-- 공지사항  -->
 			</div>
 		</div>
-		
+
 		<div class="right_center">
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="75px">
-						<td class="wow"><a href="adMessageForm.do"><img src="images/ad.jpg"/></td>
-					<tr>
-				</table>
-			</div>
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="70px">
-						<td class="wow"><a href="http://www.choongang.co.kr/" target="_blank"><img src="images/cap01.JPG"/></a></td>
-					<tr>
-				</table>
-			</div>
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="75px">
-						<td class="wow"><a href="http://www.choongang.co.kr/" target="_blank"><img src="images/cap02.JPG"/></td>
-					<tr>
-				</table>
-			</div>
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="100px">
-						<td class="wow"><a href="http://www.work.go.kr/index.jsp" target="_blank"><img src="images/cap03.JPG"/></td>
-					<tr>
-				</table>
-			</div>
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="130px">
-						<td class="wow"><a href="http://www.saramin.co.kr/zf_user/" target="_blank"><img src="images/cap04.JPG"/></td>
-						
-					<tr>
-				</table>
-			</div>
-		</div>
+         <div class="banner">
+            <table border="1">
+               <col width="350px">
+               <tr height="75px">
+                  <td class="wow"><a href="adMessageForm.do"><img src="images/ad.jpg"/></td>
+               <tr>
+            </table>
+         </div>
+         <div class="banner">
+            <table border="1">
+               <col width="350px">
+               <tr height="70px">
+                  <td class="wow"><a href="http://www.choongang.co.kr/" target="_blank"><img src="images/cap01.JPG"/></a></td>
+               <tr>
+            </table>
+         </div>
+         <div class="banner">
+            <table border="1">
+               <col width="350px">
+               <tr height="75px">
+                  <td class="wow"><a href="http://www.choongang.co.kr/" target="_blank"><img src="images/cap02.JPG"/></td>
+               <tr>
+            </table>
+         </div>
+         <div class="banner">
+            <table border="1">
+               <col width="350px">
+               <tr height="100px">
+                  <td class="wow"><a href="http://www.work.go.kr/index.jsp" target="_blank"><img src="images/cap03.JPG"/></td>
+               <tr>
+            </table>
+         </div>
+         <div class="banner">
+            <table border="1">
+               <col width="350px">
+               <tr height="130px">
+                  <td class="wow"><a href="http://www.saramin.co.kr/zf_user/" target="_blank"><img src="images/cap04.JPG"/></td>
+                  
+               <tr>
+            </table>
+         </div>
+      </div>
 
 	</div>
 
-
-
-
+		<div class="footer" align="center">
+			<%@ include file="footer.jsp" %>
+		</div>
 	</div>
 
 
 </body>
-<%@ include file="footer.jsp" %>
 </html>

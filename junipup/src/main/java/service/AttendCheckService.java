@@ -10,4 +10,6 @@ import dao.AttendCheckDao;
 public interface AttendCheckService {
 
 	public AttendCheck selectAttend(AttendCheck ac);
+
+	public int updateAttend(AttendCheck ac1);
 }

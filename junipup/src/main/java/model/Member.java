@@ -12,7 +12,8 @@ public class Member {
 	private int mrank;
 	private int usePoint;
 	private int maxPoint;
-	private Date regDate;
+//	private Date regDate;
+	private String regDate;
 	private Date loginDate;
 	
 	private String search;
@@ -21,6 +22,12 @@ public class Member {
 	private int start;
 	private int end;
 	
+	public String getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(String regDate) {
+		this.regDate = regDate;
+	}
 	public String getSearch() {
 		return search;
 	}
@@ -112,11 +119,11 @@ public class Member {
 	public void setMaxPoint(int maxPoint) {
 		this.maxPoint = maxPoint;
 	}
-	public Date getRegDate() {
-		return regDate;
-	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
-	}
+//	public Date getRegDate() {
+//		return regDate;
+//	}
+//	public void setRegDate(Date regDate) {
+//		this.regDate = regDate;
+//	}
 	
 }

@@ -12,7 +12,13 @@ regDate date,
 loginDate date
 );
 --drop table member;
-
+update member set regDate = '20150601' where nickname='master';
+update attend set attend = '010101010101011' where nickname='master';
+select * from attend;
+delete from member where nickname = '이대주씨';
+delete from member where nickname = '12321';
+delete from member where nickname = 'admin';
+delete from member where nickname = 'mdasd';
 select * from (select rownum rn, a.* from (select * from DB
     	order by bnum desc) a)  where rn between 1 and 5 
 select * from member;

@@ -15,6 +15,11 @@ public class AttendCheckServiceImpl implements AttendCheckService{
 
 	@Override
 	public AttendCheck selectAttend(AttendCheck ac) {
-			return acd.selectAttend(ac);
+		return acd.selectAttend(ac);
+	}
+
+	@Override
+	public int updateAttend(AttendCheck ac1) {
+		return acd.updateAttend(ac1);
 	}
 }

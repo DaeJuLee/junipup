@@ -12,6 +12,7 @@
 		<result property="startDay"    column="startDay" />
 		<result property="endDay"      column="endDay" />
 		<result property="attend"      column="attend" />
+		<result property="day"         column="day"/>
 	</resultMap>
 	
 	<select id="selectAttend" parameterType="AttendCheck" resultMap="AttendCheckResult">
@@ -28,5 +29,11 @@
 		#{anum}, #{nickname}, #{year}, #{month}, #{currentDay}, #{startDay},#{endDay},
 		#{attend})
 	</insert>
+	
+	<update id="updateAttend" parameterType="AttendCheck">
+		update attend set
+		attend = #{attend}
+		where year=#{year} and month=#{month} and nickname=#{nickname}
+	</update>
 
 </mapper>

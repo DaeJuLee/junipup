@@ -6,10 +6,13 @@
 <html>
 <head>
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/attendCheck.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <script type="text/javascript">
+
+var chulstate=1;
 
 function init(){
 	var year = ${attendCheck.year};
@@ -21,11 +24,13 @@ function init(){
 	var newLine = ${attendCheck.newLine};
 	/* var attend = '${attendCheck.attend}'; */
 	/* alert(attend); */
+	alert('day : ' + day);
+	/* alert(chulstate); */
 	var str = "";
-	var monthHtml = "<h2>"+${attendCheck.month}+"</h2>";
+	var monthHtml = ${attendCheck.month};
 	$("#month_value_num").html(monthHtml);
 	str += "<table class='calendar_check'><tr class='weekday'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
-	str += "<tr class='date'>"
+	str += "<tr class='date'>";
 	for(var i = 1; i <= currentDay ; i++){
 		str += "<td>&nbsp</td>";
 		newLine++;
@@ -38,12 +43,12 @@ function init(){
 		var img = check.substring(i-1,i);
 		/* alert(img); */
 		str += "<td><table class='day'><tr class='checkday'><td align='center'>" + i + "</td></tr>";
-		str += "<tr class='checkimg'><td>";
+		str += "<tr class='checkimg'><td id='input"+i+"'>";
 		if(img == 1){
-			str += "<img src='images/Master.png'/>";
+			str += "<img src='images/GGang.JPG'/>";
 		}
-		else{
-			str += "없다."
+		else if(img == 0 && i < day){
+			str += "<img src='images/sorry.JPG'/>";
 		}
 		str += "</td></tr>";
 		str += "</table></td>";
@@ -71,8 +76,10 @@ $(function(){
 	/* alert(state); */
 	var yearyear;
 	var monthmonth=13;
-	var nickname="master";
+	var nickname='${USER_KEY.nickname}';
+	alert(nickname);
 	$("#before_button").click(function(){
+		/* alert(chulstate); */
 		var year1 = ${attendCheck.year};
 		var month1 = ${attendCheck.month};
 		/* alert("상태  : "+state); */
@@ -102,12 +109,18 @@ $(function(){
 		
 		$.getJSON("attendCheckChangeBefore.do",{year: yearyear, month: monthmonth, nickname: nickname}) 
 			.done(function(data) {
+				if(data.enable == 'no'){
+					alert("가입일 전달의 내역을 확인하실 수 없습니다.");
+					monthmonth = monthmonth + 1;
+					return false;
+				}
+				
 				var str = "";
 				var newLine = data.newLine;
-				var monthHtml = "<h2>"+data.month+"</h2>";
+				var monthHtml = data.month;
 				$("#month_value_num").html(monthHtml);
 				str += "<table class='calendar_check'><tr class='weekday'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
-				str += "<tr class='date'>"
+				str += "<tr class='date'>";
 				for(var i = 1; i <= data.currentDay ; i++){
 					str += "<td>&nbsp</td>";
 					newLine++;
@@ -122,10 +135,10 @@ $(function(){
 					str += "<td><table class='day'><tr class='checkday'><td align='center'>" + i + "</td></tr>";
 					str += "<tr class='checkimg'><td>";
 					if(img == 1){
-						str += "<img src='images/Master.png'/>";
+						str += "<img src='images/GGang.JPG'/>";
 					}
 					else{
-						str += "없다."
+						str += "<img src='images/sorry.JPG'/>"
 					}
 					str += "</td></tr>";
 					str += "</table></td>";
@@ -146,6 +159,7 @@ $(function(){
 	});
 	
 	$("#after_button").click(function(){
+		alert(chulstate);
 		if(state==1){
 			alert("현재달 까지만 확인할 수 있습니다.");
 			return false;
@@ -165,15 +179,16 @@ $(function(){
 			.done(function(data) {
 				var str = "";
 				var newLine = data.newLine;
-				var monthHtml = "<h2>"+data.month+"</h2>";
+				var monthHtml = data.month;
 				$("#month_value_num").html(monthHtml);
 				str += "<table class='calendar_check'><tr class='weekday'><td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td></tr>";
-				str += "<tr class='date'>"
+				str += "<tr class='date'>";
 				for(var i = 1; i <= data.currentDay ; i++){
 					str += "<td>&nbsp</td>";
 					newLine++;
 				}
-				
+				/* alert("현재달 : " + month1); */
+				/* alert("변한달 : " + monthmonth); */
 				for(var i = 1; i <= data.endDay ; i++){
 					var check = data.attend;
 					/* alert(check); */
@@ -182,10 +197,10 @@ $(function(){
 					str += "<td><table class='day'><tr class='checkday'><td align='center'>" + i + "</td></tr>";
 					str += "<tr class='checkimg'><td>";
 					if(img == 1){
-						str += "<img src='images/Master.png'/>";
+						str += "<img src='images/GGang.JPG'/>";
 					}
-					else{
-						str += "없다."
+					else if(img == 0 && i < data.day && month1 == monthmonth){
+						str += "<img src='images/sorry.JPG'/>";
 					}
 					str += "</td></tr>";
 					str += "</table></td>";
@@ -205,22 +220,41 @@ $(function(){
 			});
 	});
 });
-/* 
+
 $(function(){
-	var state = 1;
-	var minusMonth = 1;
-	var minusYear = 1;
-	alert(state);
-	var yearyear;
-	var monthmonth=13;
-	
-}); */
+	$("#attend").click(function(){
+		var year = ${attendCheck.year}
+		var month = ${attendCheck.month};
+		var day = ${attendCheck.day};
+		var img = document.createElement('img');
+		img.src = 'images/GGang.JPG';
+		var nickname = '${USER_KEY.nickname}';
+		alert("클릭");
+		chulstate = 0;
+		$.getJSON("attend.do", {"chulsuk": "1", "year": year, "month": month, "day": day, "nickname": nickname})
+			.done(function(data){
+				if(data.success == 1){
+					alert("출석을 하셨습니다.");	
+					document.getElementById('input'+data.day).appendChild(img);
+				}else{
+					alert("이미 출석을 하셨습니다.");
+				}
+			});
+	});
+});
+
 </script>
 <body onload="init()">
 <div class="calendar_year_month">
-	<button type="button" id="before_button">이전</button>
-	<h2 id="month_value_num"></h2>
-	<button type="button" id="after_button">다음</button>
+	<div class="calendar_year_month_left">
+		<button type="button" id="before_button">이전</button>
+		<h2 id="month_value_num"></h2>
+		<button type="button" id="after_button">다음</button>
+	</div>
+	<div class="calendar_year_month_right">
+		<button id="attend"><img src='images/attendButton.JPG'/></button>
+	</div>
+	 
 </div>
 
 <div id="calendar" class="calendar">

@@ -9,108 +9,99 @@
 <meta name="author" content="Jake Rocheleau">
 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
-<style type="text/css">
-.css-bar{
-font-family : monospace;
-
-display: inline-block;
-position: relative;
-margin: 10px 10px 3px 0;
-padding: 0;
-background: #000;
-}
-.css-bar, .css-bar:before, .css-bar:after{
-width: 100px;
-height: 3px;
-}
-.css-bar:before, .css-bar:after{
-display: block;
-content: "";
-position: absolute;
-top: 50%;
-left: 0;
-background: #000;
-}
-
-#right {
-float: right;
-height : 40px;
-width : 90px;
-}
-
-#right img {
-margin: 10px 0 3px 0;
-}
-
-
-
-
-
-</style>
-
 </head>
-<body>	
-	
+<body>
+
 	<div id="wrab">
-		<div id="right">
-			<c:choose>
-				<c:when test="${empty USER_KEY}">
-					<span class="css-bar"></span>
-					<a href="login.do"><img src="img/login.JPG"></a>						
-				</c:when>
-				
-				<c:otherwise>
-					<span class="css-bar"></span>
-					<a href="logout.do"><img src="img/logout.JPG"></a>
-					<c:choose>							
-							<c:when test="${USER_KEY.nickname == 'master' }">
-								<span class="css-bar"></span>							
-								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자 페이지</a>
-				 			</c:when>
-							<c:when test="${USER_KEY.nickname != 'master' }">
-								<span class="css-bar"></span>
-								<a href="updateForm.do?email=${USER_KEY.email }"><img src="img/mypage.JPG"></a>
-							</c:when>
-					</c:choose>						
+		<div id="wrab_top">
+			<div id="wrab_top_left">
+				<c:choose>
+					<c:when test="${empty USER_KEY}">
+						<div></div>
+					</c:when>
+
+					<c:otherwise>
+						<div id="rank">
+							<table align="center">
+								<tr>
+									<td rowspan="2">
+										<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Brones.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '200'}"><img src="images/Silver.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '300'}"><img src="images/Gold.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '400'}"><img src="images/a.jpg"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '500'}"><img src="images/a.jpg"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '600'}"><img src="images/a.jpg"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '700'}"><img src="images/a.jpg"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '800'}"><img src="images/a.jpg"/></c:if>	
+									</td>
+									<th align="center">닉네임</th>
+									<th align="center">잔여포인트</th>
+									<th align="center">최고포인트</th>
+								</tr>
+								<tr>
+									<td align="center">${USER_KEY.nickname }</td>
+									<td align="center">${USER_KEY.usePoint }</td>
+									<td align="center">${USER_KEY.maxPoint }</td>
+								</tr>
+							</table>
+						</div>
 					</c:otherwise>
-				</c:choose>									
-		</div>
-	
-		
-		<div id="h2" >			
-			<div align="center">
-				<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
-			</div>			
-		</div>
-		<p>
-		
-		<c:choose>
-		<c:when test="${empty USER_KEY}">		
-			<div class="login_div" align="right">		
-										
+				</c:choose>
 			</div>
-		</c:when>
-		
-		<c:otherwise>
-		 <div class="login_div" align="right">
+			<div id="wrab_top_center">
+				<div>
+					<div align="center">
+						<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
+					</div>
+				</div>
+			</div>
+			<div id="wrab_top_right">
+				<div id="wrab_top_right_top">
+					<c:choose>
+						<c:when test="${empty USER_KEY}">
+							<!-- <span class="css-bar"></span> -->
+							<a href="login.do"><img src="img/login.JPG"></a>
+						</c:when>
+	
+						<c:otherwise>
+							<!-- <span class="css-bar"></span> -->
+							<a href="logout.do"><img src="img/logout.JPG"></a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div id="wrab_top_right_bottom">
+					<c:choose>
+					<c:when test="${empty USER_KEY}">
+					</c:when>
+					<c:otherwise>
+						<c:choose>
+							<c:when test="${USER_KEY.nickname == 'master' }">
+								<br>
+								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자
+									페이지</a>
+							</c:when>
+							<c:when test="${USER_KEY.nickname != 'master' }">
+								<br>
+								<a href="updateForm.do?email=${USER_KEY.email }" >마이페이지</a>
+							</c:when>
+						</c:choose>
+					</c:otherwise>
+				</c:choose>
+				</div>
+			</div>
+		</div>
+
+		<div id="wrab_bottom">
+			<div id="wrab_bottom_left">
+			
+			</div>
+			<div id="wrab_bottom_center">
 				
-				${USER_KEY.nickname } 
-				<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Brone.png"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '200'}"><img src="images/Silver.png"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '300'}"><img src="images/Gold.png"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '400'}"><img src="images/a.jpg"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '500'}"><img src="images/a.jpg"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '600'}"><img src="images/a.jpg"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '700'}"><img src="images/a.jpg"/></c:if>
-				<c:if test="${USER_KEY.maxPoint > '800'}"><img src="images/a.jpg"/></c:if>
-				${USER_KEY.maxPoint } |
-				${USER_KEY.mrank} |				
-				${USER_KEY.usePoint } |							
-	 		</div> 
-		</c:otherwise>
-		
-		</c:choose>   
-		
+			</div>
+			<div id="wrab_bottom_right">
+				
+			</div>
+		</div>
 	</div>
 	<!-- wrab 끝 -->
 	<nav>
@@ -165,8 +156,8 @@ margin: 10px 0 3px 0;
 						<li><a href="html5Main.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="QNA"><a href="#">QnA</a></li>
-				<li class="Check"><a href="attendCheck.do">출석체크!</a></li>				
-				<li class="Message"><a href="messageCheck.do?nickname=${USER_KEY.nickname }">Message</a></li>
+				<li class="Check"><a href="attendCheck.do?nickname=${USER_KEY.nickname }">출석체크!</a></li>
+				<%-- <li class="Message"><a href="messageCheck.do?nickname=${USER_KEY.nickname }">Message</a></li> --%>
 			</ul>
 			<!-- id="menu" 끝 -->
 		</div>

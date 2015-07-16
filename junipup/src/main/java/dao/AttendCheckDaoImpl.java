@@ -46,4 +46,8 @@ public class AttendCheckDaoImpl implements AttendCheckDao{
 		}
 		return attend;
 	}
+
+	public int updateAttend(AttendCheck ac1) {
+		return session.update("updateAttend", ac1);
+	}
 }

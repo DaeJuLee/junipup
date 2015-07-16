@@ -48,7 +48,8 @@
 
 
 	<select id="selectNickname" parameterType="String" resultMap="MemberResult">
-		<![CDATA[ select * from member where nickname=#{nickname}]]>
+		<![CDATA[ select nickname, photo, password, name, phoneNumber,
+			email, mrank, usePoint, maxPoint, to_char(regDate,'yyyymm') regDate from member where nickname=#{nickname}]]>
 
 	</select>	
 

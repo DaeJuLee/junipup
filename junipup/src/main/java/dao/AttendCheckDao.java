@@ -10,7 +10,6 @@ public interface AttendCheckDao {
 
 	public AttendCheck selectAttend(AttendCheck ac);
 	public int insertAttendPlus(AttendCheck ac);
-	
-	
-	
+	public int updateAttend(AttendCheck ac1);
+
 }
