@@ -59,8 +59,8 @@
 .left11.js_off li li.more{top:7px;right:15px}
 /* //UI Object */
 
-.tab_list{height:160px;  }
-.tab_list ul{position:relative;margin:0;padding:0;border-bottom:1px solid #ccc;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
+.tab_list{height:160px;}
+.tab_list ul{position:relative;margin:0;padding:0;font-family:Tahoma, Sans-serif;font-size:12px;list-style:none;*zoom:1}
 .tab_list ul:after{display:block;clear:both;content:""}
 .tab_list li{float:left;margin-bottom:-1px}
 .tab_list li a{float:left;position:relative;border:1px solid #eee;border-bottom-color:#ccc;background:#fafafa;color:#666;text-decoration:none}
