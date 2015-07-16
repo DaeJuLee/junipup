@@ -55,4 +55,9 @@ public class Html5ServiceImpl implements Html5Service {
 	public void htmlPointUp5(Member member) {
 		hd.htmlPointUp5(member);
 	}
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return hd.HitsUpdate(bnum);
+	}
 }

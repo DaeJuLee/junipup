@@ -85,7 +85,9 @@ public class AndroidController {
 	@RequestMapping(value = "androidDetail")
 	public String androidDetail(int bnum, Model model){
 		AndroidBoard android = service.androidDetail(bnum);
+		service.HitsUpdate(bnum);
 		model.addAttribute("androidDetail", android);
+		model.addAttribute("modify", "true");
 		return "/android/androidDetail";
 	}
 	

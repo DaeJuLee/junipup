@@ -26,13 +26,15 @@ jQuery(function($){
 	}
 });
 
-function go_pop(nick) {
-	window.open(
-					"javaPop.do?nickname="+nick,
-					"new",
-					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
-					"background='yellow'");
-}
+function go_pop(receiver, sender) {
+	var nikk = '${USER_KEY.nickname}';
+
+		window.open(
+						"jspPop.do?receiver="+receiver+"&sender="+sender,
+						"new",
+						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+						"background='yellow'");
+	}
 </script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -117,7 +119,7 @@ function go_pop(nick) {
 			<td>${num }</td>
 			<td>${db.category }</td> <!-- 눈에 띄게 !!!@#!@#!@#!@# -->
 			<!-- onclick="toggle(document.all.hideshow)" -->
-			<td><input type="button" value="${db.nickname }" onclick="go_pop('${db.nickname}')" class="button"></td>
+			<td><input type="button" value="${db.nickname }" onclick="go_pop('${db.nickname}','${USER_KEY.nickname}')" class="button"></td>
 			<%-- <td><button class="more" value="${db.nickname }">${db.nickname }</button></td> --%>
 			<%-- <td><button class="more" value="${db.nickname }" onclick="toggle(document.all.hideshow)">${db.nickname }</button></td> --%>
 			<!-- onclick="toggle(document.all.hideshow)" -->

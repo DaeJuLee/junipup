@@ -124,11 +124,6 @@ public class DBController {
 		board.setBnum(bnum);
 		model.addAttribute("bnum", board);
 		return "/database/DBDeleteCheck";
-	}
-	@RequestMapping(value="DBPop")
-	public String selectNickname(String nickname, Model model){
-		Member mem = ms.selectNickname(nickname);
-		model.addAttribute("nick", mem);
-		return"/DB/DBPop";	
+		
 	}
 }

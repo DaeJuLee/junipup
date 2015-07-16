@@ -56,11 +56,11 @@
 	<update id="androidUpdate" parameterType="AndroidBoard">
 		update Android set
 		title = #{title},
-		content = #{content},
-		category = #{category},
+		content = #{content},		
 		filesize = #{filesize, jdbcType=VARCHAR},
 		filename = #{filename, jdbcType=VARCHAR},
 		ip = #{ip, jdbcType=VARCHAR}
+		
 		where
 		bnum = #{bnum}
 	</update>
@@ -73,5 +73,9 @@
 	<select id="totalAndroidCategory" parameterType="String" resultType="int" >
 		select count(*) from Android where category = #{category} 
 	</select>
+	
+	<update id="AndroidHitsUpdate" parameterType="int">
+	<![CDATA[ update Android set hits = hits+1 where bnum=#{bnum} ]]>
+	</update>
 
 </mapper>

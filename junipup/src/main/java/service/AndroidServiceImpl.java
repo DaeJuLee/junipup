@@ -60,6 +60,11 @@ public class AndroidServiceImpl implements AndroidService{
 		dao.androidPointUp5(member);
 		
 	}
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return dao.HitsUpdate(bnum);
+	}
 	
 
 }

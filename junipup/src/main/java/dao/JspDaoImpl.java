@@ -72,4 +72,9 @@ public class JspDaoImpl implements JspDao{
 		
 	}
 
+	@Override
+	public int HitsUpdate(int bnum) {
+		return session.update("jspHitsUpdate", bnum);
+	}
+
 }

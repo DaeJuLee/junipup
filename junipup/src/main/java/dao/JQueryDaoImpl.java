@@ -70,4 +70,14 @@ public class JQueryDaoImpl implements JQueryDao {
 		session.insert("pointUp5", member);
 		
 	}
+
+	@Override
+	public Member selectNickname(String nickname) {
+		return session.selectOne("selectNickname", nickname);
+	}
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return session.update("jQueryHitsUpdate", bnum);
+	}
 }

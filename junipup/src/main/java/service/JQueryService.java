@@ -17,4 +17,5 @@ public interface JQueryService {
 	List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard);
 	int totalJQueryCategory(String category);
 	void jQueryPointUp5(Member member);
+	public int HitsUpdate(int bnum);
 }

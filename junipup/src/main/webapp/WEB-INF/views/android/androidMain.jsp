@@ -26,13 +26,15 @@ jQuery(function($){
 	}
 });
 
-function go_pop(nick) {
-	window.open(
-					"androidPop.do?nickname="+nick,
-					"new",
-					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
-					"background='yellow'");
-}
+function go_pop(receiver, sender) {
+	var nikk = '${USER_KEY.nickname}';
+
+		window.open(
+						"jspPop.do?receiver="+receiver+"&sender="+sender,
+						"new",
+						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+						"background='yellow'");
+	}
 </script> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
@@ -95,6 +97,7 @@ function go_pop(nick) {
 			<th width="15%" >닉네임</th>
 			<th width="50%" >제목</th>
 			<th width="15">작성일</th>
+			<th width="5%">조회수</th>
 		</tr>
 		
 		<c:set var="noticenum" value="4" />	
@@ -105,6 +108,7 @@ function go_pop(nick) {
 		<td>${notice.nickname }</td>		
 		<td><a href="noticeDetail.do?bnum=${notice.bnum }">${notice.title }</a></td>
 		<td>${notice.b_date }</td>
+		<td>${notice.hits }</td>		
 		</tr>
 	<c:set var="noticenum" value="${noticenum-1 }" />	
 	</c:forEach>
@@ -113,8 +117,10 @@ function go_pop(nick) {
 			<tr>
 				<td>${num }</td>
 				<td>${android.category }</td>
-				<td><input type="button" value="${android.nickname }" onclick="go_pop('${android.nickname}')" class="button"></td>
+				<td><input type="button" value="${android.nickname }" onclick="go_pop('${android.nickname}','${USER_KEY.nickname}')" class="button"></td>
 				<td><a href="androidDetail.do?bnum=${android.bnum}">${android.title }</a></td>
+				<td>${android.b_date }</td>
+				<td>${android.hits }</td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>

@@ -84,7 +84,9 @@ public class JspController {
 	@RequestMapping(value = "jspDetail")
 	public String jspDetail(int bnum, Model model){
 		JspBoard jsp = service.jspDetail(bnum);
+		service.HitsUpdate(bnum);
 		model.addAttribute("jspDetail", jsp);
+		model.addAttribute("modify", "true");
 		return "/jsp/jspDetail";
 	}
 	

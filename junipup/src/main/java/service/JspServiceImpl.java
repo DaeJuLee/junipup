@@ -57,4 +57,10 @@ public class JspServiceImpl implements JspService{
 		
 	}
 
+	@Override
+	public int HitsUpdate(int bnum) {
+		return dao.HitsUpdate(bnum);
+	
+	}
+
 }

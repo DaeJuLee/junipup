@@ -60,4 +60,9 @@ public class JavaServiceImpl implements JavaService{
 		dao.javaPointUp5(member);
 	}
 
+	@Override
+	public int HitsUpdate(int bnum) {
+		return dao.HitsUpdate(bnum);
+	}
+
 }

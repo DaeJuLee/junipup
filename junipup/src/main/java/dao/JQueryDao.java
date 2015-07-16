@@ -17,4 +17,6 @@ public interface JQueryDao {
 	List<JQueryBoard> listJQueryCategory(JQueryBoard JQueryboard);
 	public int totalJQueryCategory(String category);
 	void jQueryPointUp5(Member member);
+	Member selectNickname(String nickname);
+	public int HitsUpdate(int bnum);
 }

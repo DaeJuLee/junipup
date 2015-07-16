@@ -6,6 +6,7 @@ import java.util.List;
 
 
 
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -70,6 +71,16 @@ public class Html5DaoImpl implements Html5Dao{
 	@Override
 	public void htmlPointUp5(Member member) {
 		session.insert("pointUp5", member);
+	}
+
+	@Override
+	public Member selectNickname(String nickname) {
+		return session.selectOne("selectNickname", nickname);
+	}
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return session.update("html5HitsUpdate", bnum);
 	}
 
 }

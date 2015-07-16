@@ -84,7 +84,9 @@ public class JavaController {
 	@RequestMapping(value = "javaDetail")
 	public String javaDetail(int bnum, Model model){
 		JavaBoard java = service.javaDetail(bnum);
+		service.HitsUpdate(bnum);
 		model.addAttribute("javaDetail", java);
+		model.addAttribute("modify", "true");
 		return "/java/javaDetail";
 	}
 	

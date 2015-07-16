@@ -72,4 +72,8 @@
 	<select id="totalHtml5Category" parameterType="String" resultType="int" >
 		select count(*) from html5 where category = #{category}
 	</select>
+		
+	<update id="html5HitsUpdate" parameterType="int">
+	<![CDATA[ update html5 set hits = hits+1 where bnum=#{bnum} ]]>
+	</update>
 </mapper>

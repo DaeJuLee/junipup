@@ -17,4 +17,5 @@ public interface JspDao {
 	List<JspBoard> listJspCategory(JspBoard db);
 	void jspPointUp5(Member member);
 	Member selectNickname(String nickname);
+	public int HitsUpdate(int bnum);
 }

@@ -16,4 +16,6 @@ public interface JavaDao {
 	public int totalJavaCategory(String category);
 	List<JavaBoard> listJavaCategory(JavaBoard java);
 	void javaPointUp5(Member member);
+	Member selectNickname(String nickname);
+	public int HitsUpdate(int bnum);
 }
