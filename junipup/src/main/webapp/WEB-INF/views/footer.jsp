@@ -17,6 +17,6 @@
 		&nbsp;&nbsp;
 		&copy;2011 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://211.183.2.57:8181/junipup/main.do">tobogo.net</a>.
 	</p>
-	</div>
+	</div>  
 </body>
 </html>
