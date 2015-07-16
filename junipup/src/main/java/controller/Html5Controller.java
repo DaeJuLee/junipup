@@ -84,7 +84,9 @@ public class Html5Controller {
 	@RequestMapping(value="html5Detail")
 	public String html5Detail(Model model, int bnum) {
 		Html5Board html5 = hs.html5Detail(bnum);
+		hs.HitsUpdate(bnum);
 		model.addAttribute("html5Detail", html5);
+		model.addAttribute("modify", "true");
 		return "/html5/html5Detail";
 	}
 	

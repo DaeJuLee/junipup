@@ -68,4 +68,14 @@ public class JavaDaoImpl implements JavaDao {
 		
 	}
 
+	@Override
+	public Member selectNickname(String nickname) {
+		return session.selectOne("selectNickname", nickname);
+	}
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return session.update("HitsUpdate", bnum);
+	}
+
 }

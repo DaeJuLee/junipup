@@ -83,7 +83,9 @@ public class JQueryController {
 	@RequestMapping(value="jQueryDetail")
 	public String JQueryDetail(Model model, int bnum) {
 		JQueryBoard jquery = js.JQueryDetail(bnum);
+		js.HitsUpdate(bnum);
 		model.addAttribute("jQueryDetail", jquery);
+		model.addAttribute("modify", "true");
 		return "/jQuery/jQueryDetail";
 	}
 	

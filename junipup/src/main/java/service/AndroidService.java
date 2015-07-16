@@ -18,4 +18,5 @@ public interface AndroidService {
 	List<AndroidBoard> listAndroidCategory(AndroidBoard android);
 	int totalAndroidCategory(String category);
 	void androidPointUp5(Member member);
+	public int HitsUpdate(int bnum);
 }

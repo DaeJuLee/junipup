@@ -16,4 +16,5 @@ public interface Html5Service {
 	public int totalHtml5Category(String category);
 	List<Html5Board> listHtml5Category(Html5Board html5);
 	void htmlPointUp5(Member member);
+	public int HitsUpdate(int bnum);
 }

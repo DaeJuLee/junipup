@@ -74,7 +74,7 @@
 		bnum = #{bnum}
 	</update>
 	
-	<update id="HitsUpdate" parameterType="int">
+	<update id="DBHitsUpdate" parameterType="int">
 	<![CDATA[ update DB set hits = hits+1 where bnum=#{bnum} ]]>
 	</update>
 	

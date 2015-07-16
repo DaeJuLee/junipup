@@ -58,4 +58,10 @@ public class JQueryServiceImpl implements JQueryService {
 	public void jQueryPointUp5(Member member) {
 		jd.jQueryPointUp5(member);
 	}
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return jd.HitsUpdate(bnum);
+		
+	}
 }

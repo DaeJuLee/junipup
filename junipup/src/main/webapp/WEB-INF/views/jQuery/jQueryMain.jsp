@@ -28,13 +28,15 @@ jQuery(function($){
 	}
 });
 
-function go_pop(nick) {
-	window.open(
-					"javaPop.do?nickname="+nick,
-					"new",
-					"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
-					"background='yellow'");
-}
+function go_pop(receiver, sender) {
+	var nikk = '${USER_KEY.nickname}';
+
+		window.open(
+						"jspPop.do?receiver="+receiver+"&sender="+sender,
+						"new",
+						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+						"background='yellow'");
+	}
 </script> 
 </head>
 <body> 
@@ -104,6 +106,7 @@ function go_pop(nick) {
 		<td>${notice.nickname }</td>		
 		<td><a href="noticeDetail.do?bnum=${notice.bnum }">${notice.title }</a></td>
 		<td>${notice.b_date }</td>
+		<td>${notice.hits }</td>
 		</tr>
 	<c:set var="noticenum" value="${noticenum-1 }" />	
 	</c:forEach>
@@ -112,8 +115,10 @@ function go_pop(nick) {
 			<tr>
 				<td>${num }</td>
 				<td>${jQuery.category }</td>
-				<td><input type="button" value="${jQuery.nickname }" onclick="go_pop('${jQuery.nickname}')" class="button"></td>
+				<td><input type="button" value="${jQuery.nickname }" onclick="go_pop('${jQuery.nickname}', '${USER_KEY.nickname}')" class="button"></td>
 				<td><a href="jQueryDetail.do?bnum=${jQuery.bnum}">${jQuery.title }</a></td>
+				<td>${jQuery.b_date }</td>
+				<td>${jQuery.hits }</td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>

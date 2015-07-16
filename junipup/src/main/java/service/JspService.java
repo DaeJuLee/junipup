@@ -16,4 +16,5 @@ public interface JspService {
 	public int totalJspCategory(String category);
 	List<JspBoard> listJspCategory(JspBoard db);
 	void jspPointUp5(Member member);
+	public int HitsUpdate(int bnum);
 }

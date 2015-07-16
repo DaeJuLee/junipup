@@ -16,4 +16,5 @@ public interface JavaService {
 	public int totalJavaCategory(String category);
 	List<JavaBoard> listJavaCategory(JavaBoard java);
 	void javaPointUp5(Member member);
+	public int HitsUpdate(int bnum);
 }

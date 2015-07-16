@@ -17,4 +17,6 @@ public interface AndroidDao {
 	List<AndroidBoard> listAndroidCategory(AndroidBoard android);
 	int totalAndroidCategory(String category);
 	void androidPointUp5(Member member);
+	Member selectNickname(String nickname);
+	public int HitsUpdate(int bnum);
 }

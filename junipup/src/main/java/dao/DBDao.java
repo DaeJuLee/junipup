@@ -18,4 +18,5 @@ public interface DBDao {
 	List<DBBoard> listDBCategory(DBBoard db);
 	void DBPointUp5(Member member);
 	public int HitsUpdate(int bnum);
+	Member selectNickname(String nickname);
 }

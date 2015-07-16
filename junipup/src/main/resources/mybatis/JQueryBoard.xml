@@ -73,5 +73,7 @@
 	<select id="totalJQuery" resultType="int" >
 		select count(*) from JQuery
 	</select>
-
+	<update id="jQueryHitsUpdate" parameterType="int">
+	<![CDATA[ update jQuery set hits = hits+1 where bnum=#{bnum} ]]>
+	</update>
 </mapper>

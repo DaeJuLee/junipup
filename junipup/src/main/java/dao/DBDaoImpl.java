@@ -75,6 +75,11 @@ public class DBDaoImpl implements DBDao {
 	}
 	@Override
 	public int HitsUpdate(int bnum) {
-		return session.update("HitsUpdate", bnum);
+		return session.update("DBHitsUpdate", bnum);
+	}
+
+	@Override
+	public Member selectNickname(String nickname) {
+		return session.selectOne("selectNickname", nickname);
 	}
 }
