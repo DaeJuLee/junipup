@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 	<p><!-- 광고문의 -->
 		&nbsp;&bull;&nbsp;
 		<a href="adMessageForm.do">광고 / 제휴문의</a>
