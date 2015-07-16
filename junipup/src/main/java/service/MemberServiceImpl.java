@@ -96,8 +96,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public int deleteMember(Member member) {
-		return md.deleteMember(member);
+	public int deleteMember(String nickname) {
+		return md.deleteMember(nickname);
 	}
 	@Override
 	public void pointup2(String nickname) {

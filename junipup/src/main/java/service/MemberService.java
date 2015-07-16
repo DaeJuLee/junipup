@@ -18,7 +18,7 @@ public interface MemberService {
 	public Member selectNickname(String nickname);
 	public Member selectEmail(String email);
 	public int updateMember(Member member);
-	public int deleteMember(Member member);
+	public int deleteMember(String nickname);
 	public void pointup2(String nickname);
 	public void pointup5(String nickname);
 	public void pointup7(String nickname);

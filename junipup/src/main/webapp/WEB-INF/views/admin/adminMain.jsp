@@ -18,7 +18,7 @@
 			window.open(
 						"mailSendForm.do?recever="+recever,
 						"new",
-						"width=370, height=360, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
+						"width=500, height=320, resizable=no, scrollbars=no, status=no, location=no, directories=no; left=450; top=250"+
 						"background='yellow'");
 	}
 

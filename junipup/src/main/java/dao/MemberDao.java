@@ -20,7 +20,7 @@ public interface MemberDao {
 	public Member selectNickname(String nickname);
 	public Member selectEmail(String email);
 	public int updateMember(Member member);
-	public int deleteMember(Member member);
+	public int deleteMember(String nickname);
 	public void pointUp2(String nickname);
 	public void pointUp5(String nickname);
 	public void pointUp7(String nickname);

@@ -66,7 +66,7 @@
 		where email = #{email}
 	</update>
 	<delete id="deleteMember" parameterType="String">
-		delete from member where id = #{id}
+		delete from member where nickname = #{nickname}
 	</delete>
 	<select id="list" parameterType="Member" resultMap="MemberResult">
     	select * from (select rownum rn, a.* from (select * from member

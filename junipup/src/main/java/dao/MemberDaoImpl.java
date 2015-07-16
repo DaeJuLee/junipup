@@ -96,8 +96,8 @@ public class MemberDaoImpl implements MemberDao {
 
 
 	@Override
-	public int deleteMember(Member member) {
-		return session.update("deleteMember", member);
+	public int deleteMember(String nickname) {
+		return session.update("deleteMember", nickname);
 	}
 	public List<Member> memberList(Member member) {
 		return session.selectList("list", member);

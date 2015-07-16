@@ -305,13 +305,37 @@ jQuery(function($){
 				<!-- 공지사항  -->
 			</div>
 		</div>
-
+		
 		<div class="right_center">
 			<div class="banner">
 				<table border="1">
 					<col width="350px">
-					<tr height="130px">
-						<td class="wow"><img src="images/cap01.JPG"/></td>
+					<tr height="75px">
+						<td class="wow"><a href="adMessageForm.do"><img src="images/ad.jpg"/></td>
+					<tr>
+				</table>
+			</div>
+			<div class="banner">
+				<table border="1">
+					<col width="350px">
+					<tr height="70px">
+						<td class="wow"><a href="http://www.choongang.co.kr/" target="_blank"><img src="images/cap01.JPG"/></a></td>
+					<tr>
+				</table>
+			</div>
+			<div class="banner">
+				<table border="1">
+					<col width="350px">
+					<tr height="75px">
+						<td class="wow"><a href="http://www.choongang.co.kr/" target="_blank"><img src="images/cap02.JPG"/></td>
+					<tr>
+				</table>
+			</div>
+			<div class="banner">
+				<table border="1">
+					<col width="350px">
+					<tr height="100px">
+						<td class="wow"><a href="http://www.work.go.kr/index.jsp" target="_blank"><img src="images/cap03.JPG"/></td>
 					<tr>
 				</table>
 			</div>
@@ -319,23 +343,8 @@ jQuery(function($){
 				<table border="1">
 					<col width="350px">
 					<tr height="130px">
-						<td class="wow">배너광고를 구합니다~</td>
-					<tr>
-				</table>
-			</div>
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="130px">
-						<td class="wow">배너광고를 구합니다~</td>
-					<tr>
-				</table>
-			</div>
-			<div class="banner">
-				<table border="1">
-					<col width="350px">
-					<tr height="130px">
-						<td class="wow">배너광고를 구합니다~</td>
+						<td class="wow"><a href="http://www.saramin.co.kr/zf_user/" target="_blank"><img src="images/cap04.JPG"/></td>
+						
 					<tr>
 				</table>
 			</div>

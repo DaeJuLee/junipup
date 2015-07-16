@@ -43,7 +43,8 @@ public class AdminController {
 	
 	@RequestMapping(value="completeDelete")
 	public String completeDelete(Model model, String nickname) {
-		as.adminDelete(nickname);
+		ms.deleteMember(nickname);
+	
 		return "redirect:adminMain.do";
 	}
 }
