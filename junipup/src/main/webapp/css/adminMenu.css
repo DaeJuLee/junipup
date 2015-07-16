@@ -69,32 +69,8 @@
   background: linear-gradient(#72d4f2, #54cdf1);
   border-color: transparent;
 }
-/* The arrow indicating a submenu */
-#adminMenu > ul .has-sub > a::after {
-  content: "";
-  position: absolute;
-  top: 16px;
-  right: 10px;
-  width: 0px;
-  height: 0px;
-  /* Creating the arrow using borders */
 
-  border: 4px solid transparent;
-  border-left: 4px solid #d8d8d8;
-}
-/* The same arrow, but with a darker color, to create the shadow effect */
-#adminMenu > ul .has-sub > a::before {
-  content: "";
-  position: absolute;
-  top: 17px;
-  right: 10px;
-  width: 0px;
-  height: 0px;
-  /* Creating the arrow using borders */
 
-  border: 4px solid transparent;
-  border-left: 4px solid #000;
-}
 /* Changing the color of the arrow on hover */
 #adminMenu > ul li > a:hover::after,
 #adminMenu > ul li:hover > a::after {
