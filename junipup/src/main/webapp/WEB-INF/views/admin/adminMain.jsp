@@ -5,6 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
+<link rel="stylesheet" type="text/css" href="css/adminMenu.css">
 <link rel="stylesheet" type="text/css" href="css/board.css">
 <link rel="stylesheet" type="text/css" href="css/pagination.css">
 <link rel="stylesheet" type="text/css" href="css/button.css">
@@ -22,7 +24,7 @@
 
 
 </script>
-     
+      
     <style>
         #checkboxTestTbl {border-collapse: collapse;}
         #checkboxTestTbl th{background-color: #ccc;}        
@@ -31,6 +33,31 @@
 </head>
  
 <body>
+	<div id='adminMenu'>
+	<ul>
+	   <li><a href='#'><span>관리자페이지</span></a></li>
+	   <li class='active has-sub'><a href='#'><span>메일함</span></a>
+	      <ul>
+	         <li class='has-sub'><a href='#'><span>Product 1</span></a>
+	            <ul>
+	               <li><a href='#'><span>Sub Product</span></a></li>
+	               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+	            </ul>
+	    </li>
+	         <li class='has-sub'><a href='#'><span>Product 2</span></a>
+	            <ul>
+	               <li><a href='#'><span>Sub Product</span></a></li>
+	               <li class='last'><a href='#'><span>Sub Product</span></a></li>
+	            </ul>
+	         </li>
+	      </ul>
+	   </li>
+	   <li><a href='#'><span>About</span></a></li>
+	   <li class='last'><a href='#'><span>Contact</span></a></li>
+	</ul>
+	</div>
+	
+	<div style="padding-left: 20px">
     <!-- <table id="checkboxTestTbl" border="1px" > -->
     <table class="tbl" align="center">
         <caption>가입 명단</caption>
@@ -69,13 +96,13 @@
 			<td>${admin.maxPoint }</td>
 			<td>${admin.regDate}</td>
 			<td>${admin.loginDate}</td>
-			<td><a href="memberDeleteCheck.do?nickname=${admin.nickname }">삭제</a></td>
-			<td><button onclick="go_pop('${admin.email}')">MailSend</button></td>	
+			<td><a href="memberDeleteCheck.do?nickname=${admin.nickname }">삭제하기</a></td>
+			<td><button onclick="go_pop('${admin.email}')">메일보내기</button></td>	
         </tr>
         
         <c:set var="num" value="${num-1 }" /> 
 	</c:forEach>
-    </table>
+    </table>    
    <div class="paginate">
 	<c:if test="${pg.startPage > pg.pageBlock}">		
 		<%-- <a href="DBMain.do?currentPage=${pg.startPage-pg.pageBlock }" class="pre">이전</a> --%>
@@ -91,6 +118,7 @@
 		<button type="button" class="button" onclick="location.href='adminMain.do?currentPage=${pg.startPage+pg.pageBlock}'">다음</button>
 	</c:if>
 	</div>
-	   
+	</div>   
+	
 </body>
 </html>
