@@ -33,7 +33,7 @@
 <body>
     <!-- <table id="checkboxTestTbl" border="1px" > -->
     <table class="tbl" align="center">
-        <caption>가입 명단</caption>
+        <caption>이메일 템플릿</caption>
        <colgroup>
             <col width="100px;"/>
             <col width="100px;"/>
@@ -41,35 +41,18 @@
         </colgroup> 
         <tr>
             
-            <th>닉네임</th>
-			<th>사진</th>
-			<th>암호</th>
-			<th>이름</th>
-			<th>연락처</th>
-			<th>이메일</th>
-			<th>등급</th>
-			<th>사용포인트</th>
-			<th>최대포인트</th>
+            <th>제목</th>
 			<th>날짜</th>
-			<th>출석도장</th>
 			<th>삭제</th>
-			<th>메일보내기</th>
+			<th>수정</th>
+			
         </tr>
-        <c:forEach var="admin" items="${adminMain }">
+        <c:forEach var="email" items="${email }">
         <tr>
             
-            <td>${admin.nickname }</td>
-			<td>${admin.photo }</td>
-			<td>${admin.password }</td>
-			<td>${admin.name }</td>
-			<td>${admin.phoneNumber }</td>
-			<td>${admin.email }</td>
-			<td>${admin.mrank }</td>
-			<td>${admin.usePoint }</td>
-			<td>${admin.maxPoint }</td>
-			<td>${admin.regDate}</td>
-			<td>${admin.loginDate}</td>
-			<td><a href="memberDeleteCheck.do?nickname=${admin.nickname }">삭제</a></td>
+            <td>${email.title }</td>
+			<td>${email.regdate }</td>
+			<td><a href="memberDeleteCheck.do?title=${email.title }">삭제</a></td>
 			<td><button onclick="go_pop('${admin.email}')">MailSend</button></td>	
         </tr>
         

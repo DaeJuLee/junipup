@@ -15,7 +15,7 @@
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>android 게시판</title>
+<title></title>
 <style type="text/css">
 #boardWriteForm {
 	margin: 30px 0;

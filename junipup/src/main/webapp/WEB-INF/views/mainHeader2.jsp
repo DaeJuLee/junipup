@@ -41,6 +41,11 @@ width : 90px;
 #right img {
 margin: 10px 0 3px 0;
 }
+
+
+
+
+
 </style>
 
 </head>
@@ -70,6 +75,7 @@ margin: 10px 0 3px 0;
 					</c:otherwise>
 				</c:choose>									
 		</div>
+	
 		
 		<div id="h2" >			
 			<div align="center">
@@ -86,10 +92,10 @@ margin: 10px 0 3px 0;
 		</c:when>
 		
 		<c:otherwise>
-			<div class="login_div" align="right">	
+		 <div class="login_div" align="right">
 				
 				${USER_KEY.nickname } 
-				<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Brone.png" width="30" height="30"/></c:if>
+				<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Brone.png"/></c:if>
 				<c:if test="${USER_KEY.maxPoint > '200'}"><img src="images/Silver.png"/></c:if>
 				<c:if test="${USER_KEY.maxPoint > '300'}"><img src="images/Gold.png"/></c:if>
 				<c:if test="${USER_KEY.maxPoint > '400'}"><img src="images/a.jpg"/></c:if>
@@ -100,9 +106,11 @@ margin: 10px 0 3px 0;
 				${USER_KEY.maxPoint } |
 				${USER_KEY.mrank} |				
 				${USER_KEY.usePoint } |							
-			</div>
+	 		</div> 
 		</c:otherwise>
+		
 		</c:choose>   
+		
 	</div>
 	<!-- wrab 끝 -->
 	<nav>

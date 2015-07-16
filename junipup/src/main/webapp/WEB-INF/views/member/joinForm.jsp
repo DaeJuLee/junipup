@@ -217,7 +217,7 @@ $(function(){
 		 	<col width="35%" /> 
 			<!-- <col width="40%" />  -->
 		</colgroup> 
-		<tr><th colspan="3" id="title"><h2>회원가입</h2></th></tr>
+		<tr><th colspan="3" id="title"><font size="2em">회원정보수정</font></th></tr>
 		<tr><th colspan="1">아이디</th>
 		
 			<td><input title="Email을 입력해 주세요" type="email" name="email" id="email" class="inputText" required="required">

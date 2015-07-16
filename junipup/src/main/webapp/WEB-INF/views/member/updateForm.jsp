@@ -21,16 +21,17 @@
 	}
 	.join_tbl th {
 		width: 980px; border-collapse:collapse; border-spacing:0; border-top:2px solid #ddd;
-			border-bottom:2px solid #ddd; font-size:11px; font-family:dotum; margin-bottom:30px
+			border-bottom:2px solid #ddd; font-size:11px; font-family:dotum; margin-bottom:30px;
+		
 	}
 	.join_tbl td {
-		padding:5px 15px; border-bottom:1px solid #ddd
+		padding:5px 15px; border-bottom:1px solid #ddd;
 	}
 	.join_tbl td .inputText {
-		width:100px; border:1px solid #ccc
+		width:100px; border:1px solid #ccc;
 	}
 	.join_tbl td span {
-		color:#888
+		color:#888;
 	}
 	
 </style>
@@ -173,7 +174,7 @@ $(function(){
 		 	<col width="35%" /> 
 			<!-- <col width="40%" />  -->
 		</colgroup> 
-		<tr><th colspan="3" id="title"><h2>회원정보수정</h2></th></tr>
+		<tr><th colspan="3" id="title"><div id = "title"><font size="2em">회원정보수정</font></div></th></tr>
 		<tr><th colspan="1">아이디</th>
 		
 			<td><input type="email" name="email" id="email" value="${USER_KEY.email}" disabled="disabled" class="inputText" required="required">
