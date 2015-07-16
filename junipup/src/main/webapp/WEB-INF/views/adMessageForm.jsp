@@ -51,7 +51,7 @@ function check_submit(obj){
 					<td class="view" height="28"><b>E-mail </b></td>
 					<td class="end" style="text-align:left"><input type="text" name="email" size="35" maxlength="255" value="" class="input"></td>
 				</tr>				
-				<tr>
+				<tr> 
 					<td class="view" height="28"><b>Homepage</b></td>
 					<td class="end" style="text-align:left">&nbsp;<input type="text" name="homepage" size="50" maxlength="255" value=""  class="input"> 광고할 홈페이지 주소를 입력해주세요.</td>
 				</tr>		
