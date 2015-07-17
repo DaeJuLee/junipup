@@ -75,7 +75,7 @@ public class JavaDaoImpl implements JavaDao {
 
 	@Override
 	public int HitsUpdate(int bnum) {
-		return session.update("HitsUpdate", bnum);
+		return session.update("javaHitsUpdate", bnum);
 	}
 
 }

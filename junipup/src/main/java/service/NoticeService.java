@@ -15,4 +15,5 @@ public interface NoticeService {
 	public int noticeUpdate(NoticeBoard notice);
 	public int totalNoticeCategory(String category);
 	List<NoticeBoard> listNoticeCategory(NoticeBoard notice);
+	public int HitsUpdate(int bnum);
 }

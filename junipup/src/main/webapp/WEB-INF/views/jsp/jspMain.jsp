@@ -95,6 +95,7 @@ jQuery(function($){
 			<th width="15%" >닉네임</th>
 			<th width="50%" >제목</th>
 			<th width="15">작성일</th>
+			<th width="5%">조회수</th>
 		</tr>
 		
 	<c:set var="noticenum" value="4" />	
@@ -105,6 +106,7 @@ jQuery(function($){
 		<td>${notice.nickname }</td>		
 		<td><a href="noticeDetail.do?bnum=${notice.bnum }">${notice.title }</a></td>
 		<td>${notice.b_date }</td>
+		<td>${notice.hits }</td>
 		</tr>
 	<c:set var="noticenum" value="${noticenum-1 }" />	
 	</c:forEach>
@@ -115,6 +117,8 @@ jQuery(function($){
 				<td>${jsp.category }</td>
 				<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}', '${USER_KEY.nickname}')" class="button"></td>			
 				<td><a href="jspDetail.do?bnum=${jsp.bnum}">${jsp.title }</a></td>
+				<td>${jsp.b_date }</td>
+				<td>${jsp.hits }</td>
 			</tr>
 			<c:set var="num" value="${num-1 }" />
 		</c:forEach>

@@ -80,7 +80,7 @@
 		#{empno}, #{ename}, #{job}, #{mgr} , sysdate, #{sal}, #{comm}, #{deptno} )
 	</insert>
 	 -->
-	<update id="java5HitsUpdate" parameterType="int">
+	<update id="javaHitsUpdate" parameterType="int">
 	<![CDATA[ update java set hits = hits+1 where bnum=#{bnum} ]]>
 	</update>
 </mapper>

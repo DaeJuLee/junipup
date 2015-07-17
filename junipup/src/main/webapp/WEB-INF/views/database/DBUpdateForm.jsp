@@ -40,8 +40,7 @@
 			<td><div class="contentDiv"><textarea rows="10" cols="50" id="txtContent" 
 			name="content" required="required" style="width:100%;">${DBDetail.content }</textarea></div></td></tr>
 	</table>
-	<input type="button" value="목록보기" 
-		onclick="location.href='DBMain.do'" class="button">
+	
 	<div class="buttonDiv">
 			<c:if test="${modify == 'true'}">
 				<button type="button" class="btn btn-primary" onclick="onModify()">수정</button>

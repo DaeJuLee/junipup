@@ -94,6 +94,7 @@ function go_pop(receiver, sender) {
 			<th width="15%" >닉네임</th>
 			<th width="50%" >제목</th>
 			<th width="15">작성일</th>
+			<th width="5%">조회수</th>
 		</tr>
 		
 		<c:set var="noticenum" value="4" />	
