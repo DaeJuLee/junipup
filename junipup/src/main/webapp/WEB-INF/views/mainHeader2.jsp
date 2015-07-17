@@ -51,7 +51,7 @@
 			<div id="wrab_top_center">
 				<div>
 					<div align="center">
-						<a href="main.do"><img src="images/junipup.jpg" width="100px"></a>
+						<a href="main.do"><img src="images/New_Logo3.png" width="50px"></a>
 					</div>
 				</div>
 			</div>
