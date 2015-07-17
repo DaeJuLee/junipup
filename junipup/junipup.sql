@@ -15,7 +15,8 @@ loginDate date
 update member set regDate = '20150601' where nickname='master';
 update attend set attend = '010101010101011' where nickname='master';
 select * from attend;
-delete from member where nickname = '이대주씨';
+select * from member;
+delete from member where nickname = 'dndhkdnk';
 delete from member where nickname = '12321';
 delete from member where nickname = 'admin';
 delete from member where nickname = 'mdasd';
@@ -289,3 +290,4 @@ insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '1110001110001110');
 update attend set attend = '0101010101010110' where nickname='pmh';
 update attend set attend = '0101010101010110' where nickname='과천주니';
 update member set maxpoint = '900' where nickname='master';
+
