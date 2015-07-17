@@ -36,24 +36,14 @@
 	<div id='adminMenu'>
 	<ul>
 	   <li><a href='#'><span>관리자페이지</span></a></li>
-	   <li class='active has-sub'><a href='#'><span>메일함</span></a>
+	   <li class='active has-sub'><a href='#'><span>쪽지함</span></a>
 	      <ul>
-	         <li class='has-sub'><a href='#'><span>Product 1</span></a>
-	            <ul>
-	               <li><a href='#'><span>Sub Product</span></a></li>
-	               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-	            </ul>
+	         <li class='has-sub'><a href='sendingmessage.do?nickname='${USER_KEY.nickname }><span>보낸쪽지함</span></a>
+	            
 	    </li>
-	         <li class='has-sub'><a href='#'><span>Product 2</span></a>
-	            <ul>
-	               <li><a href='#'><span>Sub Product</span></a></li>
-	               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-	            </ul>
-	         </li>
-	      </ul>
+	         <li class='has-sub'><a href='recevingmessage.do?nickname='${USER_KEY.nickname }'><span>받은쪽지함</span></a>
 	   </li>
-	   <li><a href='#'><span>About</span></a></li>
-	   <li class='last'><a href='#'><span>Contact</span></a></li>
+	
 	</ul>
 	</div>
 	

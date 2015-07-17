@@ -15,7 +15,7 @@ public class MessageDaoImpl implements MessageDao {
 	private SqlSession session;
 	
 	public int insertMessage(Messaging message) {
-		System.out.println("여긴 다오");
+	
 		return session.insert("insertMessage", message);
 	}
 
@@ -41,6 +41,13 @@ public class MessageDaoImpl implements MessageDao {
 	@Override
 	public Messaging selectMessageNick(int mnum) {
 		return session.selectOne("selectMessageNick", mnum);
+	}
+
+
+	@Override
+	public List<Messaging> listMessagereceiver(String nickname) {
+	
+		return session.selectList("listMessagereceiver", nickname);
 	}
 
 
