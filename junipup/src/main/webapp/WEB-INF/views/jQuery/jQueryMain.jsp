@@ -116,7 +116,16 @@ function go_pop(receiver, sender) {
 			<tr>
 				<td>${num }</td>
 				<td>${jQuery.category }</td>
-				<td><input type="button" value="${jQuery.nickname }" onclick="go_pop('${jQuery.nickname}', '${USER_KEY.nickname}')" class="button"></td>
+				<c:choose>
+					<c:when test="${empty USER_KEY}">
+						<td><input type="button" value="${jQuery.nickname }" onclick="location.href='login.do'" class="button"></td>
+					</c:when>
+		
+					<c:otherwise>
+						<td><input type="button" value="${jQuery.nickname }" onclick="go_pop('${jQuery.nickname}', '${USER_KEY.nickname}')" class="button"></td>
+					</c:otherwise>
+				</c:choose>
+				
 				<td><a href="jQueryDetail.do?bnum=${jQuery.bnum}">${jQuery.title }</a></td>
 				<td>${jQuery.b_date }</td>
 				<td>${jQuery.hits }</td>

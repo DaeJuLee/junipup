@@ -119,7 +119,15 @@ function go_pop(receiver, sender) {
 			<td>${num }</td>
 			<td>${db.category }</td> <!-- 눈에 띄게 !!!@#!@#!@#!@# -->
 			<!-- onclick="toggle(document.all.hideshow)" -->
-			<td><input type="button" value="${db.nickname }" onclick="go_pop('${db.nickname}','${USER_KEY.nickname}')" class="button"></td>
+			<c:choose>
+				<c:when test="${empty USER_KEY}">
+					<td><input type="button" value="${db.nickname }" onclick="location.href='login.do'" class="button"></td>
+				</c:when>
+	
+				<c:otherwise>
+					<td><input type="button" value="${db.nickname }" onclick="go_pop('${db.nickname}','${USER_KEY.nickname}')" class="button"></td>
+				</c:otherwise>
+			</c:choose>
 			<%-- <td><button class="more" value="${db.nickname }">${db.nickname }</button></td> --%>
 			<%-- <td><button class="more" value="${db.nickname }" onclick="toggle(document.all.hideshow)">${db.nickname }</button></td> --%>
 			<!-- onclick="toggle(document.all.hideshow)" -->

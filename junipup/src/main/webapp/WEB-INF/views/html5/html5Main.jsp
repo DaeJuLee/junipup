@@ -114,7 +114,16 @@ function go_pop(receiver, sender) {
 			<tr>
 				<td>${num }</td>
 				<td>${html5.category }</td>
-				<td><input type="button" value="${html5.nickname }" onclick="go_pop('${html5.nickname}','${USER_KEY.nickname}')" class="button"></td>
+			<c:choose>
+				<c:when test="${empty USER_KEY}">
+					<td><input type="button" value="${html5.nickname }" onclick="location.href='login.do'" class="button"></td>
+				</c:when>
+	
+				<c:otherwise>
+					<td><input type="button" value="${html5.nickname }" onclick="go_pop('${html5.nickname}','${USER_KEY.nickname}')" class="button"></td>
+				</c:otherwise>
+			</c:choose>
+				
 				<td><a href="html5Detail.do?bnum=${html5.bnum}">${html5.title }</a></td>
 				<td>${html5.b_date }</td>
 				<td>${html5.hits }</td>

@@ -115,7 +115,16 @@ jQuery(function($){
 			<tr>
 				<td>${num }</td>
 				<td>${jsp.category }</td>
-				<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}', '${USER_KEY.nickname}')" class="button"></td>			
+				<c:choose>
+					<c:when test="${empty USER_KEY}">
+						<td><input type="button" value="${jsp.nickname }" onclick="location.href='login.do'" class="button"></td>
+					</c:when>
+		
+					<c:otherwise>
+						<td><input type="button" value="${jsp.nickname }" onclick="go_pop('${jsp.nickname}', '${USER_KEY.nickname}')" class="button"></td>
+					</c:otherwise>
+				</c:choose>
+						
 				<td><a href="jspDetail.do?bnum=${jsp.bnum}">${jsp.title }</a></td>
 				<td>${jsp.b_date }</td>
 				<td>${jsp.hits }</td>

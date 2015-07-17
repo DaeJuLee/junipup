@@ -115,7 +115,16 @@ function go_pop(receiver, sender) {
 			<tr>
 				<td>${num }</td>
 				<td>${java.category }</td>
-				<td><input type="button" value="${java.nickname }" onclick="go_pop('${java.nickname}', '${USER_KEY.nickname}')" class="button"></td>
+				<c:choose>
+					<c:when test="${empty USER_KEY}">
+						<td><input type="button" value="${java.nickname }" onclick="location.href='login.do'" class="button"></td>
+					</c:when>
+		
+					<c:otherwise>
+						<td><input type="button" value="${java.nickname }" onclick="go_pop('${java.nickname}', '${USER_KEY.nickname}')" class="button"></td>
+					</c:otherwise>
+				</c:choose>
+				
 				<td><a href="javaDetail.do?bnum=${java.bnum}">${java.title }</a></td>
 				<td>${java.b_date }</td>
 				<td>${java.hits }</td>

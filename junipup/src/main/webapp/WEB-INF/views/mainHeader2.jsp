@@ -156,7 +156,17 @@
 						<li><a href="html5Main.do?category=응용게시판">응용게시판</a></li>
 					</ul></li>
 				<li class="QNA"><a href="#">QnA</a></li>
-				<li class="Check"><a href="attendCheck.do?nickname=${USER_KEY.nickname }">출석체크!</a></li>
+				<li class="Check">
+					<c:choose>
+						<c:when test="${empty USER_KEY}">
+							<a href="login.do">출석체크!</a>
+						</c:when>
+	
+						<c:otherwise>
+							<a href="attendCheck.do?nickname=${USER_KEY.nickname }">출석체크!</a>
+						</c:otherwise>
+					</c:choose>
+				</li>
 				<%-- <li class="Message"><a href="messageCheck.do?nickname=${USER_KEY.nickname }">Message</a></li> --%>
 			</ul>
 			<!-- id="menu" 끝 -->
