@@ -24,7 +24,7 @@ function init(){
 	var newLine = ${attendCheck.newLine};
 	/* var attend = '${attendCheck.attend}'; */
 	/* alert(attend); */
-	alert('day : ' + day);
+	/* alert('day : ' + day); */
 	/* alert(chulstate); */
 	var str = "";
 	var monthHtml = ${attendCheck.month};
@@ -77,7 +77,7 @@ $(function(){
 	var yearyear;
 	var monthmonth=13;
 	var nickname='${USER_KEY.nickname}';
-	alert(nickname);
+	/* alert(nickname); */
 	$("#before_button").click(function(){
 		/* alert(chulstate); */
 		var year1 = ${attendCheck.year};
@@ -159,7 +159,7 @@ $(function(){
 	});
 	
 	$("#after_button").click(function(){
-		alert(chulstate);
+		/* alert(chulstate); */
 		if(state==1){
 			alert("현재달 까지만 확인할 수 있습니다.");
 			return false;
@@ -229,7 +229,7 @@ $(function(){
 		var img = document.createElement('img');
 		img.src = 'images/GGang.JPG';
 		var nickname = '${USER_KEY.nickname}';
-		alert("클릭");
+		/* alert("클릭"); */
 		chulstate = 0;
 		$.getJSON("attend.do", {"chulsuk": "1", "year": year, "month": month, "day": day, "nickname": nickname})
 			.done(function(data){
@@ -245,7 +245,7 @@ $(function(){
 
 </script>
 <body onload="init()">
-<div class="calendar_year_month">
+<div class="calendar_year_month" style="margin-left:100px;">
 	<div class="calendar_year_month_left">
 		<button type="button" id="before_button">이전</button>
 		<h2 id="month_value_num"></h2>
@@ -257,7 +257,7 @@ $(function(){
 	 
 </div>
 
-<div id="calendar" class="calendar">
+<div id="calendar" class="calendar" style="margin-left:100px;">
 
 </div>
 </body><%@ include file="../footer.jsp" %>

@@ -186,6 +186,28 @@ public class MemberController {
  
 	@RequestMapping(value = "logout")
 	public String logout(Member member, Model model, HttpSession session) {
+		List<DBBoard> db = new ArrayList<DBBoard>();
+		db = mss.DBRecent();
+		System.out.println("제목추출: " + db.get(0).getTitle());
+		List<JQueryBoard> jqb = new ArrayList<JQueryBoard>();
+		jqb = mss.JQueryRecent();
+		List<JspBoard> jb = new ArrayList<JspBoard>();
+		jb = mss.JspRecent();
+		List<JavaBoard> jab = new ArrayList<JavaBoard>();
+		jab = mss.JavaRecent();
+		List<AndroidBoard> ad = new ArrayList<AndroidBoard>();
+		ad = mss.AndroidRecent();
+		List<Html5Board> hb = new ArrayList<Html5Board>();
+		hb = mss.Html5Recent();
+		List<NoticeBoard> nb = new ArrayList<NoticeBoard>();
+		nb = mss.NoticeRecent();
+		model.addAttribute("DB", db);
+		model.addAttribute("jQuery", jqb);
+		model.addAttribute("Jsp", jb);
+		model.addAttribute("Java", jab);
+		model.addAttribute("Android", ad);
+		model.addAttribute("Html5", hb);
+		model.addAttribute("Notice",nb);
 		session.removeAttribute(WebConstants.USER_KEY);
 		return "main";
 	}

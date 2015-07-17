@@ -77,8 +77,7 @@
 						<c:choose>
 							<c:when test="${USER_KEY.nickname == 'master' }">
 								<br>
-								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자
-									페이지</a>
+								<a href="adminMain.do?nickname=${USER_KEY.nickname }">관리자페이지</a>
 							</c:when>
 							<c:when test="${USER_KEY.nickname != 'master' }">
 								<br>
@@ -92,15 +91,6 @@
 		</div>
 
 		<div id="wrab_bottom">
-			<div id="wrab_bottom_left">
-			
-			</div>
-			<div id="wrab_bottom_center">
-				
-			</div>
-			<div id="wrab_bottom_right">
-				
-			</div>
 		</div>
 	</div>
 	<!-- wrab 끝 -->

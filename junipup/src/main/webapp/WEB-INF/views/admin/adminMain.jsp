@@ -35,8 +35,8 @@
 <body> 
 	<div id='adminMenu'>
 	<ul>
-	   <li><a href='#'><span>관리자페이지</span></a></li>
-	   <li class='active has-sub'><a href='#'><span>쪽지함</span></a>
+	   <li><a href='adminMain.do?nickname=${USER_KEY.nickname }'><span>관리자페이지</span></a></li>
+	   <li class='active has-sub'><a href='messageCheck.do'><span>쪽지함</span></a>
 	      <ul>
 	         <li class='has-sub'><a href='sendingmessage.do?nickname='${USER_KEY.nickname }><span>보낸쪽지함</span></a>
 	            

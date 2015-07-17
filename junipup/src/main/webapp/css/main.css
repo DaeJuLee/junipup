@@ -9,8 +9,8 @@ body{font-size:15px; width:1100px; margin:auto; padding-top: 20px; height: 890px
 #wrab_top_left{width:350px; height:110px; padding:0; margin: 0; float:left; margin-top: 45px; margin-left: 20px;}
 #wrab_top_left #rank img{width:50px; height:50px; vertical-align: middle;}
 #wrab_top_center{width:450px; height:110px; padding:0; margin: 0; float:left;}
-#wrab_top_center img{width:720px; height:150px; padding-left:10px; padding-right: 65px;}/* 이미지 크기  */
-#wrab_top_right{width:200px; height:110px; padding:0; margin: 50; float:right;vertical-align: middle; margin-right: -51px;}
+#wrab_top_center img{width:720px; height:150px; padding-left:10px; padding-right: 65px; margin:0;}/* 이미지 크기  */
+#wrab_top_right{width:200px; height:110px; padding:0; float:right;vertical-align: middle; margin:0}
 #wrab_top_right #wrab_top_right_top img{width:100px; height:50px; padding-left: 50px; padding-right:50px; text-align: center;}
 #wrab_top_right #wrab_top_right_bottom {text-align: center;}
 
