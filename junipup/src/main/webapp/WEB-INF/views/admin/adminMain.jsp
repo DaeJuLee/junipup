@@ -32,7 +32,7 @@
     </style>
 </head>
  
-<body>
+<body> 
 	<div id='adminMenu'>
 	<ul>
 	   <li><a href='#'><span>관리자페이지</span></a></li>
