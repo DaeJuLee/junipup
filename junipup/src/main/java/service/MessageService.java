@@ -13,6 +13,7 @@ import model.Messaging;
 public interface MessageService {
 	// 전체 메세지 불러오기
 	public List<Messaging> listMessageNick(String nickname);
+	public List<Messaging> listMessagereceiver(String nickname);
 	// 신규 메세지 생성
 	public int insertMessage(Messaging message);
 	// 메세지 디테일을 위한 불러오기

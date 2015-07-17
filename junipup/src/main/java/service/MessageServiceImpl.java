@@ -43,4 +43,10 @@ public class MessageServiceImpl implements MessageService {
 		return md.upDateMessagingConfirm(mnum);
 	}
 
+	@Override
+	public List<Messaging> listMessagereceiver(String nickname) {
+		
+		return md.listMessagereceiver(nickname);
+	}
+
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import service.JspService;
 import service.MemberService;
@@ -65,6 +66,21 @@ public class MessageController {
 			return "/message/messageInsertForm";
 		}	
 	}
+	
+	@RequestMapping(value="sendingmessage")
+	public String sendingmessage(Model model, Messaging messaging, @RequestParam("nickname") String nickname){
+		List<Messaging> messageList = ms.listMessageNick(nickname);
+		model.addAttribute("lsit", messageList);
+			return "/message/sendingmessage";
+	}
+	@RequestMapping(value="recevingmessage")
+	public String recevingmessage(Model model, Messaging messaging, @RequestParam("nickname") String nickname){
+		List<Messaging> messageList = ms.listMessagereceiver(nickname);
+		model.addAttribute("lsit", messageList);
+			return "/message/recevingmessage";
+	}	
+	
+	
 	@RequestMapping(value="messageCheck")
 	public String messageCheck(Model model, String nickname){
 		int index = 0;

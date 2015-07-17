@@ -45,6 +45,11 @@
     	order by mnum desc) a) 
 	</select>
 	
+	<select id="listMessagereceiver" parameterType="String" resultMap="MessagingResult">
+    	select * from (select rownum rn, a.* from (select * from messaging where receiver=#{nickname, jdbcType=VARCHAR}
+    	order by mnum desc) a) 
+	</select>
+	
 	
 	
  	<select id="selectMessageNick" parameterType="int" resultMap="MessagingResult">
