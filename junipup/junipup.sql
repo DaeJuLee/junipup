@@ -278,7 +278,14 @@ attend varchar2(50)
 );
 
 select * from attend;
+select * from member;
 
 insert into attend values (1 , 'master', 2015, 6, 1, 1, 30, '111111111111111111111111111111');
-insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '11100011100011');
+insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '1110001110001110');
 insert into attend values (3 , 'master', 0, 0, 0, 0, 0 , '');
+insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '1110001110001110');
+insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '1110001110001110');
+insert into attend values (2 , 'master', 2015, 7, 1, 1, 31, '1110001110001110');
+update attend set attend = '0101010101010110' where nickname='pmh';
+update attend set attend = '0101010101010110' where nickname='과천주니';
+update member set maxpoint = '900' where nickname='master';
