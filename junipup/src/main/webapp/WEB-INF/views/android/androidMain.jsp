@@ -117,7 +117,16 @@ function go_pop(receiver, sender) {
 			<tr>
 				<td>${num }</td>
 				<td>${android.category }</td>
-				<td><input type="button" value="${android.nickname }" onclick="go_pop('${android.nickname}','${USER_KEY.nickname}')" class="button"></td>
+				<c:choose>
+					<c:when test="${empty USER_KEY}">
+						<td><input type="button" value="${android.nickname }" onclick="location.href='login.do'" class="button"></td>
+					</c:when>
+		
+					<c:otherwise>
+						<td><input type="button" value="${android.nickname }" onclick="go_pop('${android.nickname}','${USER_KEY.nickname}')" class="button"></td>
+					</c:otherwise>
+				</c:choose>
+			
 				<td><a href="androidDetail.do?bnum=${android.bnum}">${android.title }</a></td>
 				<td>${android.b_date }</td>
 				<td>${android.hits }</td>
