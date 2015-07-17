@@ -73,5 +73,11 @@ public class NoticeDaoImpl implements NoticeDao {
 		
 		return session.selectList("noticeRecent", notice);
 	}
+
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return session.update("noticeHitsUpdate", bnum);
+	}
 	
 }

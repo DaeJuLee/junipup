@@ -59,4 +59,10 @@ public class NoticeServiceImpl implements NoticeService{
 		return dao.listNoticeCategory(notice);
 	}
 
+
+	@Override
+	public int HitsUpdate(int bnum) {
+		return dao.HitsUpdate(bnum);
+	}
+
 }

@@ -67,7 +67,9 @@ public class NoticeController {
 	@RequestMapping(value = "noticeDetail")
 	public String noticeDetail(int bnum, Model model){
 		NoticeBoard notice = service.noticeDetail(bnum);
+		service.HitsUpdate(bnum);
 		model.addAttribute("noticeDetail", notice);
+		model.addAttribute("modify", "true");
 		System.out.println(notice.getTitle() + notice.getCategory());
 		return "/notice/noticeDetail";
 		

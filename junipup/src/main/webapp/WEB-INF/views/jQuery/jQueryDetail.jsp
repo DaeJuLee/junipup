@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -68,9 +69,36 @@
 	</div>
 		<form class="viewForm" method="post">
 			<input type="hidden" name="bnum" id="bnum" value="${jQueryDetail.bnum }" />
-			<button type="button" onclick="onModify()" class="btn btn-primary">수정</button>
 			<button type="button" onclick="onList()" class="btn btn-primary">목록</button>
-			<button type="button" onclick="onDelete()" class="btn btn-primary">삭제</button>
+			<c:choose>
+			<c:when test="${empty USER_KEY}">					
+				<button type="button" class="btn btn-primary"  onclick="location.href='login.do'">수정</button>					
+			</c:when>				
+			<c:otherwise>
+				<c:choose>							
+					<c:when test="${USER_KEY.nickname == jQueryDetail.nickname  }">
+						<button type="button" onclick="onModify()" class="btn btn-primary">수정</button>										
+					</c:when>
+					<c:when test="${USER_KEY.nickname !=  jQueryDetail.nickname }">
+					</c:when>					
+				</c:choose>							
+			</c:otherwise>		
+			</c:choose>
+			
+			<c:choose>
+			<c:when test="${empty USER_KEY}">					
+				<button type="button" class="btn btn-primary"  onclick="location.href='login.do'">삭제</button>					
+			</c:when>				
+			<c:otherwise>
+				<c:choose>							
+					<c:when test="${USER_KEY.nickname == jQueryDetail.nickname  }">
+						<button type="button" onclick="onDelete()" class="btn btn-primary">삭제</button>
+					</c:when>
+					<c:when test="${USER_KEY.nickname !=  jQueryDetail.nickname }">
+					</c:when>					
+				</c:choose>							
+			</c:otherwise>		
+			</c:choose>				
 		</form>
 </div>
 </body><%@ include file="../footer.jsp" %>

@@ -39,13 +39,16 @@
 			<th width="15%" >닉네임</th>
 			<th width="50%" >제목</th>
 			<th width="15">작성일</th>
+			<th width="5%">조회수</th>
 		</tr>
 	<c:forEach items="${list }" var="notice">
 		<tr>
 			<td>${num }</td>
 			<td>${notice.category }</td> 
-			<td><a href="findMember.do?nickname=${notice.nickname}">${notice.nickname }</a></td>
+			<td>${notice.nickname }</td>
 			<td><a href="noticeDetail.do?bnum=${notice.bnum}">${notice.title }</a></td>
+			<td>${notice.b_date }</td>
+			<td>${notice.hits }</td>
 		</tr>
 		<c:set var="num" value="${num-1 }" />
 	</c:forEach>

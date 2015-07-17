@@ -15,4 +15,5 @@ public interface NoticeDao {
 	public int totalNoticeCategory(String category);
 	List<NoticeBoard> listNoticeCategory(NoticeBoard notice);
 	List<NoticeBoard> noticeRecent(NoticeBoard notice);
+	public int HitsUpdate(int bnum);
 }
