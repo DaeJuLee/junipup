@@ -26,12 +26,12 @@
 								<tr>
 									<td rowspan="2">
 										<c:if test="${USER_KEY.maxPoint <= '100'}"><img src="images/Brones.png"/></c:if>
-										<c:if test="${USER_KEY.maxPoint > '200'}&&${USER_KEY.maxPoint <= '300'}"><img src="images/Silver.png"/></c:if>
-										<c:if test="${USER_KEY.maxPoint > '300'}&&${USER_KEY.maxPoint <= '400'}"><img src="images/Gold.png"/></c:if>
-										<c:if test="${USER_KEY.maxPoint > '400'}&&${USER_KEY.maxPoint <= '500'}"><img src="images/Platinum.png"/></c:if>
-										<c:if test="${USER_KEY.maxPoint > '500'}&&${USER_KEY.maxPoint <= '600'}"><img src="images/Diamond.png"/></c:if>
-										<c:if test="${USER_KEY.maxPoint > '600'}&&${USER_KEY.maxPoint <= '700'}"><img src="images/Christal.png"/></c:if>
-										<c:if test="${USER_KEY.maxPoint > '700'}&&${USER_KEY.maxPoint <= '800'}"><img src="images/Challenger.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '100'}&&${USER_KEY.maxPoint <= '200'}"><img src="images/Gold.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '200'}&&${USER_KEY.maxPoint <= '300'}"><img src="images/Gold.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '300'}&&${USER_KEY.maxPoint <= '400'}"><img src="images/Platinum.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '400'}&&${USER_KEY.maxPoint <= '500'}"><img src="images/Diamond.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '500'}&&${USER_KEY.maxPoint <= '600'}"><img src="images/Christal.png"/></c:if>
+										<c:if test="${USER_KEY.maxPoint > '600'}&&${USER_KEY.maxPoint <= '700'}"><img src="images/Challenger.png"/></c:if>
 										<c:if test="${USER_KEY.maxPoint > '800'}"><img src="images/Challenger.png"/></c:if>	
 									</td>
 									<th align="center">닉네임</th>

@@ -171,12 +171,12 @@ $(function(){
 	<div id='adminMenu'>
 	<ul>
 	   <li><a href='updateForm.do?email=${USER_KEY.email }'><span>마이페이지</span></a></li>
-	   <li class='active has-sub'><a href='messageCheck.do'><span>쪽지함</span></a>
+	   <li class='active has-sub'><a href='messageCheck.do?nickname=${USER_KEY.nickname }'><span>쪽지함</span></a>
 	      <ul>
-	         <li class='has-sub'><a href='sendingmessage.do?nickname='${USER_KEY.nickname }><span>보낸쪽지함</span></a>
+	         <li class='has-sub'><a href='sendingmessage.do?nickname=${USER_KEY.nickname }'><span>보낸쪽지함</span></a>
 	            
 	    </li>
-	         <li class='has-sub'><a href='recevingmessage.do?nickname='${USER_KEY.nickname }'><span>받은쪽지함</span></a>
+	         <li class='has-sub'><a href='recevingmessage.do?nickname=${USER_KEY.nickname }'><span>받은쪽지함</span></a>
 	   </li>
 	
 	</ul>

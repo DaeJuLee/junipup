@@ -21,15 +21,17 @@ public class MailController {
 	public String adMail(Model model,@RequestParam("subject") String subject, @RequestParam("name") String name,
 			@RequestParam("tel") String tel, @RequestParam("email") String email,
 			@RequestParam("homepage") String homepage, @RequestParam("contents") String contents){
-		String content;
-		content = "이름 : "+name+"/n";
-		content += "전화번호 : "+tel+"/n";
-		content += "이메일 : " +email+"/n";
-		content += "홈페이지 : " +homepage+"/n";
-		content += "내용 " +contents+"/n";
+	    String content;
+	      content = "<html>";
+	      content += "이름 : "+name+"<br>";
+	      content += "전화번호 : "+tel+"<br>";
+	      content += "이메일 : " +email+"<br>";
+	      content += "홈페이지 : " +homepage+"<br>";
+	      content += "내용 : " +contents+"<br>";
+	      content += "</html>";
 		
-		ms.sendMail("junibatnipup@gmail.com", "junibatnipup@gmail.com", subject, content);
-		return "main";
+		ms.sendMailWithAttachment("junibatnipup@gmail.com", "junibatnipup@gmail.com", subject, content);
+		return "redirect:main.do";
 	}
 	
 	@RequestMapping(value="mailSendForm")

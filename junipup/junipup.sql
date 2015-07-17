@@ -14,6 +14,7 @@ loginDate date
 --drop table member;
 update member set regDate = '20150601' where nickname='master';
 update attend set attend = '010101010101011' where nickname='master';
+select * from MESSAGING;
 select * from attend;
 select * from member;
 delete from member where nickname = 'dndhkdnk';

@@ -82,20 +82,25 @@ public class MessageController {
 	
 	
 	@RequestMapping(value="messageCheck")
-	public String messageCheck(Model model, String nickname){
+	public String messageCheck(Model model, @RequestParam("nickname") String nickname){
 		int index = 0;
 		List<Messaging> listSend = new ArrayList<Messaging>();
 		listSend = ms.listMessageNick(nickname);//보낸 메세지 함
 		List<Messaging> listReceive = new ArrayList<Messaging>();
-		for(int i = 0; i < listSend.size(); i++){
+		System.out.println("messageCheck : " + nickname);
+		System.out.println("메세지 크기 :" + listSend.size());
+		List<Messaging> listSend1 = new ArrayList<Messaging>();
+		listSend1 = ms.listMessagereceiver(nickname);
+		for(int i = 0; i < listSend1.size(); i++){
 			Messaging receiveMessage = new Messaging();
-			if((listSend.get(i).getReceiver()).equals(nickname)){
-				receiveMessage.setReceiver(listSend.get(i).getReceiver());
-				receiveMessage.setNickname(listSend.get(i).getNickname());
-				receiveMessage.setMessage(listSend.get(i).getMessage());
-				receiveMessage.setTitle(listSend.get(i).getTitle());
-				receiveMessage.setRegdate(listSend.get(i).getRegdate());
-				receiveMessage.setConfirm(listSend.get(i).getConfirm());
+			
+			if((listSend1.get(i).getReceiver()).equals(nickname)){
+				receiveMessage.setReceiver(listSend1.get(i).getReceiver());
+				receiveMessage.setNickname(listSend1.get(i).getNickname());
+				receiveMessage.setMessage(listSend1.get(i).getMessage());
+				receiveMessage.setTitle(listSend1.get(i).getTitle());
+				receiveMessage.setRegdate(listSend1.get(i).getRegdate());
+				receiveMessage.setConfirm(listSend1.get(i).getConfirm());
 				listReceive.add(index, receiveMessage);;
 				index++;
 			}	
